@@ -1,0 +1,9 @@
+fitur tambahan:
+1.	Membatasi pembeli dengan umur yang rendah dari kategori
+2.	Perbedaan harga berdasarkan tanggal di terbitkan buku
+3.	perbedaan buku special dan biasa
+4.	Ada control akses buat Customer
+5.	Ada control akses buat Manager
+6.	Ada control akses
+7.	Fitur point member
+8.	 
