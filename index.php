@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="box">
-        <form action="">
+        <form action="controAccess.php" method="POST">
             <table>
                 <tr>
                     <td><img id="gambar" src="logobaru.png" alt=""></td>
@@ -21,10 +21,10 @@
                     <td><br></td>
                 </tr>
                 <tr>
-                    <td><input type="text" placeholder="username"></td>
+                    <td><input type="text" placeholder="username" name="id"></td>
                 </tr>
                 <tr>
-                    <td><input type="password" placeholder="password"></td>
+                    <td><input type="password" placeholder="password" name="password"></td>
                 </tr>
                 <tr>
                     <td><br></td>
