@@ -6,9 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <script>
-        
-    </script>
+    <?php
+        session_start();
+        if(isset($_SESSION['error'])){
+            ?>
+            <script>
+                window.onload = function(){
+                    alert("<?php echo "username atau password salah"?>");
+                }
+            </script>
+            <?php
+        }
+        session_destroy();
+    ?>
+    
 </head>
 <body>
     <div id="box">

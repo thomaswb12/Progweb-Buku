@@ -41,8 +41,12 @@ input{
     font-size: 100%;
     border: 1px solid black;
     color: black;
-    background-color: gray;
+    background-color: darkgray;
     border-radius: 5px;
+}
+
+#login:hover{
+    background:gray;
 }
 
 tr{
