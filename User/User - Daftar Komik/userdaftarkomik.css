@@ -1,0 +1,59 @@
+html { 
+    background: url('../../background.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+.blue{ /*utk font-font yg warnanya biru*/
+    color: #000066;
+}
+.font15{ /*utk font yang ukurannya 15px*/
+    font-size: 15px;
+}
+
+/*------------------------bagian header---------------------*/
+header{
+    background-color: rgba(0,0,51,0.23);
+    height:20%;
+    width: 100%;
+}
+header #logo{
+    margin-top: 0%;
+    padding-top: 0%;
+    height:90px;
+    top: 0.2%;
+    max-width:40%;
+}
+header #logOut{
+    font-weight: bold;
+}
+header p#welcome{
+    float: right;
+    margin-right: 1%;
+}
+header p#tanggal{
+    clear: both;
+    float: right;
+    font-style: italic;
+    margin-right: 1%;
+}
+
+/*------------------------bagian artikel---------------------*/
+article{
+    height: 80%;
+}
+/*------------------------bagian aside---------------------*/
+article div#aside{
+}
+/*------------------------bagian konten---------------------*/
+article div#konten{
+
+}
