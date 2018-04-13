@@ -138,10 +138,22 @@ article #daftarKomik .infoKomik .new{ /*tambahan img icon "new" utk komik2 baru*
     width: 30px;
 }
 
+/*----------tombol utk up ke atas----------*/
+a#tombolUp{
+    font-size: 50px;
+    position: fixed;
+    right: 0px;
+    opacity: 0.3;
+    margin-top: -280px;
+    visibility: hidden;
+}
 
 
-/*media query*/
+
+
+/*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil*/
+    /*-----------------header-----------------*/
     header{ /*header height nya ditambahi, semua element di ketengahi*/
         height: 180px;
         text-align: center;
@@ -153,9 +165,12 @@ article #daftarKomik .infoKomik .new{ /*tambahan img icon "new" utk komik2 baru*
         float: none;
     }
 
+    /*-----------------utk article-----------------*/
     article{ /*semua element di article di ketengahi*/
         text-align: center;   
     }
+
+    /*--------utk article (bagian judul)---------*/
     article div#judul #sorting, article div#judul #searching{ /*media search dan sort diketengahi*/
         margin: auto;
         text-align: center;
@@ -168,4 +183,42 @@ article #daftarKomik .infoKomik .new{ /*tambahan img icon "new" utk komik2 baru*
     article div#judul #searching #searchBox::before { /*menambahkan new line sebelum id="searchBox"*/
         content: "\A";
     }
+    article div#judul #searching #selectSearchBy, article div#judul #sorting #selectSortBy{
+        margin: auto;
+    }
+
+    /*--------utk article (bagian daftar komik)---------*/
+    article div#daftarKomik{ /*sekotak daftar komik*/
+        overflow-y: inherit;
+    }
+    article #daftarKomik .infoKomik{ /*ukuran kotak dikecilin*/
+        height: 180px;
+        width: 85px;
+        margin: 10px 4px;
+    }
+    article #daftarKomik .infoKomik.favorit{ /*ukuran kotak favorit dikecilin*/
+        height: 172px;
+        width: 77px;
+    }
+    article #daftarKomik .infoKomik .komik{ /*ukuran kotak gambar dikecilin*/
+        height: 100px;
+    }
+    article #daftarKomik .infoKomik .stok, article #daftarKomik .infoKomik .tersedia{ /*utk menghemat ruang, info stok & tersedia tidak ditampilkan (dihidden)*/
+        position: absolute;
+        visibility: hidden;
+    }
+    article #daftarKomik .infoKomik h4{ /*judul komik dikecilkan*/
+        font-size: 14px;
+    }
+    article #daftarKomik .infoKomik .status{ /*judul komik dikecilkan dan diketengahkan manual*/
+        margin-right: 17px;
+        clear: both;
+        font-size: 11px;
+    }   
+    article #daftarKomik .infoKomik .new{ /*icon new dikecilkan dan dinaikkan sedikit*/
+        width: 20px;
+        margin-top: -5px;
+    }
+
+    
 }
