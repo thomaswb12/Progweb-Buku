@@ -1,5 +1,8 @@
 $(document).ready(function(){
     setTanggal();
+    $(window).scroll(function(){
+        $("#tombolUp").css("visibility","visible");
+    });
 });
 
 function setTanggal(){
