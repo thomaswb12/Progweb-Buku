@@ -49,11 +49,44 @@ header p#tanggal{   /*penampil tanggal di kanan atas*/
 /*------------------------bagian header---------------------*/
 
 /*------------------------bagian article---------------------*/
-article{
+article{ /*semua yang dibawah header*/
+    width: 95%;
     height: 80%;
+    margin: auto;
+}
+article h1{ /*judul taruh tengah*/
+    text-align: center;
+}
+article div#gambarKomik{ /*div yang isinya gambar komik*/
+    float: left;    /*sebelah kiri*/
+    margin-right: 30px;
+}
+article div#gambarKomik img{ /*atur ukuran gambar komik*/
+    height: 285px;
+    margin-bottom: 10px;
+}
+article div#keteranganKomik{ /*dari ID buku sampai dipinjam*/
+    float: left; /*disebelahkan dg gambar komik*/
+}
+article div#keteranganKomik #statusKomik{ /*avail atau tidak*/
+    color: green; /*hijau utk avail, red utk unavail*/
+}
+article div#istimewa{ /*favorit dan special edition*/
+    float: right; /*taruh sebelah kanan*/
+    margin-right: 100px;
+}
+article div#sinopsis{ /*bagian dinopsis*/
+    clear: both; /*pindah ke baris baru*/
+}
+article div#sinopsis h4{ /*tulisan "Sinopsis:"*/
+    margin-bottom: 10px;
+}
+article div#sinopsis p#isiSinopsis{ /*isi sinopsisnya*/
+    margin-top: 3px;
+    height: 120px;
+    overflow-y: scroll; /*scroll vertical*/
 }
 /*------------------------bagian article---------------------*/
-
 
 /*----------tombol utk up ke atas----------*/
 a#tombolUp{ /*peletakkannya dikanan bawah dan fixed*/
@@ -63,14 +96,12 @@ a#tombolUp{ /*peletakkannya dikanan bawah dan fixed*/
     padding: 5px;
     font-size: 30px; /*besar tombol*/
     opacity: 0.3; /*transparancy*/
-    display: block; /*tidak ditampilkan (ditampilkan saat scrolldown dan di media query utk HP, setting di file .js)*/
+    display: none; /*tidak ditampilkan (ditampilkan saat scrolldown dan di media query utk HP, setting di file .js)*/
 }
 a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     opacity: 0.6;
 }
 /*----------tombol utk up ke atas----------*/
-
-
 
 
 
@@ -89,5 +120,26 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         float: none;
     }
     /*-----------------header-----------------*/
+
+    /*-----------------article-----------------*/
+    article div#gambarKomik{    /*gambar taruh tengah*/
+        float: none;
+        text-align: center;
+    }
+    article div#gambarKomik img{    /*gambar dikecilkan*/
+        height: 230px;
+    }
+    article div#istimewa{ /*tulisan FAVORIT dan SPECIAL dikirikan*/
+        float: none;
+        text-align: left;
+    }
+    article div#keteranganKomik{    /*dari ID smpai DIPINJAM taruh tengah*/
+        float: none;
+        margin: auto;
+    }
+    article div#sinopsis p#isiSinopsis{ /*yang versi smartphone, sinopsis tidak ada scroll box nya*/
+        overflow-y: unset;
+    }
+    /*-----------------article-----------------*/
 }
 /*---------------------------media query---------------------------*/
