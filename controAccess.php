@@ -3,7 +3,7 @@
     if($_POST){
         session_start();
         if($_POST['id'] == "admin" && $_POST['password'] == "admin"){
-            header("location:");
+            header("location:User/User - Daftar Komik/User - daftar komik.html");
         }
         else{
             $servername = "localhost";
