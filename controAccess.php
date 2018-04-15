@@ -34,6 +34,7 @@
                     }
                 } 
                 else {
+                    $_SESSION['error'] = 1;
                     header("location:index.php");
                 }
             }
