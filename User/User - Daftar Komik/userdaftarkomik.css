@@ -1,12 +1,12 @@
-html { 
-    background: url('../../background.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+html {  /*untuk setting background dan font keseluruhan page*/
+    background: url('../../background.jpg') no-repeat center center fixed; /*setting background*/
+    -webkit-background-size: cover; /*setting background*/
+    -moz-background-size: cover;    /*setting background*/
+    -o-background-size: cover;     /*setting background*/
+    background-size: cover;        /*setting background*/
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-body{
+body{ /*supaya mentok selayar*/
     margin: 0px;
     padding: 0px;
     height: 100%;
@@ -20,61 +20,61 @@ body{
 }
 
 /*------------------------bagian header---------------------*/
-header{
+header{ /*bagian atas yang isinya logo, tulisan welcome, logout dan tanggal*/
     background-color: rgba(0,0,51,0.23);
     height:20%;
     width: 100%;
 }
-header #logo{
+header #logo{  /*penempatan gambar logo tepoz di kiri atas*/
     margin-top: 0%;
     padding-top: 0%;
     height:90px;
     top: 0.2%;
     max-width:40%;
 }
-header #logOut{
+header p#welcome{   /*tulisan welcome smpai logout di pojok kanan atas*/
+    float: right;   /*penempatan ke pojok kanan */
+    margin-right: 1%;
+}
+header #logOut{  /*utk logout (di pojok kanan atas)*/
     font-weight: bold;
 }
-header p#welcome{
-    float: right;
-    margin-right: 1%;
-}
-header p#tanggal{
-    clear: both;
-    float: right;
+header p#tanggal{   /*penampil tanggal di kanan atas*/
+    clear: both;    /*utk pindah baris dari tulisan welcome*/
+    float: right;   /*letakkan di kanan*/
     font-style: italic;
-    margin-right: 1%;
+    margin-right: 1%; /*supaya ada jarak sedikit dengan pojok*/
 }
 
 /*------------------------bagian artikel---------------------*/
-article{
+article{ /*article adlah semua yang ada dibawah header*/
     height: 80%;
     width: 100%;
 }
 /*------------------------bagian judul dan searching + sorting ---------------------*/
 article div#judul h1{  /*judul "Daftar Komik"*/
-    text-align: center;
+    text-align: center; /*taruh tengah*/
     font-size: 35px;
-    text-transform: uppercase;    
+    text-transform:uppercase;   /*supaya capslock*/
 }
 article div#judul #sorting{ /*"sort by" (label dan dropbox-nya)*/
-    float: right;
-    margin-right: 1%;
+    float: right;   /*taruh pojok kanan*/
+    margin-right: 1%;   /*beri jarak dengan pojok*/
 }
 article div#judul #sorting #selectSortBy{ /*"sort by" (dropbox-nya)*/
-    margin-left: 15px;
-    width: 100px;
+    margin-left: 15px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 100px;   /*lebar dropbox*/
     background-color: rgba(255,255,255,0.54);
     border: 0.05vw solid lightslategray;
     border-radius: 20px;
 }
 article div#judul #searching{ /*"search by" (label, dropbox, input, dan icon-nya)*/
-    float: right;
+    float: right;   /*letakkan di kanan, sebelahan dg sort by*/
     width: 300px;
-    margin-right: 2%;
+    margin-right: 2%; /*jarak dgn sort by*/
 }
 article div#judul #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
-    float: right;
+    float: right;   /*lettakkan di kanan parent #searching*/
 }
 article div#judul #searching #searchBox #inputSearchBy{ /*"search by" (input-nya)*/
     width: 150px;
@@ -84,8 +84,8 @@ article div#judul #searching #searchBox #inputSearchBy{ /*"search by" (input-nya
 }
 article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
     width: 100px;
-    margin-left: 3px;
-    margin-right: 10px;
+    margin-left: 3px;   /*memberi jarak ke kanan dengan label yg diatasnya*/
+    margin-right: 10px; /*memberi jarak dengan box inputan*/
     background-color: rgba(255,255,255,0.54);
     border: 0.05vw solid lightslategray;
     border-radius: 20px;
@@ -93,26 +93,26 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 
 /*------------------------bagian isi (daftar komiknya)---------------------*/
 article div#daftarKomik{ /*sekotak daftar komik*/
-    margin: auto;
+    margin: auto;   /*ditaruh tengah*/
     height: 400px;
     width: 91%;
-    overflow-y: scroll;  /*utk scroll*/
+    overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
 article #daftarKomik .infoKomik{ /*kotak masing2 komik yang isinya info komik*/
     background-color: #F2F2F2;
     margin: 14px;
     height: 300px;
     width: 170px;
-    float: left;
+    float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
 }
 article #daftarKomik .infoKomik.favorit{ /*utk komik2 yang favorit*/
-    border: 4px solid red;
-    height: 292px;
-    width: 162px;
+    border: 4px solid red; /*favorit ditandai dg bordernya yg merah*/
+    height: 292px;  /*height jadi lebih sedikit 8px dari pada yang tidak favorit (supaya besar kotak sama)*/
+    width: 162px;   /*witdh juga jadi lebih sedikit 8px*/
     padding: 0px;
 }
 article #daftarKomik .infoKomik.specialEdition{ /*utk komik2 yang special edition*/
-    outline: 4px solid gold;
+    outline: 4px solid gold; /*special edition ditambahi outline gold*/
 }
 article #daftarKomik .infoKomik .komik{ /*utk fotonya*/
     height: 200px;
@@ -120,48 +120,52 @@ article #daftarKomik .infoKomik .komik{ /*utk fotonya*/
 }
 article #daftarKomik .infoKomik h4{ /*judul komiknya*/
     margin: 4px;
-    text-align: center;
+    text-align: center; /*tengah kotak*/
 }
-article #daftarKomik .infoKomik p{ /*info komiknya*/
-    margin: 0px;
+article #daftarKomik .infoKomik p{ /*info komiknya (stok, tersedia, available)*/
+    margin: 1px; /*jarak 1px dg kotaknya*/
 }
 article #daftarKomik .infoKomik p.tersedia{ /*tersedia berapa*/
-    float: left;
+    float: left; /*supaya bisa sebaris dg tulisan available*/
 }
 article #daftarKomik .infoKomik p.status{ /*available atau tidak*/
-    float: right;
+    float: right; /*dikanannya tulisan tersedia*/
     color: green; /*available hijau, unavail red*/
 }
 article #daftarKomik .infoKomik .new{ /*tambahan img icon "new" utk komik2 baru*/
-    clear: both;
-    float: right;
+    clear: both;    /*pindah baris dari tulisan available*/
+    float: right;   /*bagian kanan kotak*/
     width: 30px;
 }
 
 /*----------tombol utk up ke atas----------*/
-a#tombolUp{
-    font-size: 50px;
-    position: fixed;
-    right: 0px;
-    opacity: 0.3;
-    margin-top: -280px;
-    visibility: hidden;
+a#tombolUp{ /*peletakkannya dikanan bawah dan fixed*/
+    position: fixed; /*tetap ada di bawah walau discroll*/
+    bottom: 2px;     /*jarak dengan bottom window*/
+    right: 2px;      /*jarak dg kanan window*/
+    padding: 5px;
+    font-size: 30px; /*besar tombol*/
+    opacity: 0.3; /*transparancy*/
+    display: none; /*tidak ditampilkan (ditampilkan saat scrolldown dan di media query utk HP, setting di file .js)*/
+}
+a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
+    opacity: 0.6;
 }
 
 
 
 
 /*---------------------------media query---------------------------*/
-@media screen and (max-width: 680px){ /*view port kecil*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
     /*-----------------header-----------------*/
     header{ /*header height nya ditambahi, semua element di ketengahi*/
         height: 180px;
         text-align: center;
     }
-    header #logo{
+    header #logo{ /*logo tepoz supaya bisa ikut ketengah*/
         float: none;
     }
-    header p#welcome, header p#tanggal{
+    header p#welcome, header p#tanggal{ /*hilangi floatnya, supaya ikut ketengah*/
         float: none;
     }
 
@@ -174,14 +178,14 @@ a#tombolUp{
     article div#judul #sorting, article div#judul #searching{ /*media search dan sort diketengahi*/
         margin: auto;
         text-align: center;
-        float: none;
+        float: none;    /*hilangi float*/
         
     }
     article div#judul #searching #searchBox{
         float: none;
     }
     article div#judul #searching #searchBox::before { /*menambahkan new line sebelum id="searchBox"*/
-        content: "\A";
+        content: "\A";  /*tambahkan newline, spti <br>*/
     }
     article div#judul #searching #selectSearchBy, article div#judul #sorting #selectSortBy{
         margin: auto;
@@ -191,26 +195,26 @@ a#tombolUp{
     article div#daftarKomik{ /*sekotak daftar komik*/
         overflow-y: inherit;
     }
-    article #daftarKomik .infoKomik{ /*ukuran kotak dikecilin*/
+    article #daftarKomik .infoKomik{ /*ukuran kotak putih dikecilin*/
         height: 180px;
         width: 85px;
         margin: 10px 4px;
     }
-    article #daftarKomik .infoKomik.favorit{ /*ukuran kotak favorit dikecilin*/
+    article #daftarKomik .infoKomik.favorit{ /*ukuran kotak putih yang favorit juga dikecilin*/
         height: 172px;
         width: 77px;
     }
-    article #daftarKomik .infoKomik .komik{ /*ukuran kotak gambar dikecilin*/
+    article #daftarKomik .infoKomik .komik{ /*ukuran gambar komik dikecilin*/
         height: 100px;
     }
     article #daftarKomik .infoKomik .stok, article #daftarKomik .infoKomik .tersedia{ /*utk menghemat ruang, info stok & tersedia tidak ditampilkan (dihidden)*/
-        position: absolute;
+        position: absolute; /*fungsinya supaya tulisan availble naik kebawah judul komik*/
         visibility: hidden;
     }
     article #daftarKomik .infoKomik h4{ /*judul komik dikecilkan*/
         font-size: 14px;
     }
-    article #daftarKomik .infoKomik .status{ /*judul komik dikecilkan dan diketengahkan manual*/
+    article #daftarKomik .infoKomik .status{ /*tulisan available dikecilkan dan diketengahkan manual*/
         margin-right: 17px;
         clear: both;
         font-size: 11px;
