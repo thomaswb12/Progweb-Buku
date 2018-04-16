@@ -117,6 +117,34 @@ article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
     border-radius: 20px;
 }
 /*keperluan search------*/
+/*tabel daftar peminjaman------*/
+article div#konten div#tabel{
+    height: 65%;
+    width: 95%;
+    overflow-y: scroll;  
+    margin: auto;
+    margin-top: 100px;
+    clear: both;
+}
+table{  
+    margin: auto;
+    border-collapse: collapse;
+}
+th{
+    background-color: grey;
+    color: white;
+}
+th,td{
+    text-align: center;
+    border: 2px solid black; 
+    width: 350px;
+}
+.peringatan{
+    background-color: transparent;
+    width: 50px;
+    border: none;
+}
+/*tabel daftar peminjaman------*/
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
@@ -133,6 +161,9 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     opacity: 0.6;
 }
 /*----------tombol utk up ke atas----------*/
+
+
+
 
 
 /*---------------------------media query---------------------------*/
@@ -193,4 +224,12 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     /*keperluan searching -------*/
     
     /*-----------------utk konten-----------------*/
+    /*tabel daftar peminjaman------*/
+    article div#konten div#tabel{
+        overflow-y: unset;
+        margin-top: 120px;
+    }
+    /*tabel daftar peminjaman------*/
+    /*-----------------utk konten-----------------*/
 }
+
