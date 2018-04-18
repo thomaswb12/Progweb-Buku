@@ -5,6 +5,8 @@ html {  /*untuk setting background dan font keseluruhan page*/
     -o-background-size: cover;     /*setting background*/
     background-size: cover;        /*setting background*/
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
+    width: 100%;
 }
 body{ /*supaya mentok selayar*/
     margin: 0px;
@@ -121,6 +123,9 @@ article #daftarKomik .infoKomik .komik{ /*utk fotonya*/
 article #daftarKomik .infoKomik h4{ /*judul komiknya*/
     margin: 4px;
     text-align: center; /*tengah kotak*/
+    overflow: hidden;   /*overflow tidak ditampilkan*/
+    text-overflow: ellipsis;    /*kalau text panjang, akhhirnya diberi ...*/
+    white-space: nowrap;    /*tidak ada newline*/
 }
 article #daftarKomik .infoKomik p{ /*info komiknya (stok, tersedia, available)*/
     margin: 1px; /*jarak 1px dg kotaknya*/
@@ -196,12 +201,12 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         overflow-y: inherit;
     }
     article #daftarKomik .infoKomik{ /*ukuran kotak putih dikecilin*/
-        height: 180px;
+        height: 160px;
         width: 85px;
         margin: 10px 4px;
     }
     article #daftarKomik .infoKomik.favorit{ /*ukuran kotak putih yang favorit juga dikecilin*/
-        height: 172px;
+        height: 152px;
         width: 77px;
     }
     article #daftarKomik .infoKomik .komik{ /*ukuran gambar komik dikecilin*/
@@ -212,12 +217,12 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         visibility: hidden;
     }
     article #daftarKomik .infoKomik h4{ /*judul komik dikecilkan*/
-        font-size: 14px;
+        font-size: 10px;
     }
     article #daftarKomik .infoKomik .status{ /*tulisan available dikecilkan dan diketengahkan manual*/
         margin-right: 17px;
         clear: both;
-        font-size: 11px;
+        font-size: 9px;
     }   
     article #daftarKomik .infoKomik .new{ /*icon new dikecilkan dan dinaikkan sedikit*/
         width: 20px;
