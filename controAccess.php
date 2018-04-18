@@ -27,8 +27,7 @@
                     header("location:index.php");
                 }
             }
-            
-            
+            $conn->close();
         }
     }
 ?>
