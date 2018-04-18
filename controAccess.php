@@ -1,9 +1,9 @@
 <?php
     //print_r($_POST);
-    if($_POST){
+    if($_POST){//untuk mengecek apakah sudah ada yg post
         session_start();
-        if($_POST['id'] == "admin" && $_POST['password'] == "admin"){
-            header("location:User/User - Daftar Komik/User - daftar komik.html");
+        if($_POST['id'] == "admin" && $_POST['password'] == "admin"){ //untuk login ke page user
+            header("location:User/User - Daftar Komik/User - daftar komik.html");//untuk pindah ke page tersebuh
         }
         else{
             if($_POST['id'] == "" || $_POST['password'] == ""){
@@ -11,19 +11,8 @@
                 header("location:index.php");
             }
             else{
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "progweb";
-
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                } 
-                
-                $sql =  " SELECT idJabatan FROM karyawan where idKaryawan = '".$_POST['id']."' and pass = '".$_POST['password']."'";
+                require("koneksi.php");
+                $sql =  " SELECT idJabatan FROM karyawan where idKaryawan = '".$_POST['id']."' and pass = '".hash('sha256',$_POST['password'])."'";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
