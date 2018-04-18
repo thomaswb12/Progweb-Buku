@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php session_start();?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,7 +14,7 @@
 <body>
     <header>
         <img src="../../logobaru.png" id="logo"/>
-        <p class="blue font15" id="welcome">Welcome, <span id="namaUser">Erinda Resha</span> | <span id="logOut">Log Out</span></p>
+        <p class="blue font15" id="welcome">Welcome, <span id="namaUser"> <?php echo $_SESSION['nama'];?></span> | <span id="logOut">Log Out</span></p>
         <p id="tanggal" class="blue font15">tanggal</p>
     </header>
     <article>

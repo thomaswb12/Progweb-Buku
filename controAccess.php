@@ -11,6 +11,7 @@
                 header("location:index.php");
             }
             else{
+                $_SESSION['id'] = $_POST['id'];
                 require("koneksi.php");
                 $sql =  " SELECT idJabatan FROM karyawan where idKaryawan = '".$_POST['id']."' and pass = '".hash('sha256',$_POST['password'])."'";
                 $result = $conn->query($sql);
@@ -18,7 +19,7 @@
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         switch ($row["idJabatan"]){
-                            case "KSRR" : header("location:kasir/Kasir - peminjaman/Kasir - peminjaman.html");break;
+                            case "KSRR" : header("location:kasir/Kasir - peminjaman/Kasir - peminjaman.php");break;
                         }
                     }
                 } 
