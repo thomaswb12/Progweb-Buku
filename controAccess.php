@@ -12,20 +12,10 @@
             }
             else{
                 $_SESSION['id'] = $_POST['id'];
-                require("koneksi.php");
-                $sql =  " SELECT idJabatan FROM karyawan where idKaryawan = '".$_POST['id']."' and pass = '".hash('sha256',$_POST['password'])."'";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        switch ($row["idJabatan"]){
-                            case "KSRR" : header("location:kasir/Kasir - peminjaman/Kasir - peminjaman.php");break;
-                        }
-                    }
-                } 
-                else {
-                    $_SESSION['error'] = 1;
-                    header("location:index.php");
+                $_SESSION['pass'] = $_POST['password'];
+                require("getIdentitas.php");
+                switch ($_SESSION['idJabatan']){
+                    case "KSRR" : header("location:kasir/Kasir - peminjaman/Kasir - peminjaman.php");break;
                 }
             }
             $conn->close();
