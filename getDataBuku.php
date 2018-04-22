@@ -21,7 +21,7 @@
         }
         function jumlahEksemplar(){
             global $conn;
-            $sql =  " SELECT * FROM eksbuku";
+            $sql =  " SELECT * FROM eksbuku where ";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($rows = $result->fetch_assoc()){
@@ -37,6 +37,7 @@
         }
     }
     else{
+        $_SESSION['error'] = 2;
         header("location:index.php");
     }
     

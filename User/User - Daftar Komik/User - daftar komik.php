@@ -1,6 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['id'])){
+        $_SESSION['error']= 2;
         header("location:http://localhost/project-akhir/Progweb-Buku/");
     }
     else{

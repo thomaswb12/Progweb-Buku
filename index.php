@@ -12,7 +12,12 @@
             ?>
             <script>
                 window.onload = function(){
-                    alert("<?php echo "username atau password salah"?>");
+                    <?php if($_SESSION['error']==1)
+                        echo "alert('username atau password salah');";
+                    elseif($_SESSION['error'] == 2)
+                        echo "alert('Masuk dengan akses yang tidak valid');";
+                    else 
+                    ?>
                 }
             </script>
             <?php
