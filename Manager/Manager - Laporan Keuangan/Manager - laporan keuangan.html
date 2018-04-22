@@ -32,6 +32,13 @@
         
         <div id="konten">
             <h1>Laporan Keuangan</h1>
+            <div id="periode">
+                <label id="periodeLabel" class="blue font15">Periode :</label>
+                <input type="text"  placeholder="dd/mm/yyyy" class="font15" id="periodeAwal" name="periodeAwal"/>
+                <p class="blue">s/d</p>
+                <input type="text"  placeholder="dd/mm/yyyy" class="font15" id="periodeAkhir" name="periodeAkhir"/>
+                <input type="button" id="OK" value="OK"/>
+            </div>
             <!--bagian tabel laporan keuangan-->
             <div id="tabel">
                 <table>
@@ -40,8 +47,10 @@
                         <th class="tanggalTransaksi">Tgl Transaksi</th>
                         <th class="idMember">ID Member</th>
                         <th class="idKaryawan">ID Karyawan</th>
-                        <th class="namaKaryawan">Nama Karyawan</th>
-                        <th class="total">Total</th>
+                        <th class="idBuku">ID Buku</th>
+                        <th class="harga">Harga</th>
+                        <th class="denda">Denda</th>
+                        <th class="subTotal">Sub Total</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -49,16 +58,19 @@
                             <td class="tanggalTransaksi">01/01/2018</td>
                             <td class="idMember">123</td>
                             <td class="idKaryawan">456</td>
-                            <td class="namaKaryawan">Namanya siapa</td>
-                            <td class="total">15000</td>
+                            <td class="idBuku">AB123</td>
+                            <td class="harga">3000</td>
+                            <td class="denda"></td>
+                            <td class="subTotal">3000</td>
                         </tr>
                         <tr>
-                            <td colspan="5">TOTAL</td>
-                            <td id="totalSemua">15000</td>
+                            <td colspan="7">TOTAL</td>
+                            <td id="total">3000</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <button id="print">PRINT</button>
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
