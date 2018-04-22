@@ -3,7 +3,9 @@
     if($_POST){//untuk mengecek apakah sudah ada yg post
         session_start();
         if($_POST['id'] == "admin" && $_POST['password'] == "admin"){ //untuk login ke page user
-            header("location:User/User - Daftar Komik/User - daftar komik.html");//untuk pindah ke page tersebuh
+            $_SESSION['id'] = $_POST['id'];
+            $_SESSION['pass'] = $_POST['password'];
+            header("location:User/User - Daftar Komik/User - daftar komik.php");//untuk pindah ke page tersebut
         }
         else{
             if($_POST['id'] == "" || $_POST['password'] == ""){
