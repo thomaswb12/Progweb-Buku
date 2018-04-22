@@ -67,7 +67,7 @@ article div#gambarKomik{ /*div yang isinya gambar komik*/
     margin-right: 30px;
 }
 article div#gambarKomik img{ /*atur ukuran gambar komik*/
-    height: 285px;
+    height: 295px;
     margin-bottom: 10px;
 }
 article div#keteranganKomik{ /*dari ID buku sampai dipinjam*/
