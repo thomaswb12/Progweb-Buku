@@ -94,10 +94,24 @@ article div#konten h1{  /*judul*/
     font-size: 35px;
     text-transform:uppercase;   /*supaya capslock*/
 }
-
+/*periode--------*/
+article div#konten div#periode{
+    float: right;   /*letakkan di kanan*/
+    width: 350px;
+    margin-right: 20px;
+}
+article div#konten div#periode p, article div#konten div#periode #OK{
+    display: inline;
+}
+article div#konten div#periode #periodeAwal, article div#konten div#periode #periodeAkhir{
+    background-color: rgba(255,255,255,0.54);
+    border: 0.05vw solid lightslategray;
+    width: 100px;
+}
+/*periode--------*/
 /*tabel laporan------*/
 article div#konten div#tabel{ /*div pembungkus tabel*/
-    height: 75%;
+    height: 65%;
     width: 100%;
     overflow-y: scroll;  /*scroll horizontal kalau overflow*/
     margin: auto;   /*ketengahin*/
@@ -135,16 +149,27 @@ td{
 .idKaryawan{
     width: 10%;
 }
-.namaKaryawan{
-    width: 40%;
+.idiBuku{
+    width: 20%;
 }
-.total{
+.harga{
+    width: 10%;
+}
+.denda{
+    width: 10%;
+}
+.subTotal{
     width: 15%;
 }
-#totalSemua{
+#total{
     font-weight: bold;
 }
 /*tabel laporan------*/
+#print{
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
@@ -206,10 +231,23 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         width: 100%;
     }
     /*-----------------utk konten-----------------*/
+    /*periode----------*/
+    article div#konten div#periode{ /*diketengahi*/
+        margin: auto;
+        float: left;;    /*hilangi float*/
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+    }
+    article div#konten div#periode #periodeAwal, article div#konten div#periode #periodeAkhir{
+        display: block;
+        margin: auto;
+    }
+    /*periode----------*/
     /*tabel laporan------*/
     article div#konten div#tabel{ /*div pembungkus tabel*/
         overflow-y: unset;  /*tidak ada scroll lagi*/
-        margin-top: 10px;
+        margin-top: 150px;
         width: auto;
         height: auto;
         overflow-x: scroll; /*scroll ke samping*/
@@ -219,6 +257,10 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         width: 200%;
     }
     /*tabel laporan------*/
+    #print{
+        margin-top: 10px;
+        margin-right: 5px;
+    }
     /*-----------------utk konten-----------------*/
 }
 
