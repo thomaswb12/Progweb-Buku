@@ -265,7 +265,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     }
     table{
         font-size: 10px; /*tulisan dikecilkan*/
-        width: 300%;
+        width: 300%; /*supaya ga banyak text di dalem tabel yg kepotong*/
     }
     /*tabel------*/
     /*-----------------utk konten-----------------*/
