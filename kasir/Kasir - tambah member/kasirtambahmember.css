@@ -94,6 +94,85 @@ article div#konten h1{  /*judul*/
     font-size: 35px;
     text-transform:uppercase;   /*supaya capslock*/
 }
+/*bagian ngisi2----*/
+article div#konten div#kiri{ /*yng sbelah kiri, dari id member smp tanggal lahir*/
+    float: left;
+    margin-left: 100px;
+}
+article div#konten div#kanan{ /*yg kanan, dari email smp alamat*/
+    float: left;
+    margin-top: 105px;
+    margin-left: 250px;
+}
+article div#konten label{   /*semua label taruh diatas inputan*/
+    font-size: 12px;
+    margin-left: 50px;
+}
+article div#konten input, article div#konten select, article div#konten textarea{   /*kotak yang utk input*/
+    margin-bottom: 8px;
+    font-size: 12px;
+    padding: 8px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 3px;
+}
+article div#konten select{
+    width: 270px;
+}
+article div#konten input[type=text]:focus { /*warna background berubah ketika focus*/
+    background-color: cornflowerblue;
+}
+article div#konten textarea#alamat{
+    height: 90px;
+}
+article div#konten .simbol{ /*simbol2 font awesome utk input*/
+    margin-right: 6px;
+    font-size: 30px;
+    color: rgba(94,94,94,0.9)
+}
+/*atur masing2 jarak simbol dengan inputan*/
+article div#konten .fa-id-card-alt{
+    margin-right: 10px;
+}
+article div#konten .fa-id-card{
+    margin-right: 14px;
+}
+article div#konten .fa-transgender{
+    margin-right: 20px;
+}
+article div#konten .fa-birthday-cake{
+    margin-right: 18px;
+}
+article div#konten .fa-envelope{
+    margin-right: 16px;
+}
+article div#konten .fa-phone{
+    margin-right: 16px;
+}
+article div#konten .fa-home{
+    margin-right: 13px;
+    float: left;
+}
+/*bagian ngisi2----*/
+/*tombol ok dibawah*/
+article div#konten input#tombolOk{
+    clear: both;
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+    padding: 5px;
+    width: 100px;
+    font-size: 15px;
+    border: 1px solid black;
+    color: black;
+    background-color: darkgray;
+    border-radius: 5px;
+}
+article div#konten input#tombolOk:hover{
+    background-color: gray;
+}
+
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
@@ -154,7 +233,26 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
     }
-    
+    /*-- bagian isi2*/
+    article div#konten div#kiri, article div#konten div#kanan{
+        float: none;
+        clear: both;
+        margin: auto;
+    }
+    article div#konten input, article div#konten textarea{
+        width: 200px;
+    }
+    article div#konten select{
+        width: 220px;
+    }
+    /*-- tombol ok di bawah*/
+    article div#konten input#tombolOk{
+        width: 60px;
+        float: none;
+        margin: auto;
+        margin-top: 20px;
+        display: block;
+    }
     /*-----------------utk konten-----------------*/
 }
 
