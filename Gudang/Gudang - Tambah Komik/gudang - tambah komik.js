@@ -8,8 +8,8 @@ $(document).ready(function(){
     });
 
     //------ memilih navigasi ------
-    $('#aside2').click(function(){
-        $(location).attr('href', '../Gudang - Tambah Komik/gudang - tambah komik.php');
+    $('#aside1').click(function(){
+        $(location).attr('href', '../Gudang - Daftar Komik/gudang - daftar komik.php');
     });
     $('#aside3').click(function(){
         $(location).attr('href', '../Gudang - Daftar Penerbit/gudang - daftar penerbit.php');
@@ -31,7 +31,7 @@ $(document).ready(function(){
     });
 
     //------ menandai option aside yg sedang terpilih ----
-    $('#aside1').addClass('terpilih'); //aside1 itu daftar member
+    $('#aside2').addClass('terpilih'); //aside5 itu daftar member
 });
 
 //----- fungsi menampilkan & sembunyikan tombol utk balik ke atas ---------
