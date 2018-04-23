@@ -12,7 +12,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>User - Daftar Komik</title>
+            <title>Gudang - Daftar Komik</title>
             <link href="gudang - daftar komik.css" type="text/css" rel="stylesheet">
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
             <script src="gudang - daftar komik.js"></script>
