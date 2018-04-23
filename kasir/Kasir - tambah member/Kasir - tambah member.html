@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kasir - Daftar Member</title>
+    <title>Kasir - Tambah Member</title>
     <link href="kasirtambahmember.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="kasirtambahmember.js"></script>
@@ -39,6 +39,47 @@
         <div id="konten">
             <h1>Tambah Member</h1>
             <!--form utk tambah member-->
+            <div id="kiri">
+                <label>ID Member</label><br/>
+                <i class="fas fa-id-card-alt simbol"></i>
+                <input type="text" id="idMember" name="idMember"/><br/><br/><br/>
+
+                <label>Nama Member</label><br/>
+                <i class="fas fa-user-plus simbol"></i>
+                <input type="text" id="namaMember" name="namaMember"/><br/>
+
+                <label>No. Identitas</label><br/>
+                <i class="fas fa-id-card simbol"></i>
+                <input type="text" id="nomorIdentitas" name="noIdentitas"/><br/>
+
+                <label>Gender</label><br/>
+                <i class="fas fa-transgender simbol"></i>
+                <select>
+                    <option>Perempuan</option>
+                    <option>Laki-laki</option>
+                </select><br/>
+
+                <label>Tanggal Lahir</label><br/>
+                <i class="fas fa-birthday-cake simbol"></i>
+                <input type="text" id="tanggalLahir" name="tanggalLahir"/><br/>
+            </div>
+            <div id="kanan">
+                <label>E-mail</label><br/>
+                <i class="fas fa-envelope simbol"></i>
+                <input type="text" id="email" name="email"/><br/>
+
+                <label>No. Telp.</label><br/>
+                <i class="fas fa-phone simbol"></i>
+                <input type="text" id="noTelp" name="noTelp"/><br/>
+
+                <label>Alamat</label><br/>
+                <i class="fas fa-home simbol"></i>
+                <div>
+                <textarea type="text" id="alamat" name="alamat"></textarea><br/>
+                </div>
+            </div>
+            <!--nanti ganti submit-->
+            <input type="button" id="tombolOk" name="tombolOk" value="OK">
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
