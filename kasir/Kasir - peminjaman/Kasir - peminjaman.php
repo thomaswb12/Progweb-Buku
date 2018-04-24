@@ -3,7 +3,6 @@
 <head>
     <?php 
         session_start();
-    
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,31 +15,14 @@
 </head>
 <body>
     <header>
-        <img src="../../logobaru.png" id="logo"/>
-        <p class="blue font15" id="welcome">Welcome, <span id="namaUser"> <?php echo $_SESSION['nama'];?></span> | <span id="logOut">Log Out</span></p>
-        <p id="tanggal" class="blue font15">tanggal</p>
+        <?php
+            include "../Template/header.php";
+        ?>
     </header>
     <article>
-        <div id="aside">
-            <div id="minimizeOption"> <!--Dipakai ketika media query utk ukuran smartphone-->
-                <h3><span><i class="fas fa-bars" style="color: white;"></i></span></h3>
-                <hr/>
-            </div>
-            <div id="option">
-                <h3 class="blue" id="aside1"> <span><i class="fas fa-angle-right"></i></span> Peminjaman</h3>
-                <hr/>
-                <h3 class="blue" id="aside2">Pengembalian</h3>
-                <hr/>
-                <h3 class="blue" id="aside3">Perpanjangan</h3>
-                <hr/>
-                <h3 class="blue" id="aside4">Daftar komik</h3>
-                <hr/>
-                <h3 class="blue" id="aside4">Tambah member</h3>
-                <hr/>
-                <h3 class="blue" id="aside4">Daftar member</h3>
-                <hr/>
-            </div>
-        </div>
+        <?php 
+            include "../Template/aside.php"
+        ?>
         <div id="konten">
             <h1>Peminjaman</h1>
             <div>

@@ -8,14 +8,46 @@ $(document).ready(function(){
     });
 
     //------ menandai option aside yg sedang terpilih ----
-    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
+    //$('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
 
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
 
+    $("#aside1").click(function(){
+        $(".blue").removeClass('terpilih');
+        $("#centang").appendTo('#aside1 span');
+        $("#aside1").addClass('terpilih');
+    });
+    $("#aside2").click(function(){
+        $(".blue").removeClass('terpilih');
+        $("#centang").appendTo('#aside2 span');
+        $("#aside2").addClass('terpilih');
+    });
+    $("#aside3").click(function(){
+        $(".blue").removeClass('terpilih');
+        $("#centang").appendTo('#aside3 span');
+        $("#aside3").addClass('terpilih');
+    });
+    $("#aside4").click(function(){
+        $(".blue").removeClass('terpilih');
+        $("#centang").appendTo('#aside4 span');
+        $("#aside4").addClass('terpilih');
+    });
+    $("#aside5").click(function(){
+        $(".blue").removeClass('terpilih');
+        $("#centang").appendTo('#aside5 span');
+        $("#aside5").addClass('terpilih');
+    });
+    $("#aside6").click(function(){
+        $(".blue").removeClass('terpilih');
+        $("#centang").appendTo('#aside6 span');
+        $("#aside6").addClass('terpilih');
+    });
+
 });
+
 
 //------------------ fungsi ketika window di resize --------------
 $(window).resize(function(){
