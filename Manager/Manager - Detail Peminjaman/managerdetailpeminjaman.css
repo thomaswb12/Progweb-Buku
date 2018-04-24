@@ -27,11 +27,6 @@ header{ /*bagian atas yang isinya logo, tulisan welcome, logout dan tanggal*/
     height:20%;
     width: 100%;
 }
-header #tombolBack{ /*tombol utk kembali*/
-    float: left;
-    margin-top: 0.4%;
-    font-size: 50px;
-}
 header #logo{  /*penempatan gambar logo tepoz di kiri atas*/
     margin-top: 0%;
     padding-top: 0%;
