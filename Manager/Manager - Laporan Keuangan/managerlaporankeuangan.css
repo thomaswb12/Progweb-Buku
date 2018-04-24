@@ -165,10 +165,21 @@ td{
     font-weight: bold;
 }
 /*tabel laporan------*/
+/*tombol print ----*/
 #print{
     float: right;
     margin-top: 20px;
     margin-right: 20px;
+    padding: 5px;
+    width: 100px;
+    font-size: 15px;
+    border: 1px solid black;
+    color: black;
+    background-color: darkgray;
+    border-radius: 5px;
+}
+#print:hover{
+    background-color: gray;
 }
 /*------------------------bagian konten---------------------*/
 
