@@ -36,13 +36,6 @@ div#pinggirKanan{
     margin-top: 62px;
 }
 
-.floatKiri{
-    float: left;
-}
-
-.floatKanan{
-    float: right;
-}
 input{border-radius: 3px;}
 
 input.inputBesar{
@@ -57,10 +50,6 @@ input.inputBesar{
 
 .position{
     height: 25%;
-}
-
-.tebal{
-    font-weight: bold;
 }
 
 .right{

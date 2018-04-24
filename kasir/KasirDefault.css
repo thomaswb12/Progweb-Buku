@@ -93,6 +93,18 @@ article div#konten h1{  /*judul*/
     font-size: 35px;
     text-transform:uppercase;   /*supaya capslock*/
 }
+
+.floatKiri{
+    float: left;
+}
+
+.floatKanan{
+    float: right;
+}
+
+.tebal{
+    font-weight: bold;
+}
 /*untuk inputan--------*/
 article div#konten input, article div#konten select, article div#konten textarea{   /*kotak yang utk input*/
     font-size: 12px;
