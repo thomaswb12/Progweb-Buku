@@ -4,10 +4,10 @@
     <?php 
         session_start();
     ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <div id="gantiHead">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Kasir - Peminjaman</title>
         <link href="Kasir - peminjaman/Kasir - peminjaman.css" type="text/css" rel="stylesheet">
     </div>
@@ -26,19 +26,7 @@
             include "Template/aside.php"
         ?>
         <div id="konten">
-            <h1>Peminjaman</h1>
-            <div>
-                <form action="">
-                    <div>
-                        <input type="text">
-                        <input type="text">
-                    </div>
-                    <div>
-                        <input type="text" name="" id="">
-                        <input type="submit">
-                    </div>
-                </form>
-            </div>
+            <?php include "Kasir - peminjaman/KontenKasirPeminjaman.php"?>
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
