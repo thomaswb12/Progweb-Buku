@@ -96,9 +96,74 @@ article div#konten h1{  /*judul*/
 
 div#pinggir{
     position: relative;
-    margin: 100px;
-    left: 100px; 
+    left: 20px; 
 }
+
+table,tr,td,th{
+    table-layout: fixed;
+    padding: 3px;
+    font-size: 15px;
+    height: 24px;
+    text-align: center;
+    background: white;
+    border-collapse: collapse;
+    margin: auto;
+    border: 1px solid black;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+input{
+    font-size: 20px;
+}
+
+th{
+    background-color: grey;
+    color: white;
+}
+table{width: 70%}
+ #th1{width: 25%}
+ #th2{width: 25%}
+ #th3{width: 20%}
+ #th4{width: 25%}
+
+div#pinggirKanan{
+    margin-top: 62px;
+}
+
+.floatKiri{
+    float: left;
+}
+
+.floatKanan{
+    float: right;
+}
+
+input.inputBesar{
+    height: 20px;
+}
+.marginDiv{
+    margin-left: 30px;
+}
+.margin{
+    margin: 10px;
+}
+
+.position{
+    height: 25%;
+}
+
+.tebal{
+    font-weight: bold;
+}
+
+.right{
+    margin-right: 100px;
+}
+.enter{
+    margin-top: 20px;
+}
+
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
