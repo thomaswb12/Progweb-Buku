@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HRD - Tambah Jabatan</title>
+    <link href="../HRDDefault.css" type="text/css" rel="stylesheet">
     <link href="HRD - Tambah Jabatan.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="HRD - Tambah Jabatan.js"></script>
@@ -31,14 +32,29 @@
                 <hr/>
                 <h3 class="blue" id="aside5">Edit Jabatan</h3>
                 <hr/>
-                <h3 class="blue" id="aside6"> <span><i class="fas fa-angle-right"></i></span>Tambah Jabatan</h3>
+                <h3 class="blue" id="aside6"> <span><i class="fas fa-angle-right"></i></span> Tambah Jabatan</h3>
                 <hr/>
             </div>
         </div>
         <div id="konten">
             <h1>Tambah Jabatan</h1>
-            
-            
+            <br/>
+            <div id="inputan">
+                <label>ID Jabatan</label>
+                <input type="text" id="idJabatan" name="idJabatan"/>
+                <br/><br/>
+                <label>Nama Jabatan</label>
+                <input type="text" id="namaJabatan" name="namaJabatan"/>
+                <br/><br/>
+                <label>Gaji</label>
+                <input type="text" id="gaji" name="gaji"/>
+                <br/><br/>
+                <div id="divKet"><label>Keterangan</label></div>
+                <textarea id="keterangan" name="keterangan"></textarea>
+                <br/><br/>
+                <!-- tombol save -->
+                <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
+            </div>  
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
