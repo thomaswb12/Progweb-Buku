@@ -19,31 +19,37 @@ $(document).ready(function(){
         $(".blue").removeClass('terpilih');
         $("#centang").appendTo('#aside1 span');
         $("#aside1").addClass('terpilih');
+        $("div#konten p#cek").text("1");
     });
     $("#aside2").click(function(){
         $(".blue").removeClass('terpilih');
         $("#centang").appendTo('#aside2 span');
         $("#aside2").addClass('terpilih');
+        $("div#konten p#cek").text("2");
     });
     $("#aside3").click(function(){
         $(".blue").removeClass('terpilih');
         $("#centang").appendTo('#aside3 span');
         $("#aside3").addClass('terpilih');
+        $("div#konten p#cek").text("3");
     });
     $("#aside4").click(function(){
         $(".blue").removeClass('terpilih');
         $("#centang").appendTo('#aside4 span');
         $("#aside4").addClass('terpilih');
+        $("div#konten p#cek").text("4");
     });
     $("#aside5").click(function(){
         $(".blue").removeClass('terpilih');
         $("#centang").appendTo('#aside5 span');
         $("#aside5").addClass('terpilih');
+        $("div#konten p#cek").text("5");
     });
     $("#aside6").click(function(){
         $(".blue").removeClass('terpilih');
         $("#centang").appendTo('#aside6 span');
         $("#aside6").addClass('terpilih');
+        $("div#konten p#cek").text("6");
     });
 
 });

@@ -24,6 +24,10 @@
             include "../Template/aside.php"
         ?>
         <div id="konten">
+            <p id="cek">1</p>
+            <?php 
+                $data; 
+            ?>
             <h1>Peminjaman</h1>
             <div>
                 <form action="">
