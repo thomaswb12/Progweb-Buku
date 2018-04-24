@@ -93,6 +93,12 @@ article div#konten h1{  /*judul*/
     font-size: 35px;
     text-transform:uppercase;   /*supaya capslock*/
 }
+
+div#pinggir{
+    position: relative;
+    margin: 100px;
+    left: 100px; 
+}
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
