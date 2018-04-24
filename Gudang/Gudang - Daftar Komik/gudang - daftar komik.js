@@ -8,6 +8,9 @@ $(document).ready(function(){
     });
 
     //------ memilih navigasi ------
+    $('#aside1').click(function(){
+        $(location).attr('href', '../Gudang - Daftar Komik/gudang - daftar komik.php');
+    });
     $('#aside2').click(function(){
         $(location).attr('href', '../Gudang - Tambah Komik/gudang - tambah komik.php');
     });
