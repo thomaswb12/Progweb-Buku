@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Manager - Laporan Keuangan</title>
+    <link href="../ManagerDefault.css" type="text/css" rel="stylesheet">
     <link href="managerlaporankeuangan.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="managerlaporankeuangan.js"></script>
@@ -37,7 +38,7 @@
                 <input type="text"  placeholder="dd/mm/yyyy" class="font15" id="periodeAwal" name="periodeAwal"/>
                 <p class="blue">s/d</p>
                 <input type="text"  placeholder="dd/mm/yyyy" class="font15" id="periodeAkhir" name="periodeAkhir"/>
-                <input type="button" id="OK" value="OK"/>
+                <input type="button" id="OK" class="tombol" value="OK"/>
             </div>
             <!--bagian tabel laporan keuangan-->
             <div id="tabel">
@@ -70,7 +71,7 @@
                     </tbody>
                 </table>
             </div>
-            <input type="button" id="print" name="print" value="PRINT"/>
+            <input type="button" id="print" name="print" class="tombol" value="PRINT"/>
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
