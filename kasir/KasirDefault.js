@@ -20,7 +20,8 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside1 span');
         $("#aside1").addClass('terpilih');
         $("div#konten p#cek").text("1");
-        $("div#konten").load("KontenKasirPeminjaman.php");
+        $("div#konten").load("Kasir%20-%20peminjaman/KontenKasirPeminjaman.php");
+        $("div#gantiHead").load("Kasir%20-%20peminjaman/HeadKasirPeminjaman.php")
     });
     $("#aside2").click(function(){
         $(".blue").removeClass('terpilih');
@@ -45,7 +46,8 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside5 span');
         $("#aside5").addClass('terpilih');
         $("div#konten p#cek").text("5");
-        $("div#konten").load("../Kasir%20-%20tambah%20member/kasirTambahMember.php");
+        $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
+        $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
     });
     $("#aside6").click(function(){
         $(".blue").removeClass('terpilih');
