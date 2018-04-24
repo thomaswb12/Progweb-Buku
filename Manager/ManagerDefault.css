@@ -80,6 +80,9 @@ article div#aside h3:hover{ /*jika di hover, warnanya abu2*/
 article div#aside div#minimizeOption{ /*minimize option*/
     display: none; /*tidak ditampilkan di layar versi dekstop*/
 }
+article div#aside div#option pre { /*spasi spasi supaya dalam 1 baris (yang di aside, yang menu detail peminjaman)*/
+    display:inline;
+}
 /*------------------------bagian aside---------------------*/
 
 /*------------------------bagian konten---------------------*/
