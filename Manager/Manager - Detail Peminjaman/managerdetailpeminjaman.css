@@ -1,8 +1,6 @@
 
 /*------------------------bagian aside---------------------*/
-article div#aside div#option pre { /*spasi spasi supaya dalam 1 baris (yang di aside, yang menu detail peminjaman)*/
-    display:inline;
-}
+
 /*------------------------bagian konten---------------------*/
 /*-----bagian data umum--------*/
 article div#konten table#dataMember{ /*data id, nama, email, dll*/

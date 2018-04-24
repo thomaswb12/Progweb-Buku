@@ -9,6 +9,7 @@ $(document).ready(function(){
 
     //------ menandai option aside yg sedang terpilih ----
     $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
+    $('#aside2').hide();
 
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
