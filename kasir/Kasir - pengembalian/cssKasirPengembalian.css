@@ -1,0 +1,16 @@
+table,th,tr,td{
+    margin: auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th{
+    background-color: grey;
+    color: white;
+}
+tr,td{
+    background-color: white;
+}
+
+.center{
+    text-align: center;
+}

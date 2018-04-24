@@ -42,20 +42,15 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside4 span');
         $("#aside4").addClass('terpilih');
         $("div#konten p#cek").text("4");
+        $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
+        $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
     });
     $("#aside5").click(function(){
         $(".blue").removeClass('terpilih');
         $("#centang").appendTo('#aside5 span');
         $("#aside5").addClass('terpilih');
         $("div#konten p#cek").text("5");
-        $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
-        $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
-    });
-    $("#aside6").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside6 span');
-        $("#aside6").addClass('terpilih');
-        $("div#konten p#cek").text("6");
+        
     });
 
 });
