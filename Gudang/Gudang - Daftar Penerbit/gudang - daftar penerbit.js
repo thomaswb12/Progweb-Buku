@@ -34,7 +34,7 @@ $(document).ready(function(){
     });
 
     //------ menandai option aside yg sedang terpilih ----
-    $('#aside2').addClass('terpilih'); //aside5 itu daftar member
+    $('#aside3').addClass('terpilih'); //aside5 itu daftar member
 });
 
 //----- fungsi menampilkan & sembunyikan tombol utk balik ke atas ---------
