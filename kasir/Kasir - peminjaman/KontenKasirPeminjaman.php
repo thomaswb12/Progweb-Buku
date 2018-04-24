@@ -46,6 +46,6 @@
         </tfoot>
     </table>
 </div>
-<div class="margin right enter enter" style="top: 10px">
-    <input type="button" value="Print nota" class="floatKanan tebal margin">
+<div class="margin right enter" style="top: 10px">
+    <input id="print" type="button" value="Print nota" class="floatKanan tebal margin tombol">
 </div>

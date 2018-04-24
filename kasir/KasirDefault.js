@@ -28,6 +28,8 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside2 span');
         $("#aside2").addClass('terpilih');
         $("div#konten p#cek").text("2");
+        $("div#konten").load("Kasir%20-%20pengembalian/KontenKasirPengembalian.php");
+        $("div#gantiHead").load("Kasir%20-%20pengembalian/HeadKasirPengembalian.php")
     });
     $("#aside3").click(function(){
         $(".blue").removeClass('terpilih');
