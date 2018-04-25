@@ -77,6 +77,7 @@ function backToTop(){
     }
 }
 
+
 //----------- fungsi utk memasukkan tanggal NOW ke p#tanggal di header ----------
 function setTanggal(){ 
     var n =  new Date();

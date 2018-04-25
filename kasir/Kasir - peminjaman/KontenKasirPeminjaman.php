@@ -1,4 +1,4 @@
-<h1 class="enter">Peminjaman</h1>
+<h1 onclick="pencet()" class="enter">Peminjaman</h1>
 <div class="position">
     <form action="">
         <div id="pinggir" class="floatKiri marginDiv">
@@ -8,7 +8,7 @@
                 <br>
                 <input class="inputBesar" type="text"><br>
                 <label for="">Nama</label><br>
-                <input class="inputBesar" type="text">
+                <input class="inputBesar disable" type="text" disabled="disabled">
             </div>
         </div>
         <div id="pinggirKanan" class="floatKanan margin right">
@@ -50,4 +50,4 @@
     <input id="print" type="button" value="Print nota" class="floatKanan tebal margin tombol">
 </div>
 
-<script src="./Kasir - peminjaman.js"></script>
+<script src="Kasir - peminjaman/Kasir - peminjaman.js"></script>
