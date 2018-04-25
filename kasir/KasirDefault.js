@@ -56,6 +56,16 @@ $(document).ready(function(){
 
 });
 
+function pencot(){
+    $("#popup").css('display','block');
+    $("#blur").css('display','block');
+}
+
+function pencat(){
+    $("#popup").css('display','none');
+    $("#blur").css('display','none');
+}
+
 
 //------------------ fungsi ketika window di resize --------------
 $(window).resize(function(){

@@ -135,6 +135,10 @@ article div#konten input.tombol{
 article div#konten input.tombol:hover{
     background-color: gray;
 }
+
+.noBorder{
+    border: none;
+}
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/

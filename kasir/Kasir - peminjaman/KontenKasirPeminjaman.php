@@ -49,5 +49,6 @@
 <div class="margin right enter" style="top: 10px">
     <input id="print" type="button" value="Print nota" class="floatKanan tebal margin tombol">
 </div>
-
 <script src="Kasir - peminjaman/Kasir - peminjaman.js"></script>
+
+

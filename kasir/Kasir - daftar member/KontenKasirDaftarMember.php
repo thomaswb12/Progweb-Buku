@@ -34,8 +34,31 @@
 
 <!-- utk pop up message -->
 
-<div id="blur">
+<div id="blur" onclick="pencat()">
 </div>
-<div id="popup" > apapun
+<div id="popup">
+    <div style="margin: 50px">
+        <table class="noBorber">
+            <tr>
+                <td>ID Member</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>NO Identitas</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="text"></td>
+            </tr>  
+            <tr>
+                <td>Email</td>
+                <td><input type="text"></td>
+            </tr>      
+        </table>
+    </div>
 </div>
-<script src="Kasir - daftar member/kasirdaftarmember.js"></script>
