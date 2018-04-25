@@ -74,6 +74,9 @@ article div#aside h3{ /*option di aside, pengaturan jaraknya dg elemen lainnya*/
 article div#aside h3:hover{ /*jika di hover, warnanya abu2*/
     background-color: gray;
 }
+article div#aside h3 pre{
+    display: inline;
+}
 .terpilih{ /*utk option aside yg sedang dipilih (disini diasumsikan #aside1 yg terpilih, penambahan class di .js)*/
     background-color: rgba(51,153,204,0.52); /*aside yg sedang terpilih warna biru*/
 }
@@ -101,7 +104,7 @@ article div#konten #sorting{ /*"sort by" (label dan dropbox-nya)*/
 }
 article div#konten #sorting #selectSortBy{ /*"sort by" (dropbox-nya)*/
     margin-left: 15px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
-    width: 100px;   /*lebar dropbox*/
+    width: 120px;   /*lebar dropbox*/
     background-color: rgba(255,255,255,0.54);
     border: 0.05vw solid lightslategray;
     border-radius: 20px;
@@ -111,7 +114,7 @@ article div#konten #sorting #selectSortBy{ /*"sort by" (dropbox-nya)*/
 /*keperluan search------*/
 article div#konten #searching{ /*"search by" (label, dropbox, input, dan icon-nya)*/
     float: right;   /*letakkan di kanan, sebelahan dg sort by*/
-    width: 300px;
+    width: 320px;
     margin-right: 2%; /*jarak dgn sort by*/
 }
 article div#konten #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
@@ -124,7 +127,7 @@ article div#konten #searching #searchBox #inputSearchBy{ /*"search by" (input-ny
     border-radius: 20px;
 }
 article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
-    width: 100px;
+    width: 120px;
     margin-left: 3px;   /*memberi jarak ke kanan dengan label yg diatasnya*/
     margin-right: 10px; /*memberi jarak dengan box inputan*/
     background-color: rgba(255,255,255,0.54);

@@ -74,6 +74,9 @@ article div#aside h3{ /*option di aside, pengaturan jaraknya dg elemen lainnya*/
 article div#aside h3:hover{ /*jika di hover, warnanya abu2*/
     background-color: gray;
 }
+article div#aside h3 pre{
+    display: inline;
+}
 .terpilih{ /*utk option aside yg sedang dipilih (disini diasumsikan #aside1 yg terpilih, penambahan class di .js)*/
     background-color: rgba(51,153,204,0.52); /*aside yg sedang terpilih warna biru*/
 }
