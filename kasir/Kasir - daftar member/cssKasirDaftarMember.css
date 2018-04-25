@@ -1,0 +1,77 @@
+
+/*keperluan search------*/
+article div#konten #searching{ /*"search by" (label, dropbox, input, dan icon-nya)*/
+    float: right;   /*letakkan di kanan*/
+    width: 350px;
+    margin-right: 20px;
+}
+article div#konten #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
+    float: right;   /*lettakkan di kanan parent #searching*/
+}
+article div#konten #searching #searchBox #inputSearchBy{ /*"search by" (input-nya)*/
+    width: 150px;
+}
+article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
+    width: 120px;
+    margin-left: 20px;   /*memberi jarak ke kanan dengan label yg diatasnya*/
+    margin-right: 5px; /*memberi jarak dengan box inputan*/
+}
+/*keperluan search------*/
+
+/*tabel daftar peminjaman------*/
+article div#konten div#tabel{ /*div pembungkus tabel*/
+    height: 68%;
+    width: 100%;
+    overflow-y: scroll;  /*scroll horizontal kalau overflow*/
+    margin: auto;   /*ketengahin*/
+    margin-top: 100px;
+    clear: both;
+}
+table{  /*tabelnya*/
+    font-size: 13px;
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+th{ /*tabel baris paling atas*/
+    background-color: grey;
+    color: white;
+}
+th,td{ /*semua data didalam tabel*/
+    text-align: center;
+    border: 2px solid black; 
+}
+td{
+    max-width: 0;
+    overflow: hidden;   /*jika data melebihi batas tabel, di hidden*/
+    text-overflow: ellipsis; /*supaya teks panjang berubah jadi ...*/
+    white-space: nowrap; /*supaya tidak di-newline*/
+}
+.nomor{
+    width: 3%;
+}
+.idMember{
+    width: 9%;
+}
+.namaMember{
+    width: 21%;
+}
+.nomorIdentitas{
+    width: 11%;
+}
+.gender{
+    width: 1%;
+}
+.tanggalLahir{
+    width: 8%;
+}
+.email{
+    width: 18%;
+}
+.nomorTelepon{
+    width: 9%;
+}
+.alamat{
+    width: 20%;
+}
+/*tabel daftar peminjaman------*/

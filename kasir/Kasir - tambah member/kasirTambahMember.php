@@ -40,4 +40,4 @@
                 </div>
             </div>
             <!--nanti ganti submit-->
-            <input type="button" id="tombolOk" name="tombolOk" value="OK">
+            <input class="tombol tebal" type="button" id="tombolOk" name="tombolOk" value="OK">
