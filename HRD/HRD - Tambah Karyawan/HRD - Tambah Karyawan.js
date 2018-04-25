@@ -23,6 +23,9 @@ $(document).ready(function(){
     $('#aside1').click(function(){
         $(location).attr('href', '../HRD - Daftar Karyawan/HRD - Daftar Karyawan.html');
     });
+    $('#tombolSave').click(function(){
+        $(location).attr('href', '../HRD - Data Karyawan/HRD - Data Karyawan.html');
+    });
     $('#aside4').click(function(){
         $(location).attr('href', '../HRD - Tambah Karyawan/HRD - Tambah Karyawan.html');
     });

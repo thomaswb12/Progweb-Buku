@@ -96,7 +96,56 @@ article div#konten h1{  /*judul*/
     font-size: 35px;
     text-transform:uppercase;   /*supaya capslock*/
 }
-
+article div#konten div#dataKaryawan div.kiri{
+    float: left;
+}
+article div#konten div#dataKaryawan div.kanan{
+    float: right;
+    margin-right: 1%;
+}
+article #dataKaryawan .detailKaryawan .peraturan{ /*format foto*/
+    font-size: 13px;
+}
+article #dataKaryawan .detailKaryawan .photo{ /*utk fotonya*/
+    height: 300px;
+    width: inherit; /*selebar kotak putih*/
+}
+article div#konten div#inputan{
+    margin-left: 50px;
+}
+article div#konten input{
+    width: 200px;
+}
+article div#konten input#idKaryawan{
+    margin-left: 130px;
+}
+article div#konten input#namaKaryawan{
+    margin-left: 105px;
+}
+article div#konten input#jabatan{
+    margin-left: 88px;
+}
+article div#konten input#email{
+    margin-left: 106px;
+}
+article div#konten input#telepon{
+    margin-left: 86px;
+}
+article div#konten div#divAl{
+    float: left;
+}
+article div#konten textarea#alamat{
+    width: 300px;
+    height: 100px;
+    margin-left: 100px;
+}
+/*tombol utk save -------*/
+article div#konten input#tombolSave{
+    width: 100px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 10px;
+}
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
