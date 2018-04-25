@@ -12,15 +12,17 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Gudang - Daftar Penerbit</title>
-            <link href="gudang - daftar penerbit.css" type="text/css" rel="stylesheet">
+            <div id="gantiHead">
+                <title>Gudang - Daftar Komik</title>
+                <link href="gudangDefault.css" type="text/css" rel="stylesheet">
+            </div>
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
-            <script src="gudang - daftar penerbit.js"></script>
+            <script src="gudangDefault.js"></script>
             <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         </head>
         <body>
             <header>
-                <img src="../../logobaru.png" id="logo"/>
+                <img src="../logobaru.png" id="logo"/>
                 <p class="blue font15" id="welcome">Welcome, <span id="namaUser">our customer</span> | <span id="logOut">Log Out</span></p>
                 <p id="tanggal" class="blue font15">tanggal</p>
             </header>
@@ -31,21 +33,21 @@
                         <hr/>
                     </div>
                     <div id="option">
-                        <h3 class="blue" id="aside1">Daftar Komik</h3>
+                        <h3 class="blue terpilih" id="aside1"> <span><i class="fas fa-angle-right" id="centang"></i></span> Daftar Komik</h3>
                         <hr/>
-                        <h3 class="blue" id="aside2">Tambah Komik</h3>
+                        <h3 class="blue" id="aside2"><span></span>Tambah Komik</h3>
                         <hr/>
-                        <h3 class="blue" id="aside3"><span><i class="fas fa-angle-right"></i></span> Daftar Penerbit</h3>
+                        <h3 class="blue" id="aside3"><span></span>Daftar Penerbit</h3>
                         <hr/>
-                        <h3 class="blue" id="aside4">Tambah Penerbit</h3>
+                        <h3 class="blue" id="aside4"><span></span>Tambah Penerbit</h3>
                         <hr/>
-                        <h3 class="blue" id="aside5">Daftar Pengarang</h3>
+                        <h3 class="blue" id="aside5"><span></span>Daftar Pengarang</h3>
                         <hr/>
-                        <h3 class="blue" id="aside6">Tambah Pengarang</h3>
+                        <h3 class="blue" id="aside6"><span></span>Tambah Pengarang</h3>
                         <hr/>
-                        <h3 class="blue" id="aside7">Daftar Supplier</h3>
+                        <h3 class="blue" id="aside7"><span></span>Daftar Supplier</h3>
                         <hr/>
-                        <h3 class="blue" id="aside8">Tambah Supplier</h3>
+                        <h3 class="blue" id="aside8"><span></span>Tambah Supplier</h3>
                         <hr/>
                     </div>
                 </div>
