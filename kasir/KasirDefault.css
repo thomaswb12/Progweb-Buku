@@ -102,6 +102,10 @@ article div#konten h1{  /*judul*/
     float: right;
 }
 
+article div#konten input.disable{
+    background-color: grey !important;
+}
+
 .tebal{
     font-weight: bold;
 }
