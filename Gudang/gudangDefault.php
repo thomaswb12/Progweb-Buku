@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div id="konten">
-                    
+                    <?php include "Gudang - Daftar Komik/daftarKomik.php" ?>
                 </div>
             </article>
             <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
