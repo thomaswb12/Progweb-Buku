@@ -45,7 +45,7 @@ $(document).ready(function(){
         $("#aside4").addClass('terpilih');
         $("div#konten p#cek").text("4");
         $("div#konten").load("kosong.php");
-        $("div#gantiHead").load("kososng.php");
+        $("div#gantiHead").load("kosong.php");
     });
     $("#aside5").click(function(){
         $(".blue").removeClass('terpilih');
@@ -61,7 +61,7 @@ $(document).ready(function(){
         $("#aside6").addClass('terpilih');
         $("div#konten p#cek").text("6");
         $("div#konten").load("kosong.php");
-        $("div#gantiHead").load("kososng.php");
+        $("div#gantiHead").load("kosong.php");
     });
     $("#aside7").click(function(){
         $(".blue").removeClass('terpilih');
@@ -77,7 +77,7 @@ $(document).ready(function(){
         $("#aside8").addClass('terpilih');
         $("div#konten p#cek").text("8");
         $("div#konten").load("kosong.php");
-        $("div#gantiHead").load("kososng.php");
+        $("div#gantiHead").load("kosong.php");
     });
 });
 
