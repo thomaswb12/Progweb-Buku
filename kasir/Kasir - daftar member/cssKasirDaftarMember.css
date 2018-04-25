@@ -29,7 +29,7 @@ article div#konten div#tabel{ /*div pembungkus tabel*/
 }
 table{  /*tabelnya*/
     font-size: 13px;
-    width: 100%;
+    width: 80%;
     margin: auto;
     border-collapse: collapse;
 }
@@ -40,6 +40,10 @@ th{ /*tabel baris paling atas*/
 th,td{ /*semua data didalam tabel*/
     text-align: center;
     border: 2px solid black; 
+}
+th,tr,td{
+    padding: 5px;
+    height: 20px;
 }
 td{
     max-width: 0;
@@ -54,25 +58,10 @@ td{
     width: 9%;
 }
 .namaMember{
-    width: 21%;
-}
-.nomorIdentitas{
-    width: 11%;
-}
-.gender{
-    width: 1%;
-}
-.tanggalLahir{
-    width: 8%;
-}
-.email{
     width: 18%;
 }
-.nomorTelepon{
-    width: 9%;
-}
-.alamat{
-    width: 20%;
+.email{
+    width: 21%;
 }
 /*tabel daftar peminjaman------*/
 

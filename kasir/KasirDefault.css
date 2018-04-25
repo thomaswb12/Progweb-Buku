@@ -103,7 +103,7 @@ article div#konten h1{  /*judul*/
 }
 
 article div#konten input.disable{
-    background-color: grey !important;
+    background-color: grey;
 }
 
 .tebal{
