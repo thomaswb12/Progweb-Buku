@@ -29,63 +29,13 @@
         </div>
     </div>
 </div>
-<div id="daftarSupplier" class="font15">
-    <div class="infoSupplier">
-        <img class="supplier" src="logo.jpg"/>
+<div id="daftar" class="font15">
+    <div class="info">
+        <img class="foto" src="logo.jpg"/>
         <p class="ID">ID : </p>
         <p class="nama">Nama : </p>
         <p class="asal">No. Telp : </p>
         <p class="email">Email : </p>
         <p class="alamat">Alamat : </p>
     </div>
-    <!--<div class="infoKomik">
-        <img class="komik" src="miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-        <img class="new" src="../../label_new.png"/>
-    </div>
-    <div class="infoKomik favorit">
-        <img class="komik" src="miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik">
-        <img class="komik" src="miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik">
-        <img class="komik" src="miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik specialEdition">
-        <img class="komik" src="miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik favorit specialEdition">
-        <img class="komik" src="miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik">
-        <img class="komik" src="miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>-->
 </div>
