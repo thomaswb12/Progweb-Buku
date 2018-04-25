@@ -50,7 +50,7 @@ header p#tanggal{   /*penampil tanggal di kanan atas*/
 
 /*------------------------bagian artikel---------------------*/
 article{ /*article adlah semua yang ada dibawah header*/
-    height: 80%;
+    height: 70%;
     width: 100%;
 }
 /*------------------------bagian judul dan searching + sorting ---------------------*/
@@ -96,7 +96,8 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 /*------------------------bagian isi (daftar komiknya)---------------------*/
 article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
-    height: 400px;
+    margin-top: 90px;
+    height: 360px;
     width: 91%;
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
