@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HRD - Daftar Jabatan</title>
+    <link href="../HRDDefault.css" type="text/css" rel="stylesheet">
     <link href="HRD - Daftar Jabatan.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
     <script src="HRD - Daftar Jabatan.js"></script>
@@ -62,6 +63,57 @@
                 </div>
             </div>
             
+            <div id="daftarJabatan">
+                <!-- ini jabatan ke-1 -->
+                <div class="daftarSatuan">
+                    <h3 class="judulJabatan">Administrator</h3>
+                    <div class="kiri">
+                        <label>ID Jabatan</label>
+                        <input type="text" class="idJabatan" name="idJabatan" value="0001"/><br/>
+                        <label>Nama Jabatan</label>
+                        <input type="text" class="namaJabatan" name="namaJabatan" value="Administrator"/><br/>
+                        <label>Gaji</label>
+                        <input type="text" class="gaji" name="gaji" value="Rp 9.000.000"/><br/>
+                    </div>
+                    <div class="kanan">
+                        <div>
+                            <label>Keterangan</label>
+                        </div>
+                        <textarea class="keterangan" name="keterangan">Administrator bekerja untuk mengurusi segala hal</textarea>
+                        <br/><br/>
+                        <div class="bagianTombol">
+                            <input type="button" class="tombol" id="tombolSave" name="tombolSave" value="SAVE"/>
+                            <input type="button" class="tombol" id="tombolDelete" name="tombolDelete" value="DELETE"/>
+                        </div>
+                    </div>
+                    <hr/>
+                </div>
+
+                <!-- ini jabatan ke-2 -->
+                <div class="daftarSatuan">
+                    <h3 class="judulJabatan">Kasir</h3>
+                    <div class="kiri">
+                        <label>ID Jabatan</label>
+                        <input type="text" class="idJabatan" name="idJabatan" value="0002"/><br/>
+                        <label>Nama Jabatan</label>
+                        <input type="text" class="namaJabatan" name="namaJabatan" value="Kasir"/><br/>
+                        <label>Gaji</label>
+                        <input type="text" class="gaji" name="gaji" value="Rp 2.000.000"/><br/>
+                    </div>
+                    <div class="kanan">
+                        <div>
+                            <label>Keterangan</label>
+                        </div>
+                        <textarea class="keterangan" name="keterangan">Kasir bekerja bagian transaksi dengan customer</textarea>
+                        <br/><br/>
+                        <div class="bagianTombol">
+                            <input type="button" class="tombol" id="tombolSave" name="tombolSave" value="SAVE"/>
+                            <input type="button" class="tombol" id="tombolDelete" name="tombolDelete" value="DELETE"/>
+                        </div>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
