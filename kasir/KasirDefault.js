@@ -52,7 +52,6 @@ $(document).ready(function(){
         $("div#konten p#cek").text("5");
         $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
         $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
-        
     });
 
 });
