@@ -80,8 +80,8 @@ article div#aside h3:hover{ /*jika di hover, warnanya abu2*/
 article div#aside div#minimizeOption{ /*minimize option*/
     display: none; /*tidak ditampilkan di layar versi dekstop*/
 }
-article div#aside div#option pre { /*spasi spasi supaya dalam 1 baris (yang di aside, yang menu detail peminjaman)*/
-    display:inline;
+article div#aside pre{
+    display: inline;
 }
 /*------------------------bagian aside---------------------*/
 
@@ -142,8 +142,8 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
-    /*-----------------header-----------------*/
-    header{ /*header height nya ditambahi, semua element di ketengahi*/
+     /*-----------------header-----------------*/
+     header{ /*header height nya ditambahi, semua element di ketengahi*/
         height: 180px;
         text-align: center;
     }
@@ -174,10 +174,5 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     }
     /*-----------------utk aside-----------------*/
 
-    /*-----------------utk konten-----------------*/
-    article div#konten{
-        float: none; /*hilangkan float agar pindah kebawah*/
-        width: 100%;
-    }
-    /*-----------------utk konten-----------------*/
 }
+/*---------------------------media query---------------------------*/

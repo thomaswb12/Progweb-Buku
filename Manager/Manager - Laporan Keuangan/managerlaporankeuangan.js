@@ -8,7 +8,8 @@ $(document).ready(function(){
     });
 
     //------ menandai option aside yg sedang terpilih ----
-    $('#aside2').addClass('terpilih');  //aside 2 yg kepilih (laporan keuangan)
+    $('#aside3').addClass('terpilih');  //aside 2 yg kepilih (laporan keuangan)
+    $('#aside2').hide();
 
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
