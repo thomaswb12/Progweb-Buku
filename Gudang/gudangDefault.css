@@ -23,7 +23,7 @@ body{ /*supaya mentok selayar*/
 
 /*------------------------bagian header---------------------*/
 header{ /*bagian atas yang isinya logo, tulisan welcome, logout dan tanggal*/
-    background-color: rgba(0,0,51,0.23);
+    background-color: rgba(0,0,255,0.3);
     height:20%;
     width: 100%;
 }
@@ -47,6 +47,7 @@ header p#tanggal{   /*penampil tanggal di kanan atas*/
     font-style: italic;
     margin-right: 1%; /*supaya ada jarak sedikit dengan pojok*/
 }
+
 
 /*------------------------bagian artikel---------------------*/
 article{ /*article adlah semua yang ada dibawah header*/
@@ -82,7 +83,7 @@ article div#aside div#minimizeOption{ /*minimize option*/
 /*------------------------bagian aside---------------------*/
 
 /*------------------------bagian judul dan searching + sorting ---------------------*/
-article div#judul h1{  /*judul "Daftar Komik"*/
+article div#judul h1{  /*judul "Daftar "*/
     text-align: center; /*taruh tengah*/
     font-size: 35px;
     text-transform:uppercase;   /*supaya capslock*/
@@ -121,26 +122,54 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
     border-radius: 20px;
 }
 
-/*------------------------bagian isi (daftar penerbitnya)---------------------*/
-article div#daftarPenerbit{ /*sekotak daftar penerbit*/
+/*------------------------bagian isi (daftar nya)---------------------*/
+article div#daftar{ /*sekotak daftar */
     margin: auto;   /*ditaruh tengah*/
     height: 400px;
     width: 91%;
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
-article #daftarPenerbit .infoPenerbit{ /*kotak masing2 penerbit yang isinya info penerbit*/
+article #daftar .info{ /*kotak masing2  yang isinya info */
     background-color: #F2F2F2;
     margin: 14px;
     height: 300px;
     width: 170px;
     float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
 }
-article #daftarPenerbit .infoPenerbit .penerbit{ /*utk fotonya*/
+article #daftar .info.favorit{ /*utk 2 yang favorit*/
+    border: 4px solid red; /*favorit ditandai dg bordernya yg merah*/
+    height: 292px;  /*height jadi lebih sedikit 8px dari pada yang tidak favorit (supaya besar kotak sama)*/
+    width: 162px;   /*witdh juga jadi lebih sedikit 8px*/
+    padding: 0px;
+}
+article #daftar .info.specialEdition{ /*utk 2 yang special edition*/
+    outline: 4px solid gold; /*special edition ditambahi outline gold*/
+}
+article #daftar .info .foto{ /*utk fotonya*/
     height: 200px;
     width: inherit; /*selebar kotak putih*/
 }
-article #daftarPenerbit .infoPenerbit p{ /*info penerbitnya*/
+article #daftar .info h4{ /*judul nya*/
+    margin: 4px;
+    text-align: center; /*tengah kotak*/
+    overflow: hidden;   /*overflow tidak ditampilkan*/
+    text-overflow: ellipsis;    /*kalau text panjang, akhhirnya diberi ...*/
+    white-space: nowrap;    /*tidak ada newline*/
+}
+article #daftar .info p{ /*info nya (stok, tersedia, available)*/
     margin: 1px; /*jarak 1px dg kotaknya*/
+}
+article #daftar .info p.tersedia{ /*tersedia berapa*/
+    float: left; /*supaya bisa sebaris dg tulisan available*/
+}
+article #daftar .info p.status{ /*available atau tidak*/
+    float: right; /*dikanannya tulisan tersedia*/
+    color: green; /*available hijau, unavail red*/
+}
+article #daftar .info .new{ /*tambahan img icon "new" utk 2 baru*/
+    clear: both;    /*pindah baris dari tulisan available*/
+    float: right;   /*bagian kanan kotak*/
+    width: 30px;
 }
 /*------------------------bagian artikel---------------------*/
 article{ /*article adlah semua yang ada dibawah header*/
