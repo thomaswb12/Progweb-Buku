@@ -41,3 +41,10 @@
         </tbody>
     </table>
 </div>
+
+<!-- utk pop up message -->
+
+<div id="blur">
+</div>
+<div id="popup">
+</div>
