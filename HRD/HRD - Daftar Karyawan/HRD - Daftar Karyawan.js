@@ -27,7 +27,7 @@ $(document).ready(function(){
         $(location).attr('href', '../HRD - Tambah Karyawan/HRD - Tambah Karyawan.html');
     });
     $('#aside5').click(function(){
-        $(location).attr('href', '../HRD - Edit Jabatan/HRD - Edit Jabatan.html');
+        $(location).attr('href', '../HRD - Daftar Jabatan/HRD - Daftar Jabatan.html');
     });
     $('#aside6').click(function(){
         $(location).attr('href', '../HRD - Tambah Jabatan/HRD - Tambah Jabatan.html');

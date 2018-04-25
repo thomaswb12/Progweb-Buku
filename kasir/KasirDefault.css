@@ -1,5 +1,5 @@
 html {  /*untuk setting background dan font keseluruhan page*/
-    background: url('../../background.jpg') no-repeat center center fixed; /*setting background, src diperhatikan! diganti sesuai kebutuhan*/
+    background: url('../background.jpg') no-repeat center center fixed; /*setting background, src diperhatikan! diganti sesuai kebutuhan*/
     -webkit-background-size: cover; /*setting background*/
     -moz-background-size: cover;    /*setting background*/
     -o-background-size: cover;     /*setting background*/
@@ -74,9 +74,6 @@ article div#aside h3{ /*option di aside, pengaturan jaraknya dg elemen lainnya*/
 article div#aside h3:hover{ /*jika di hover, warnanya abu2*/
     background-color: gray;
 }
-article div#aside h3 pre{
-    display: inline;
-}
 .terpilih{ /*utk option aside yg sedang dipilih (disini diasumsikan #aside1 yg terpilih, penambahan class di .js)*/
     background-color: rgba(51,153,204,0.52); /*aside yg sedang terpilih warna biru*/
 }
@@ -97,6 +94,47 @@ article div#konten h1{  /*judul*/
     text-transform:uppercase;   /*supaya capslock*/
 }
 
+.floatKiri{
+    float: left;
+}
+
+.floatKanan{
+    float: right;
+}
+
+article div#konten input.disable{
+    background-color: grey !important;
+}
+
+.tebal{
+    font-weight: bold;
+}
+/*untuk inputan--------*/
+article div#konten input, article div#konten select, article div#konten textarea{   /*kotak yang utk input*/
+    font-size: 12px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 3px;
+}
+article div#konten input[type=text]:focus { /*warna background berubah ketika focus*/
+    background-color: cornflowerblue;
+}
+/*utk fontawesome---*/
+article div#konten .simbol{
+    color: rgba(94,94,94,0.9);
+}
+/*utk tombol*/
+article div#konten input.tombol{
+    padding: 5px;
+    border: 1px solid black;
+    color: black;
+    background-color: darkgray;
+    border-radius: 5px;
+}
+article div#konten input.tombol:hover{
+    background-color: gray;
+}
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/

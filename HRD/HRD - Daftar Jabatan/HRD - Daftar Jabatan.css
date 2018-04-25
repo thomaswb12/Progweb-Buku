@@ -1,0 +1,148 @@
+
+/*------------------------bagian konten---------------------*/
+
+/*keperluan sort------*/
+article div#konten #sorting{ /*"sort by" (label dan dropbox-nya)*/
+    float: right;   /*taruh pojok kanan*/
+    margin-right: 1%;   /*beri jarak dengan pojok*/
+}
+article div#konten #sorting #selectSortBy{ /*"sort by" (dropbox-nya)*/
+    margin-left: 15px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 120px;   /*lebar dropbox*/
+    border-radius: 5px;
+}
+/*keperluan sort------*/
+
+/*keperluan search------*/
+article div#konten #searching{ /*"search by" (label, dropbox, input, dan icon-nya)*/
+    float: right;   /*letakkan di kanan, sebelahan dg sort by*/
+    width: 350px;
+    margin-right: 2%; /*jarak dgn sort by*/
+}
+article div#konten #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
+    float: right;   /*lettakkan di kanan parent #searching*/
+}
+article div#konten #searching #searchBox #inputSearchBy{ /*"search by" (input-nya)*/
+    width: 150px;
+    border-radius: 5px;
+}
+article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
+    width: 120px;
+    margin-left: 3px;   /*memberi jarak ke kanan dengan label yg diatasnya*/
+    margin-right: 10px; /*memberi jarak dengan box inputan*/
+    border-radius: 5px;
+}
+/*keperluan search------*/
+
+/*daftar jabatannya------*/
+article div#konten div#daftarJabatan{
+    clear: both;
+    height: 70%;
+    width: 95%;
+    margin: auto;
+    margin-top: 90px;
+    overflow-y: scroll;
+}
+article div#konten div#daftarJabatan div.kiri{
+    float: left;
+}
+article div#konten div#daftarJabatan div.kanan{
+    width: 50%;
+    float: right;
+}
+article div#konten div#daftarJabatan div.kanan label{
+    float: left;
+    margin-right: 30px;
+}
+article div#konten div#daftarJabatan div.kanan div.bagianTombol{
+    float: right;
+    margin-right: 25px;
+}
+article div#konten div#daftarJabatan div.kiri input{
+    width: 200px;
+}
+article div#konten div#daftarJabatan div.kanan textarea{
+    width: 300px;
+    height: 60px;
+}
+article div#konten div#daftarJabatan hr{
+    clear: both;
+    width: 95%;
+}
+article div#konten div#daftarJabatan label, article div#konten div#daftarJabatan input{
+    margin-bottom: 10px;
+}
+article div#konten div#daftarJabatan input.idJabatan{
+    margin-left: 36px;
+}
+article div#konten div#daftarJabatan input.namaJabatan{
+    margin-left: 10px;
+}
+article div#konten div#daftarJabatan input.gaji{
+    margin-left: 83px;
+}
+/*daftar jabatannya------*/
+/*------------------------bagian konten---------------------*/
+
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*-----------------utk konten-----------------*/
+    article div#konten{
+        float: none; /*hilangkan float agar pindah kebawah*/
+        width: 100%;
+    }
+    /*kepeluan search dan sort*/
+    article div#konten #sorting, article div#konten #searching{ /*media search dan sort diketengahi*/
+        margin: auto;
+        margin-bottom: 5px;
+        text-align: center;
+        float: none;    /*hilangi float*/
+        width: 100%;
+    }
+    article div#konten #searching #searchBox{
+        float: none;
+        margin: auto;
+        margin-top: 10px;
+    }
+    article div#konten #searching #searchBox::before { /*menambahkan new line sebelum id="searchBox"*/
+        content: "\A";  /*tambahkan newline, spti <br>*/
+    }
+    article div#konten #searching #selectSearchBy, article div#konten #sorting #selectSortBy{
+        margin: 0px;
+        margin: auto;
+    }
+    /*kepeluan search dan sort*/
+    /*daftar jabatan*/
+    article div#konten div#daftarJabatan{
+        margin: auto;
+        width: 95%;
+        overflow-y: unset;
+    }
+    article div#konten div#daftarJabatan input.idJabatan{
+        margin-left: 25px;
+    }
+    article div#konten div#daftarJabatan input.namaJabatan{
+        margin-left: 0px;
+    }
+    article div#konten div#daftarJabatan input.gaji{
+        margin-left: 72px;
+    }
+    article div#konten div#daftarJabatan div.kiri input{
+        width: 145px;
+    }
+    article div#konten div#daftarJabatan div.kanan{
+        clear: both;
+        float: none;
+        width: 95%;
+    }
+    article div#konten div#daftarJabatan div.kanan textarea{
+        width: 100%;
+    }
+    article div#konten div#daftarJabatan div.kanan div.bagianTombol{
+        float: none;
+        margin: auto;
+        text-align: center;
+    }
+    /*-----------------utk konten-----------------*/
+}

@@ -28,6 +28,8 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside2 span');
         $("#aside2").addClass('terpilih');
         $("div#konten p#cek").text("2");
+        $("div#konten").load("Kasir%20-%20pengembalian/KontenKasirPengembalian.php");
+        $("div#gantiHead").load("Kasir%20-%20pengembalian/HeadKasirPengembalian.php")
     });
     $("#aside3").click(function(){
         $(".blue").removeClass('terpilih');
@@ -40,20 +42,16 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside4 span');
         $("#aside4").addClass('terpilih');
         $("div#konten p#cek").text("4");
+        $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
+        $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
     });
     $("#aside5").click(function(){
         $(".blue").removeClass('terpilih');
         $("#centang").appendTo('#aside5 span');
         $("#aside5").addClass('terpilih');
         $("div#konten p#cek").text("5");
-        $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
-        $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
-    });
-    $("#aside6").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside6 span');
-        $("#aside6").addClass('terpilih');
-        $("div#konten p#cek").text("6");
+        $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
+        $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
     });
 
 });
@@ -78,6 +76,7 @@ function backToTop(){
         $('#tombolUp').css('display','none');
     }
 }
+
 
 //----------- fungsi utk memasukkan tanggal NOW ke p#tanggal di header ----------
 function setTanggal(){ 

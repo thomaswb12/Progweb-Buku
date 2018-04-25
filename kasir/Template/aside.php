@@ -8,13 +8,11 @@
         <hr/>
         <h3 class="blue" id="aside2"><span></span> Pengembalian</h3>
         <hr/>
-        <h3 class="blue" id="aside3"><span></span> Perpanjangan</h3>
+        <h3 class="blue" id="aside3"><span></span> Daftar komik</h3>
         <hr/>
-        <h3 class="blue" id="aside4"><span></span> Daftar komik</h3>
+        <h3 class="blue" id="aside4"><span></span> Tambah member</h3>
         <hr/>
-        <h3 class="blue" id="aside5"><span></span> Tambah member</h3>
-        <hr/>
-        <h3 class="blue" id="aside6"><span></span> Daftar member</h3>
+        <h3 class="blue" id="aside5"><span></span> Daftar member</h3>
         <hr/>
     </div>
 </div>
