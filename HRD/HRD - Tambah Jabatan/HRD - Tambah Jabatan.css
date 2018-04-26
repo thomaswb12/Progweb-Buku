@@ -1,23 +1,23 @@
 /*------------------------bagian konten---------------------*/
-article div#konten div#inputan{
+article div#konten div#inputan{ /*bagian input2 dibawah judul*/
     margin-left: 50px;
 }
-article div#konten input{
+article div#konten input{ /*atur lebar kotak inputan*/
     width: 200px;
 }
-article div#konten input#idJabatan{
+article div#konten input#idJabatan{ /*inputan ID jabatan*/
     margin-left: 30px;
 }
-article div#konten input#namaJabatan{
+article div#konten input#namaJabatan{   /*inputan nama jabatan*/
     margin-left: 5px;
 }
-article div#konten input#gaji{
+article div#konten input#gaji{  /*inputan gaji*/
     margin-left: 76px;
 }
-article div#konten div#divKet{
-    float: left;
+article div#konten div#divKet{  /*tulisan "Keterangan"*/
+    float: left; /*supaya bisa disebelah textarea*/
 }
-article div#konten textarea#keterangan{
+article div#konten textarea#keterangan{ /*inputan keterangan*/
     margin-left: 30px;
     width: 400px;
     height: 150px;
@@ -39,10 +39,10 @@ article div#konten input#tombolSave{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
     }
-    article div#konten div#inputan{
+    article div#konten div#inputan{ /*bagian input2 dibawah judul*/
         margin: 0px;
     }
-    article div#konten input, article div#konten textarea#keterangan{
+    article div#konten input, article div#konten textarea#keterangan{ /*semua kotak input dan textarea*/
         width: 150px;
     }
     /*tombol utk save -------*/
