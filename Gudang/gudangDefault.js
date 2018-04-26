@@ -28,8 +28,8 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside2 span');
         $("#aside2").addClass('terpilih');
         $("div#konten p#cek").text("2");
-        $("div#konten").load("Gudang%20-%20Tambah%20Komik/tambahKomik.php");
-        $("div#gantiHead").load("Gudang%20-%20Tambah%20Komik/headTambahKomik.php");
+        $("div#konten").load("Gudang%20-%20Tambah%20Komik/tambahKomik.html");
+        $("div#gantiHead").load("Gudang%20-%20Tambah%20Komik/headTambahKomik.html");
     });
     $("#aside3").click(function(){
         $(".blue").removeClass('terpilih');
@@ -44,8 +44,8 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside4 span');
         $("#aside4").addClass('terpilih');
         $("div#konten p#cek").text("4");
-        $("div#konten").load("kosong.php");
-        $("div#gantiHead").load("kosong.php");
+        $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.html");
+        $("div#gantiHead").load("Gudang%20-%20Tambah%20Penerbit/headTambahPenerbit.html");
     });
     $("#aside5").click(function(){
         $(".blue").removeClass('terpilih');
@@ -60,8 +60,8 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside6 span');
         $("#aside6").addClass('terpilih');
         $("div#konten p#cek").text("6");
-        $("div#konten").load("kosong.php");
-        $("div#gantiHead").load("kosong.php");
+        $("div#konten").load("Gudang%20-%20Tambah%20Pengarang/tambahPengarang.html");
+        $("div#gantiHead").load("Gudang%20-%20Tambah%20Pengarang/headTambahPengarang.html");
     });
     $("#aside7").click(function(){
         $(".blue").removeClass('terpilih');
@@ -76,8 +76,8 @@ $(document).ready(function(){
         $("#centang").appendTo('#aside8 span');
         $("#aside8").addClass('terpilih');
         $("div#konten p#cek").text("8");
-        $("div#konten").load("kosong.php");
-        $("div#gantiHead").load("kosong.php");
+        $("div#konten").load("Gudang%20-%20Tambah%20Supplier/tambahSupplier.html");
+        $("div#gantiHead").load("Gudang%20-%20Tambah%20Supplier/headTambahSupplier.html");
     });
 });
 
