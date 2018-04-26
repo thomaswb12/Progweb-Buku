@@ -13,6 +13,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>User - Daftar Komik</title>
+            <link href="../UserDefault.css" type="text/css" rel="stylesheet">
             <link href="userdaftarkomik.css" type="text/css" rel="stylesheet">
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
             <script src="userdaftarkomik.js"></script>
