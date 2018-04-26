@@ -139,7 +139,7 @@ article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 /*daftar karyawan------*/
 article div#daftarKaryawan{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
-    height: 400px;
+    height: 382px;
     width: 94%;
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
