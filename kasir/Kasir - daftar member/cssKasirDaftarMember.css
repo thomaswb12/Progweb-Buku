@@ -67,7 +67,7 @@ td{
 
 /*pop up message*/
 div#blur{
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     height: 100%;
@@ -76,10 +76,57 @@ div#blur{
     display: none;
 }
 div#popup{
-    position: absolute;
+    position: fixed;
     top: 5%;
     height: 90%;
     width: 70%;
     background-color: rgba(255, 255, 255, 1);
     display: none;
+}
+/*pop up message*/
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*keperluan searching -------*/
+    article div#konten #searching{ /*media search diketengahi*/
+        margin: auto;
+        float: left;;    /*hilangi float*/
+        margin: 0px;
+        width: 95%;
+    }
+    article div#konten #searching #selectSearchBy{  /*dropbox-nya*/
+        margin: 5px;
+    }
+    article div#konten #searching #searchBox{ /*inputan box*/
+        float: none; /*pindah baris baru*/
+        margin: 5px;
+        margin-bottom: 20px;
+    }
+    article div#konten #searching #searchBox #inputSearchBy{ /*box inputan*/
+        margin: auto; /*tengah*/
+    }
+    /*keperluan searching -------*/
+    
+    /*-----------------utk konten-----------------*/
+    /*tabel------*/
+    article div#konten div#tabel{ /*div pembungkus tabel*/
+        overflow-y: unset;  /*tidak ada scroll lagi*/
+        margin-top: 120px;
+        width: auto;
+        height: auto;
+    }
+    table{
+        font-size: 10px; /*tulisan dikecilkan*/
+        width: 100%; /*supaya ga banyak text di dalem tabel yg kepotong*/
+    }
+    /*tabel------*/
+    /*pop up message*/
+    div#popup{
+        top: 10%;
+        height: 80%;
+        left: 15%;
+        width: 70%;
+    }
+    /*pop up message*/
+    /*-----------------utk konten-----------------*/
 }
