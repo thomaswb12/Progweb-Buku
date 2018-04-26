@@ -35,18 +35,18 @@ article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 /*keperluan search------*/
 
 /*daftar jabatannya------*/
-article div#konten div#daftarJabatan{
+article div#konten div#daftarJabatan{ /*kotak daftar jabatan yg bisa di scroll*/
     clear: both;
     height: 70%;
     width: 95%;
-    margin: auto;
+    margin: auto;   /*tengahin*/
     margin-top: 90px;
     overflow-y: scroll;
 }
-article div#konten div#daftarJabatan div.kiri{
+article div#konten div#daftarJabatan div.kiri{  /*bagian kiri (id jabatan sampai gaji)*/
     float: left;
 }
-article div#konten div#daftarJabatan div.kanan{
+article div#konten div#daftarJabatan div.kanan{ /*bagian kanan (keterangan dan tombol save delete)*/
     width: 50%;
     float: right;
 }
@@ -54,7 +54,7 @@ article div#konten div#daftarJabatan div.kanan label{
     float: left;
     margin-right: 30px;
 }
-article div#konten div#daftarJabatan div.kanan div.bagianTombol{
+article div#konten div#daftarJabatan div.kanan div.bagianTombol{ /*div tombol save dan delete*/
     float: right;
     margin-right: 25px;
 }
@@ -65,7 +65,7 @@ article div#konten div#daftarJabatan div.kanan textarea{
     width: 300px;
     height: 60px;
 }
-article div#konten div#daftarJabatan hr{
+article div#konten div#daftarJabatan hr{ /*garis pembatas jabatan satu dg lainnya*/
     clear: both;
     width: 95%;
 }
