@@ -15,8 +15,6 @@ $(document).ready(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
 
-    $.session.set('page','1');
-
     $("#aside1").click(function(){
         aside1();
     });
@@ -41,11 +39,15 @@ $(document).ready(function(){
     $("#aside8").click(function(){
         aside8();
     });
+    $("#edityi").click(function(){
+        edityi();
+    });
+    
 });
 
 $(window).on('load', function () {
         var c = $.session.get('page');
-        if(c==1)
+        if(c == null || c == 1)
             aside1();
         else if(c == 2)
             aside2();
@@ -71,6 +73,11 @@ $(window).resize(function(){
         $("#option").css('display','none');     //option di aside sembunyi
     }  
 });
+
+function edit(){
+    $("div#konten").load("Gudang-EditKomik/editKomik.php");
+    $("div#gantiHead").load("Gudang-EditKomik/headEditKomik.html");
+}
 
 function aside1(){
     $(".blue").removeClass('terpilih');
