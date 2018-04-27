@@ -1,61 +1,220 @@
 /*--------------------------Bagian yang di rubah----------------*/
-div#pinggir{
-    position: relative;
-    left: 20px; 
+/*bagian atas tabel*/
+div.position{   /*bagian atas tabel, bawah header*/
+    height: 25%;
+    width: 100%;
+}
+div#pinggirKiri{    /*sebelah kiri (id member dan nama member)*/
+    float: left;
+    margin-left: 100px;
+}
+input{border-radius: 5px;}
+div#pinggirKanan{   /*sebelah kanan (id buku)*/
+    float: right;
+    margin-right: 100px;
+    margin-top: 62px;
+}
+div.position input[type=text]{  /*semua inputan text*/
+    height: 20px;
+    width: 200px;
+}
+#simbolOrang{   /*simbol gambar orang*/
+    float: left;
+    font-size: 110px;
+    margin-right: 20px;
+}
+div#divSimbolBuku{  /*div pembungkus simbol buku*/
+    float: left;
+}
+#simbolBuku{    /*simbol buku*/
+    font-size: 35px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+div#divInputIdBuku{
+    float: left;
+}
+div#divIdDanPlus{
+    float: left;
+}
+div#divSimbolPlus{   /*div pembungkus simbol plus*/
+    float: left;
+    margin-left: 10px;
+}
+#simbolPlus{
+    font-size: 30px;
+    margin-top: 25px;
+}
+div#pinggirKanan p.warning{  /*warning dibawah inputan ID buku*/ /*nanti di display:none dulu*/
+    clear: both;
+    color: red;
+    margin: 0px;
+    margin-left: 50px;
+    font-size: 13px;
+}
+/*bagian atas tabel*/
+
+/*tabel*/
+div#tabelDaftar{  /*div bungkus tabel*/
+    margin: auto;
+    margin-top: 20px;
+    height: 43%;
+    width: 80%;
+    overflow-y: scroll;
+}
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+.idBuku{width: 15%}         /*kolom id buku*/
+.judulBuku{width: 42%}      /*kolom judul buku*/
+.tanggalPengembalian{width: 15%}       /*kolom tanggal pengembalian*/
+.hargaSewa{width: 25%}      /*kolom harga sewa*/
+.peringatan{                /*kolom tong sampah*/
+    width: 3%;
+    font-size: 20px;
+    background-color: transparent;
+    color: red;
+    border: none;
+}
+.peringatan:hover{
+    color: blue;
 }
 
 table,tr,td,th{
-    table-layout: fixed;
-    padding: 3px;
     font-size: 15px;
-    height: 24px;
     text-align: center;
-    background: white;
     border-collapse: collapse;
     margin: auto;
+    
+}
+td,th{
+    padding: 3px;
     border: 1px solid black;
+}
+td{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
-article div#konten input#print{
-    font-size: 20px;
-}
-
 th{
     background-color: grey;
     color: white;
 }
-table{width: 70%}
- #th1{width: 25%}
- #th2{width: 25%}
- #th3{width: 20%}
- #th4{width: 25%}
+/*tabel*/
 
-div#pinggirKanan{
-    margin-top: 62px;
+/*tombol print nota*/
+article div#divTombol{  /*div bungkus 2 tombol dibawah*/
+    float: right;
+    margin-top: 10px;
 }
+article div#konten input#print{ /*tombol utk print*/
+    font-size: 15px;
+    margin-right: 10px;
+}
+article div#konten input#cancel{    /*tombol cancel*/
+    font-size: 15px;
+    margin-right: 110px;
+}
+/*tombol print nota*/
 
-input{border-radius: 3px;}
-
-input.inputBesar{
-    height: 20px;
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*bagian bawah header, atas tabel*/
+    div.position{
+        height: auto;
+    }
+    /*kiri*/
+    div#pinggirKiri{    /*sebelah kiri (id member dan nama member)*/
+        clear: both;
+        float: none;
+        width: 100%;
+        margin-left: 0px;
+        text-align: center;
+    } 
+    #simbolOrang{   /*simbol gambar orang*/
+        float: none;
+        clear: both;
+        font-size: 50px;
+        text-align: center;
+        margin: 10px 0px;
+    }
+    div#divInputKiri{   /*bungkus input id member dan nama member*/
+        width: 100%;
+        clear: both;
+    }
+    
+    /*kanan*/
+    div#pinggirKanan{   /*sebelah kanan (id buku)*/
+        width: 100%;
+        clear: both;
+        float: none;
+    }
+    div#divSimbolBuku{  /*div pembungkus simbol buku*/
+        clear: both;
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    #simbolBuku{    /*div pembungkus input id buku*/
+        text-align: center;
+        font-size: 50px;
+        margin: 30px 0px 10px 0px;
+    }
+    div#pinggirKanan input[type=text]{
+        width: 160px;
+    }
+    div#divIdDanPlus{
+        width:220px;
+        float: none;
+        margin: auto;
+        text-align: center;
+    }
+    div#divInputIdBuku{
+        margin: 0px;
+    }
+    div#divInputIdBuku label{   /*label ID buku*/
+        margin-left: 45px;
+    }
+    div#divSimbolPlus{   /*div pembungkus simbol plus*/
+        float: left;
+        margin-left: 0px;
+    }
+    #simbolPlus{
+        margin-left: 10px;
+    }
+    div#pinggirKanan p.warning{  /*warning dibawah inputan ID buku*/ /*nanti di display:none dulu*/
+        float: left;
+        margin-left: 0px;
+    }
+    /*bagian bawah header, atas tabel*/
+    /*tabel*/
+    div#tabelDaftar{  /*div bungkus tabel*/
+        overflow-y: unset;  /*tidak ada scroll lagi*/
+        margin-top: 100px;
+        width: auto;
+        height: auto;
+        overflow-x: scroll; /*scroll ke samping*/
+    }
+    table{
+        width: 190%;
+        margin: 0px 5px;
+    }
+    .peringatan{                /*kolom tong sampah*/
+        font-size: 20px;
+    }
+    table,tr,td,th{
+        font-size: 12px;   
+    }
+    /*tabel*/
+    /*tombol print nota*/
+    article div#divTombol{  /*div bungkus 2 tombol dibawah*/
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+    article div#konten input#cancel{    /*tombol cancel*/
+        margin-right: 0px;
+    }
+    /*tombol print nota*/
 }
-.marginDiv{
-    margin-left: 30px;
-}
-.margin{
-    margin: 10px;
-}
-
-.position{
-    height: 25%;
-}
-
-.right{
-    margin-right: 100px;
-}
-.enter{
-    margin-top: 20px;
-}
-/*--------------------------Bagian yang di rubah----------------*/
