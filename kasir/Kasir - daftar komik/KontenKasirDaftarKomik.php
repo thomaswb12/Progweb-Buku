@@ -30,23 +30,56 @@
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
         <p class="status">Available</p>
-        <img class="new" src="../../label_new.png"/>
+        <img class="new" src="../label_new.png"/>
     </div>
-    <?php
-
-        require "../getDataBuku.php";
-        $data = getBuku();
-        foreach($data as $key=>$value){
-        ?>
-        <div class="infoKomik">
-            <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-            <h4 class="judul"><?php echo $value['judulBuku']?></h4>
-            <p class="stok">Stok : 5</p>
-            <p class="tersedia">Tersedia : 1</p>
-            <p class="status">Available</p>
-            <img class="new" src="../../label_new.png"/>
-        </div>
-            <?php
-        }
-    ?>
+    <div class="infoKomik">
+        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
+        <h4 class="judul">Hai Miiko! Vol.19</h4>
+        <p class="stok">Stok : 5</p>
+        <p class="tersedia">Tersedia : 1</p>
+        <p class="status">Available</p>
+        <img class="new" src="../label_new.png"/>
+    </div>
+    <div class="infoKomik favorit">
+        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
+        <h4 class="judul">Hai Miiko! Vol.19</h4>
+        <p class="stok">Stok : 5</p>
+        <p class="tersedia">Tersedia : 1</p>
+        <p class="status">Available</p>
+    </div>
+    <div class="infoKomik">
+        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
+        <h4 class="judul">Hai Miiko! Vol.19</h4>
+        <p class="stok">Stok : 5</p>
+        <p class="tersedia">Tersedia : 1</p>
+        <p class="status">Available</p>
+    </div>
+    <div class="infoKomik">
+        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
+        <h4 class="judul">Hai Miiko! Vol.19</h4>
+        <p class="stok">Stok : 5</p>
+        <p class="tersedia">Tersedia : 1</p>
+        <p class="status">Available</p>
+    </div>
+    <div class="infoKomik specialEdition">
+        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
+        <h4 class="judul">Hai Miiko! Vol.19</h4>
+        <p class="stok">Stok : 5</p>
+        <p class="tersedia">Tersedia : 1</p>
+        <p class="status">Available</p>
+    </div>
+    <div class="infoKomik favorit specialEdition">
+        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
+        <h4 class="judul">Hai Miiko! Vol.19</h4>
+        <p class="stok">Stok : 5</p>
+        <p class="tersedia">Tersedia : 1</p>
+        <p class="status">Available</p>
+    </div>
+    <div class="infoKomik">
+        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
+        <h4 class="judul">Hai Miiko! Vol.19</h4>
+        <p class="stok">Stok : 5</p>
+        <p class="tersedia">Tersedia : 1</p>
+        <p class="status">Available</p>
+    </div>
 </div>
