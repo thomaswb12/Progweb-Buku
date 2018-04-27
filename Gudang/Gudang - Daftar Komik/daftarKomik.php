@@ -29,6 +29,9 @@
     
     <div class="info">
         <img class="foto" src="miiko19.jpg"/>
+        <div id="edit" onclick="edit()">
+            <div class="text">Edit</div>
+        </div>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
@@ -37,6 +40,9 @@
     </div>
     <div class="info favorit">
         <img class="foto" src="miiko19.jpg"/>
+        <div id="edit">
+            <div class="text">Edit</div>
+        </div>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
@@ -44,6 +50,9 @@
     </div>
     <div class="info">
         <img class="foto" src="miiko19.jpg"/>
+        <div id="edit">
+            <div class="text">Edit</div>
+        </div>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
@@ -51,6 +60,9 @@
     </div>
     <div class="info">
         <img class="foto" src="miiko19.jpg"/>
+        <div id="edit">
+            <div class="text">Edit</div>
+        </div>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
@@ -58,6 +70,9 @@
     </div>
     <div class="info specialEdition">
         <img class="foto" src="miiko19.jpg"/>
+        <div id="edit">
+            <div class="text">Edit</div>
+        </div>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
@@ -65,6 +80,9 @@
     </div>
     <div class="info favorit specialEdition">
         <img class="foto" src="miiko19.jpg"/>
+        <div id="edit">
+            <div class="text">Edit</div>
+        </div>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
@@ -72,6 +90,9 @@
     </div>
     <div class="info">
         <img class="foto" src="miiko19.jpg"/>
+        <div id="edit">
+            <div class="text">Edit</div>
+        </div>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
