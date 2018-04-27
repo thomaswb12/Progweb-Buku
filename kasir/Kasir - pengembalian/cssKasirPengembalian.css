@@ -1,16 +1,85 @@
-table,th,tr,td{
+/*atasnya tabel*/
+div#atasTabel{
+    margin-left: 100px;
+}
+#simbolOrang{   /*simbol gambar orang*/
+    float: left;
+    font-size: 110px;
+    margin-right: 20px;
+}
+div#atasTabel input[type=text]{  /*semua inputan text*/
+    height: 20px;
+    width: 200px;
+}
+/*atasnya tabel*/
+/*tabel*/
+div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
-    border: 1px solid black;
+    margin-top: 25px;
+    height: 43%;
+    width: 90%;
+    overflow-y: scroll;
+}
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+table,tr,td,th{
+    font-size: 15px;
+    text-align: center;
     border-collapse: collapse;
+    margin: auto;
+    
+}
+td,th{
+    padding: 3px;
+    border: 1px solid black;
+}
+td{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 th{
     background-color: grey;
     color: white;
 }
-tr,td{
-    background-color: white;
+.idBuku{width: 10%}         /*kolom id buku*/
+.judulBuku{width: 35%}      /*kolom judul buku*/
+.tanggalPinjam{width: 10%}      /*kolom tanggal pinjam*/
+.tanggalPengembalian{width: 10%}       /*kolom tanggal pengembalian*/
+.telat{width: 5%}      /*kolom telat brp hari*/
+.denda{width: 10%}      /*kolom denda*/
+/*tabel*/
+/*tombol print*/
+input#print{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 100px;
+    float: right;
 }
+/*tombol print*/
 
-.center{
-    text-align: center;
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*atasnya tabel*/
+    div#atasTabel{
+        width: 100%;
+        margin: auto;
+        margin-left: 0px;
+        text-align: center;
+    }
+    #simbolOrang{   /*simbol gambar orang*/
+        float: none;
+        clear: both;
+        font-size: 50px;
+        text-align: center;
+        margin: 10px 0px;
+    }
+    div#atasTabel input[type=text]{  /*semua inputan text*/
+        height: 20px;
+        width: 200px;
+    }
+    /*atasnya tabel*
 }

@@ -1,62 +1,61 @@
 <h1>Pengembalian</h1>
 <div>
     <form action="">
-        <div>
-            <i class="fas fa-user floatKiri margin" style="display: block; float:left; font-size: 100px; color: rgba(94, 94, 94, 0.9)"></i>
+        <div id="atasTabel">
+            <i class="fas fa-user simbol" id="simbolOrang"></i>
             <div>
-                <label for="">ID Member</label>
-                <br>
-                <input type="text"><br>
-                <label for="">Nama</label><br>
-                <input type="text">
+                <label>ID Member</label><br>
+                <input id="inputID" oninput="searchNama()" type="text"><br>
+                <label>Nama</label><br>
+                <input id="namaMember" class="disable" type="text" disabled="disabled">
             </div>
         </div>
     </form>
 </div>
-<div class="center">
-    <table class="center">
+<div id="tabelDaftar">
+    <table>
         <thead>
-            <th>ID Buku</th>
-            <th>Judul Buku</th>
-            <th>Tanggal Pinjam</th>
-            <th>Tanggal Pengembalian</th>
-            <th>Telat</th>
-            <th>Denda</th>
+            <th class="idBuku">ID Buku</th>
+            <th class="judulBuku">Judul Buku</th>
+            <th class="tanggalPinjam">Tanggal Pinjam</th>
+            <th class="tanggalPengembalian">Tanggal Pengembalian</th>
+            <th class="telat">Telat</th>
+            <th class="denda">Denda</th>
         </thead>
         <tbody>
             <tr>
-                <td>1234567788</td>
-                <td>Naruto</td>
-                <td>01/01/2018</td>
-                <td>01/01/2018</td>
-                <td>-</td>
-                <td>Rp.0</td>
+                <td class="idBuku">1234567788</td>
+                <td class="judulBuku">Naruto</td>
+                <td class="tanggalPinjam">01/01/2018</td>
+                <td class="tanggalPengembalian">09/01/2018</td>
+                <td class="telat">-</td>
+                <td class="denda">Rp 0</td>
             </tr>
             <tr>
-                <td>1234567788</td>
-                <td>Naruto</td>
-                <td>01/01/2018</td>
-                <td>01/01/2018</td>
-                <td>-</td>
-                <td>Rp.0</td>
+                <td class="idBuku">1234567788</td>
+                <td class="judulBuku">Naruto</td>
+                <td class="tanggalPinjam">01/01/2018</td>
+                <td class="tanggalPengembalian">05/01/2018</td>
+                <td class="telat">1 hari</td>
+                <td class="denda">Rp 500</td>
             </tr>
             <tr>
-                <td>1234567788</td>
-                <td>Naruto</td>
-                <td>01/01/2018</td>
-                <td>01/01/2018</td>
-                <td>-</td>
-                <td>Rp.0</td>
+                <td class="idBuku">1234567788</td>
+                <td class="judulBuku">Naruto</td>
+                <td class="tanggalPinjam">01/01/2018</td>
+                <td class="tanggalPengembalian">09/01/2018</td>
+                <td class="telat">-</td>
+                <td class="denda">Rp 0</td>
             </tr>
         </tbody>
         <tfoot>
-            <tr>
-                <td class="tebal"colspan="5">Total</td>
-                <td>Rp.0</td>
+            <tr class="tebal">
+                <td colspan="5">Total</td>
+                <td>Rp 500</td>
             </tr>
         </tfoot>
     </table>
 </div>
 <div>
-    <input class="tebal tombol floatKanan"type="button" value="Print Nota">
+    <input class="tombol" id="print" name="print" type="button" value="Print Nota">
 </div>
