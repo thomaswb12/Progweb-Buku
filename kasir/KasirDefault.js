@@ -56,9 +56,10 @@ $(document).ready(function(){
 
 });
 
-function pencot(){
-    $("#popup").css('display','block');
-    $("#blur").css('display','block');
+function pencot(temp){
+    //$("#popup").css('display','block');
+    //$("#blur").css('display','block');
+    alert(temp.children("td:nth-of-type(2)").html());
 }
 
 function pencat(){

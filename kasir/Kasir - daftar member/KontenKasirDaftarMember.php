@@ -22,7 +22,7 @@
             <th class="email">Email</th>
         </thead>
         <tbody>
-            <tr onclick="pencot()">
+            <tr onclick="pencot($(this))">
                 <td class="nomor">1</td>
                 <td class="idMember">1234567890</td>
                 <td class="namaMember">Namanya siapa</td>
