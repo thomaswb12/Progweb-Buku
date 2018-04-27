@@ -1,14 +1,13 @@
 <h1 onclick="pencet()" class="enter">Peminjaman</h1>
 <div class="position">
-    <form action="">
         <div id="pinggir" class="floatKiri marginDiv">
             <i class="fas fa-user floatKiri margin" style="display: block; float:left; font-size: 100px; color: rgba(94, 94, 94, 0.9)"></i>
             <div class="floatKanan margin">
                 <label for="">ID Member</label>
                 <br>
-                <input class="inputBesar" type="text"><br>
+                <input id="inputID" oninput="searchNama()" class="inputBesar" type="text"><br>
                 <label for="">Nama</label><br>
-                <input class="inputBesar disable" type="text" disabled="disabled">
+                <input id="namaMember" class="inputBesar disable" type="text" disabled="disabled">
             </div>
         </div>
         <div id="pinggirKanan" class="floatKanan margin right">
@@ -16,7 +15,6 @@
             <input class="inputBesar margin" type="text" name="" id="">
             <input type="submit">
         </div>
-    </form>
 </div>
 <div class="enter">
     <table>

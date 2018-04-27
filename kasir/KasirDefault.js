@@ -66,6 +66,19 @@ function pencat(){
     $("#blur").css('display','none');
 }
 
+function searchNama(){
+    var a = $("#inputID").val();
+    $.ajax({
+        type : 'post',
+        data : {'id':a},
+        url: 'PHP/Kasir%20-%20peminjaman/getNama.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#namaMember").val(response);
+        }
+     });
+}
+
 
 //------------------ fungsi ketika window di resize --------------
 $(window).resize(function(){
