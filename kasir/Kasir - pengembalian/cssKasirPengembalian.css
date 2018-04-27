@@ -1,6 +1,6 @@
 /*atasnya tabel*/
 div#atasTabel{
-    margin-left: 100px;
+    margin-left: 50px;
 }
 #simbolOrang{   /*simbol gambar orang*/
     float: left;
@@ -16,7 +16,7 @@ div#atasTabel input[type=text]{  /*semua inputan text*/
 div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
     margin-top: 25px;
-    height: 43%;
+    height: 45%;
     width: 90%;
     overflow-y: scroll;
 }
@@ -44,10 +44,10 @@ th{
     background-color: grey;
     color: white;
 }
-.idBuku{width: 10%}         /*kolom id buku*/
-.judulBuku{width: 35%}      /*kolom judul buku*/
-.tanggalPinjam{width: 10%}      /*kolom tanggal pinjam*/
-.tanggalPengembalian{width: 10%}       /*kolom tanggal pengembalian*/
+.idBuku{width: 15%}         /*kolom id buku*/
+.judulBuku{width: 20%}      /*kolom judul buku*/
+.tanggalPinjam{width: 15%}      /*kolom tanggal pinjam*/
+.tanggalPengembalian{width: 15%}       /*kolom tanggal pengembalian*/
 .telat{width: 5%}      /*kolom telat brp hari*/
 .denda{width: 10%}      /*kolom denda*/
 /*tabel*/
@@ -82,4 +82,30 @@ input#print{
         width: 200px;
     }
     /*atasnya tabel*
+    /*tabel*/
+    div#tabelDaftar{  /*div bungkus tabel*/
+        overflow-y: unset;  /*tidak ada scroll lagi*/
+        margin-top: 20px;
+        width: auto;
+        height: auto;
+        overflow-x: scroll; /*scroll ke samping*/
+    }
+    table{
+        width: 190%;
+        margin: 0px 5px;
+    }
+    table,tr,td,th{
+        font-size: 12px;
+    }
+    /*tabel*/
+    /*tombol print*/
+    div#divTombol{
+        width: 100%;
+        text-align: center;
+    }
+    input#print{
+        float: none;
+        margin-right: 0px;
+    }
+    /*tombol print*/
 }
