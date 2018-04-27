@@ -15,73 +15,53 @@ $(document).ready(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
 
+    $.session.set('page','1');
+
     $("#aside1").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside1 span');
-        $("#aside1").addClass('terpilih');
-        $("div#konten p#cek").text("1");
-        $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
-        $("div#gantiHead").load("Gudang%20-%20Daftar%20Komik/headDaftarKomik.php");
+        aside1();
     });
     $("#aside2").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside2 span');
-        $("#aside2").addClass('terpilih');
-        $("div#konten p#cek").text("2");
-        $("div#konten").load("Gudang%20-%20Tambah%20Komik/tambahKomik.html");
-        $("div#gantiHead").load("Gudang%20-%20Tambah%20Komik/headTambahKomik.html");
+        aside2();
     });
     $("#aside3").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside3 span');
-        $("#aside3").addClass('terpilih');
-        $("div#konten p#cek").text("3");
-        $("div#konten").load("Gudang%20-%20Daftar%20Penerbit/daftarPenerbit.php");
-        $("div#gantiHead").load("Gudang%20-%20Daftar%20Penerbit/headDaftarPenerbit.php");
+        aside3();
     });
     $("#aside4").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside4 span');
-        $("#aside4").addClass('terpilih');
-        $("div#konten p#cek").text("4");
-        $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.html");
-        $("div#gantiHead").load("Gudang%20-%20Tambah%20Penerbit/headTambahPenerbit.html");
+        aside4();
     });
     $("#aside5").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside5 span');
-        $("#aside5").addClass('terpilih');
-        $("div#konten p#cek").text("5");
-        $("div#konten").load("Gudang%20-%20Daftar%20Pengarang/daftarPengarang.php");
-        $("div#gantiHead").load("Gudang%20-%20Daftar%20Pengarang/headDaftarPengarang.php");
+        aside5();
     });
     $("#aside6").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside6 span');
-        $("#aside6").addClass('terpilih');
-        $("div#konten p#cek").text("6");
-        $("div#konten").load("Gudang%20-%20Tambah%20Pengarang/tambahPengarang.html");
-        $("div#gantiHead").load("Gudang%20-%20Tambah%20Pengarang/headTambahPengarang.html");
+        aside6();
     });
     $("#aside7").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside7 span');
-        $("#aside7").addClass('terpilih');
-        $("div#konten p#cek").text("7");
-        $("div#konten").load("Gudang%20-%20Daftar%20Supplier/daftarSupplier.php");
-        $("div#gantiHead").load("Gudang%20-%20Daftar%20Supplier/headDaftarSupplier.php");
+        aside7();
     });
     $("#aside8").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside8 span');
-        $("#aside8").addClass('terpilih');
-        $("div#konten p#cek").text("8");
-        $("div#konten").load("Gudang%20-%20Tambah%20Supplier/tambahSupplier.html");
-        $("div#gantiHead").load("Gudang%20-%20Tambah%20Supplier/headTambahSupplier.html");
+        aside8();
     });
 });
 
-
+$(window).on('load', function () {
+        var c = $.session.get('page');
+        if(c==1)
+            aside1();
+        else if(c == 2)
+            aside2();
+        else if(c == 3)
+            aside3();
+        else if(c == 4)
+            aside4();
+        else if(c == 5)
+            aside5();
+        else if(c == 6)
+            aside6();
+        else if(c == 7)
+            aside7();
+        else if(c == 8)
+            aside8();
+    });
 //------------------ fungsi ketika window di resize --------------
 $(window).resize(function(){
     if ($(window).width() > 680) {   //ukuran dekstop
@@ -91,6 +71,78 @@ $(window).resize(function(){
         $("#option").css('display','none');     //option di aside sembunyi
     }  
 });
+
+function aside1(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside1 span');
+    $("#aside1").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
+    $("div#gantiHead").load("Gudang%20-%20Daftar%20Komik/headDaftarKomik.php");
+    $.session.set('page','1');
+}
+
+function aside2(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside2 span');
+    $("#aside2").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Tambah%20Komik/tambahKomik.html");
+    $("div#gantiHead").load("Gudang%20-%20Tambah%20Komik/headTambahKomik.html");
+    $.session.set('page','2');
+}
+
+function aside3(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside3 span');
+    $("#aside3").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Daftar%20Penerbit/daftarPenerbit.php");
+    $("div#gantiHead").load("Gudang%20-%20Daftar%20Penerbit/headDaftarPenerbit.php");
+    $.session.set('page','3');
+}
+
+function aside4(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside4 span');
+    $("#aside4").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.html");
+    $("div#gantiHead").load("Gudang%20-%20Tambah%20Penerbit/headTambahPenerbit.html");
+    $.session.set('page','4');
+}
+
+function aside5(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside5 span');
+    $("#aside5").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Daftar%20Pengarang/daftarPengarang.php");
+    $("div#gantiHead").load("Gudang%20-%20Daftar%20Pengarang/headDaftarPengarang.php");
+    $.session.set('page','5');
+}
+
+function aside6(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside6 span');
+    $("#aside6").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Tambah%20Pengarang/tambahPengarang.html");
+    $("div#gantiHead").load("Gudang%20-%20Tambah%20Pengarang/headTambahPengarang.html");
+    $.session.set('page','6');
+}
+
+function aside7(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside7 span');
+    $("#aside7").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Daftar%20Supplier/daftarSupplier.php");
+    $("div#gantiHead").load("Gudang%20-%20Daftar%20Supplier/headDaftarSupplier.php");
+    $.session.set('page','7');
+}
+
+function aside8(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside8 span');
+    $("#aside8").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Tambah%20Supplier/tambahSupplier.html");
+    $("div#gantiHead").load("Gudang%20-%20Tambah%20Supplier/headTambahSupplier.html");
+    $.session.set('page','8');
+}
 
 //----- fungsi menampilkan & sembunyikan tombol utk balik ke atas ---------
 function backToTop(){
