@@ -17,8 +17,8 @@
                 <title>Gudang - Daftar Komik</title>
                 <link href="gudangDefault.css" type="text/css" rel="stylesheet">
             </div>
-            
             <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+            <script src="jquery.session.js"></script>
             <script src="gudangDefault.js"></script>
             <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         </head>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div id="konten">
-                    <?php include "Gudang - Daftar Komik/daftarKomik.php" ?>
+                    <!--<?php include "Gudang - Daftar Komik/daftarKomik.php" ?>-->
                 </div>
             </article>
             <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
