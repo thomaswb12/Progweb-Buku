@@ -22,7 +22,7 @@
             <th class="email">Email</th>
         </thead>
         <tbody>
-            <tr onclick="pencot($(this))">
+            <tr onclick="pencetTR($(this))">
                 <td class="nomor">1</td>
                 <td class="idMember">1234567890</td>
                 <td class="namaMember">Namanya siapa</td>
@@ -34,7 +34,7 @@
 
 <!-- utk pop up message -->
 
-<div id="blur" onclick="pencat()">
+<div id="blur" onclick="pencetBlur()">
 </div>
 <div id="popup">
     <div style="margin: 50px">

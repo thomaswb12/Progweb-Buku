@@ -56,13 +56,13 @@ $(document).ready(function(){
 
 });
 
-function pencot(temp){
+function pencetTR(temp){
     //$("#popup").css('display','block');
     //$("#blur").css('display','block');
     alert(temp.children("td:nth-of-type(2)").html());
 }
 
-function pencat(){
+function pencetBlur(){
     $("#popup").css('display','none');
     $("#blur").css('display','none');
 }
