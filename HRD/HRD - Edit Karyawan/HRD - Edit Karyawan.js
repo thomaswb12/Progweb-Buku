@@ -8,7 +8,8 @@ $(document).ready(function(){
     });
 
     //------ menandai option aside yg sedang terpilih ----
-    $('#aside4').addClass('terpilih'); //asumsikan aside1 yg terpilih
+    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
+    $('#aside3').addClass('terpilih');
 
     //------ men-slide option utk aside ------
     $("#minimizeOption").click(function(){
@@ -17,7 +18,6 @@ $(document).ready(function(){
 
     //------ menyembunyikan aside edit ------
     $('#aside2').hide();
-    $('#aside3').hide();
 
     //------ memilih navigasi ------
     $('#aside1').click(function(){
@@ -35,7 +35,6 @@ $(document).ready(function(){
     $('#aside6').click(function(){
         $(location).attr('href', '../HRD - Tambah Jabatan/HRD - Tambah Jabatan.html');
     });
-
 });
 
 //------------------ fungsi ketika window di resize --------------

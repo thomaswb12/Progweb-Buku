@@ -16,8 +16,8 @@ body{ /*supaya mentok selayar*/
 .blue{ /*utk font-font yg warnanya biru*/
     color: #000066;
 }
-.font15{ /*utk font yang ukurannya 15px*/
-    font-size: 15px;
+.font15{ /*utk font yang ukurannya 24px*/
+    font-size: 18px;
 }
 
 /*------------------------bagian header---------------------*/
@@ -117,7 +117,7 @@ article div#konten input{
     width: 200px;
 }
 article div#konten input#idKaryawan{
-    margin-left: 130px;
+    margin-left: 135px;
 }
 article div#konten input#namaKaryawan{
     margin-left: 105px;
