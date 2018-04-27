@@ -12,12 +12,14 @@
     </div>
     <div id="pinggirKanan">
         <div id="divSimbolBuku"><i class="fas fa-book simbol" id="simbolBuku"></i></div>
-        <div id="divInputIdBuku">
-            <label>ID Buku</label><br>
-            <input class="margin" type="text" name="inputIdBuku" id="inputIdBuku">
+        <div id="divIdDanPlus">
+            <div id="divInputIdBuku">
+                <label>ID Buku</label><br>
+                <input class="margin" type="text" name="inputIdBuku" id="inputIdBuku">
+            </div>
+            <div id="divSimbolPlus"><i class="fas fa-plus-circle simbol" id="simbolPlus"></i></div>
+            <p class="warning">Buku tidak ada</p>
         </div>
-        <div id="divSimbolPlus"><i class="fas fa-plus-circle simbol" id="simbolPlus"></i></div>
-        <p class="warning">Buku tidak ada</p>
     </div>
 </div>
 <div id="tabelDaftar">
