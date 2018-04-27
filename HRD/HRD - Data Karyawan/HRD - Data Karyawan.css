@@ -16,8 +16,8 @@ body{ /*supaya mentok selayar*/
 .blue{ /*utk font-font yg warnanya biru*/
     color: #000066;
 }
-.font15{ /*utk font yang ukurannya 15px*/
-    font-size: 15px;
+.font15{ /*utk font yang ukurannya 24px*/
+    font-size: 18px;
 }
 
 /*------------------------bagian header---------------------*/
@@ -96,56 +96,34 @@ article div#konten h1{  /*judul*/
     font-size: 35px;
     text-transform:uppercase;   /*supaya capslock*/
 }
+
+/*data karyawan------*/
+article div#dataKaryawan{ /*area data karyawan*/
+    margin: auto; 
+    height: 400px;
+    width: 94%;
+}
 article div#konten div#dataKaryawan div.kiri{
     float: left;
 }
 article div#konten div#dataKaryawan div.kanan{
     float: right;
-    margin-right: 1%;
-}
-article #dataKaryawan .detailKaryawan .peraturan{ /*format foto*/
-    font-size: 13px;
 }
 article #dataKaryawan .detailKaryawan .photo{ /*utk fotonya*/
     height: 300px;
     width: inherit; /*selebar kotak putih*/
 }
-article div#konten div#inputan{
-    margin-left: 50px;
+article #dataKaryawan .detailKaryawan p{ /*info karyawan*/
+    margin: 1px; /*jarak 1px dg kotaknya*/
 }
-article div#konten input{
-    width: 200px;
+article #dataKaryawan .detailKaryawan .tombol{ /*info karyawan*/
+    margin: auto;
+    margin-left: 79%;
+    font-weight: bold;
+    text-align: center;
 }
-article div#konten input#idKaryawan{
-    margin-left: 130px;
-}
-article div#konten input#namaKaryawan{
-    margin-left: 105px;
-}
-article div#konten input#jabatan{
-    margin-left: 88px;
-}
-article div#konten input#email{
-    margin-left: 106px;
-}
-article div#konten input#telepon{
-    margin-left: 86px;
-}
-article div#konten div#divAl{
-    float: left;
-}
-article div#konten textarea#alamat{
-    width: 300px;
-    height: 100px;
-    margin-left: 100px;
-}
-/*tombol utk save -------*/
-article div#konten input#tombolSave{
-    width: 100px;
-    float: right;
-    margin-top: 30px;
-    margin-right: 10px;
-}
+/*daftar karyawan------*/
+
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
