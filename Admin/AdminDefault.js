@@ -22,6 +22,49 @@ $(document).ready(function(){
     $("#aside4").click(function(){aside4();});
     $("#aside5").click(function(){aside5();});
     $("#aside6").click(function(){aside6();});
+    $("#aside7").click(function(){aside7();});
+    $("#aside8").click(function(){aside8();});
+    $("#aside9").click(function(){aside9();});
+    $("#aside10").click(function(){aside10();});
+    $("#aside11").click(function(){aside11();});
+    $("#aside12").click(function(){aside12();});
+    $("#aside13").click(function(){aside13();});
+    $("#aside14").click(function(){aside14();});
+    $("#aside15").click(function(){aside15();});
+    $("#aside16").click(function(){aside16();});
+    $("#aside17").click(function(){aside17();});
+    $("#aside18").click(function(){aside18();});
+    $("#aside19").click(function(){aside19();});
+    $("#aside20").click(function(){aside20();});
+    $("#aside21").click(function(){aside21();});
+    $("#aside22").click(function(){aside22();});
+    $("#aside23").click(function(){aside23();});
+    $("#aside24").click(function(){aside24();});
+    $("#aside25").click(function(){aside25();});
+    $("#aside26").click(function(){aside26();});
+    $("#aside27").click(function(){aside27();});
+
+    $("#aside7").hide();
+    $("#aside8").hide();
+    $("#aside9").hide();
+    $("#aside10").hide();
+    $("#aside11").hide();
+    $("#aside12").hide();
+    $("#aside13").hide();
+    $("#aside14").hide();
+    $("#aside15").hide();
+    $("#aside16").hide();
+    $("#aside17").hide();
+    $("#aside18").hide();
+    $("#aside19").hide();
+    $("#aside20").hide();
+    $("#aside21").hide();
+    $("#aside22").hide();
+    $("#aside23").hide();
+    $("#aside24").hide();
+    $("#aside25").hide();
+    $("#aside26").hide();
+    $("#aside27").hide();
 });
 
 $(window).on('load', function () {
@@ -38,11 +81,51 @@ $(window).on('load', function () {
         aside5();
     else if(c == 6)
         aside6();
+    else if(c == 7)
+        aside7();
+    else if(c == 8)
+        aside8();
+    else if(c == 9)
+        aside9();
+    else if(c == 10)
+        aside10();
+    else if(c == 11)
+        aside11();
+    else if(c == 12)
+        aside12();
+    else if(c == 13)
+        aside13();
+    else if(c == 14)
+        aside14();
+    else if(c == 15)
+        aside15();
+    else if(c == 16)
+        aside16();
+    else if(c == 17)
+        aside17();
+    else if(c == 18)
+        aside18();
+    else if(c == 19)
+        aside19();
+    else if(c == 20)
+        aside20();
+    else if(c == 21)
+        aside6();
+    else if(c == 22)
+        aside22();
+    else if(c == 23)
+        aside23();
+    else if(c == 24)
+        aside24();
+    else if(c == 25)
+        aside25();
+    else if(c == 26)
+        aside26();
+    else if(c == 27)
+        aside27();
 });
 
 function aside1(){
-    $("#aside2").hide();
-    $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
@@ -51,8 +134,6 @@ function aside1(){
     $.session.set('page','1');
 }
 function aside2(){
-    $("#aside3").hide();
-    $("#aside2").show();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
@@ -61,8 +142,6 @@ function aside2(){
     $.session.set('page','2');
 }
 function aside3(){
-    $("#aside2").hide();
-    $("#aside3").show();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
@@ -71,8 +150,6 @@ function aside3(){
     $.session.set('page','3');
 }
 function aside4(){
-    $("#aside2").hide();
-    $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
     $("#aside4").addClass('terpilih');
@@ -81,8 +158,6 @@ function aside4(){
     $.session.set('page','4');
 }
 function aside5(){
-    $("#aside2").hide();
-    $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside5 span');
     $("#aside5").addClass('terpilih');
@@ -91,8 +166,6 @@ function aside5(){
     $.session.set('page','5');
 }
 function aside6(){
-    $("#aside2").hide();
-    $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside6 span');
     $("#aside6").addClass('terpilih');

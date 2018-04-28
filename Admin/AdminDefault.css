@@ -85,51 +85,6 @@ article div#aside pre{
 }
 /*------------------------bagian aside---------------------*/
 
-/*------------------------bagian konten---------------------*/
-article div#konten{ /*konten (sebelahnya aside)*/
-    float: left;
-    width: 80%;
-    height: 100%;
-}
-article div#konten h1{  /*judul*/
-    text-align: center; /*taruh tengah*/
-    font-size: 35px;
-    text-transform:uppercase;   /*supaya capslock*/
-}
-/*untuk inputan--------*/
-article div#konten input, article div#konten select, article div#konten textarea{   /*kotak yang utk input*/
-    font-size: 12px;
-    padding: 8px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    border-radius: 3px;
-}
-article div#konten input[type=text]:focus { /*warna background berubah ketika focus*/
-    background-color: cornflowerblue;
-}
-article div#konten input[type=password]:focus { /*warna background berubah ketika focus*/
-    background-color: cornflowerblue;
-}
-article div#konten textarea[type=text]:focus { /*warna background berubah ketika focus*/
-    background-color: cornflowerblue;
-}
-/*utk fontawesome---*/
-article div#konten .simbol{
-    color: rgba(94,94,94,0.9);
-}
-/*utk tombol*/
-article div#konten input.tombol{
-    padding: 5px;
-    border: 1px solid black;
-    color: black;
-    background-color: darkgray;
-    border-radius: 5px;
-}
-article div#konten input.tombol:hover{
-    background-color: gray;
-}
-/*------------------------bagian konten---------------------*/
-
 /*----------tombol utk up ke atas----------*/
 a#tombolUp{ /*peletakkannya dikanan bawah dan fixed*/
     position: fixed; /*tetap ada di bawah walau discroll*/
