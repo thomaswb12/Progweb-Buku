@@ -58,6 +58,35 @@ article div#sinopsis p#isiSinopsis{ /*isi sinopsisnya*/
     height: 115px;
     overflow-y: scroll; /*scroll vertical*/
 }
+
+/*pop up message*/
+div#blur{       /*utk blur semuanya*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: none;
+}
+div#popup{  /*kotak popup*/
+    position: fixed;
+    top: 5%;
+    left: 10%;
+    height: 90%;
+    width: 80%;
+    background-color:rgba(50,50,50,0.9);
+    color: white;
+    display: none;
+}
+div#popup .simbolX{ /*simbol x untuk close popup*/
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: white;
+    font-size: 30px;
+}
+/*pop up message*/
 /*------------------------bagian article---------------------*/
 
 
