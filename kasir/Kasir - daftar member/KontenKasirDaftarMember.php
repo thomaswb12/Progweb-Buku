@@ -20,13 +20,17 @@
             <th class="idMember">ID Member</th>
             <th class="namaMember">Nama Member</th>
             <th class="email">Email</th>
+            <th class="gender">Gender</th>
+            <th class="noIdentitas">No Identitas</th>
         </thead>
         <tbody>
             <tr onclick="pencetTR($(this))">
                 <td class="nomor">1</td>
                 <td class="idMember">1234567890</td>
-                <td class="namaMember">Namanya siapa</td>
+                <td class="namaMember">Namanya siapa yaaa</td>
                 <td class="email">email@gmail.com</td>
+                <td class="gender">Perempuan</td>
+                <td class="noIdentitas">12345632862312</td>
             </tr>
         </tbody>
     </table>
@@ -37,28 +41,33 @@
 <div id="blur" onclick="pencetBlur()">
 </div>
 <div id="popup">
-    <div style="margin: 50px">
-        <table class="noBorber">
-            <tr>
-                <td>ID Member</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>Nama</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>NO Identitas</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>Gender</td>
-                <td><input type="text"></td>
-            </tr>  
-            <tr>
-                <td>Email</td>
-                <td><input type="text"></td>
-            </tr>      
-        </table>
-    </div>
+    <i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
+    <br/><br/>
+    <table>
+        <tr>
+            <td><i class="fas fa-id-card-alt simbolPopup"></i><td>
+            <td class="atribut">ID Member</td>
+            <td class="value" id="popupIdMember">: </td>
+        </tr>
+        <tr>
+            <td><i class="fas fa-user simbolPopup"></i><td>
+            <td class="atribut">Nama</td>
+            <td class="value" id="popupNamaMember">: </td>
+        </tr>
+        <tr>
+            <td><i class="fas fa-id-card simbolPopup"></i><td>
+            <td class="atribut">No Identitas</td>
+            <td class="value" id="popupNoIdentitas">: </td>
+        </tr>
+        <tr>
+            <td><i class="fas fa-transgender simbolPopup"></i><td>
+            <td class="atribut">Gender</td>
+            <td class="value" id="popupGender">: </td>
+        </tr>  
+        <tr>
+            <td><i class="fas fa-envelope simbolPopup"></i><td>
+            <td class="atribut">Email</td>
+            <td class="value" id="popupEmail">: </td>
+        </tr>      
+    </table>
 </div>

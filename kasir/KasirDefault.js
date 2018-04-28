@@ -61,9 +61,18 @@ function aside5(){
 }
 
 function pencetTR(temp){
-    var a = temp.children("td:nth-of-type(2)").html();
+    var idMember = temp.children("td:nth-of-type(2)").html();
+    var namaMember = temp.children("td:nth-of-type(3)").html();
+    var email = temp.children("td:nth-of-type(4)").html();
+    var gender = temp.children("td:nth-of-type(5)").html();
+    var noIdentitas = temp.children("td:nth-of-type(6)").html(); 
     $("#popup").fadeIn();
     $("#blur").fadeIn();
+    $("#popupIdMember").text(": "+idMember);
+    $("#popupNamaMember").text(": "+namaMember);
+    $("#popupEmail").text(": "+email);
+    $("#popupGender").text(": "+gender);
+    $("#popupNoIdentitas").text(": "+noIdentitas);
 }
 
 function pencetBlur(){
