@@ -15,6 +15,7 @@
 <div id="tabelDaftar">
     <table>
         <thead>
+            <th class="tandaTable"></th>
             <th class="idBuku">ID Buku</th>
             <th class="judulBuku">Judul Buku</th>
             <th class="tanggalPinjam">Tanggal Pinjam</th>
@@ -23,7 +24,8 @@
             <th class="denda">Denda</th>
         </thead>
         <tbody>
-            <tr>
+            <tr onclick="pencetTRPengembalian($(this))">
+                <td class="tandaTable"></td>
                 <td class="idBuku">1234567788</td>
                 <td class="judulBuku">Naruto</td>
                 <td class="tanggalPinjam">01/01/2018</td>
@@ -31,7 +33,8 @@
                 <td class="telat">-</td>
                 <td class="denda">Rp 0</td>
             </tr>
-            <tr>
+            <tr onclick="pencetTRPengembalian($(this))">
+                <td class="tandaTable"></td>
                 <td class="idBuku">1234567788</td>
                 <td class="judulBuku">Naruto</td>
                 <td class="tanggalPinjam">01/01/2018</td>
@@ -39,7 +42,8 @@
                 <td class="telat">1 hari</td>
                 <td class="denda">Rp 500</td>
             </tr>
-            <tr>
+            <tr onclick="pencetTRPengembalian($(this))">
+                <td class="tandaTable"></td>
                 <td class="idBuku">1234567788</td>
                 <td class="judulBuku">Naruto</td>
                 <td class="tanggalPinjam">01/01/2018</td>
@@ -50,6 +54,7 @@
         </tbody>
         <tfoot>
             <tr class="tebal">
+                <td class="tandaTable"></td>
                 <td colspan="5">Total</td>
                 <td>Rp 500</td>
             </tr>

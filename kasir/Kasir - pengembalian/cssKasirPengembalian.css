@@ -44,10 +44,15 @@ th{
     background-color: grey;
     color: white;
 }
+.tandaTable{
+    background-color: transparent !important;
+    border: transparent !important;
+}
+.tandaTable{width: 2%;}
 .idBuku{width: 15%}         /*kolom id buku*/
 .judulBuku{width: 20%}      /*kolom judul buku*/
-.tanggalPinjam{width: 15%}      /*kolom tanggal pinjam*/
-.tanggalPengembalian{width: 15%}       /*kolom tanggal pengembalian*/
+.tanggalPinjam{width: 14%}      /*kolom tanggal pinjam*/
+.tanggalPengembalian{width: 14%}       /*kolom tanggal pengembalian*/
 .telat{width: 5%}      /*kolom telat brp hari*/
 .denda{width: 10%}      /*kolom denda*/
 /*tabel*/

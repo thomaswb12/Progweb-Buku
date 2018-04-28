@@ -140,6 +140,8 @@ article div#konten input.tombol:hover{
 .noBorder{
     border: none;
 }
+
+.green{background-color: rgba(0, 100, 0, 0.6) !important;}
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/

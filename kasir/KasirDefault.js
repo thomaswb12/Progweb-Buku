@@ -21,7 +21,6 @@ $(document).ready(function(){
     $("#aside3").click(function(){aside3();});
     $("#aside4").click(function(){aside4();});
     $("#aside5").click(function(){aside5();});
-    
 });
 
 $(window).on('load', function () {
@@ -77,6 +76,14 @@ function aside5(){
     $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
     $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
     $.session.set('page','5');
+}
+
+function pencetTRPengembalian(temp){
+    //alert(temp.html());
+    if($(temp).css("background-color") == "rgba(0, 100, 0, 0.6)") $(temp).removeClass("green");
+    else {
+        $(temp).addClass("green");
+    }
 }
 
 function pencetTR(temp){
