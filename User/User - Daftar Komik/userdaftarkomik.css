@@ -12,7 +12,7 @@ article div#judul h1{  /*judul "Daftar Komik"*/
 }
 article div#judul #sorting{ /*"sort by" (label dan dropbox-nya)*/
     float: right;   /*taruh pojok kanan*/
-    margin-right: 1%;   /*beri jarak dengan pojok*/
+    margin-right: 5%;   /*beri jarak dengan pojok*/
 }
 article div#judul #sorting #selectSortBy{ /*"sort by" (dropbox-nya)*/
     margin-left: 15px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
@@ -38,8 +38,8 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 /*------------------------bagian isi (daftar komiknya)---------------------*/
 article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
-    margin-top: 90px;
-    height: 360px;
+    margin-top: 100px;
+    height: 357px;
     width: 91%;
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
@@ -92,7 +92,7 @@ article #daftarKomik .infoKomik .new{ /*tambahan img icon "new" utk komik2 baru*
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
     /*-----------------utk article-----------------*/
     article{ /*semua element di article di ketengahi*/
-        text-align: center;   
+        text-align: center; 
     }
 
     /*--------utk article (bagian judul)---------*/
@@ -100,11 +100,12 @@ article #daftarKomik .infoKomik .new{ /*tambahan img icon "new" utk komik2 baru*
         margin: auto;
         text-align: center;
         float: none;    /*hilangi float*/
-        
+        width: 100%;
     }
     article div#judul #searching #searchBox{
         float: none;
         margin-top: 15px;
+        
     }
     article div#judul #searching #searchBox::before { /*menambahkan new line sebelum id="searchBox"*/
         content: "\A";  /*tambahkan newline, spti <br>*/
@@ -116,10 +117,12 @@ article #daftarKomik .infoKomik .new{ /*tambahan img icon "new" utk komik2 baru*
     /*--------utk article (bagian daftar komik)---------*/
     article div#daftarKomik{ /*sekotak daftar komik*/
         overflow-y: inherit;
+        margin-top: 10px;
+        width: 100%;
     }
     article #daftarKomik .infoKomik{ /*ukuran kotak putih dikecilin*/
         height: 160px;
-        width: 85px;
+        width: 80px;
         margin: 10px 4px;
     }
     article #daftarKomik .infoKomik.favorit{ /*ukuran kotak putih yang favorit juga dikecilin*/
