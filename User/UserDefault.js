@@ -29,3 +29,13 @@ function setTanggal(){
     //tampilkan dalam format DAY,DATE MONTH YEAR
     $('p#tanggal').text(day[n.getDay()] + ", " + date + " " + month[n.getMonth() + 1] + " " + year);
 }
+
+function munculPopup(temp){
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
+}
+
+function pencetBlur(){
+    $("#popup").css('display','none');
+    $("#blur").css('display','none');
+}
