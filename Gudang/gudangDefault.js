@@ -39,8 +39,9 @@ $(document).ready(function(){
     $("#aside8").click(function(){
         aside8();
     });
-    $("#edityi").click(function(){
-        edityi();
+    
+    $("#edit").click(function(){
+        edit();
     });
     
 });
