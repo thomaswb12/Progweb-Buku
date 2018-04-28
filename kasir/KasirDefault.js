@@ -16,53 +16,54 @@ $(document).ready(function(){
     $("#minimizeOption").click(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
-    $("#aside1").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside1 span');
-        $("#aside1").addClass('terpilih');
-        $("div#konten").load("Kasir%20-%20peminjaman/KontenKasirPeminjaman.php");
-        $("div#gantiHead").load("Kasir%20-%20peminjaman/HeadKasirPeminjaman.php");
-
-    });
-    $("#aside2").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside2 span');
-        $("#aside2").addClass('terpilih');
-        $("div#konten").load("Kasir%20-%20pengembalian/KontenKasirPengembalian.php");
-        $("div#gantiHead").load("Kasir%20-%20pengembalian/HeadKasirPengembalian.php");
-
-    });
-    $("#aside3").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside3 span');
-        $("#aside3").addClass('terpilih');
-        $("div#konten").load("Kasir%20-%20daftar%20komik/KontenKasirDaftarKomik.php");
-        $("div#gantiHead").load("Kasir%20-%20daftar%20komik/HeadKasirDaftarKomik.php");
-
-    });
-    $("#aside4").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside4 span');
-        $("#aside4").addClass('terpilih');
-        $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
-        $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
-
-    });
-    $("#aside5").click(function(){
-        $(".blue").removeClass('terpilih');
-        $("#centang").appendTo('#aside5 span');
-        $("#aside5").addClass('terpilih');
-        $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
-        $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
-
-    });
+    $("#aside1").click(function(){aside1();});
+    $("#aside2").click(function(){aside2();});
+    $("#aside3").click(function(){aside3();});
+    $("#aside4").click(function(){aside4();});
+    $("#aside5").click(function(){aside5();});
     
 });
 
+function aside1(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside1 span');
+    $("#aside1").addClass('terpilih');
+    $("div#konten").load("Kasir%20-%20peminjaman/KontenKasirPeminjaman.php");
+    $("div#gantiHead").load("Kasir%20-%20peminjaman/HeadKasirPeminjaman.php");
+}
+function aside2(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside2 span');
+    $("#aside2").addClass('terpilih');
+    $("div#konten").load("Kasir%20-%20pengembalian/KontenKasirPengembalian.php");
+    $("div#gantiHead").load("Kasir%20-%20pengembalian/HeadKasirPengembalian.php");
+}
+function aside3(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside3 span');
+    $("#aside3").addClass('terpilih');
+    $("div#konten").load("Kasir%20-%20daftar%20komik/KontenKasirDaftarKomik.php");
+    $("div#gantiHead").load("Kasir%20-%20daftar%20komik/HeadKasirDaftarKomik.php");
+}
+function aside4(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside4 span');
+    $("#aside4").addClass('terpilih');
+    $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
+    $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
+}
+function aside5(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside5 span');
+    $("#aside5").addClass('terpilih');
+    $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
+    $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
+}
+
 function pencetTR(temp){
     var a = temp.children("td:nth-of-type(2)").html();
-    $("#popup").css('display','block');
-    $("#blur").css('display','block');
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
 }
 
 function pencetBlur(){

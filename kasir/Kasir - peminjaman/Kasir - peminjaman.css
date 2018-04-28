@@ -1,4 +1,5 @@
 /*--------------------------Bagian yang di rubah----------------*/
+
 /*bagian atas tabel*/
 div.position{   /*bagian atas tabel, bawah header*/
     height: 25%;
@@ -54,12 +55,18 @@ div#pinggirKanan p.warning{  /*warning dibawah inputan ID buku*/ /*nanti di disp
 }
 /*bagian atas tabel*/
 
+div#bagianTabel{
+    margin: auto;
+    width: 80%;
+    height: 50%;
+}
+
 /*tabel*/
 div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
     margin-top: 20px;
     height: 43%;
-    width: 80%;
+    width: 100%;
     overflow-y: scroll;
 }
 table{
@@ -106,7 +113,7 @@ th{
 /*tombol print nota*/
 article div#divTombol{  /*div bungkus 2 tombol dibawah*/
     float: right;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 article div#konten input#print{ /*tombol utk print*/
     font-size: 15px;
@@ -114,7 +121,6 @@ article div#konten input#print{ /*tombol utk print*/
 }
 article div#konten input#cancel{    /*tombol cancel*/
     font-size: 15px;
-    margin-right: 110px;
 }
 /*tombol print nota*/
 

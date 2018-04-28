@@ -24,7 +24,7 @@
     </div>
 </div>
 <div id="daftarKomik" class="font15">
-    <div class="infoKomik">
+    <div class="infoKomik" onclick="pencetTR($(this))">
         <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
         <h4 class="judul">Miiko vol 19</h4>
         <p class="stok">Stok : 5</p>
@@ -32,7 +32,7 @@
         <p class="status">Available</p>
         <img class="new" src="../label_new.png"/>
     </div>
-    <div class="infoKomik">
+    <div class="infoKomik" onclick="pencetTR($(this))">
         <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
@@ -40,42 +40,42 @@
         <p class="status">Available</p>
         <img class="new" src="../label_new.png"/>
     </div>
-    <div class="infoKomik favorit">
+    <div class="infoKomik favorit" onclick="pencetTR($(this))">
         <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
         <p class="status">Available</p>
     </div>
-    <div class="infoKomik">
+    <div class="infoKomik" onclick="pencetTR($(this))">
         <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
         <p class="status">Available</p>
     </div>
-    <div class="infoKomik">
+    <div class="infoKomik" onclick="pencetTR($(this))">
         <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
         <p class="status">Available</p>
     </div>
-    <div class="infoKomik specialEdition">
+    <div class="infoKomik specialEdition" onclick="pencetTR($(this))">
         <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
         <p class="status">Available</p>
     </div>
-    <div class="infoKomik favorit specialEdition">
+    <div class="infoKomik favorit specialEdition" onclick="pencetTR($(this))">
         <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
         <p class="tersedia">Tersedia : 1</p>
         <p class="status">Available</p>
     </div>
-    <div class="infoKomik">
+    <div class="infoKomik" onclick="pencetTR($(this))">
         <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
         <h4 class="judul">Hai Miiko! Vol.19</h4>
         <p class="stok">Stok : 5</p>
