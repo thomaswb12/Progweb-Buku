@@ -54,25 +54,17 @@
                     </div>
                 </div>
                 <div id="daftarKomik" class="font15">
-                    <?php
-
-                       require "../../getDataBuku.php";
-                       $data = getBuku();
-                       foreach($data as $key=>$value){
-                        ?>
-                        <div class="infoKomik">
-                            <img class="komik" src="miiko19.jpg"/>
-                            <h4 class="judul"><?php echo $value['judulBuku']?></h4>
-                            <p class="stok">Stok : 5</p>
-                            <p class="tersedia">Tersedia : 1</p>
-                            <p class="status">Available</p>
-                            <img class="new" src="../../label_new.png"/>
-                        </div>
-                            <?php
-                       }
-                    ?>
+                
+                    <div class="infoKomik">
+                        <img class="komik" src="miiko19.jpg"/>
+                        <h4 class="judul">Hai Miiko! Vol.19</h4>
+                        <p class="stok">Stok : 5</p>
+                        <p class="tersedia">Tersedia : 1</p>
+                        <p class="status">Available</p>
+                        <img class="new" src="../../label_new.png"/>
+                    </div>
                     
-                    <!--<div class="infoKomik">
+                    <div class="infoKomik">
                         <img class="komik" src="miiko19.jpg"/>
                         <h4 class="judul">Hai Miiko! Vol.19</h4>
                         <p class="stok">Stok : 5</p>
@@ -121,7 +113,7 @@
                         <p class="stok">Stok : 5</p>
                         <p class="tersedia">Tersedia : 1</p>
                         <p class="status">Available</p>
-                    </div>-->
+                    </div>
                 </div>
             </article>
             <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
