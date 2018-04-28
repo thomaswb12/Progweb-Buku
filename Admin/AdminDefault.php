@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="AdminDefault.css" type="text/css">
     <div id="gantiHead">
         <title>Admin</title>
-        <link href="../User/User - Daftar Komik/userdaftarkomik.css" type="text/css" rel="stylesheet">
+        <link href="AdminDefault.css" type="text/css" rel="stylesheet">
     </div>
     <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
     <script src="AdminDefault.js"></script>
