@@ -65,7 +65,7 @@ div#bagianTabel{
 div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
     margin-top: 20px;
-    height: 43%;
+    height: 80%;
     width: 100%;
     overflow-y: scroll;
 }

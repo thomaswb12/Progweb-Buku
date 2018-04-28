@@ -24,12 +24,27 @@ $(document).ready(function(){
     
 });
 
+$(window).on('load', function () {
+    var c = $.session.get('page');
+    if(c == null || c == 1)
+        aside1();
+    else if(c == 2)
+        aside2();
+    else if(c == 3)
+        aside3();
+    else if(c == 4)
+        aside4();
+    else if(c == 5)
+        aside5();
+});
+
 function aside1(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
     $("div#konten").load("Kasir%20-%20peminjaman/KontenKasirPeminjaman.php");
     $("div#gantiHead").load("Kasir%20-%20peminjaman/HeadKasirPeminjaman.php");
+    $.session.set('page','1');
 }
 function aside2(){
     $(".blue").removeClass('terpilih');
@@ -37,6 +52,7 @@ function aside2(){
     $("#aside2").addClass('terpilih');
     $("div#konten").load("Kasir%20-%20pengembalian/KontenKasirPengembalian.php");
     $("div#gantiHead").load("Kasir%20-%20pengembalian/HeadKasirPengembalian.php");
+    $.session.set('page','2');
 }
 function aside3(){
     $(".blue").removeClass('terpilih');
@@ -44,6 +60,7 @@ function aside3(){
     $("#aside3").addClass('terpilih');
     $("div#konten").load("Kasir%20-%20daftar%20komik/KontenKasirDaftarKomik.php");
     $("div#gantiHead").load("Kasir%20-%20daftar%20komik/HeadKasirDaftarKomik.php");
+    $.session.set('page','3');
 }
 function aside4(){
     $(".blue").removeClass('terpilih');
@@ -51,6 +68,7 @@ function aside4(){
     $("#aside4").addClass('terpilih');
     $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
     $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
+    $.session.set('page','4');
 }
 function aside5(){
     $(".blue").removeClass('terpilih');
@@ -58,6 +76,7 @@ function aside5(){
     $("#aside5").addClass('terpilih');
     $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
     $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
+    $.session.set('page','5');
 }
 
 function pencetTR(temp){
