@@ -42,7 +42,7 @@ $(window).on('load', function () {
 
 function aside1(){
     $("#aside2").hide();
-    $("#aside3").show();
+    $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
