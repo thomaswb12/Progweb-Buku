@@ -29,6 +29,9 @@
         <label>Jumlah Halaman</label><br/>
         <input type="text" id="jumlahHalaman" name="jumlahHalaman"/><br/>
 
+        <label>Jumlah Eksemplar</label><br/>
+        <input type="text" id="jumlaEksemplar" name="jumlahEksemplar"/><br/>
+
         <label>Berat Buku</label><br/>
         <input type="text" id="beratBuku" name="beratBuku"/><br/>
 
@@ -48,5 +51,5 @@
         <input type="text" id="rating" name="rating"/><br/>
     </div>
     <input type="submit" id="tombol" name="tombol" value="SAVE">
-    <input type="button" id="tombol" name="tombol" value="CANCEL">
+    <input type="button" id="tombol" name="tombol" value="CANCEL" onclick="aside1()">
 </form>
