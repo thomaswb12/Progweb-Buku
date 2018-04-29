@@ -143,6 +143,15 @@ function backToTop(){
     }
 }
 
+//----- fungsi menampilkan & sembunyikan petunjuk scroll down saat POP UP ---------
+function scrollDown(){
+    var scrollTop = $("#popupScroll").scrollTop(); //sejauh apa user telah meng-scroll
+    if (scrollTop > 120) {  //bila user sudah scroll lebih besar dari 120, tombol disembunyikan
+        $('#tombolDown').css('display','none');
+    } else { //bila user belum scroll jauh, tombol ditampilkan
+        $('#tombolDown').css('display','block');
+    }
+}
 
 //----------- fungsi utk memasukkan tanggal NOW ke p#tanggal di header ----------
 function setTanggal(){ 

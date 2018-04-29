@@ -120,7 +120,7 @@
 <div id="popup">
     <i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
     <br/><br/>
-    <div id="popupScroll">
+    <div id="popupScroll" onscroll="scrollDown()">
         <p id="popupJudul"></p>
         <div id="divImg">
             <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
@@ -169,6 +169,10 @@
         <div id="divSinopsis">
             <p>Sinopsis</p>
             <p id="popupSinopsis"></p>
+        </div>
+        <div id="tombolDown">
+            <i class="fas fa-chevron-circle-down"></i>
+            <p>Scroll</p>
         </div>
     </div>
 </div>
