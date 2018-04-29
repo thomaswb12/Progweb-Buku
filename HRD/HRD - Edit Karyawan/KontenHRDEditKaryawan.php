@@ -11,7 +11,10 @@
                 <input type="text" id="namaKaryawan" name="namaKaryawan"/>
                 <br/><br/>
                 <label>Jabatan</label>
-                <input type="text" id="jabatan" name="jabatan"/>
+                <select id="selectJabatan" class="font15">
+                    <option>Kasir</option>
+                    <option>Gudang</option>
+                </select>
                 <br/><br/>
                 <label>Email</label>
                 <input type="text" id="email" name="email"/>
