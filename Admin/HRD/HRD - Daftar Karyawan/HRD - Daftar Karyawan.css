@@ -1,0 +1,125 @@
+/*------------------------bagian artikel---------------------*/
+article{ /*article adlah semua yang ada dibawah header*/
+    height: 80%;
+    width: 100%;
+}
+/*------------------------bagian artikel---------------------*/
+
+/*------------------------bagian konten---------------------*/
+article div#konten{ /*konten (sebelahnya aside)*/
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+article div#konten h1{  /*konten*/
+    text-align: center; /*taruh tengah*/
+    font-size: 35px;
+    text-transform:uppercase;   /*supaya capslock*/
+}
+
+/*keperluan sort------*/
+article div#konten #sorting{ /*"sort by" (label dan dropbox-nya)*/
+    float: right;   /*taruh pojok kanan*/
+    margin-right: 3%;   /*beri jarak dengan pojok*/
+}
+article div#konten #sorting #selectSortBy{ /*"sort by" (dropbox-nya)*/
+    margin-left: 15px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 100px;   /*lebar dropbox*/
+}
+/*keperluan sort------*/
+
+/*keperluan search------*/
+article div#konten #searching{ /*"search by" (label, dropbox, input, dan icon-nya)*/
+    float: right;   /*letakkan di kanan, sebelahan dg sort by*/
+    width: 330px;
+    margin-right: 2%; /*jarak dgn sort by*/
+}
+article div#konten #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
+    float: right;   /*lettakkan di kanan parent #searching*/
+}
+article div#konten #searching #searchBox #inputSearchBy{ /*"search by" (input-nya)*/
+    width: 150px;
+}
+article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
+    width: 130px;
+    margin-left: 3px;   /*memberi jarak ke kanan dengan label yg diatasnya*/
+    margin-right: 10px; /*memberi jarak dengan box inputan*/
+}
+/*keperluan search------*/
+
+/*daftar karyawan------*/
+article div#daftarKaryawan{ /*sekotak daftar komik*/
+    margin: auto;   /*ditaruh tengah*/
+    height: 382px;
+    width: 94%;
+    overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
+}
+article #daftarKaryawan .infoKaryawan{ /*kotak masing2 komik yang isinya info komik*/
+    background-color: #F2F2F2;
+    margin: 20px;
+    height: 300px;
+    width: 185px;
+    float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
+}
+article #daftarKaryawan .infoKaryawan .photo{ /*utk fotonya*/
+    height: 200px;
+    width: inherit; /*selebar kotak putih*/
+}
+article #daftarKaryawan .infoKaryawan p{ /*info komiknya (stok, tersedia, available)*/
+    margin: 1px; /*jarak 1px dg kotaknya*/
+}
+article #daftarKaryawan .infoKaryawan .more{ /*info komiknya (stok, tersedia, available)*/
+    margin: 1px; /*jarak 1px dg kotaknya*/
+    color: blue;
+}
+/*daftar karyawan------*/
+
+/*------------------------bagian konten---------------------*/
+
+/*----------tombol utk up ke atas----------*/
+a#tombolUp{ /*peletakkannya dikanan bawah dan fixed*/
+    position: fixed; /*tetap ada di bawah walau discroll*/
+    bottom: 2px;     /*jarak dengan bottom window*/
+    right: 2px;      /*jarak dg kanan window*/
+    padding: 5px;
+    font-size: 30px; /*besar tombol*/
+    opacity: 0.3; /*transparancy*/
+    display: none; /*tidak ditampilkan (ditampilkan saat scrolldown dan di media query utk HP, setting di file .js)*/
+}
+a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
+    opacity: 0.6;
+}
+/*----------tombol utk up ke atas----------*/
+
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*-----------------utk konten-----------------*/
+    article div#konten{
+        float: none; /*hilangkan float agar pindah kebawah*/
+        width: 100%;
+    }
+    /*-----------------utk konten-----------------*/
+
+    /*--------utk article (bagian konten)---------*/
+    article div#konten #sorting, article div#konten #searching{ /*media search dan sort diketengahi*/
+        margin: auto;
+        text-align: center;
+        float: none;    /*hilangi float*/
+        
+    }
+    article div#konten #searching #searchBox{
+        float: none;
+        margin-top: 15px;
+    }
+    article div#konten #searching #searchBox::before { /*menambahkan new line sebelum id="searchBox"*/
+        content: "\A";  /*tambahkan newline, spti <br>*/
+    }
+    article div#konten #searching #selectSearchBy, article div#konten #sorting #selectSortBy{
+        margin: auto;
+    }
+
+ 
+
+    /*--------utk article (bagian konten)---------*/
+}

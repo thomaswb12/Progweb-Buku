@@ -1,0 +1,309 @@
+/*------------------------bagian artikel---------------------*/
+article{ /*article adlah semua yang ada dibawah header*/
+    height: 80%;
+    width: 100%;
+}
+/*------------------------bagian konten---------------------*/
+article div#konten{ /*konten (sebelahnya aside)*/
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+/*------------------------bagian judul dan searching + sorting ---------------------*/
+article div#judul h1{  /*judul "Daftar Komik"*/
+    text-align: center; /*taruh tengah*/
+    font-size: 35px;
+    text-transform:uppercase;   /*supaya capslock*/
+}
+article div#judul #sorting{ /*"sort by" (label dan dropbox-nya)*/
+    float: right;   /*taruh pojok kanan*/
+    margin-right: 3%;   /*beri jarak dengan pojok*/
+}
+article div#judul #sorting #selectSortBy{ /*"sort by" (dropbox-nya)*/
+    margin-left: 15px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 100px;   /*lebar dropbox*/
+}
+article div#judul #searching{ /*"search by" (label, dropbox, input, dan icon-nya)*/
+    float: right;   /*letakkan di kanan, sebelahan dg sort by*/
+    width: 300px;
+    margin-right: 2%; /*jarak dgn sort by*/
+}
+article div#judul #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
+    float: right;   /*lettakkan di kanan parent #searching*/
+}
+article div#judul #searching #searchBox #inputSearchBy{ /*"search by" (input-nya)*/
+    width: 150px;
+}
+article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
+    width: 100px;
+    margin-left: 3px;   /*memberi jarak ke kanan dengan label yg diatasnya*/
+    margin-right: 10px; /*memberi jarak dengan box inputan*/
+}
+
+/*------------------------bagian isi (daftar komiknya)---------------------*/
+article div#daftarKomik{ /*sekotak daftar komik*/
+    margin: auto;   /*ditaruh tengah*/
+    margin-top: 90px;
+    height: 420px;
+    width: 100%;
+    overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
+}
+article #daftarKomik .infoKomik{ /*kotak masing2 komik yang isinya info komik*/
+    background-color: #F2F2F2;
+    margin: 14px;
+    height: 300px;
+    width: 170px;
+    float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
+}
+article #daftarKomik .infoKomik.favorit{ /*utk komik2 yang favorit*/
+    border: 4px solid red; /*favorit ditandai dg bordernya yg merah*/
+    height: 292px;  /*height jadi lebih sedikit 8px dari pada yang tidak favorit (supaya besar kotak sama)*/
+    width: 162px;   /*witdh juga jadi lebih sedikit 8px*/
+    padding: 0px;
+}
+article #daftarKomik .infoKomik.specialEdition{ /*utk komik2 yang special edition*/
+    outline: 4px solid gold; /*special edition ditambahi outline gold*/
+}
+article #daftarKomik .infoKomik .komik{ /*utk fotonya*/
+    height: 200px;
+    width: inherit; /*selebar kotak putih*/
+}
+article #daftarKomik .infoKomik h4{ /*judul komiknya*/
+    margin: 4px;
+    text-align: center; /*tengah kotak*/
+    overflow: hidden;   /*overflow tidak ditampilkan*/
+    text-overflow: ellipsis;    /*kalau text panjang, akhhirnya diberi ...*/
+    white-space: nowrap;    /*tidak ada newline*/
+}
+article #daftarKomik .infoKomik p{ /*info komiknya (stok, tersedia, available)*/
+    margin: 1px; /*jarak 1px dg kotaknya*/
+}
+article #daftarKomik .infoKomik p.tersedia{ /*tersedia berapa*/
+    float: left; /*supaya bisa sebaris dg tulisan available*/
+}
+article #daftarKomik .infoKomik p.status{ /*available atau tidak*/
+    float: right; /*dikanannya tulisan tersedia*/
+    color: green; /*available hijau, unavail red*/
+}
+article #daftarKomik .infoKomik .new{ /*tambahan img icon "new" utk komik2 baru*/
+    clear: both;    /*pindah baris dari tulisan available*/
+    float: right;   /*bagian kanan kotak*/
+    width: 30px;
+}
+
+/*pop up message*/
+div#blur{       /*utk blur semuanya*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: none;
+}
+div#popup{  /*kotak popup*/
+    position: fixed;
+    top: 5%;
+    left: 15%;
+    height: 90%;
+    width: 70%;
+    background-color:rgba(50,50,50,0.9);
+    color: white;
+    overflow: hidden;
+    display: none;
+}
+div#popup .simbolX{ /*simbol x untuk close popup*/
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: white;
+    font-size: 30px;
+}
+div#popup div#popupScroll{  /*div utk yg bisa discroll*/
+    width: 100%;
+    height: 90%;
+    overflow-y: scroll;
+    padding-right: 17px;        /*keperluan supaya scrollbarnya hilang, tp ttep bisa scroll*/
+    box-sizing: content-box;    /*keperluan supaya scrollbarnya hilang*/
+    margin-left: 10px;
+}
+div#popup p#popupJudul{ /*judul*/
+    font-size: 30px;
+    text-align: center;
+}
+div#popup div#divImg{
+    float: left;
+    margin-left: 75px;
+    margin-right: 20px;
+}
+div#popup img{
+    width: 200px;
+}
+div#popup div#istimewa{     /*popular & special edition*/
+    font-size: 20px;
+    font-family: cursive;
+}
+div#popup div#penting{  /*status, harga, lama sewa*/
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 25px;
+    width: 230px;
+    background-color: rgba(229,212,235,0.7);
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-right: 50px;
+}
+div#popup table{
+    clear: both;
+    margin-left: 70px;
+    width: 55%;
+    table-layout: fixed;
+}
+div#popup table td{
+    padding: 10px;
+    width: 50%;
+    overflow: hidden;   /*jika data melebihi batas tabel, di hidden*/
+    text-overflow: ellipsis; /*supaya teks panjang berubah jadi ...*/
+    white-space: nowrap; /*supaya tidak di-newline*/
+}
+div#popup table td,div#popup p{
+    font-size: 17px;
+}
+div#popup div#divSinopsis{
+    margin-left: 75px;
+    margin-right: 50px;
+    text-align: justify;
+}
+/*----------tombol utk up ke atas----------*/
+#tombolDown{ /*peletakkannya dikanan bawah dan fixed*/
+    text-align: center;
+    position: fixed; /*tetap ada di bawah walau discroll*/
+    bottom: 6%;     /*jarak dengan bottom window*/
+    right: 49%;      /*jarak dg kanan window*/
+    font-size: 30px; /*besar tombol*/
+    opacity: 0.2; /*transparancy*/
+    display: block; /*tidak ditampilkan (ditampilkan saat scrolldown dan di media query utk HP, setting di file .js)*/
+}
+#tombolDown p{
+    margin: 0px;
+}
+/*----------tombol utk up ke atas----------*/
+/*pop up message*/
+
+
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*-----------------utk article-----------------*/
+    article{ /*semua element di article di ketengahi*/
+        text-align: center;   
+    }
+
+    /*--------utk article (bagian judul)---------*/
+    article div#judul #sorting, article div#judul #searching{ /*media search dan sort diketengahi*/
+        margin: auto;
+        text-align: center;
+        float: none;    /*hilangi float*/
+        
+    }
+    article div#judul #searching #searchBox{
+        float: none;
+        margin-top: 15px;
+    }
+    article div#judul #searching #searchBox::before { /*menambahkan new line sebelum id="searchBox"*/
+        content: "\A";  /*tambahkan newline, spti <br>*/
+    }
+    article div#judul #searching #selectSearchBy, article div#judul #sorting #selectSortBy{
+        margin: auto;
+    }
+
+    /*--------utk article (bagian daftar komik)---------*/
+    article div#daftarKomik{ /*sekotak daftar komik*/
+        margin-top: 10px;
+        overflow-y: inherit;
+        width: 100%;
+    }
+    article #daftarKomik .infoKomik{ /*ukuran kotak putih dikecilin*/
+        height: 160px;
+        width: 80px;
+        margin: 10px 4px;
+    }
+    article #daftarKomik .infoKomik.favorit{ /*ukuran kotak putih yang favorit juga dikecilin*/
+        height: 152px;
+        width: 77px;
+    }
+    article #daftarKomik .infoKomik .komik{ /*ukuran gambar komik dikecilin*/
+        height: 100px;
+    }
+    article #daftarKomik .infoKomik p{ /*utk menghemat ruang, info stok & tersedia tidak ditampilkan (dihidden)*/
+        position: absolute; /*fungsinya supaya tulisan availble naik kebawah judul komik*/
+        visibility: hidden;
+    }
+    article #daftarKomik .infoKomik h4{ /*judul komik dikecilkan*/
+        font-size: 10px;
+    }
+    article #daftarKomik .infoKomik .status{ /*tulisan available dikecilkan dan diketengahkan manual*/
+        margin-right: 17px;
+        clear: both;
+        font-size: 9px;
+        visibility: visible;
+    }   
+    article #daftarKomik .infoKomik .new{ /*icon new dikecilkan dan dinaikkan sedikit*/
+        width: 20px;
+        margin-top: -5px;
+    }
+
+    /*pop up message*/
+    div#popup{  
+        margin: auto;
+        top: 10%;
+        height: 80%;
+        left: 3%;
+        width: 94%;
+        text-align: center;
+    }
+    div#popup .simbolX{     /*X utk close popup*/
+        font-size: 20px;
+    }
+    div#popup p#popupJudul{ /*judul*/
+        font-size: 25px;
+    }
+    div#popup div#divImg{
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+    div#popup div#istimewa{     /*popular & special edition*/
+        font-size: 15px;
+    }
+    div#popup div#penting{  /*status, harga, lama sewa*/
+        font-size: 15px;
+        padding: 5px;
+        width: 200px;
+        float: none;
+        margin: auto;
+        text-align: center;
+    }
+    div#popup table{
+        margin-left: 2%;
+        margin-top: 15px;
+        width: 95%;
+    }
+    div#popup table td,div#popup p{
+        font-size: 13px;
+    }
+    div#popup div#divSinopsis{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    /*----------tombol utk up ke atas----------*/
+    #tombolDown{ /*peletakkannya dikanan bawah dan fixed*/
+        bottom: 10%;     /*jarak dengan bottom window*/
+        right: 47%;      /*jarak dg kanan window*/
+        opacity: 0.7;
+    }
+    /*----------tombol utk up ke atas----------*/
+    /*pop up message*/
+}

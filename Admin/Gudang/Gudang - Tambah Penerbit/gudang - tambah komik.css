@@ -1,0 +1,75 @@
+/*------------------------bagian artikel---------------------*/
+article{ /*article adlah semua yang ada dibawah header*/
+    height: 80%;
+    width: 100%;
+}
+/*------------------------bagian artikel---------------------*/
+/*------------------------bagian konten---------------------*/
+article div#konten{ /*konten (sebelahnya aside)*/
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+article div#konten h1{  /*konten*/
+    text-align: center; /*taruh tengah*/
+    font-size: 35px;
+    text-transform:uppercase;   /*supaya capslock*/
+}
+
+/*------------------------bagian input---------------------*/
+article div#konten div#kiri{ /*yng sbelah kiri, dari id member smp tanggal lahir*/
+    float: left;
+    margin-top: 35px;
+    margin-left: 100px;
+}
+article div#konten div#kanan{ /*yg kanan, dari email smp alamat*/
+    float: left;
+    margin-top: 35px;
+    margin-left: 250px;
+}
+article div#konten label{   /*semua label taruh diatas inputan*/
+    font-size: 12px;
+    margin-left: 5px;
+}
+article div#konten input, article div#konten select, article div#konten textarea{   /*kotak yang utk input*/
+    margin-bottom: 8px;
+    font-size: 12px;
+    padding: 8px;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 3px;
+}
+article div#konten textarea{
+    height: 134px;
+    resize: none;
+}
+article div#konten select{
+    width: 270px;
+}
+article div#konten input[type=text]:focus, article div#konten textarea:focus{ /*warna background berubah ketika focus*/
+    background-color: cornflowerblue;
+}
+article div#konten input#tombol{
+    clear: both;
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+    padding: 5px;
+    width: 100px;
+    font-size: 15px;
+    border: 1px solid black;
+    color: black;
+    background-color: darkgray;
+    border-radius: 5px;
+}
+article div#konten input#tombol:hover{
+    background-color: gray;
+}
+
+/*------------------------bagian input---------------------*/
+article div#konten{ /*konten (sebelahnya aside)*/
+    overflow-y: scroll;
+}
+/*------------------------bagian input---------------------*/
+/*------------------------bagian konten---------------------*/
