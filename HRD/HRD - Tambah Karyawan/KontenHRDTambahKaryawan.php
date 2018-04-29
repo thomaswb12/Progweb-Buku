@@ -37,7 +37,7 @@
             <label>Photo</label>
             <input type="file" id="gambar" name="gambar"/><br/>
             <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
-            <img class="photo" src="profile_pic.jpg"/><br><br><br>
+            <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/><br><br><br>
             <!-- tombol save -->
             <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
         </div>

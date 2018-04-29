@@ -22,7 +22,7 @@
 
 <div id="daftarKaryawan" class="font15">
     <div class="infoKaryawan">
-        <img class="photo" src="profile_pic.jpg"/>
+        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
         <table>
             <tr>
                 <td><p class="label">ID</p></td>
@@ -45,7 +45,7 @@
         </table>
     </div>
     <div class="infoKaryawan">
-        <img class="photo" src="profile_pic.jpg"/>
+        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
         <table>
             <tr>
                 <td><p class="label">ID</p></td>
@@ -68,7 +68,7 @@
         </table>
     </div>
     <div class="infoKaryawan">
-        <img class="photo" src="profile_pic.jpg"/>
+        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
         <table>
             <tr>
                 <td><p class="label">ID</p></td>
@@ -91,7 +91,7 @@
         </table>
     </div>
     <div class="infoKaryawan">
-        <img class="photo" src="profile_pic.jpg"/>
+        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
         <table>
             <tr>
                 <td><p class="label">ID</p></td>
@@ -114,7 +114,7 @@
         </table>
     </div>
     <div class="infoKaryawan">
-        <img class="photo" src="profile_pic.jpg"/>
+        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
         <table>
             <tr>
                 <td><p class="label">ID</p></td>
@@ -137,7 +137,7 @@
         </table>
     </div>
     <div class="infoKaryawan">
-        <img class="photo" src="profile_pic.jpg"/>
+        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
         <table>
             <tr>
                 <td><p class="label">ID</p></td>
@@ -160,7 +160,7 @@
         </table>
     </div>
     <div class="infoKaryawan">
-        <img class="photo" src="profile_pic.jpg"/>
+        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
         <table>
             <tr>
                 <td><p class="label">ID</p></td>

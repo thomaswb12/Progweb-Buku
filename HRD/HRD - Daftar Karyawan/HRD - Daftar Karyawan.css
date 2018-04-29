@@ -56,9 +56,9 @@ article div#daftarKaryawan{ /*sekotak daftar komik*/
 }
 article #daftarKaryawan .infoKaryawan{ /*kotak masing2 komik yang isinya info komik*/
     background-color: #F2F2F2;
-    margin: 14px;
+    margin: 20px;
     height: 300px;
-    width: 170px;
+    width: 185px;
     float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
 }
 article #daftarKaryawan .infoKaryawan .photo{ /*utk fotonya*/

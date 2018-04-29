@@ -5,7 +5,7 @@
                 <div class="detailKaryawan">
                     <div class="kanan">
                         <button type="button" class="tombol" name="tombolEdit" onclick="aside3()"><i class="fas fa-edit"></i>Edit</button><br><br>
-                        <img class="photo" src="profile_pic.jpg"/>
+                        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
                     </div>
                     <div class="kiri">
                         <table>
