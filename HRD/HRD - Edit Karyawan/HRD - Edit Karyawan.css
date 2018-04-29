@@ -1,10 +1,3 @@
-/*------------------------bagian artikel---------------------*/
-article{ /*article adlah semua yang ada dibawah header*/
-    height: 80%;
-    width: 100%;
-}
-/*------------------------bagian artikel---------------------*/
-
 /*------------------------bagian konten---------------------*/
 article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
@@ -43,8 +36,9 @@ article div#konten input#idKaryawan{
 article div#konten input#namaKaryawan{
     margin-left: 105px;
 }
-article div#konten input#jabatan{
-    margin-left: 88px;
+article div#konten #selectJabatan{ /*"sort by" (dropbox-nya)*/
+    margin-left: 88px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 220px;   /*lebar dropbox*/
 }
 article div#konten input#email{
     margin-left: 106px;
@@ -100,43 +94,17 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#konten div#dataKaryawan div.kanan{
         float: none;
         text-align: center;
-        margin-right: 0%;
+        margin: auto;
     }
     article div#konten div#inputan{
-        margin-left: 10px;
+        margin-left: 0px;
     }
-    article div#konten input#idKaryawan{
-        margin-left: 120px;
-    }
-    article div#konten input#namaKaryawan{
-        margin-left: 96px;
-    }
-    article div#konten input#jabatan{
-        margin-left: 80px;
-    }
-    article div#konten input#email{
-        margin-left: 97px;
-    }
-    article div#konten input#telepon{
-        margin-left: 78px;
-    }
-    article div#konten div#divAl{
-        float: left;
-    }
-    article div#konten textarea#alamat{
+    article div#konten #selectJabatan{
+        margin-left: 0px;
         width: 200px;
-        height: 300px;
-        margin-left: 90px;
     }
-    article div#konten input#pass1{
-        margin-left: 71px;
-    }
-    article div#konten input#pass2{
-        margin-left: 10px;
-    }
-    article div#konten input#tombolSave{
-        margin-top: 0px;
-        margin-right: 3%;
+    article div#konten input, article div#konten textarea#alamat{ /*semua kotak input dan textarea*/
+        width: 150px;
     }
     /*-----------------utk konten-----------------*/
 }
