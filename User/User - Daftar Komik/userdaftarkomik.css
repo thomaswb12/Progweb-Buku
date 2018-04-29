@@ -249,6 +249,12 @@ div#popup div#divSinopsis{
     div#popup p#popupJudul{ /*judul*/
         font-size: 25px;
     }
+    div#popup div#divImg{
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
     div#popup div#istimewa{     /*popular & special edition*/
         font-size: 15px;
     }
@@ -267,6 +273,10 @@ div#popup div#divSinopsis{
     }
     div#popup table td,div#popup p{
         font-size: 13px;
+    }
+    div#popup div#divSinopsis{
+        margin-left: 10px;
+        margin-right: 10px;
     }
     /*pop up message*/
 }
