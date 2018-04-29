@@ -1,5 +1,3 @@
-var cek;
-
 $(document).ready(function(){
     //------ tampilkan tanggal NOW -------------------
     setTanggal(); //panggil fungsi setTanggal()
@@ -10,7 +8,7 @@ $(document).ready(function(){
     });
 
     //------ menandai option aside yg sedang terpilih ----
-    //$('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
+    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
 
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
@@ -22,6 +20,9 @@ $(document).ready(function(){
     $("#aside4").click(function(){aside4();});
     $("#aside5").click(function(){aside5();});
     $("#aside6").click(function(){aside6();});
+
+    //------ klik details ------
+    $(".more").click(function(){aside2();});
 });
 
 $(window).on('load', function () {
