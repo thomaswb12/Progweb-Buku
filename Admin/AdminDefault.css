@@ -120,12 +120,12 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#aside{
         float: none; /*hilangkan float*/
         width: 100%; /*full widthnya*/
-        text-align: center; /*tengah*/
         height: auto; /*menyesuaikan isinya*/
         background-color: rgba(255,255,255,0.46);
     }
     article div#aside div#minimizeOption{ /*tombol utk slidedown option2 pd aside*/
         display: block; /*tampilkan ke layar*/
+        text-align: center; /*tengah*/
     }
     article div#aside div#minimizeOption h3{
         background-color: #000066; /*atur warna background*/
