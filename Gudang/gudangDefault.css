@@ -373,12 +373,15 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     /*--------utk article (bagian daftar )---------*/
     article div#daftar{ /*sekotak daftar */
         margin-top: 10px;
+        margin-left: auto;
         width: 100%;
+        overflow-y: unset;
     }
     article #daftar .info{ /*ukuran kotak putih dikecilin*/
         height: 160px;
         width: 80px;
         margin: 10px 4px;
+        float: left;
     }
     article #daftar .info.favorit{ /*ukuran kotak putih yang favorit juga dikecilin*/
         height: 152px;
@@ -405,24 +408,20 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin-top: -5px;
     }
 
-    
-
     /*-----------------utk konten-----------------*/
-    article div#konten{
+    body article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
-        overflow-y: inherit;
+        overflow-y: unset;
     }
     article div#konten div#kiri{
         float: none;
         clear: both;
-        overflow-y: inherit;
         margin-left: 10%;
     }
     article div#konten div#kanan    {
         float: none;
         clear: both;
-        overflow-y: inherit;
         margin-left: 10%;
     }
     /*-----------------utk konten-----------------*/
@@ -430,19 +429,5 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         float: none;
         clear: both;
         margin-left: 10%;
-    }
-    article #daftar .info #edit .text{ /*font pada tombol edit*/
-        background-color: rgba(51,153,204,1);
-        color: white;
-        font-size: 16px;
-        padding: 16px 32px;
-        width: 55px;
-    }
-    article #daftar .info #view .text{ /*font pada tombol edit*/
-        background-color: rgba(51,153,204,1);
-        color: white;
-        font-size: 16px;
-        padding: 16px 32px;
-        width: 55px;
     }
 }
