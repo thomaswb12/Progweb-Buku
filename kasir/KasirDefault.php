@@ -31,7 +31,6 @@
             include "Template/aside.php"
         ?>
         <div id="konten">
-            <?php include "Kasir - peminjaman/KontenKasirPeminjaman.php"?>
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>

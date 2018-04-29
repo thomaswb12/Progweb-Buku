@@ -26,30 +26,30 @@
         <tbody>
             <tr onclick="pencetTRPengembalian($(this))">
                 <td class="tandaTable"></td>
-                <td class="idBuku">1234567788</td>
-                <td class="judulBuku">Naruto</td>
-                <td class="tanggalPinjam">01/01/2018</td>
-                <td class="tanggalPengembalian">09/01/2018</td>
-                <td class="telat">-</td>
-                <td class="denda">Rp 0</td>
+                <td class="idBuku ganti">1234567788</td>
+                <td class="judulBuku ganti">Naruto</td>
+                <td class="tanggalPinjam ganti">01/01/2018</td>
+                <td class="tanggalPengembalian ganti">09/01/2018</td>
+                <td class="telat ganti">-</td>
+                <td class="denda ganti">Rp 0</td>
             </tr>
             <tr onclick="pencetTRPengembalian($(this))">
                 <td class="tandaTable"></td>
-                <td class="idBuku">1234567788</td>
-                <td class="judulBuku">Naruto</td>
-                <td class="tanggalPinjam">01/01/2018</td>
-                <td class="tanggalPengembalian">05/01/2018</td>
-                <td class="telat">1 hari</td>
-                <td class="denda">Rp 500</td>
+                <td class="idBuku ganti">1234567788</td>
+                <td class="judulBuku ganti">Naruto</td>
+                <td class="tanggalPinjam ganti">01/01/2018</td>
+                <td class="tanggalPengembalian ganti">05/01/2018</td>
+                <td class="telat ganti">1 hari</td>
+                <td class="denda ganti">Rp 500</td>
             </tr>
             <tr onclick="pencetTRPengembalian($(this))">
                 <td class="tandaTable"></td>
-                <td class="idBuku">1234567788</td>
-                <td class="judulBuku">Naruto</td>
-                <td class="tanggalPinjam">01/01/2018</td>
-                <td class="tanggalPengembalian">09/01/2018</td>
-                <td class="telat">-</td>
-                <td class="denda">Rp 0</td>
+                <td class="idBuku ganti">1234567788</td>
+                <td class="judulBuku ganti">Naruto</td>
+                <td class="tanggalPinjam ganti">01/01/2018</td>
+                <td class="tanggalPengembalian ganti">09/01/2018</td>
+                <td class="telat ganti">-</td>
+                <td class="denda ganti">Rp 0</td>
             </tr>
         </tbody>
         <tfoot>

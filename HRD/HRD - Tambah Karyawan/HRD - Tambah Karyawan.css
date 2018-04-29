@@ -98,10 +98,10 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
     }
-    article div#konten div#dataKaryawan div.kanan{
+    article div#konten div#dataKaryawan{
         float: none;
         text-align: center;
-        margin-right: 0%;
+        margin-right: auto;
     }
     article div#konten div#inputan{
         margin-left: 10px;
@@ -112,7 +112,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#konten input#namaKaryawan{
         margin-left: 96px;
     }
-    article div#konten input#jabatan{
+    article div#konten #selectJabatan{
         margin-left: 80px;
     }
     article div#konten input#email{

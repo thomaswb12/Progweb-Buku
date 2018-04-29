@@ -91,7 +91,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
     }
-    article div#konten div#dataKaryawan div.kanan{
+    article div#konten div#dataKaryawan{
         float: none;
         text-align: center;
         margin: auto;
@@ -100,8 +100,8 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin-left: 0px;
     }
     article div#konten #selectJabatan{
-        margin-left: 0px;
-        width: 200px;
+        margin-left: 88px;
+        width: 170px;
     }
     article div#konten input, article div#konten textarea#alamat{ /*semua kotak input dan textarea*/
         width: 150px;
