@@ -118,5 +118,8 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#konten #searching #selectSearchBy, article div#konten #sorting #selectSortBy{
         margin: auto;
     }
+
+ 
+
     /*--------utk article (bagian konten)---------*/
 }
