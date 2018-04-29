@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div id="daftarKomik" class="font15">
-                
+                <!-- kalau mau sambung database, yang ditiru yang bawah ya-->
                     <div class="infoKomik">
                         <img class="komik" src="miiko19.jpg"/>
                         <h4 class="judul">Hai Miiko! Vol.19</h4>
@@ -105,6 +105,7 @@
                         <p class="status">Available</p>
                     </div>
 
+                    <!-- ini yg ditiru-->
                     <div class="infoKomik favorit specialEdition" onclick="munculPopup($(this))">
                         <img class="komik" src="miiko19.jpg"/>
                         <h4 class="judul">Hai Miiko! Vol.19</h4>

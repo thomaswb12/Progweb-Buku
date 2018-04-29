@@ -3,7 +3,7 @@
 article div#konten div#periode{
     float: right;   /*letakkan di kanan*/
     width: 370px;
-    margin-right: 20px;
+    margin-right: 1px;
     margin-bottom: 10px;
 }
 article div#konten div#periode p, article div#konten div#periode #OK{
@@ -15,14 +15,14 @@ article div#konten div#periode #periodeAwal, article div#konten div#periode #per
 /*tabel laporan------*/
 article div#konten div#tabel{ /*div pembungkus tabel*/
     height: 65%;
-    width: 100%;
+    width: 98%;
     overflow-y: scroll;  /*scroll horizontal kalau overflow*/
     margin: auto;   /*ketengahin*/
     margin-top: 60px;
     clear: both;
 }
 table{  /*tabelnya*/
-    width: 95%;
+    width: 98%;
     margin: auto;
     border-collapse: collapse;
 }
@@ -72,7 +72,7 @@ td{
 #print{
     float: right;
     margin-top: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
     width: 100px;
 }
 /*------------------------bagian konten---------------------*/

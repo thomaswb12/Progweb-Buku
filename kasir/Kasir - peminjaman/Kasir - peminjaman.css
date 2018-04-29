@@ -113,7 +113,7 @@ th{
 /*tombol print nota*/
 article div#divTombol{  /*div bungkus 2 tombol dibawah*/
     float: right;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 article div#konten input#print{ /*tombol utk print*/
     font-size: 15px;
