@@ -81,7 +81,7 @@ function aside5(){
 function pencetTRPengembalian(temp){
     if($(temp).children("td.ganti").css("background-color") == "rgba(0, 100, 0, 0.6)"){
         $(temp).children("td.ganti").removeClass("green");
-        $(temp).children("td.tandaTable").html("<td class='tandaTable'></td>");
+        $(temp).children("td.tandaTable").html("<td class='tandaTable'><i class='fas fa-check' style='color:grey'></i></td>");
     } 
     else {
         $(temp).children("td.ganti").addClass("green");
