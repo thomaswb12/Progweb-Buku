@@ -79,10 +79,10 @@ function aside5(){
 }
 
 function pencetTRPengembalian(temp){
-    //alert(temp.html());
-    if($(temp).css("background-color") == "rgba(0, 100, 0, 0.6)") $(temp).removeClass("green");
+    //alert(temp.children("td.ganti"));
+    if($(temp).children("td.ganti").css("background-color") == "rgba(0, 100, 0, 0.6)") $(temp).children("td.ganti").removeClass("green");
     else {
-        $(temp).addClass("green");
+        $(temp).children("td.ganti").addClass("green");
     }
 }
 
