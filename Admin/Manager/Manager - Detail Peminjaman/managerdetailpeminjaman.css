@@ -1,0 +1,104 @@
+
+/*------------------------bagian aside---------------------*/
+
+/*------------------------bagian konten---------------------*/
+/*-----bagian data umum--------*/
+article div#konten table#dataMember{ /*data id, nama, email, dll*/
+    margin-left: 4%;
+    font-size: 20px;
+    width: 60%;
+}
+article div#konten table#dataMember .tableIcon{ /*kolom bagian icon orang, rumah, dll*/
+    width: 5%;
+}
+article div#konten table#dataMember .tableAtribut{ /*kolom bagian 'nama:','alamat:', dll*/
+    width: 17%;
+}
+article div#konten table#dataMember .tableValue{ /*kolom bagian isinya / valuenya*/
+    width: 78%;
+    text-overflow: ellipsis;    /*ubah jadi ... kalau isi kepanjangan*/
+    overflow: hidden;           /*lewat dr width, disembunyikan*/
+    white-space: nowrap;        /*tidak ada end line*/
+    max-width: 100px;
+    
+}
+/*-----bagian daftar komik yg dipinjam--------*/
+article div#konten div#daftarKomik{ /*div pembungkus tabel*/
+    height: 40%;
+    width: 95%;
+    overflow-y: scroll;  /*scroll horizontal kalau overflow*/
+    margin: auto;   /*ketengahin*/
+    margin-top: 30px;
+}
+article div#konten div#daftarKomik table#tabelDaftarKomik{  /*tabelnya*/
+    width: 95%;
+    margin-left: 5%;
+    border-collapse: collapse;
+}
+article div#konten table#tabelDaftarKomik th{ /*tabel baris paling atas*/
+    background-color: grey;
+    color: white;
+}
+article div#konten table#tabelDaftarKomik th, article div#konten table#tabelDaftarKomik td{ /*semua data didalam tabel*/
+    text-align: center;
+    border: 2px solid black; 
+}
+article div#konten table#tabelDaftarKomik .idBuku{ /*kolom id buku*/
+    width: 12%;
+}
+article div#konten table#tabelDaftarKomik .judulBuku{ /*kolom judul buku*/
+    width: 59%;
+}
+article div#konten table#tabelDaftarKomik .tanggalPinjam{   /*kolom tanggal pinjam*/
+    width: 12%;
+}
+article div#konten table#tabelDaftarKomik .tanggalPengembalian{ /*kolom tanggal pengembalian*/
+    width: 12%;
+}
+article div#konten table#tabelDaftarKomik .peringatan{ /*kolom untuk menampilkan ! (yang sudah terlambat / denda)*/
+    background-color: transparent;
+    width: 5%;
+    border: none;
+}
+/*------------------------bagian konten---------------------*/
+
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*-----------------utk konten-----------------*/
+    article div#konten{
+        float: none; /*hilangkan float agar pindah kebawah*/
+        width: 100%;
+    }
+    /*-----bagian data--------*/
+    article div#konten table#dataMember{ /*data id, nama, email, dll*/
+        margin-left: 0%;
+        font-size: 14px;
+        width: 100%;
+    }
+    article div#konten table#dataMember .tableIcon{ /*kolom bagian icon orang, rumah, dll*/
+        width: 5%;
+    }
+    article div#konten table#dataMember .tableAtribut{ /*kolom bagian 'nama:','alamat:', dll*/
+        width: 27%;
+    }
+    article div#konten table#dataMember .tableValue{ /*kolom bagian isinya / valuenya*/
+        width: 68%;
+        padding: 5px;
+    }
+    /*------- bagian tabel -----*/
+    article div#konten div#daftarKomik{ /*div pembungkus tabel*/
+        height: auto;
+        width: 100%;
+        overflow-y: auto;   /*tidak usah scroll*/
+        margin-top: 5px;
+    }
+    article div#konten div#daftarKomik table#tabelDaftarKomik{  /*tabelnya*/
+        width: 100%;
+        margin-left: 0%;
+        font-size: 10px;
+    }
+    /*-----------------utk konten-----------------*/
+    
+}
+

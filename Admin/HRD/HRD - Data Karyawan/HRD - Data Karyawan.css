@@ -1,0 +1,57 @@
+/*------------------------bagian artikel---------------------*/
+article{ /*article adlah semua yang ada dibawah header*/
+    height: 80%;
+    width: 100%;
+}
+/*------------------------bagian artikel---------------------*/
+
+/*------------------------bagian konten---------------------*/
+article div#konten{ /*konten (sebelahnya aside)*/
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+article div#konten h1{  /*konten*/
+    text-align: center; /*taruh tengah*/
+    font-size: 35px;
+    text-transform:uppercase;   /*supaya capslock*/
+}
+
+/*data karyawan------*/
+article div#dataKaryawan{ /*area data karyawan*/
+    margin: auto; 
+    height: 400px;
+    width: 94%;
+}
+article div#konten div#dataKaryawan div.kiri{
+    float: left;
+}
+article div#konten div#dataKaryawan div.kanan{
+    float: right;
+}
+article #dataKaryawan .detailKaryawan .photo{ /*utk fotonya*/
+    height: 300px;
+    width: inherit; /*selebar kotak putih*/
+}
+article #dataKaryawan .detailKaryawan p{ /*info karyawan*/
+    margin: 1px; /*jarak 1px dg kotaknya*/
+}
+article #dataKaryawan .detailKaryawan .tombol{ /*info karyawan*/
+    margin: auto;
+    margin-left: 79%;
+    font-weight: bold;
+    text-align: center;
+}
+/*daftar karyawan------*/
+
+/*------------------------bagian konten---------------------*/
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*-----------------utk konten-----------------*/
+    article div#konten{
+        float: none; /*hilangkan float agar pindah kebawah*/
+        width: 100%;
+    }
+    /*-----------------utk konten-----------------*/
+}

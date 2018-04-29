@@ -1,0 +1,3 @@
+function pencet(){
+    alert("wakwaw");
+}

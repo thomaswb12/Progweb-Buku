@@ -1,0 +1,100 @@
+
+/*------------------------bagian header---------------------*/
+header #tombolBack{ /*tombol utk kembali*/
+    float: left;
+    margin-top: 0.4%;
+    font-size: 50px;
+}
+/*------------------------bagian header---------------------*/
+
+/*------------------------bagian article---------------------*/
+article{ /*semua yang dibawah header*/
+    width: 95%;
+    height: 70%;
+    margin: auto;
+}
+article h1{ /*judul taruh tengah*/
+    text-align: center;
+}
+article div#gambarKomik{ /*div yang isinya gambar komik*/
+    float: left;    /*sebelah kiri*/
+    margin-right: 30px;
+}
+article div#gambarKomik img{ /*atur ukuran gambar komik*/
+    height: 290px;
+    margin-bottom: 10px;
+}
+article div#istimewa{ /*favorit dan special edition*/
+    float: right; /*taruh sebelah kanan*/
+    margin-right: 100px;
+}
+article div#sewa{
+    clear: right;
+    float: right;
+    margin-right: 30px;
+    padding: 0px 20px;
+    background-color: rgba(248,142,142,0.25);
+}
+article table#kiri{ /*dari ID buku sampai dipinjam*/
+    float: left; /*disebelahkan dg gambar komik*/
+    margin-top: -100px;
+}
+article div#keteranganKomik #statusKomik{ /*avail atau tidak*/
+    color: green; /*hijau utk avail, red utk unavail*/
+}
+article div#sinopsis{ /*bagian dinopsis*/
+    clear: both; /*pindah ke baris baru*/
+}
+article table#kanan{ /*dari genre sampai rak*/
+    margin-left: 50px;
+    margin-top: 110px;
+    float: left;
+}
+article div#sinopsis h4{ /*tulisan "Sinopsis:"*/
+    margin-bottom: 10px;
+}
+article div#sinopsis p#isiSinopsis{ /*isi sinopsisnya*/
+    margin-top: 3px;
+    height: 115px;
+    overflow-y: scroll; /*scroll vertical*/
+}
+/*------------------------bagian article---------------------*/
+
+
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    /*-----------------header-----------------*/
+    header #tombolBack{
+        font-size: 40px;
+    }
+    /*-----------------header-----------------*/
+
+    /*-----------------article-----------------*/
+    article div#gambarKomik{    /*gambar taruh tengah*/
+        float: none;
+        text-align: center;
+    }
+    article div#gambarKomik img{    /*gambar dikecilkan*/
+        height: 230px;
+    }
+    article div#istimewa{ /*tulisan FAVORIT dan SPECIAL dikirikan*/
+        float: none;
+        text-align: left;
+    }
+    article table#kiri, article table#kanan{    /*dari ID smpai rak taruh tengah*/
+        float: none;
+        margin: 0px;
+    }
+    article table#kanan{
+        width: 65%;
+    }
+    article table#kanan td{
+        width: 50%;
+    }
+    article div#sinopsis p#isiSinopsis{ /*yang versi smartphone, sinopsis tidak ada scroll box nya*/
+        overflow-y: unset;
+    }
+    /*-----------------article-----------------*/
+}
+/*---------------------------media query---------------------------*/

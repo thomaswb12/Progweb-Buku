@@ -12,8 +12,8 @@
         <hr id="asidehr2"/>
             <h3 class="blue" id="aside7"><pre>   </pre><span></span>Daftar Komik</h3>
             <hr id="asidehr7"/>
-            <h3 class="blue" id="aside26"><pre>      </pre><span></span>Edit Komik</h3>
-                <hr id="asidehr26"/>
+                <h3 class="blue" id="aside26"><pre>      </pre><span></span>Edit Komik</h3>
+                    <hr id="asidehr26"/>
             <h3 class="blue" id="aside8"><pre>   </pre><span></span>Tambah Komik</h3>
             <hr id="asidehr8"/>
             <h3 class="blue" id="aside9"><pre>   </pre><span></span>Daftar Penerbit</h3>
@@ -32,8 +32,10 @@
         <hr id="asidehr3"/>
             <h3 class="blue" id="aside15"><pre>   </pre><span></span>Daftar Karyawan</h3>
             <hr id="asidehr15"/>
-                <h3 class="blue" id="aside27"><pre>      </pre><span></span>Edit Karyawan</h3>
+                <h3 class="blue" id="aside27"><pre>      </pre><span></span>Data Karyawan</h3>
                 <hr id="asidehr27"/>
+                <h3 class="blue" id="aside28"><pre>      </pre><span></span>Edit Karyawan</h3>
+                <hr id="asidehr28"/>
             <h3 class="blue" id="aside16"><pre>   </pre><span></span>Tambah Karyawan</h3>
             <hr id="asidehr16"/>
             <h3 class="blue" id="aside17"><pre>   </pre><span></span>Daftar Jabatan</h3>
@@ -50,7 +52,7 @@
             <hr id="asidehr21"/>
             <h3 class="blue" id="aside22"><pre>   </pre><span></span>Tambah Member</h3>
             <hr id="asidehr22"/>
-            <h3 class="blue" id="aside23"><pre>   </pre><span></span>Tambah Daftar</h3>
+            <h3 class="blue" id="aside23"><pre>   </pre><span></span>Daftar Member</h3>
             <hr id="asidehr23"/>
         <h3 class="blue" id="aside5"><span></span>MANAGER</h3>
         <hr id="asidehr5"/>
