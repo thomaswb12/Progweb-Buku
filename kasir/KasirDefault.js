@@ -79,10 +79,13 @@ function aside5(){
 }
 
 function pencetTRPengembalian(temp){
-    //alert(temp.children("td.ganti"));
-    if($(temp).children("td.ganti").css("background-color") == "rgba(0, 100, 0, 0.6)") $(temp).children("td.ganti").removeClass("green");
+    if($(temp).children("td.ganti").css("background-color") == "rgba(0, 100, 0, 0.6)"){
+        $(temp).children("td.ganti").removeClass("green");
+        $(temp).children("td.tandaTable").html("<td class='tandaTable'></td>");
+    } 
     else {
         $(temp).children("td.ganti").addClass("green");
+        $(temp).children("td.tandaTable").html("<td class='tandaTable'><i class='fas fa-check' style='color:green'></i></td>");
     }
 }
 
