@@ -7,6 +7,8 @@ $(document).ready(function(){
         backToTop();
     });
 
+    
+
     //------ menandai option aside yg sedang terpilih ----
     //$('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
 
@@ -39,32 +41,31 @@ $(document).ready(function(){
     $("#aside8").click(function(){
         aside8();
     });
-    
-    $("#edit").click(function(){
-        edit();
-    });
-    
+
 });
 
 $(window).on('load', function () {
-        var c = $.session.get('page');
-        if(c == null || c == 1)
-            aside1();
-        else if(c == 2)
-            aside2();
-        else if(c == 3)
-            aside3();
-        else if(c == 4)
-            aside4();
-        else if(c == 5)
-            aside5();
-        else if(c == 6)
-            aside6();
-        else if(c == 7)
-            aside7();
-        else if(c == 8)
-            aside8();
-    });
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
+    var c = $.session.get('page');
+    if(c == null || c == 1)
+        aside1();
+    else if(c == 2)
+        aside2();
+    else if(c == 3)
+        aside3();
+    else if(c == 4)
+        aside4();
+    else if(c == 5)
+        aside5();
+    else if(c == 6)
+        aside6();
+    else if(c == 7)
+        aside7();
+    else if(c == 8)
+        aside8();
+});
+
 //------------------ fungsi ketika window di resize --------------
 $(window).resize(function(){
     if ($(window).width() > 680) {   //ukuran dekstop
@@ -79,11 +80,32 @@ function edit(){
     $("div#konten").load("Gudang-EditKomik/editKomik.php");
     $("div#gantiHead").load("Gudang-EditKomik/headEditKomik.html");
 }
+function view(){
+    $("#asideDetail").addClass('terpilih');
+    $("#dropdown").show();
+    $("#asideDetail").show();
+    $("#dropdown").appendTo('#aside1 span');
+    $("#centang").appendTo('#asideDetail span');
+    $("div#konten").load("Gudang-detailKomik/detailKomik.html");
+    $("div#gantiHead").load("Gudang-detailKomik/headDetailKomik.html");
+}
+
+function back(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside1 span');
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
+    $("#aside1").addClass('terpilih');
+    $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
+    $("div#gantiHead").load("Gudang%20-%20Daftar%20Komik/headDaftarKomik.php");
+    $.session.set('page','1');
+}
 
 function aside1(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
+    $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Komik/headDaftarKomik.php");
     $.session.set('page','1');
@@ -93,6 +115,8 @@ function aside2(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Tambah%20Komik/tambahKomik.html");
     $("div#gantiHead").load("Gudang%20-%20Tambah%20Komik/headTambahKomik.html");
     $.session.set('page','2');
@@ -102,6 +126,8 @@ function aside3(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Penerbit/daftarPenerbit.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Penerbit/headDaftarPenerbit.php");
     $.session.set('page','3');
@@ -111,6 +137,8 @@ function aside4(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
     $("#aside4").addClass('terpilih');
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.html");
     $("div#gantiHead").load("Gudang%20-%20Tambah%20Penerbit/headTambahPenerbit.html");
     $.session.set('page','4');
@@ -120,6 +148,8 @@ function aside5(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside5 span');
     $("#aside5").addClass('terpilih');
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Pengarang/daftarPengarang.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Pengarang/headDaftarPengarang.php");
     $.session.set('page','5');
@@ -129,6 +159,8 @@ function aside6(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside6 span');
     $("#aside6").addClass('terpilih');
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Tambah%20Pengarang/tambahPengarang.html");
     $("div#gantiHead").load("Gudang%20-%20Tambah%20Pengarang/headTambahPengarang.html");
     $.session.set('page','6');
@@ -138,6 +170,8 @@ function aside7(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside7 span');
     $("#aside7").addClass('terpilih');
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Supplier/daftarSupplier.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Supplier/headDaftarSupplier.php");
     $.session.set('page','7');
@@ -147,6 +181,8 @@ function aside8(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside8 span');
     $("#aside8").addClass('terpilih');
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Tambah%20Supplier/tambahSupplier.html");
     $("div#gantiHead").load("Gudang%20-%20Tambah%20Supplier/headTambahSupplier.html");
     $.session.set('page','8');
