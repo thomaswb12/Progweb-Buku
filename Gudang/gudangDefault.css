@@ -115,9 +115,10 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 
 /*------------------------bagian isi (daftar nya)---------------------*/
 article div#daftar{ /*sekotak daftar */
-    margin: auto;   /*ditaruh tengah*/
+    margin-left: 50px; /*ditaruh tengah*/
+    margin-right: 0px;
     height: 400px;
-    width: 91%;
+    width: 95.5%;
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
 article #daftar .info{ /*kotak masing2  yang isinya info */
@@ -153,7 +154,18 @@ article #daftar .info #edit{ /*tombol edit*/
     transition: .25s ease;
     opacity: 0;
     position: absolute;
-    top: 50%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+article #daftar .info #view{ /*tombol edit*/
+    transition: .25s ease;
+    opacity: 0;
+    position: absolute;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -167,11 +179,30 @@ article #daftar .info:hover .foto{ /*agar foto opacity berkurang saat di hover*/
 article #daftar .info:hover #edit{ /*agar tombol edit muncul*/
     opacity: 1;
 }
+article #daftar .info:hover #view{ /*agar tombol edit muncul*/
+    opacity: 1;
+}
+
+
 article #daftar .info #edit .text{ /*font pada tombol edit*/
     background-color: rgba(51,153,204,1);
     color: white;
     font-size: 16px;
     padding: 16px 32px;
+    width: 55px;
+}
+article #daftar .info #view .text{ /*font pada tombol edit*/
+    background-color: rgba(51,153,204,1);
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    width: 55px;
+}
+article #daftar .info #edit .text:hover{ /*saat tombol di hover warnanya jadi gray*/
+    background-color: gray;
+}
+article #daftar .info #view .text:hover{ /*saat tombol di hover warnanya jadi gray*/
+    background-color: gray;
 }
 
 /*------------------------bagian keluar tombol edit---------------------*/
