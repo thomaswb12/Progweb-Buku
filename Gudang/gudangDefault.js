@@ -41,7 +41,6 @@ $(document).ready(function(){
     $("#aside8").click(function(){
         aside8();
     });
-
 });
 
 $(window).on('load', function () {
@@ -105,6 +104,7 @@ function aside1(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
+    $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Komik/headDaftarKomik.php");

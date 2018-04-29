@@ -122,6 +122,9 @@
     <br/><br/>
     <div id="popupScroll">
         <p id="popupJudul"></p>
+        <div id="divImg">
+            <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
+        </div>
         <div id="istimewa">
             <h3 id="popupPopular" style="color:red;"></h3>
             <h3 id="popupSpecial" style="color:orange;"></h3>
@@ -163,7 +166,9 @@
             <tr><td>Rak</td>
                 <td id="popupRak"></td></tr>
         </table>
-        <p>Sinopsis</p>
-        <p id="popupSinopsis"></p>
+        <div id="divSinopsis">
+            <p>Sinopsis</p>
+            <p id="popupSinopsis"></p>
+        </div>
     </div>
 </div>

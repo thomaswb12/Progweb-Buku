@@ -313,6 +313,9 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    body{
+        position: relative;
+    }
     /*-----------------header-----------------*/
     header{ /*header height nya ditambahi, semua element di ketengahi*/
         height: 180px;
@@ -346,7 +349,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     /*-----------------utk aside-----------------*/
 
     /*-----------------utk konten-----------------*/
-    article div#konten{
+    article div#konten, #kiri, #kanan{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
     }
