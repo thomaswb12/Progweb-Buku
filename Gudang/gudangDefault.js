@@ -94,6 +94,7 @@ function view(){
 function back(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
+    $("#aside1+hr").hide();    
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("#aside1").addClass('terpilih');
