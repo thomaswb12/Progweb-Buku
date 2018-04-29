@@ -44,6 +44,7 @@ $(document).ready(function(){
     $("#aside26").click(function(){aside26();});
     $("#aside27").click(function(){aside27();});
 
+    //menyembunyikan navigasi
     $("#aside7").hide();
     $("#aside8").hide();
     $("#aside9").hide();
@@ -65,6 +66,29 @@ $(document).ready(function(){
     $("#aside25").hide();
     $("#aside26").hide();
     $("#aside27").hide();
+
+    $("#asidehr7").hide();
+    $("#asidehr8").hide();
+    $("#asidehr9").hide();
+    $("#asidehr10").hide();
+    $("#asidehr11").hide();
+    $("#asidehr12").hide();
+    $("#asidehr13").hide();
+    $("#asidehr14").hide();
+    $("#asidehr15").hide();
+    $("#asidehr16").hide();
+    $("#asidehr17").hide();
+    $("#asidehr18").hide();
+    $("#asidehr19").hide();
+    $("#asidehr20").hide();
+    $("#asidehr21").hide();
+    $("#asidehr22").hide();
+    $("#asidehr23").hide();
+    $("#asidehr24").hide();
+    $("#asidehr25").hide();
+    $("#asidehr26").hide();
+    $("#asidehr27").hide();
+    //menyembunyikan navigasi
 });
 
 $(window).on('load', function () {
@@ -126,6 +150,14 @@ $(window).on('load', function () {
 });
 
 function aside1(){
+    if($("#aside6").is(":hidden")){
+        $("#aside6").show();
+        $("#asidehr6").show();
+    }
+    else{
+        $("#aside6").hide();
+        $("#asidehr6").hide();
+    }
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
@@ -134,6 +166,42 @@ function aside1(){
     $.session.set('page','1');
 }
 function aside2(){
+    if($("#aside7").is(":hidden")){
+        $("#aside7").show();
+        $("#asidehr7").show();
+        $("#aside8").show();
+        $("#asidehr8").show();
+        $("#aside9").show();
+        $("#asidehr9").show();
+        $("#aside10").show();
+        $("#asidehr10").show();
+        $("#aside11").show();
+        $("#asidehr11").show();
+        $("#aside12").show();
+        $("#asidehr12").show();
+        $("#aside13").show();
+        $("#asidehr13").show();
+        $("#aside14").show();
+        $("#asidehr14").show();
+    }
+    else{
+        $("#aside7").hide();
+        $("#asidehr7").hide();
+        $("#aside8").hide();
+        $("#asidehr8").hide();
+        $("#aside9").hide();
+        $("#asidehr9").hide();
+        $("#aside10").hide();
+        $("#asidehr10").hide();
+        $("#aside11").hide();
+        $("#asidehr11").hide();
+        $("#aside12").hide();
+        $("#asidehr12").hide();
+        $("#aside13").hide();
+        $("#asidehr13").hide();
+        $("#aside14").hide();
+        $("#asidehr14").hide();
+    }
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
@@ -142,6 +210,26 @@ function aside2(){
     $.session.set('page','2');
 }
 function aside3(){
+    if($("#aside15").is(":hidden")){
+        $("#aside15").show();
+        $("#asidehr15").show();
+        $("#aside16").show();
+        $("#asidehr16").show();
+        $("#aside17").show();
+        $("#asidehr17").show();
+        $("#aside18").show();
+        $("#asidehr18").show();
+    }
+    else{
+        $("#aside15").hide();
+        $("#asidehr15").hide();
+        $("#aside16").hide();
+        $("#asidehr16").hide();
+        $("#aside17").hide();
+        $("#asidehr17").hide();
+        $("#aside18").hide();
+        $("#asidehr18").hide();
+    }
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
@@ -150,6 +238,30 @@ function aside3(){
     $.session.set('page','3');
 }
 function aside4(){
+    if($("#aside19").is(":hidden")){
+        $("#aside19").show();
+        $("#asidehr19").show();
+        $("#aside20").show();
+        $("#asidehr20").show();
+        $("#aside21").show();
+        $("#asidehr21").show();
+        $("#aside22").show();
+        $("#asidehr22").show();
+        $("#aside23").show();
+        $("#asidehr23").show();
+    }
+    else{
+        $("#aside19").hide();
+        $("#asidehr19").hide();
+        $("#aside20").hide();
+        $("#asidehr20").hide();
+        $("#aside21").hide();
+        $("#asidehr21").hide();
+        $("#aside22").hide();
+        $("#asidehr22").hide();
+        $("#aside23").hide();
+        $("#asidehr23").hide();
+    }
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
     $("#aside4").addClass('terpilih');
@@ -158,6 +270,18 @@ function aside4(){
     $.session.set('page','4');
 }
 function aside5(){
+    if($("#aside24").is(":hidden")){
+        $("#aside24").show();
+        $("#asidehr24").show();
+        $("#aside25").show();
+        $("#asidehr25").show();
+    }
+    else{
+        $("#aside24").hide();
+        $("#asidehr24").hide();
+        $("#aside25").hide();
+        $("#asidehr25").hide();
+    }
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside5 span');
     $("#aside5").addClass('terpilih');
