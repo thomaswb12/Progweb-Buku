@@ -43,8 +43,9 @@ article div#konten input#idKaryawan{
 article div#konten input#namaKaryawan{
     margin-left: 105px;
 }
-article div#konten input#jabatan{
-    margin-left: 88px;
+article div#konten #selectJabatan{ /*"sort by" (dropbox-nya)*/
+    margin-left: 88px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 220px;   /*lebar dropbox*/
 }
 article div#konten input#email{
     margin-left: 106px;
