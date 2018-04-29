@@ -12,6 +12,7 @@ body{ /*supaya mentok selayar*/
     padding: 0px;
     height: 100%;
     width: 100%;
+    position: fixed;
 }
 .blue{ /*utk font-font yg warnanya biru*/
     color: #000066;
@@ -140,6 +141,8 @@ article div#konten input.tombol:hover{
 .noBorder{
     border: none;
 }
+
+.green{background-color: rgba(0, 100, 0, 0.6) !important;}
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
@@ -160,6 +163,9 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    body{
+        position: unset;
+    }
     /*-----------------header-----------------*/
     header{ /*header height nya ditambahi, semua element di ketengahi*/
         height: 180px;

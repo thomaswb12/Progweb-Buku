@@ -1,95 +1,9 @@
-html {  /*untuk setting background dan font keseluruhan page*/
-    background: url('../../background.jpg') no-repeat center center fixed; /*setting background, src diperhatikan! diganti sesuai kebutuhan*/
-    -webkit-background-size: cover; /*setting background*/
-    -moz-background-size: cover;    /*setting background*/
-    -o-background-size: cover;     /*setting background*/
-    background-size: cover;        /*setting background*/
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    height: 100%;
-}
-body{ /*supaya mentok selayar*/
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    width: 100%;
-}
-.blue{ /*utk font-font yg warnanya biru*/
-    color: #000066;
-}
-.font15{ /*utk font yang ukurannya 24px*/
-    font-size: 18px;
-}
-
-/*------------------------bagian header---------------------*/
-header{ /*bagian atas yang isinya logo, tulisan welcome, logout dan tanggal*/
-    background-color: rgba(0,0,51,0.23);
-    height:20%;
-    width: 100%;
-}
-header #logo{  /*penempatan gambar logo tepoz di kiri atas*/
-    margin-top: 0%;
-    padding-top: 0%;
-    height:90px;
-    top: 0.2%;
-    max-width:40%;
-}
-header p#welcome{   /*tulisan welcome smpai logout di pojok kanan atas*/
-    float: right;   /*penempatan ke pojok kanan */
-    margin-right: 1%;
-}
-header #logOut{  /*utk logout (di pojok kanan atas)*/
-    font-weight: bold;
-}
-header p#tanggal{   /*penampil tanggal di kanan atas*/
-    clear: both;    /*utk pindah baris dari tulisan welcome*/
-    float: right;   /*letakkan di kanan*/
-    font-style: italic;
-    margin-right: 1%; /*supaya ada jarak sedikit dengan pojok*/
-}
-/*------------------------bagian header---------------------*/
-
-/*------------------------bagian artikel---------------------*/
-article{ /*article adlah semua yang ada dibawah header*/
-    height: 80%;
-    width: 100%;
-}
-/*------------------------bagian artikel---------------------*/
-
-/*------------------------bagian aside---------------------*/
-article div#aside{ /*aside*/
-    float: left; /*taruh kiri*/
-    width: 20%;
-    height: 100%;
-    background-color: rgba(255,255,255,0.46);
-}
-article div#aside hr{ /*garis hr dibuat tidak ada jarak dg element lainnya*/
-    margin: 0px;
-}
-article div#aside h3{ /*option di aside, pengaturan jaraknya dg elemen lainnya*/
-    padding-top: 9px;
-    padding-bottom: 9px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-article div#aside h3:hover{ /*jika di hover, warnanya abu2*/
-    background-color: gray;
-}
-article div#aside h3 pre{
-    display: inline;
-}
-.terpilih{ /*utk option aside yg sedang dipilih (disini diasumsikan #aside1 yg terpilih, penambahan class di .js)*/
-    background-color: rgba(51,153,204,0.52); /*aside yg sedang terpilih warna biru*/
-}
-article div#aside div#minimizeOption{ /*minimize option*/
-    display: none; /*tidak ditampilkan di layar versi dekstop*/
-}
-/*------------------------bagian aside---------------------*/
-
 /*------------------------bagian konten---------------------*/
 article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*judul*/
     text-align: center; /*taruh tengah*/
@@ -101,7 +15,7 @@ article div#konten div#dataKaryawan div.kiri{
 }
 article div#konten div#dataKaryawan div.kanan{
     float: right;
-    margin-right: 1%;
+    margin-right: 50px;
 }
 article #dataKaryawan .detailKaryawan .peraturan{ /*format foto*/
     font-size: 13px;
@@ -117,13 +31,14 @@ article div#konten input{
     width: 200px;
 }
 article div#konten input#idKaryawan{
-    margin-left: 135px;
+    margin-left: 130px;
 }
 article div#konten input#namaKaryawan{
     margin-left: 105px;
 }
-article div#konten input#jabatan{
-    margin-left: 88px;
+article div#konten #selectJabatan{ /*"sort by" (dropbox-nya)*/
+    margin-left: 88px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 220px;   /*lebar dropbox*/
 }
 article div#konten input#email{
     margin-left: 106px;
@@ -139,12 +54,17 @@ article div#konten textarea#alamat{
     height: 100px;
     margin-left: 100px;
 }
+article div#konten input#pass1{
+    margin-left: 83px;
+}
+article div#konten input#pass2{
+    margin-left: 20px;
+}
 /*tombol utk save -------*/
 article div#konten input#tombolSave{
     width: 100px;
     float: right;
-    margin-top: 30px;
-    margin-right: 10px;
+    margin-top: 35%;
 }
 /*------------------------bagian konten---------------------*/
 
@@ -166,42 +86,25 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
-    /*-----------------header-----------------*/
-    header{ /*header height nya ditambahi, semua element di ketengahi*/
-        height: 180px;
-        text-align: center;
-    }
-    header #logo{ /*logo tepoz supaya bisa ikut ketengah*/
-        float: none;
-    }
-    header p#welcome, header p#tanggal{ /*hilangi floatnya, supaya ikut ketengah*/
-        float: none;
-    }
-    /*-----------------header-----------------*/
-
-    /*-----------------utk aside-----------------*/
-    article div#aside{
-        float: none; /*hilangkan float*/
-        width: 100%; /*full widthnya*/
-        text-align: center; /*tengah*/
-        height: auto; /*menyesuaikan isinya*/
-        background-color: rgba(255,255,255,0.46);
-    }
-    article div#aside div#minimizeOption{ /*tombol utk slidedown option2 pd aside*/
-        display: block; /*tampilkan ke layar*/
-    }
-    article div#aside div#minimizeOption h3{
-        background-color: #000066; /*atur warna background*/
-    }
-    article div#aside div#option{ /*option2 pada aside*/
-        display: none; /*sembunyikan*/
-    }
-    /*-----------------utk aside-----------------*/
-
     /*-----------------utk konten-----------------*/
     article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+    }
+    article div#konten div#dataKaryawan div.kanan{
+        float: none;
+        text-align: center;
+        margin: auto;
+    }
+    article div#konten div#inputan{
+        margin-left: 0px;
+    }
+    article div#konten #selectJabatan{
+        margin-left: 0px;
+        width: 200px;
+    }
+    article div#konten input, article div#konten textarea#alamat{ /*semua kotak input dan textarea*/
+        width: 150px;
     }
     /*-----------------utk konten-----------------*/
 }
