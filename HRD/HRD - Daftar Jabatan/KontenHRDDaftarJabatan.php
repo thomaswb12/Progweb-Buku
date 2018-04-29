@@ -25,12 +25,12 @@
     <div id="daftarJabatan">
         <!-- ini jabatan ke-1 -->
         <div class="daftarSatuan">
-            <h3 class="judulJabatan">Administrator</h3>
+            <h3 class="judulJabatan">Gudang</h3>
             <div class="kiri">
                 <label>ID Jabatan</label>
                 <input type="text" class="idJabatan" name="idJabatan" value="0001"/><br/>
                 <label>Nama Jabatan</label>
-                <input type="text" class="namaJabatan" name="namaJabatan" value="Administrator"/><br/>
+                <input type="text" class="namaJabatan" name="namaJabatan" value="Gudang"/><br/>
                 <label>Gaji</label>
                 <input type="text" class="gaji" name="gaji" value="Rp 9.000.000"/><br/>
             </div>
@@ -38,7 +38,7 @@
                 <div>
                     <label>Keterangan</label>
                 </div>
-                <textarea class="keterangan" name="keterangan">Administrator bekerja untuk mengurusi segala hal</textarea>
+                <textarea class="keterangan" name="keterangan">Gudang bekerja untuk mengurusi stok komik, mengurusi bagian informasi tentang masing-masing komik, serta mengurusi urusan dengan penerbit komik tersebut</textarea>
                 <br/><br/>
                 <div class="bagianTombol">
                     <input type="button" class="tombol" id="tombolSave" name="tombolSave" value="SAVE"/>
