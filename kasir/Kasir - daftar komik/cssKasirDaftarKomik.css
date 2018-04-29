@@ -170,6 +170,20 @@ div#popup div#divSinopsis{
     margin-right: 50px;
     text-align: justify;
 }
+/*----------tombol utk up ke atas----------*/
+#tombolDown{ /*peletakkannya dikanan bawah dan fixed*/
+    text-align: center;
+    position: fixed; /*tetap ada di bawah walau discroll*/
+    bottom: 6%;     /*jarak dengan bottom window*/
+    right: 49%;      /*jarak dg kanan window*/
+    font-size: 30px; /*besar tombol*/
+    opacity: 0.2; /*transparancy*/
+    display: block; /*tidak ditampilkan (ditampilkan saat scrolldown dan di media query utk HP, setting di file .js)*/
+}
+#tombolDown p{
+    margin: 0px;
+}
+/*----------tombol utk up ke atas----------*/
 /*pop up message*/
 
 
@@ -279,5 +293,12 @@ div#popup div#divSinopsis{
         margin-left: 10px;
         margin-right: 10px;
     }
+    /*----------tombol utk up ke atas----------*/
+    #tombolDown{ /*peletakkannya dikanan bawah dan fixed*/
+        bottom: 10%;     /*jarak dengan bottom window*/
+        right: 47%;      /*jarak dg kanan window*/
+        opacity: 0.7;
+    }
+    /*----------tombol utk up ke atas----------*/
     /*pop up message*/
 }

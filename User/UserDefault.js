@@ -6,7 +6,10 @@ $(document).ready(function(){
     $(window).on('scroll', function () {
         backToTop();
     });
-
+    //-------- kalau poup nya di scroll, panggil fungsi scrollDown(), biar simbolnya hilang-----
+    $("#popupScroll").on('scroll', function () {
+        scrollDown();
+    });
 });
 
 //----- fungsi menampilkan & sembunyikan tombol utk balik ke atas ---------
@@ -16,6 +19,16 @@ function backToTop(){
         $('#tombolUp').css('display','block');
     } else { //bila user belum scroll jauh, tombol disembunyikan
         $('#tombolUp').css('display','none');
+    }
+}
+
+//----- fungsi menampilkan & sembunyikan petunjuk scroll down saat POP UP ---------
+function scrollDown(){
+    var scrollTop = $("#popupScroll").scrollTop(); //sejauh apa user telah meng-scroll
+    if (scrollTop > 120) {  //bila user sudah scroll lebih besar dari 120, tombol disembunyikan
+        $('#tombolDown').css('display','none');
+    } else { //bila user belum scroll jauh, tombol ditampilkan
+        $('#tombolDown').css('display','block');
     }
 }
 
