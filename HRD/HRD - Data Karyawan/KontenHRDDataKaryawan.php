@@ -1,10 +1,10 @@
-<div id="konten">
+
             <h1>Data Karyawan</h1>
 
             <div id="dataKaryawan" class="font15">
                 <div class="detailKaryawan">
                     <div class="kanan">
-                        <button type="button" class="tombol" name="tombolEdit"><i class="fas fa-edit"></i>Edit</button><br><br>
+                        <button type="button" class="tombol" name="tombolEdit" onclick="aside3()"><i class="fas fa-edit"></i>Edit</button><br><br>
                         <img class="photo" src="profile_pic.jpg"/>
                     </div>
                     <div class="kiri">
@@ -49,4 +49,3 @@
                     </div>
                 </div>
             </div>
-        </div>

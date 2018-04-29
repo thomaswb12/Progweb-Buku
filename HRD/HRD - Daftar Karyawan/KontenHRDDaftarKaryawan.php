@@ -40,7 +40,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td class="more" onclick="aside2()">Details >></td>
             </tr>
         </table>
     </div>
