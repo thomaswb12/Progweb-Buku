@@ -44,6 +44,7 @@ $(document).ready(function(){
 });
 
 $(window).on('load', function () {
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     var c = $.session.get('page');
@@ -82,6 +83,7 @@ function edit(){
 function view(){
     $("#asideDetail").addClass('terpilih');
     $("#dropdown").show();
+    $("#aside1+hr").show();
     $("#asideDetail").show();
     $("#dropdown").appendTo('#aside1 span');
     $("#centang").appendTo('#asideDetail span');
@@ -92,6 +94,7 @@ function view(){
 function back(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
+    $("#aside1+hr").hide();    
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("#aside1").addClass('terpilih');
@@ -104,6 +107,7 @@ function aside1(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
@@ -115,6 +119,7 @@ function aside2(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Tambah%20Komik/tambahKomik.html");
@@ -126,6 +131,7 @@ function aside3(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Penerbit/daftarPenerbit.php");
@@ -137,6 +143,7 @@ function aside4(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
     $("#aside4").addClass('terpilih');
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.html");
@@ -148,6 +155,7 @@ function aside5(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside5 span');
     $("#aside5").addClass('terpilih');
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Pengarang/daftarPengarang.php");
@@ -159,6 +167,7 @@ function aside6(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside6 span');
     $("#aside6").addClass('terpilih');
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Tambah%20Pengarang/tambahPengarang.html");
@@ -170,6 +179,7 @@ function aside7(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside7 span');
     $("#aside7").addClass('terpilih');
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Daftar%20Supplier/daftarSupplier.php");
@@ -181,6 +191,7 @@ function aside8(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside8 span');
     $("#aside8").addClass('terpilih');
+    $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
     $("div#konten").load("Gudang%20-%20Tambah%20Supplier/tambahSupplier.html");
