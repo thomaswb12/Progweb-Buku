@@ -25,7 +25,7 @@
         <body>
             <header>
                 <img src="../logobaru.png" id="logo"/>
-                <p class="blue font15" id="welcome">Welcome, <span id="namaUser">our customer</span> | <a href="../" style="text-decoration:none;"><span id="logOut">Log Out</span></a></p>
+                <p class="blue font15" id="welcome">Welcome, <span id="namaUser">Erinda Resha</span> | <a href="../" style="text-decoration:none;"><span id="logOut">Log Out</span></a></p>
                 <p id="tanggal" class="blue font15">tanggal</p>
             </header>
             <article>
