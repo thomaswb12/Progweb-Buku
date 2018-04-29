@@ -212,6 +212,10 @@
                         <p>Sinopsis</p>
                         <p id="popupSinopsis"></p>
                     </div>
+                    <div id="tombolDown">
+                        <i class="fas fa-chevron-circle-down"></i>
+                        <p>Scroll</p>
+                    </div>
                 </div>
             </div>
         </body>
