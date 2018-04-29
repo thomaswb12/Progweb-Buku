@@ -233,8 +233,8 @@ function aside3(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Edit%20Karyawan/KontenHRDEditKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Edit%20Karyawan/HeadHRDEditKaryawan.php");
+    //$("div#konten").load("../HRD/HRD%20-%20Daftar%20Karyawan/KontenHRDDaftarKaryawan.php");
+    //$("div#gantiHead").load("../HRD/HRD%20-%20Daftar%20Karyawan/HeadHRDDaftarKaryawan.php");
     $.session.set('page','3');
 }
 function aside4(){
@@ -296,6 +296,174 @@ function aside6(){
     $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
     $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
     $.session.set('page','6');
+}
+function aside7(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside7 span');
+    $("#aside7").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','7');
+}
+function aside8(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside8 span');
+    $("#aside8").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','8');
+}
+function aside9(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside9 span');
+    $("#aside9").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','9');
+}
+function aside10(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside10 span');
+    $("#aside10").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','10');
+}
+function aside11(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside11 span');
+    $("#aside11").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','11');
+}
+function aside12(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside12 span');
+    $("#aside12").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','12');
+}
+function aside13(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside13 span');
+    $("#aside13").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','13');
+}
+function aside14(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside14 span');
+    $("#aside14").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','14');
+}
+function aside15(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside15 span');
+    $("#aside15").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','15');
+}
+function aside16(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside16 span');
+    $("#aside16").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','16');
+}
+function aside17(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside17 span');
+    $("#aside17").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','17');
+}
+function aside18(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside18 span');
+    $("#aside18").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','18');
+}
+function aside19(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside19 span');
+    $("#aside19").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','19');
+}
+function aside20(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside20 span');
+    $("#aside20").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','20');
+}
+function aside21(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside21 span');
+    $("#aside21").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','21');
+}
+function aside22(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside22 span');
+    $("#aside22").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','22');
+}
+function aside23(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside23 span');
+    $("#aside23").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','23');
+}
+function aside24(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside24 span');
+    $("#aside24").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','24');
+}
+function aside25(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside25 span');
+    $("#aside25").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','25');
+}
+function aside26(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside26 span');
+    $("#aside26").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','26');
+}
+function aside27(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside27 span');
+    $("#aside27").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','27');
 }
 
 function pencetTRPengembalian(temp){
