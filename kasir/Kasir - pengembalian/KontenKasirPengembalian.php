@@ -25,7 +25,7 @@
         </thead>
         <tbody>
             <tr onclick="pencetTRPengembalian($(this))">
-                <td class="tandaTable"></td>
+                <td class="tandaTable"><i class='fas fa-check' style='color:grey'></i></td>
                 <td class="idBuku ganti">1234567788</td>
                 <td class="judulBuku ganti">Naruto</td>
                 <td class="tanggalPinjam ganti">01/01/2018</td>
@@ -34,7 +34,7 @@
                 <td class="denda ganti">Rp 0</td>
             </tr>
             <tr onclick="pencetTRPengembalian($(this))">
-                <td class="tandaTable"></td>
+                <td class="tandaTable"><i class='fas fa-check' style='color:grey'></i></td>
                 <td class="idBuku ganti">1234567788</td>
                 <td class="judulBuku ganti">Naruto</td>
                 <td class="tanggalPinjam ganti">01/01/2018</td>
@@ -43,7 +43,7 @@
                 <td class="denda ganti">Rp 500</td>
             </tr>
             <tr onclick="pencetTRPengembalian($(this))">
-                <td class="tandaTable"></td>
+                <td class="tandaTable"><i class='fas fa-check' style='color:grey'></i></td>
                 <td class="idBuku ganti">1234567788</td>
                 <td class="judulBuku ganti">Naruto</td>
                 <td class="tanggalPinjam ganti">01/01/2018</td>
