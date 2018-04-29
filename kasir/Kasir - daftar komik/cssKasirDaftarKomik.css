@@ -39,7 +39,7 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
     margin-top: 90px;
-    height: 360px;
+    height: 420px;
     width: 94%;
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
@@ -126,6 +126,14 @@ div#popup p#popupJudul{ /*judul*/
     font-size: 30px;
     text-align: center;
 }
+div#popup div#divImg{
+    float: left;
+    margin-left: 75px;
+    margin-right: 20px;
+}
+div#popup img{
+    width: 200px;
+}
 div#popup div#istimewa{     /*popular & special edition*/
     font-size: 20px;
     font-family: cursive;
@@ -139,9 +147,10 @@ div#popup div#penting{  /*status, harga, lama sewa*/
     color: black;
     font-weight: bold;
     float: right;
-    margin-right: 35px;
+    margin-right: 50px;
 }
 div#popup table{
+    clear: both;
     margin-left: 70px;
     width: 55%;
     table-layout: fixed;
@@ -155,6 +164,11 @@ div#popup table td{
 }
 div#popup table td,div#popup p{
     font-size: 17px;
+}
+div#popup div#divSinopsis{
+    margin-left: 75px;
+    margin-right: 50px;
+    text-align: justify;
 }
 /*pop up message*/
 
@@ -236,6 +250,12 @@ div#popup table td,div#popup p{
     div#popup p#popupJudul{ /*judul*/
         font-size: 25px;
     }
+    div#popup div#divImg{
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
     div#popup div#istimewa{     /*popular & special edition*/
         font-size: 15px;
     }
@@ -254,6 +274,10 @@ div#popup table td,div#popup p{
     }
     div#popup table td,div#popup p{
         font-size: 13px;
+    }
+    div#popup div#divSinopsis{
+        margin-left: 10px;
+        margin-right: 10px;
     }
     /*pop up message*/
 }
