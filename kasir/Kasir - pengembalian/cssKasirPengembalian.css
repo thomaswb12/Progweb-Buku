@@ -1,6 +1,8 @@
 /*atasnya tabel*/
 div#atasTabel{
-    margin-left: 80px;
+    width: 100%;
+    margin-bottom: 3%;
+    margin-left: 3%;
 }
 #simbolOrang{   /*simbol gambar orang*/
     float: left;
@@ -12,12 +14,17 @@ div#atasTabel input[type=text]{  /*semua inputan text*/
     width: 200px;
 }
 /*atasnya tabel*/
+div#bungkus{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
 /*tabel*/
 div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
-    margin-top: 25px;
     height: 45%;
-    width: 90%;
+    width: 100%;
     overflow-y: scroll;
 }
 table{
@@ -57,13 +64,19 @@ th{
 .denda{width: 10%}      /*kolom denda*/
 /*tabel*/
 /*tombol print*/
+
+div#divTombol{
+    height: 7.5%;
+}
+
 input#print{
-    font-size: 15px;
+    font-size: 15px !important;
     margin-top: 10px;
-    margin-right: 55px;
     float: right;
 }
 /*tombol print*/
+
+
 
 
 /*---------------------------media query---------------------------*/
