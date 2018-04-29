@@ -20,9 +20,6 @@ $(document).ready(function(){
     $("#aside4").click(function(){aside4();});
     $("#aside5").click(function(){aside5();});
     $("#aside6").click(function(){aside6();});
-
-    //------ klik details ------
-    $(".more").click(function(){aside2();});
 });
 
 $(window).on('load', function () {
@@ -57,8 +54,8 @@ function aside2(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
-    $("div#konten").load("../HRD%20-%20Data%20Karyawan/KontenHRDDataKaryawan.php");
-    $("div#gantiHead").load("../HRD%20-%20Data%20Karyawan/HeadHRDDataKaryawan.php");
+    $("div#konten").load("HRD%20-%20Data%20Karyawan/KontenHRDDataKaryawan.php");
+    $("div#gantiHead").load("HRD%20-%20Data%20Karyawan/HeadHRDDataKaryawan.php");
     $.session.set('page','2');
 }
 function aside3(){

@@ -36,7 +36,7 @@
             <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
             <img class="photo" src="profile_pic.jpg"/><br><br><br>
             <!-- tombol save -->
-            <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
+            <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="aside1()"/>
         </div>
     </div>
 </div>
