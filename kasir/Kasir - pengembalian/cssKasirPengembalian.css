@@ -1,6 +1,6 @@
 /*atasnya tabel*/
 div#atasTabel{
-    margin-left: 50px;
+    margin-left: 80px;
 }
 #simbolOrang{   /*simbol gambar orang*/
     float: left;
@@ -60,7 +60,7 @@ th{
 input#print{
     font-size: 15px;
     margin-top: 10px;
-    margin-right: 100px;
+    margin-right: 55px;
     float: right;
 }
 /*tombol print*/

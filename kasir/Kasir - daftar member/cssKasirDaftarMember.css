@@ -3,7 +3,7 @@
 article div#konten #searching{ /*"search by" (label, dropbox, input, dan icon-nya)*/
     float: right;   /*letakkan di kanan*/
     width: 350px;
-    margin-right: 20px;
+    margin-right: 90px;
 }
 article div#konten #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
     float: right;   /*lettakkan di kanan parent #searching*/
@@ -21,7 +21,7 @@ article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 /*tabel daftar peminjaman------*/
 article div#konten div#tabel{ /*div pembungkus tabel*/
     height: 68%;
-    width: 100%;
+    width: 85%;
     overflow-y: scroll;  /*scroll horizontal kalau overflow*/
     margin: auto;   /*ketengahin*/
     margin-top: 100px;
@@ -29,7 +29,7 @@ article div#konten div#tabel{ /*div pembungkus tabel*/
 }
 div#tabel table{  /*tabelnya*/
     font-size: 13px;
-    width: 80%;
+    width: 100%;
     margin: auto;
     border-collapse: collapse;
 }
@@ -55,13 +55,13 @@ div#tabel table td{
     width: 3%;
 }
 .idMember{
-    width: 9%;
+    width: 15%;
 }
 .namaMember{
-    width: 18%;
+    width: 42%;
 }
 .email{
-    width: 21%;
+    width: 40%;
 }
 .noIdentitas, .gender{
     display: none
@@ -147,13 +147,14 @@ div#popup .value{   /*valuenya (no,nama,email)*/
     /*tabel------*/
     article div#konten div#tabel{ /*div pembungkus tabel*/
         overflow-y: unset;  /*tidak ada scroll lagi*/
+        overflow-x: scroll;
         margin-top: 120px;
-        width: 100%;
+        width: auto;
         height: auto;
     }
     table{
         font-size: 10px; /*tulisan dikecilkan*/
-        width: 100%; /*supaya ga banyak text di dalem tabel yg kepotong*/
+        width: 150%; 
     }
     /*tabel------*/
     /*pop up message*/

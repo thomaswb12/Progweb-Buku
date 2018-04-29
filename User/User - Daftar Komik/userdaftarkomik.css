@@ -40,7 +40,7 @@ article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
     margin-top: 100px;
     height: 357px;
-    width: 91%;
+    width: 90%;
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
 article #daftarKomik .infoKomik{ /*kotak masing2 komik yang isinya info komik*/
@@ -223,6 +223,7 @@ div#popup table td,div#popup p{
     /*pop up message*/
     div#popup{  
         margin: auto;
+        text-align: center;
         top: 10%;
         height: 80%;
         left: 3%;
@@ -242,7 +243,8 @@ div#popup table td,div#popup p{
         padding: 5px;
         width: 200px;
         float: none;
-        margin-right: auto;
+        margin: auto;
+        text-align: center;
     }
     div#popup table{
         margin-left: 2%;
