@@ -107,6 +107,12 @@ article div#konten input, article div#konten select, article div#konten textarea
 article div#konten input[type=text]:focus { /*warna background berubah ketika focus*/
     background-color: cornflowerblue;
 }
+article div#konten input[type=password]:focus { /*warna background berubah ketika focus*/
+    background-color: cornflowerblue;
+}
+article div#konten textarea[type=text]:focus { /*warna background berubah ketika focus*/
+    background-color: cornflowerblue;
+}
 /*utk fontawesome---*/
 article div#konten .simbol{
     color: rgba(94,94,94,0.9);

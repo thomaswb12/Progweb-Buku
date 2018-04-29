@@ -21,6 +21,7 @@
             <th class="peringatan"></th>
         </thead>
         <tbody>
+        
             <tr>
                 <td>2343</td>
                 <td>idid</td>

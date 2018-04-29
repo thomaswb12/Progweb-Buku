@@ -65,7 +65,7 @@ div#bagianTabel{
 div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
     margin-top: 20px;
-    height: 43%;
+    height: 80%;
     width: 100%;
     overflow-y: scroll;
 }
@@ -113,7 +113,7 @@ th{
 /*tombol print nota*/
 article div#divTombol{  /*div bungkus 2 tombol dibawah*/
     float: right;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 article div#konten input#print{ /*tombol utk print*/
     font-size: 15px;

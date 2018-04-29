@@ -41,6 +41,7 @@ $(document).ready(function(){
     $("#aside8").click(function(){
         aside8();
     });
+
 });
 
 $(window).on('load', function () {
