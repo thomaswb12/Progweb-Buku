@@ -1,5 +1,3 @@
-var cek;
-
 $(document).ready(function(){
     //------ tampilkan tanggal NOW -------------------
     setTanggal(); //panggil fungsi setTanggal()
@@ -10,7 +8,7 @@ $(document).ready(function(){
     });
 
     //------ menandai option aside yg sedang terpilih ----
-    //$('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
+    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
 
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
@@ -21,6 +19,7 @@ $(document).ready(function(){
     $("#aside3").click(function(){aside3();});
     $("#aside4").click(function(){aside4();});
     $("#aside5").click(function(){aside5();});
+    $("#aside6").click(function(){aside6();});
 });
 
 $(window).on('load', function () {
@@ -35,47 +34,69 @@ $(window).on('load', function () {
         aside4();
     else if(c == 5)
         aside5();
+    else if(c == 6)
+        aside6();
 });
 
 function aside1(){
+    $("#aside2").hide();
+    $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20peminjaman/KontenKasirPeminjaman.php");
-    $("div#gantiHead").load("Kasir%20-%20peminjaman/HeadKasirPeminjaman.php");
+    $("div#konten").load("HRD%20-%20Daftar%20Karyawan/KontenHRDDaftarKaryawan.php");
+    $("div#gantiHead").load("HRD%20-%20Daftar%20Karyawan/HeadHRDDaftarKaryawan.php");
     $.session.set('page','1');
 }
 function aside2(){
+    $("#aside3").hide();
+    $("#aside2").show();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20pengembalian/KontenKasirPengembalian.php");
-    $("div#gantiHead").load("Kasir%20-%20pengembalian/HeadKasirPengembalian.php");
+    $("div#konten").load("HRD%20-%20Data%20Karyawan/KontenHRDDataKaryawan.php");
+    $("div#gantiHead").load("HRD%20-%20Data%20Karyawan/HeadHRDDataKaryawan.php");
     $.session.set('page','2');
 }
 function aside3(){
+    $("#aside2").hide();
+    $("#aside3").show();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20daftar%20komik/KontenKasirDaftarKomik.php");
-    $("div#gantiHead").load("Kasir%20-%20daftar%20komik/HeadKasirDaftarKomik.php");
+    $("div#konten").load("HRD%20-%20Edit%20Karyawan/KontenHRDEditKaryawan.php");
+    $("div#gantiHead").load("HRD%20-%20Edit%20Karyawan/HeadHRDEditKaryawan.php");
     $.session.set('page','3');
 }
 function aside4(){
+    $("#aside2").hide();
+    $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
     $("#aside4").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
-    $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
+    $("div#konten").load("HRD%20-%20Tambah%20Karyawan/KontenHRDTambahKaryawan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Karyawan/HeadHRDTambahKaryawan.php");
     $.session.set('page','4');
 }
 function aside5(){
+    $("#aside2").hide();
+    $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside5 span');
     $("#aside5").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
-    $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
+    $("div#konten").load("HRD%20-%20Daftar%20Jabatan/KontenHRDDaftarJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Daftar%20Jabatan/HeadHRDDaftarJabatan.php");
     $.session.set('page','5');
+}
+function aside6(){
+    $("#aside2").hide();
+    $("#aside3").hide();
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside6 span');
+    $("#aside6").addClass('terpilih');
+    $("div#konten").load("HRD%20-%20Tambah%20Jabatan/KontenHRDTambahJabatan.php");
+    $("div#gantiHead").load("HRD%20-%20Tambah%20Jabatan/HeadHRDTambahJabatan.php");
+    $.session.set('page','6');
 }
 
 function pencetTRPengembalian(temp){
@@ -150,58 +171,4 @@ function setTanggal(){
     var year = n.getFullYear();
     //tampilkan dalam format DAY,DATE MONTH YEAR
     $('p#tanggal').text(day[n.getDay()] + ", " + date + " " + month[n.getMonth() + 1] + " " + year);
-}
-
-/*tampilkan pop up detail komik*/
-function popupDetailKomik(temp){
-    //ambil semua yg dibutuhkan utk ditampilkan di popup
-    $judul = temp.children(".judul").text();
-    $popular = temp.children(".keperluanPopup").children(".popular").text();    
-    $specialEdition = temp.children(".keperluanPopup").children(".specialEdition").text();
-    $status = temp.children(".status").text();
-    $hargaSewa = temp.children(".keperluanPopup").children(".hargaSewa").text();
-    $lamaSewa = temp.children(".keperluanPopup").children(".lamaSewa").text();
-    $idBuku = temp.children(".keperluanPopup").children(".idBuku").text();
-    $penulis = temp.children(".keperluanPopup").children(".penulis").text();
-    $penerbit = temp.children(".keperluanPopup").children(".penerbit").text();
-    $tanggalTerbit = temp.children(".keperluanPopup").children(".tanggalTerbit").text();
-    $jumlahHalaman = temp.children(".keperluanPopup").children(".jumlahHalaman").text();
-    $beratBuku = temp.children(".keperluanPopup").children(".beratBuku").text();
-    $jenisCover = temp.children(".keperluanPopup").children(".jenisCover").text();
-    $dimensi = temp.children(".keperluanPopup").children(".dimensi").text();
-    $jumlahHalaman = temp.children(".keperluanPopup").children(".jumlahHalaman").text();
-    $text = temp.children(".keperluanPopup").children(".text").text();
-    $stok = temp.children("p").children(".stok").text();
-    $tersedia = temp.children("p").children(".tersedia").text();
-    $dipinjam = temp.children(".keperluanPopup").children(".dipinjam").text();
-    $genre = temp.children(".keperluanPopup").children(".genre").text();
-    $rating = temp.children(".keperluanPopup").children(".rating").text();
-    $rak = temp.children(".keperluanPopup").children(".rak").text();
-    $isiSinopsis = temp.children(".keperluanPopup").children(".isiSinopsis").text();
-    //tampilkan di popup
-    $("#popupJudul").text($judul);
-    $("#popupPopular").text($popular);
-    $("#popupSpecial").text($specialEdition);
-    $("#popupStatus").text($status);
-    $("#popupHarga").text("Rp "+$hargaSewa);
-    $("#popupLama").text($lamaSewa+" hari");
-    $("#popupIdBuku").text($idBuku);
-    $("#popupPenulis").text($penulis);
-    $("#popupPenerbit").text($penerbit);
-    $("#popupTanggalTerbit").text($tanggalTerbit);
-    $("#popupJumlahHalaman").text($jumlahHalaman);
-    $("#popupBerat").text($beratBuku+" gr");
-    $("#popupJenisCover").text($jenisCover);
-    $("#popupDimensi").text($dimensi+" cm");
-    $("#popupText").text($text);
-    $("#popupStok").text($stok+" buku");
-    $("#popupTersedia").text($tersedia+" buku");
-    $("#popupDipinjam").text($dipinjam+" kali");
-    $("#popupGenre").text($genre);
-    $("#popupRating").text($rating);
-    $("#popupRak").text($rak);
-    $("#popupSinopsis").text($isiSinopsis);
-
-    $("#popup").fadeIn();
-    $("#blur").fadeIn();
 }
