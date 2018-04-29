@@ -41,10 +41,6 @@ $(document).ready(function(){
     $("#aside8").click(function(){
         aside8();
     });
-<<<<<<< HEAD
-=======
-
->>>>>>> dec45e19495b73c1c27ee97f77f094285d21eedd
 });
 
 $(window).on('load', function () {
