@@ -122,6 +122,7 @@ article div#daftar{ /*sekotak daftar */
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
 article #daftar .info{ /*kotak masing2  yang isinya info */
+    border: 0.1px solid #F2F2F2;
     background-color: #F2F2F2;
     margin: 14px;
     height: 300px;
@@ -159,6 +160,8 @@ article #daftar .info #edit{ /*tombol edit*/
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+    width: 70%;
+    height: 25%;
 }
 
 article #daftar .info #view{ /*tombol edit*/
@@ -170,6 +173,8 @@ article #daftar .info #view{ /*tombol edit*/
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+    width: 70%;
+    height: 25%;
 }
 
 article #daftar .info:hover .foto{ /*agar foto opacity berkurang saat di hover*/
@@ -187,16 +192,14 @@ article #daftar .info:hover #view{ /*agar tombol edit muncul*/
 article #daftar .info #edit .text{ /*font pada tombol edit*/
     background-color: rgba(51,153,204,1);
     color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-    width: 55px;
+    font-size: 100%;
+    padding: 15%;
 }
 article #daftar .info #view .text{ /*font pada tombol edit*/
     background-color: rgba(51,153,204,1);
     color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-    width: 55px;
+    font-size: 100%;
+    padding: 15%;
 }
 article #daftar .info #edit .text:hover{ /*saat tombol di hover warnanya jadi gray*/
     background-color: gray;
@@ -314,7 +317,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
     body{
-        position: relative;
+        position: unset;
     }
     /*-----------------header-----------------*/
     header{ /*header height nya ditambahi, semua element di ketengahi*/
@@ -348,10 +351,98 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     }
     /*-----------------utk aside-----------------*/
 
-    /*-----------------utk konten-----------------*/
-    article div#konten, #kiri, #kanan{
-        float: none; /*hilangkan float agar pindah kebawah*/
+    /*--------utk article (bagian judul)---------*/
+    article div#judul #sorting, article div#judul #searching{ /*media search dan sort diketengahi*/
+        margin: auto;
+        text-align: center;
+        float: none;    /*hilangi float*/
         width: 100%;
     }
+    article div#judul #searching #searchBox{
+        float: none;
+        margin-top: 15px;
+        
+    }
+    article div#judul #searching #searchBox::before { /*menambahkan new line sebelum id="searchBox"*/
+        content: "\A";  /*tambahkan newline, spti <br>*/
+    }
+    article div#judul #searching #selectSearchBy, article div#judul #sorting #selectSortBy{
+        margin: auto;
+    }
+
+    /*--------utk article (bagian daftar )---------*/
+    article div#daftar{ /*sekotak daftar */
+        margin-top: 10px;
+        width: 100%;
+    }
+    article #daftar .info{ /*ukuran kotak putih dikecilin*/
+        height: 160px;
+        width: 80px;
+        margin: 10px 4px;
+    }
+    article #daftar .info.favorit{ /*ukuran kotak putih yang favorit juga dikecilin*/
+        height: 152px;
+        width: 77px;
+    }
+    article #daftar .info .foto{ /*ukuran gambar  dikecilin*/
+        height: 100px;
+    }
+    article #daftar .info p{ /*utk menghemat ruang, info stok & tersedia tidak ditampilkan (dihidden)*/
+        position: absolute; /*fungsinya supaya tulisan availble naik kebawah judul */
+        visibility: hidden;
+    }
+    article #daftar .info h4{ /*judul  dikecilkan*/
+        font-size: 10px;
+    }
+    article #daftar .info .status{ /*tulisan available dikecilkan dan diketengahkan manual*/
+        margin-right: 17px;
+        clear: both;
+        font-size: 9px;
+        visibility: visible;
+    }   
+    article #daftar .info .new{ /*icon new dikecilkan dan dinaikkan sedikit*/
+        width: 20px;
+        margin-top: -5px;
+    }
+
+    
+
     /*-----------------utk konten-----------------*/
+    article div#konten{
+        float: none; /*hilangkan float agar pindah kebawah*/
+        width: 100%;
+        overflow-y: inherit;
+    }
+    article div#konten div#kiri{
+        float: none;
+        clear: both;
+        overflow-y: inherit;
+        margin-left: 10%;
+    }
+    article div#konten div#kanan    {
+        float: none;
+        clear: both;
+        overflow-y: inherit;
+        margin-left: 10%;
+    }
+    /*-----------------utk konten-----------------*/
+    article div#konten input#tombol{
+        float: none;
+        clear: both;
+        margin-left: 10%;
+    }
+    article #daftar .info #edit .text{ /*font pada tombol edit*/
+        background-color: rgba(51,153,204,1);
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+        width: 55px;
+    }
+    article #daftar .info #view .text{ /*font pada tombol edit*/
+        background-color: rgba(51,153,204,1);
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+        width: 55px;
+    }
 }
