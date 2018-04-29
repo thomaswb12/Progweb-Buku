@@ -39,7 +39,7 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
     margin-top: 90px;
-    height: 360px;
+    height: 420px;
     width: 94%;
     overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
