@@ -41,6 +41,9 @@ $(document).ready(function(){
     $("#aside8").click(function(){
         aside8();
     });
+    $("#asideEksemplar").click(function(){
+        asideEksemplar();
+    })
 });
 
 $(window).on('load', function () {
@@ -64,6 +67,8 @@ $(window).on('load', function () {
         aside7();
     else if(c == 8)
         aside8();
+    else if(c == 9)
+        asideEksemplar();
 });
 
 //------------------ fungsi ketika window di resize --------------
@@ -101,6 +106,18 @@ function back(){
     $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Komik/headDaftarKomik.php");
     $.session.set('page','1');
+}
+
+function asideEksemplar(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#asideEksemplar span');
+    $("#asideEksemplar").addClass('terpilih');
+    $("#aside1+hr").hide();
+    $("#dropdown").hide();
+    $("#asideDetail").hide();
+    $("div#konten").load("Gudang-TambahEksemplar/tambahEksemplar.html");
+    $("div#gantiHead").load("Gudang-TambahEksemplar/headTambahEksemplar.html");
+    $.session.set('page','9');
 }
 
 function aside1(){
