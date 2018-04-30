@@ -23,6 +23,7 @@ $(document).ready(function(){
 });
 
 function aside1(){
+    $("#aside2").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
@@ -31,10 +32,15 @@ function aside1(){
 }
 
 function aside2(){
-    
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside2 span');
+    $("#aside2").show().addClass('terpilih');
+    $("div#konten").load("managerDetailPeminjaman/kontenManagerDetailPeminjaman.php");
+    $("div#gantiHead").load("managerDetailPeminjaman/headManagerDetailPeminjaman.php");
 }
 
 function aside3(){
+    $("#aside2").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
