@@ -16,6 +16,9 @@ body{ /*supaya mentok selayar*/
 .blue{ /*utk font-font yg warnanya biru*/
     color: #000066;
 }
+
+.green{background-color: rgba(0, 100, 0, 0.6) !important;}
+
 .font15{ /*utk font yang ukurannya 15px*/
     font-size: 15px;
 }
@@ -52,6 +55,28 @@ header p#tanggal{   /*penampil tanggal di kanan atas*/
 article{ /*article adlah semua yang ada dibawah header*/
     height: 80%;
     width: 100%;
+}
+/*untuk inputan--------*/
+article input, article select, article textarea{   /*kotak yang utk input*/
+    font-size: 12px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 3px;
+}
+article input[type=text]:focus { /*warna background berubah ketika focus*/
+    background-color: cornflowerblue;
+}
+/*utk tombol*/
+article div#konten input.tombol{
+    padding: 5px;
+    border: 1px solid black;
+    color: black;
+    background-color: darkgray;
+    border-radius: 5px;
+}
+article div#konten input.tombol:hover{
+    background-color: gray;
 }
 /*------------------------bagian artikel---------------------*/
 

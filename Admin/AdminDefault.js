@@ -8,6 +8,10 @@ $(document).ready(function(){
     $(window).on('scroll', function () {
         backToTop();
     });
+    //-------- kalau poup nya di scroll, panggil fungsi scrollDown(), biar simbolnya hilang-----
+    $("#popupScroll").on('scroll', function () {
+        scrollDown();
+    });
 
     //------ menandai option aside yg sedang terpilih ----
     //$('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
@@ -697,10 +701,13 @@ function aside28(){
 }
 
 function pencetTRPengembalian(temp){
-    //alert(temp.html());
-    if($(temp).css("background-color") == "rgba(0, 100, 0, 0.6)") $(temp).removeClass("green");
+    if($(temp).children("td.ganti").css("background-color") == "rgba(0, 100, 0, 0.6)"){
+        $(temp).children("td.ganti").removeClass("green");
+        $(temp).children("td.tandaTable").html("<td class='tandaTable'><i class='fas fa-check' style='color:grey'></i></td>");
+    } 
     else {
-        $(temp).addClass("green");
+        $(temp).children("td.ganti").addClass("green");
+        $(temp).children("td.tandaTable").html("<td class='tandaTable'><i class='fas fa-check' style='color:green'></i></td>");
     }
 }
 
@@ -822,4 +829,14 @@ function popupDetailKomik(temp){
 
     $("#popup").fadeIn();
     $("#blur").fadeIn();
+}
+
+//----- fungsi menampilkan & sembunyikan petunjuk scroll down saat POP UP ---------
+function scrollDown(){
+    var scrollTop = $("#popupScroll").scrollTop(); //sejauh apa user telah meng-scroll
+    if (scrollTop > 120) {  //bila user sudah scroll lebih besar dari 120, tombol disembunyikan
+        $('#tombolDown').css('display','none');
+    } else { //bila user belum scroll jauh, tombol ditampilkan
+        $('#tombolDown').css('display','block');
+    }
 }
