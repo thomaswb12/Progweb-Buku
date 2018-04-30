@@ -643,7 +643,7 @@ function aside25(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside25 span');
     $("#aside25").addClass('terpilih');
-    $("div#konten").load("Manager/managerLaporanKeuangan/managerLaporanKeuangan.php");
+    $("div#konten").load("Manager/managerLaporanKeuangan/kontenManagerLaporanKeuangan.php");
     $("div#gantiHead").load("Manager/managerLaporanKeuangan/headManagerLaporanKeuangan.php");
     $.session.set('page','25');
 }
