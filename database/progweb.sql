@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2018 at 12:20 PM
+-- Generation Time: May 01, 2018 at 12:27 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -30,7 +30,6 @@ USE `progweb`;
 -- Table structure for table `buku`
 --
 
-DROP TABLE IF EXISTS `buku`;
 CREATE TABLE IF NOT EXISTS `buku` (
   `idBuku` char(8) NOT NULL,
   `judulBuku` varchar(255) NOT NULL,
@@ -68,7 +67,6 @@ INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `tanggalTiba`, `juml
 -- Table structure for table `contoh`
 --
 
-DROP TABLE IF EXISTS `contoh`;
 CREATE TABLE IF NOT EXISTS `contoh` (
   `idbuku` char(8) NOT NULL,
   `ideks` char(16) NOT NULL,
@@ -88,7 +86,6 @@ INSERT INTO `contoh` (`idbuku`, `ideks`, `total`) VALUES
 -- Table structure for table `detailtransaksi`
 --
 
-DROP TABLE IF EXISTS `detailtransaksi`;
 CREATE TABLE IF NOT EXISTS `detailtransaksi` (
   `idBuku` char(8) NOT NULL,
   `idEksBuku` char(8) NOT NULL,
@@ -109,7 +106,6 @@ CREATE TABLE IF NOT EXISTS `detailtransaksi` (
 -- Table structure for table `eksbuku`
 --
 
-DROP TABLE IF EXISTS `eksbuku`;
 CREATE TABLE IF NOT EXISTS `eksbuku` (
   `idEksBuku` char(16) NOT NULL,
   `idBuku` char(8) NOT NULL,
@@ -129,7 +125,6 @@ INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`) VALUES
 --
 -- Triggers `eksbuku`
 --
-DROP TRIGGER IF EXISTS `triger_after_insert`;
 DELIMITER $$
 CREATE TRIGGER `triger_after_insert` BEFORE INSERT ON `eksbuku` FOR EACH ROW BEGIN
 	DECLARE P1 CHAR(8);
@@ -145,7 +140,6 @@ DELIMITER ;
 -- Table structure for table `genre`
 --
 
-DROP TABLE IF EXISTS `genre`;
 CREATE TABLE IF NOT EXISTS `genre` (
   `idGenre` char(8) NOT NULL,
   `namaGenre` varchar(100) NOT NULL,
@@ -158,7 +152,6 @@ CREATE TABLE IF NOT EXISTS `genre` (
 -- Table structure for table `genrebuku`
 --
 
-DROP TABLE IF EXISTS `genrebuku`;
 CREATE TABLE IF NOT EXISTS `genrebuku` (
   `id GenreBuku` char(8) NOT NULL,
   `idGenre` char(8) NOT NULL,
@@ -173,7 +166,6 @@ CREATE TABLE IF NOT EXISTS `genrebuku` (
 -- Table structure for table `jabatankaryawan`
 --
 
-DROP TABLE IF EXISTS `jabatankaryawan`;
 CREATE TABLE IF NOT EXISTS `jabatankaryawan` (
   `idJabatan` char(4) NOT NULL,
   `namaJabatan` varchar(50) NOT NULL,
@@ -194,7 +186,6 @@ INSERT INTO `jabatankaryawan` (`idJabatan`, `namaJabatan`, `gaji`) VALUES
 -- Table structure for table `karyawan`
 --
 
-DROP TABLE IF EXISTS `karyawan`;
 CREATE TABLE IF NOT EXISTS `karyawan` (
   `idKaryawan` char(8) NOT NULL,
   `nama` varchar(100) NOT NULL,
@@ -220,7 +211,6 @@ INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `p
 -- Table structure for table `member`
 --
 
-DROP TABLE IF EXISTS `member`;
 CREATE TABLE IF NOT EXISTS `member` (
   `id` char(8) NOT NULL,
   `nama` text NOT NULL,
@@ -247,7 +237,6 @@ INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idI
 -- Table structure for table `penerbit`
 --
 
-DROP TABLE IF EXISTS `penerbit`;
 CREATE TABLE IF NOT EXISTS `penerbit` (
   `idPenerbit` char(8) NOT NULL,
   `NamaPenerbit` varchar(100) NOT NULL,
@@ -267,7 +256,6 @@ INSERT INTO `penerbit` (`idPenerbit`, `NamaPenerbit`) VALUES
 -- Table structure for table `penulis`
 --
 
-DROP TABLE IF EXISTS `penulis`;
 CREATE TABLE IF NOT EXISTS `penulis` (
   `idPenulis` char(8) NOT NULL,
   `namaPenulis` varchar(150) NOT NULL,
@@ -287,7 +275,6 @@ INSERT INTO `penulis` (`idPenulis`, `namaPenulis`) VALUES
 -- Table structure for table `rak`
 --
 
-DROP TABLE IF EXISTS `rak`;
 CREATE TABLE IF NOT EXISTS `rak` (
   `idRak` char(8) NOT NULL,
   `namaRak` varchar(100) NOT NULL,
@@ -309,7 +296,6 @@ INSERT INTO `rak` (`idRak`, `namaRak`, `tanggalRak`, `Abjad`) VALUES
 -- Table structure for table `transaksi`
 --
 
-DROP TABLE IF EXISTS `transaksi`;
 CREATE TABLE IF NOT EXISTS `transaksi` (
   `idTransaksi` char(16) NOT NULL,
   `tanggalTransaksi` datetime NOT NULL,
