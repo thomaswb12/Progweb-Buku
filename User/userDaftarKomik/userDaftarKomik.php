@@ -57,6 +57,11 @@
                         </div>
                     </div>
                 </div>
+                <?php 
+                    include "../../getDataBuku.php";
+                    $buku = getBuku();
+                    
+                ?>
                 <div id="daftarKomik" class="font15">
                 <!-- kalau mau sambung database, yang ditiru yang bawah ya-->
                     <div class="infoKomik">
