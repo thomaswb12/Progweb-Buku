@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2018 at 11:55 AM
+-- Generation Time: May 01, 2018 at 12:11 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `buku`
 --
 
-CREATE TABLE `buku` (
+CREATE TABLE IF NOT EXISTS `buku` (
   `idBuku` char(8) NOT NULL,
   `judulBuku` varchar(255) NOT NULL,
   `tanggalTerbit` date NOT NULL,
@@ -45,7 +45,11 @@ CREATE TABLE `buku` (
   `Rating` enum('anak-anak','remaja','dewasa','semua umur') NOT NULL,
   `idRak` char(8) NOT NULL,
   `jumlahEksemplar` int(11) NOT NULL,
-  `Location` text NOT NULL
+  `Location` text NOT NULL,
+  PRIMARY KEY (`idBuku`),
+  KEY `fk_buku1` (`idPenerbit`),
+  KEY `fk_buku2` (`idPenulis`),
+  KEY `fk_buku3` (`idRak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -61,7 +65,7 @@ INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `tanggalTiba`, `juml
 -- Table structure for table `contoh`
 --
 
-CREATE TABLE `contoh` (
+CREATE TABLE IF NOT EXISTS `contoh` (
   `idbuku` char(8) NOT NULL,
   `ideks` char(16) NOT NULL,
   `total` int(11) NOT NULL
@@ -80,7 +84,7 @@ INSERT INTO `contoh` (`idbuku`, `ideks`, `total`) VALUES
 -- Table structure for table `detailtransaksi`
 --
 
-CREATE TABLE `detailtransaksi` (
+CREATE TABLE IF NOT EXISTS `detailtransaksi` (
   `idBuku` char(8) NOT NULL,
   `idEksBuku` char(8) NOT NULL,
   `harga` double NOT NULL,
@@ -88,7 +92,10 @@ CREATE TABLE `detailtransaksi` (
   `tanggalKembali` date DEFAULT NULL,
   `tanggalAturanKembali` date DEFAULT NULL,
   `denda` double NOT NULL DEFAULT '0',
-  `idTransaksi` char(16) NOT NULL
+  `idTransaksi` char(16) NOT NULL,
+  KEY `FK_Det1` (`idBuku`),
+  KEY `FK_Det2` (`idEksBuku`),
+  KEY `FK_DET3` (`idTransaksi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -97,10 +104,12 @@ CREATE TABLE `detailtransaksi` (
 -- Table structure for table `eksbuku`
 --
 
-CREATE TABLE `eksbuku` (
+CREATE TABLE IF NOT EXISTS `eksbuku` (
   `idEksBuku` char(16) NOT NULL,
   `idBuku` char(8) NOT NULL,
-  `Status` enum('Tersedia','Dipinjam') DEFAULT NULL
+  `Status` enum('Tersedia','Dipinjam') DEFAULT NULL,
+  PRIMARY KEY (`idEksBuku`),
+  KEY `FK_eks1` (`idBuku`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -129,9 +138,10 @@ DELIMITER ;
 -- Table structure for table `genre`
 --
 
-CREATE TABLE `genre` (
+CREATE TABLE IF NOT EXISTS `genre` (
   `idGenre` char(8) NOT NULL,
-  `namaGenre` varchar(100) NOT NULL
+  `namaGenre` varchar(100) NOT NULL,
+  PRIMARY KEY (`idGenre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -140,10 +150,12 @@ CREATE TABLE `genre` (
 -- Table structure for table `genrebuku`
 --
 
-CREATE TABLE `genrebuku` (
+CREATE TABLE IF NOT EXISTS `genrebuku` (
   `id GenreBuku` char(8) NOT NULL,
   `idGenre` char(8) NOT NULL,
-  `idBuku` char(8) NOT NULL
+  `idBuku` char(8) NOT NULL,
+  PRIMARY KEY (`idGenre`,`idBuku`,`id GenreBuku`) USING BTREE,
+  KEY `FK_genn2` (`idBuku`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -152,10 +164,11 @@ CREATE TABLE `genrebuku` (
 -- Table structure for table `jabatankaryawan`
 --
 
-CREATE TABLE `jabatankaryawan` (
+CREATE TABLE IF NOT EXISTS `jabatankaryawan` (
   `idJabatan` char(4) NOT NULL,
   `namaJabatan` varchar(50) NOT NULL,
-  `gaji` double DEFAULT '0'
+  `gaji` double DEFAULT '0',
+  PRIMARY KEY (`idJabatan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -171,14 +184,16 @@ INSERT INTO `jabatankaryawan` (`idJabatan`, `namaJabatan`, `gaji`) VALUES
 -- Table structure for table `karyawan`
 --
 
-CREATE TABLE `karyawan` (
+CREATE TABLE IF NOT EXISTS `karyawan` (
   `idKaryawan` char(8) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `email` varchar(150) NOT NULL,
   `noTelp` varchar(12) NOT NULL,
   `idJabatan` char(4) NOT NULL,
   `pass` char(64) NOT NULL,
-  `foto` blob NOT NULL
+  `foto` blob NOT NULL,
+  PRIMARY KEY (`idKaryawan`),
+  KEY `FK_Karyawan` (`idJabatan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -194,7 +209,7 @@ INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `p
 -- Table structure for table `member`
 --
 
-CREATE TABLE `member` (
+CREATE TABLE IF NOT EXISTS `member` (
   `id` char(8) NOT NULL,
   `nama` text NOT NULL,
   `alamat` text NOT NULL,
@@ -203,7 +218,8 @@ CREATE TABLE `member` (
   `noTelp` char(12) NOT NULL,
   `idIdentitas` char(16) NOT NULL,
   `gender` enum('Pria','Wanita') DEFAULT NULL,
-  `email` varchar(150) NOT NULL
+  `email` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -219,9 +235,10 @@ INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idI
 -- Table structure for table `penerbit`
 --
 
-CREATE TABLE `penerbit` (
+CREATE TABLE IF NOT EXISTS `penerbit` (
   `idPenerbit` char(8) NOT NULL,
-  `NamaPenerbit` varchar(100) NOT NULL
+  `NamaPenerbit` varchar(100) NOT NULL,
+  PRIMARY KEY (`idPenerbit`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -237,9 +254,10 @@ INSERT INTO `penerbit` (`idPenerbit`, `NamaPenerbit`) VALUES
 -- Table structure for table `penulis`
 --
 
-CREATE TABLE `penulis` (
+CREATE TABLE IF NOT EXISTS `penulis` (
   `idPenulis` char(8) NOT NULL,
-  `namaPenulis` varchar(150) NOT NULL
+  `namaPenulis` varchar(150) NOT NULL,
+  PRIMARY KEY (`idPenulis`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -255,11 +273,12 @@ INSERT INTO `penulis` (`idPenulis`, `namaPenulis`) VALUES
 -- Table structure for table `rak`
 --
 
-CREATE TABLE `rak` (
+CREATE TABLE IF NOT EXISTS `rak` (
   `idRak` char(8) NOT NULL,
   `namaRak` varchar(100) NOT NULL,
   `tanggalRak` date NOT NULL,
-  `Abjad` enum('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') NOT NULL
+  `Abjad` enum('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') NOT NULL,
+  PRIMARY KEY (`idRak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -275,99 +294,16 @@ INSERT INTO `rak` (`idRak`, `namaRak`, `tanggalRak`, `Abjad`) VALUES
 -- Table structure for table `transaksi`
 --
 
-CREATE TABLE `transaksi` (
+CREATE TABLE IF NOT EXISTS `transaksi` (
   `idTransaksi` char(16) NOT NULL,
   `tanggalTransaksi` datetime NOT NULL,
   `idMember` char(8) NOT NULL,
   `idKaryawan` char(8) NOT NULL,
-  `total` double NOT NULL DEFAULT '0'
+  `total` double NOT NULL DEFAULT '0',
+  PRIMARY KEY (`idTransaksi`),
+  KEY `FK_1` (`idMember`),
+  KEY `FK_2` (`idKaryawan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `buku`
---
-ALTER TABLE `buku`
-  ADD PRIMARY KEY (`idBuku`),
-  ADD KEY `fk_buku1` (`idPenerbit`),
-  ADD KEY `fk_buku2` (`idPenulis`),
-  ADD KEY `fk_buku3` (`idRak`);
-
---
--- Indexes for table `detailtransaksi`
---
-ALTER TABLE `detailtransaksi`
-  ADD KEY `FK_Det1` (`idBuku`),
-  ADD KEY `FK_Det2` (`idEksBuku`),
-  ADD KEY `FK_DET3` (`idTransaksi`);
-
---
--- Indexes for table `eksbuku`
---
-ALTER TABLE `eksbuku`
-  ADD PRIMARY KEY (`idEksBuku`),
-  ADD KEY `FK_eks1` (`idBuku`);
-
---
--- Indexes for table `genre`
---
-ALTER TABLE `genre`
-  ADD PRIMARY KEY (`idGenre`);
-
---
--- Indexes for table `genrebuku`
---
-ALTER TABLE `genrebuku`
-  ADD PRIMARY KEY (`idGenre`,`idBuku`,`id GenreBuku`) USING BTREE,
-  ADD KEY `FK_genn2` (`idBuku`);
-
---
--- Indexes for table `jabatankaryawan`
---
-ALTER TABLE `jabatankaryawan`
-  ADD PRIMARY KEY (`idJabatan`);
-
---
--- Indexes for table `karyawan`
---
-ALTER TABLE `karyawan`
-  ADD PRIMARY KEY (`idKaryawan`),
-  ADD KEY `FK_Karyawan` (`idJabatan`);
-
---
--- Indexes for table `member`
---
-ALTER TABLE `member`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `penerbit`
---
-ALTER TABLE `penerbit`
-  ADD PRIMARY KEY (`idPenerbit`);
-
---
--- Indexes for table `penulis`
---
-ALTER TABLE `penulis`
-  ADD PRIMARY KEY (`idPenulis`);
-
---
--- Indexes for table `rak`
---
-ALTER TABLE `rak`
-  ADD PRIMARY KEY (`idRak`);
-
---
--- Indexes for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`idTransaksi`),
-  ADD KEY `FK_1` (`idMember`),
-  ADD KEY `FK_2` (`idKaryawan`);
 
 --
 -- Constraints for dumped tables
