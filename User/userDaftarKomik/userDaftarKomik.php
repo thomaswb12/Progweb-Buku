@@ -61,26 +61,17 @@
                 <?php 
                     include "../../getDataBuku.php";
                     $buku = getBuku();
-                    foreach($data as $value){
-                        echo '<div class="infoKomik">
-                            <img class="komik" src="miiko19.jpg"/>
-                            <h4 class="judul">Hai Miiko! Vol.19</h4>
-                            <p class="stok">Stok : 5</p>
-                            <p class="tersedia">Tersedia : 1</p>
-                            <p class="status">Available</p>
-                            <img class="new" src="../../label_new.png"/>
-                        </div>';
+                    foreach($buku as $value){
+                        echo '<div class="infoKomik favorit specialEdition" onclick="munculPopup($(this))">
+                                <img class="komik" src="../../'.$value['Location'].'"/>
+                                <h4 class="judul">'.$value['judulBuku'].'</h4>
+                                <p>Stok : <span class="stok">'.$value['jumlahEksemplar'].'</span></p>
+                                <p style="float:left;">Tersedia : <span class="tersedia">1</span></p>
+                                <p class="status">Available</p>';
                     }
                 ?>
-            
-
                     <!-- ini yg ditiru-->
-                    <div class="infoKomik favorit specialEdition" onclick="munculPopup($(this))">
-                        <img class="komik" src="miiko19.jpg"/>
-                        <h4 class="judul">Hai Miiko! Vol.19</h4>
-                        <p>Stok : <span class="stok">5</span></p>
-                        <p style="float:left;">Tersedia : <span class="tersedia">1</span></p>
-                        <p class="status">Available</p>
+                    
                         <!-- yg perlu ditampilkan di popup, tp gaperlu tampil di page-nya -->
                         <div class="keperluanPopup" style="display: none">
                             <p class="idBuku">83742</p>
@@ -112,14 +103,6 @@
                                 Walaupun Tappei sering mengejek Miiko, tappei sering membantu dan menghibur Miiko saat terkena masalah.
                             </p>
                         </div>
-                    </div>
-
-                    <div class="infoKomik">
-                        <img class="komik" src="miiko19.jpg"/>
-                        <h4 class="judul">Hai Miiko! Vol.19</h4>
-                        <p class="stok">Stok : 5</p>
-                        <p class="tersedia">Tersedia : 1</p>
-                        <p class="status">Available</p>
                     </div>
                 </div>
             </article>
