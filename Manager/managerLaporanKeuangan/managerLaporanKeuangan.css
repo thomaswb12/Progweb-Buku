@@ -14,9 +14,7 @@ article div#konten div#periode #periodeAwal, article div#konten div#periode #per
 }
 /*tabel laporan------*/
 article div#konten div#tabel{ /*div pembungkus tabel*/
-    height: 65%;
     width: 98%;
-    overflow-y: scroll;  /*scroll horizontal kalau overflow*/
     margin: auto;   /*ketengahin*/
     margin-top: 60px;
     clear: both;

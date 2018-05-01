@@ -22,7 +22,6 @@ article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 article div#konten div#tabel{ /*div pembungkus tabel*/
     height: 65%;
     width: 95%;
-    overflow-y: scroll;  /*scroll horizontal kalau overflow*/
     margin: auto;   /*ketengahin*/
     margin-top: 100px;
     clear: both;
