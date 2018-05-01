@@ -23,7 +23,7 @@ html{
     overflow: hidden;
 }
 #gambar{
-    max-width: 50%;
+    height: 150px;
 }
 input{
     margin: 5px;
@@ -76,12 +76,17 @@ tr{
     font-size: 12px;
     color: gray;
  }
-
-.tanpaGarisBawah{
-    text-decoration-style: none !important;
-    text-decoration-line: none !important;
-}
-
 #login:hover{
     cursor: pointer;
+}
+
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    #gambar{
+        height: 90px;
+    }
+    #login{
+        width: 30%;
+    }
 }
