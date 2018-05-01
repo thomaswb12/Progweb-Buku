@@ -4,8 +4,8 @@
         session_start();
         if($_POST['id'] == "admin" && $_POST['password'] == "admin"){ //untuk login ke page user
             $_SESSION['id'] = $_POST['id'];
-            $_SESSION['pass'] = $_POST['password'];
-            header("location:User/User - Daftar Komik/User - daftar komik.php");//untuk pindah ke page tersebut
+            $_SESSION['control'] = 1;
+            header("location:User/UserDaftarKomik/UserDaftarKomik.php");//untuk pindah ke page tersebut
         }
         else{
             if($_POST['id'] == "" || $_POST['password'] == ""){
