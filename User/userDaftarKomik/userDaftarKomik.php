@@ -53,62 +53,22 @@
                         </div>
                     </div>
                 </div>
+                <div id="daftarKomik" class="font15">
                 <?php 
                     include "../../getDataBuku.php";
                     $buku = getBuku();
-                    
+                    foreach($data as $value){
+                        echo '<div class="infoKomik">
+                            <img class="komik" src="miiko19.jpg"/>
+                            <h4 class="judul">Hai Miiko! Vol.19</h4>
+                            <p class="stok">Stok : 5</p>
+                            <p class="tersedia">Tersedia : 1</p>
+                            <p class="status">Available</p>
+                            <img class="new" src="../../label_new.png"/>
+                        </div>';
+                    }
                 ?>
-                <div id="daftarKomik" class="font15">
-                <!-- kalau mau sambung database, yang ditiru yang bawah ya-->
-                    <div class="infoKomik">
-                        <img class="komik" src="miiko19.jpg"/>
-                        <h4 class="judul">Hai Miiko! Vol.19</h4>
-                        <p class="stok">Stok : 5</p>
-                        <p class="tersedia">Tersedia : 1</p>
-                        <p class="status">Available</p>
-                        <img class="new" src="../../label_new.png"/>
-                    </div>
-                    
-                    <div class="infoKomik">
-                        <img class="komik" src="miiko19.jpg"/>
-                        <h4 class="judul">Hai Miiko! Vol.19</h4>
-                        <p class="stok">Stok : 5</p>
-                        <p class="tersedia">Tersedia : 1</p>
-                        <p class="status">Available</p>
-                        <img class="new" src="../../label_new.png"/>
-                    </div>
-
-                    <div class="infoKomik favorit">
-                        <img class="komik" src="miiko19.jpg"/>
-                        <h4 class="judul">Hai Miiko! Vol.19</h4>
-                        <p class="stok">Stok : 5</p>
-                        <p class="tersedia">Tersedia : 1</p>
-                        <p class="status">Available</p>
-                    </div>
-
-                    <div class="infoKomik">
-                        <img class="komik" src="miiko19.jpg"/>
-                        <h4 class="judul">Hai Miiko! Vol.19</h4>
-                        <p class="stok">Stok : 5</p>
-                        <p class="tersedia">Tersedia : 1</p>
-                        <p class="status">Available</p>
-                    </div>
-
-                    <div class="infoKomik">
-                        <img class="komik" src="miiko19.jpg"/>
-                        <h4 class="judul">Hai Miiko! Vol.19</h4>
-                        <p class="stok">Stok : 5</p>
-                        <p class="tersedia">Tersedia : 1</p>
-                        <p class="status">Available</p>
-                    </div>
-
-                    <div class="infoKomik specialEdition">
-                        <img class="komik" src="miiko19.jpg"/>
-                        <h4 class="judul">Hai Miiko! Vol.19</h4>
-                        <p class="stok">Stok : 5</p>
-                        <p class="tersedia">Tersedia : 1</p>
-                        <p class="status">Available</p>
-                    </div>
+            
 
                     <!-- ini yg ditiru-->
                     <div class="infoKomik favorit specialEdition" onclick="munculPopup($(this))">
