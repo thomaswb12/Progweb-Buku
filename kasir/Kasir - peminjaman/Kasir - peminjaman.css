@@ -65,9 +65,7 @@ div#bagianTabel{
 div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
     margin-top: 20px;
-    height: 80%;
     width: 100%;
-    overflow-y: scroll;
 }
 table{
     width: 100%;
@@ -195,8 +193,10 @@ article div#konten input#cancel{    /*tombol cancel*/
     }
     /*bagian bawah header, atas tabel*/
     /*tabel*/
+    div#bagianTabel{
+        width: 95%;
+    }
     div#tabelDaftar{  /*div bungkus tabel*/
-        overflow-y: unset;  /*tidak ada scroll lagi*/
         margin-top: 100px;
         width: auto;
         height: auto;
