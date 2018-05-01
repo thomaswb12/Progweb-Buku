@@ -39,9 +39,7 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
     margin-top: 90px;
-    height: 420px;
-    width: 94%;
-    overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
+    width: 100%;
 }
 article #daftarKomik .infoKomik{ /*kotak masing2 komik yang isinya info komik*/
     background-color: #F2F2F2;
@@ -216,7 +214,6 @@ div#popup div#divSinopsis{
     /*--------utk article (bagian daftar komik)---------*/
     article div#daftarKomik{ /*sekotak daftar komik*/
         margin-top: 10px;
-        overflow-y: inherit;
         width: 100%;
     }
     article #daftarKomik .infoKomik{ /*ukuran kotak putih dikecilin*/
