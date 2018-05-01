@@ -32,7 +32,6 @@ header #logo{  /*penempatan gambar logo tepoz di kiri atas*/
     padding-top: 0%;
     height:90px;
     top: 0.2%;
-    max-width:40%;
 }
 header p#welcome{   /*tulisan welcome smpai logout di pojok kanan atas*/
     float: right;   /*penempatan ke pojok kanan */
@@ -163,6 +162,9 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    header #logo{
+        height: 80px;
+    }
     body{
         position: unset;
     }
