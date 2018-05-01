@@ -44,6 +44,17 @@ function setTanggal(){
 }
 
 function munculPopup(temp){
+    var a = temp;
+    $.ajax({
+        type : 'post',
+        data : {'idBuku':a},
+        url: 'popUp.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#popup").html(response);
+        }
+     });
+    /*
     //ambil semua yg dibutuhkan utk ditampilkan di popup
     $judul = temp.children(".judul").text();
     $popular = temp.children(".keperluanPopup").children(".popular").text();    
@@ -91,7 +102,7 @@ function munculPopup(temp){
     $("#popupRating").text($rating);
     $("#popupRak").text($rak);
     $("#popupSinopsis").text($isiSinopsis);
-
+    */
     $("#popup").fadeIn();
     $("#blur").fadeIn();
 }

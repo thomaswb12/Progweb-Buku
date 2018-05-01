@@ -57,13 +57,15 @@
                 <?php 
                     include "../../getDataBuku.php";
                     $buku = getBuku();
+                    $nama="thomas";
                     foreach($buku as $value){
-                        echo '<div class="infoKomik favorit specialEdition" onclick="munculPopup($(this))">
+                        echo '<div class="infoKomik favorit specialEdition" onclick="munculPopup('."'".$value['idBuku']."'".')">
                                 <img class="komik" src="../../'.$value['Location'].'"/>
                                 <h4 class="judul">'.$value['judulBuku'].'</h4>
                                 <p>Stok : <span class="stok">'.$value['jumlahEksemplar'].'</span></p>
                                 <p style="float:left;">Tersedia : <span class="tersedia">1</span></p>
-                                <p class="status">Available</p>';
+                                <p class="status">Available</p>
+                            </div>';
                     }
                 ?>
                     <!-- ini yg ditiru-->
@@ -99,7 +101,7 @@
                                 Walaupun Tappei sering mengejek Miiko, tappei sering membantu dan menghibur Miiko saat terkena masalah.
                             </p>
                         </div>
-                    </div>
+                    
                 </div>
             </article>
             <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
@@ -108,63 +110,7 @@
             <div id="blur" onclick="pencetBlur()">
             </div>
             <div id="popup">
-                <i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
-                <br/><br/>
-                <div id="popupScroll">
-                    <p id="popupJudul"></p>
-                    <div id="divImg">
-                        <img class="komik" src="miiko19.jpg"/>
-                    </div>
-                    <div id="istimewa">
-                        <h3 id="popupPopular" style="color:red;"></h3>
-                        <h3 id="popupSpecial" style="color:orange;"></h3>
-                    </div>
-                    <div id="penting">
-                        <p>Status : <span id="popupStatus"></span></p>
-                        <p>Harga Sewa : <span id="popupHarga"></span></p>
-                        <p>Lama Sewa : <span id="popupLama"></span></p>
-                    </div>
-                    <table>
-                        <tr><td>ID Buku</td>
-                            <td id="popupIdBuku"></td></tr>
-                        <tr><td>Penulis</td>
-                            <td id="popupPenulis"></td></tr>
-                        <tr><td>Penerbit</td>
-                            <td id="popupPenerbit"></td></tr>
-                        <tr><td>Tanggal Terbit</td>
-                            <td id="popupTanggalTerbit"></td></tr>
-                        <tr><td>Jumlah Halaman</td>
-                            <td id="popupJumlahHalaman"></td></tr>
-                        <tr><td>Berat</td>
-                            <td id="popupBerat"></td></tr>
-                        <tr><td>JenisCover</td>
-                            <td id="popupJenisCover"></td></tr>
-                        <tr><td>Dimensi</td>
-                            <td id="popupDimensi"></td></tr>
-                        <tr><td>Text</td>
-                            <td id="popupText"></td></tr>
-                        <tr><td>Stok</td>
-                            <td id="popupStok"></td></tr>
-                        <tr><td>Tersedia</td>
-                            <td id="popupTersedia"></td></tr>
-                        <tr><td>Dipinjam</td>
-                            <td id="popupDipinjam"></td></tr>
-                        <tr><td>Genre</td>
-                            <td id="popupGenre"></td></tr>
-                        <tr><td>Rating</td>
-                            <td id="popupRating"></td></tr>
-                        <tr><td>Rak</td>
-                            <td id="popupRak"></td></tr>
-                    </table>
-                    <div id="divSinopsis">
-                        <p>Sinopsis</p>
-                        <p id="popupSinopsis"></p>
-                    </div>
-                    <div id="tombolDown">
-                        <i class="fas fa-chevron-circle-down"></i>
-                        <p>Scroll</p>
-                    </div>
-                </div>
+                
             </div>
         </body>
         </html>
