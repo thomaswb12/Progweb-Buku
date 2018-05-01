@@ -50,7 +50,7 @@
                     <td><br></td>
                 </tr>
                 <tr>
-                    <td><a href="#" class="tanpaGarisBawah"><input id="login" type="submit" value="Login"></a></td>
+                    <td><input id="login" type="submit" value="Login"></td>
                 </tr>
             </table>
         </form>
