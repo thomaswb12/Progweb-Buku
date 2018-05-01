@@ -62,6 +62,14 @@ article input, article select, article textarea{   /*kotak yang utk input*/
 article input[type=text]:focus { /*warna background berubah ketika focus*/
     background-color: cornflowerblue;
 }
+
+.floatKiri{
+    float: left;
+}
+
+.floatKanan{
+    float: right;
+}
 /*------------------------bagian artikel---------------------*/
 
 /*----------tombol utk up ke atas----------*/

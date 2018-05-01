@@ -21,9 +21,13 @@
         </head>
         <body>
             <header>
-                <img src="../../logobaru.png" id="logo"/>
-                <p class="blue font15" id="welcome">Welcome, <span id="namaUser">our customer</span> | <span id="logOut">Log Out</span></p>
-                <p id="tanggal" class="blue font15">tanggal</p>
+                <div class="floatKiri" id="headerGambar">
+                    <img src="../../logobaru.png" id="logo"/>
+                </div>
+                <div class="floatKanan">
+                    <p class="blue font15" id="welcome">Welcome, <span id="namaUser">our customer</span> | <span id="logOut">Log Out</span></p>
+                    <p id="tanggal" class="blue font15">tanggal</p>
+                </div>
             </header>
             <article>
                 <div id="judul">
