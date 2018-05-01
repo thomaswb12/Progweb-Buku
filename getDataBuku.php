@@ -11,28 +11,33 @@
                 while($rows = $result->fetch_assoc()){
                     $data[] = $rows;
                 }
+                $conn->close();
+                return $data;
             }
             else{
                 echo "gagal";
+                $conn->close();
             } 
-            $conn->close();
-            return $data;
         }
-        function jumlahEksemplar(){
+
+        function getDetailBuku($temp){
             global $conn;
-            $sql =  "SELECT * FROM";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($rows = $result->fetch_assoc()){
-                    $data[] = array('judulBuku'=>$rows['judulBuku'],'Dipinjam'=>$rows['Dipinjam']);
-                    
+            $sql =  "SELECT b.*,p.namaPenulis,pe.NamaPenerbit,r.namaRak FROM `buku` as b,penulis as p, penerbit as pe, rak as r WHERE `idBuku` = '$temp' AND p.idPenulis = b.idPenulis AND pe.idPenerbit = b.idPenerbit AND r.idRak = b.idRak ";
+            if($result = $conn->query($sql)){
+                if ($result->num_rows == 1) {
+                        $data = $result->fetch_assoc();
+                    $conn->close();
+                    return $data;
                 }
+                else{
+                    $conn->close();
+                    echo "gagal";
+                } 
             }
             else{
                 echo "gagal";
-            } 
-            $conn->close();
-            return $data;
+            }
+            
         }
     }
     else{
