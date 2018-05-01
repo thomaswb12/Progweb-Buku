@@ -77,3 +77,11 @@ tr{
     color: gray;
  }
 
+.tanpaGarisBawah{
+    text-decoration-style: none !important;
+    text-decoration-line: none !important;
+}
+
+#login:hover{
+    cursor: pointer;
+}

@@ -31,7 +31,11 @@
         <form action="controAccess.php" method="POST">
             <table>
                 <tr>
-                    <td><img id="gambar" src="logobaru.png" alt=""></td>
+                    <td>
+                        <div>
+                            <img id="gambar" src="logobaru.png" alt="">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td><br></td>
@@ -46,7 +50,7 @@
                     <td><br></td>
                 </tr>
                 <tr>
-                    <td><input id="login" type="submit" value="Login"></td>
+                    <td><a href="#" class="tanpaGarisBawah"><input id="login" type="submit" value="Login"></a></td>
                 </tr>
             </table>
         </form>
