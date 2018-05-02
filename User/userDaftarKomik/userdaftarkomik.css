@@ -1,8 +1,9 @@
 
 /*------------------------bagian artikel---------------------*/
 article{ /*article adlah semua yang ada dibawah header*/
-    height: 70%;
+    height: 80%;
     width: 100%;
+    overflow-y: scroll;
 }
 /*------------------------bagian judul dan searching + sorting ---------------------*/
 article div#judul h1{  /*judul "Daftar Komik"*/
@@ -43,9 +44,7 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
     margin-top: 100px;
-    height: 80%;
     width: 90%;
-    overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
 }
 article #daftarKomik .infoKomik{ /*kotak masing2 komik yang isinya info komik*/
     background-color: #F2F2F2;
@@ -195,6 +194,7 @@ div#popup div#divSinopsis{
     /*-----------------utk article-----------------*/
     article{ /*semua element di article di ketengahi*/
         text-align: center; 
+        overflow-y: unset;
     }
 
     /*--------utk article (bagian judul)---------*/
