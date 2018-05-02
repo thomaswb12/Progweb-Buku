@@ -18,7 +18,7 @@
         <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
         <i class="fa fa-search blue font15"></i>
     </div>
-</div><br>
+</div><br><br>
 
 <div id="daftarKaryawan" class="font15">
     <div class="infoKaryawan">

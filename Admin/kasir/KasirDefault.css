@@ -88,6 +88,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*judul*/
     text-align: center; /*taruh tengah*/
@@ -202,6 +203,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+        overflow-y: unset;
     }
     /*-----------------utk konten-----------------*/
 }

@@ -10,6 +10,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*konten*/
     text-align: center; /*taruh tengah*/
@@ -55,6 +56,7 @@ article div#konten input#tombolSave{
     article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+        overflow-y: unset;
     }
     article div#konten div#inputan{ /*bagian input2 dibawah judul*/
         margin: 0px;

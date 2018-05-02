@@ -10,6 +10,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*konten*/
     text-align: center; /*taruh tengah*/
@@ -19,7 +20,7 @@ article div#konten h1{  /*konten*/
 /*------------------------bagian konten---------------------*/
 /*atasnya tabel*/
 div#atasTabel{
-    width: 100%;
+    width: 80%;
     margin-bottom: 3%;
     margin-left: 3%;
 }
@@ -27,6 +28,7 @@ div#atasTabel{
     float: left;
     font-size: 110px;
     margin-right: 20px;
+    color: rgba(94,94,94,0.9);
 }
 div#atasTabel input[type=text]{  /*semua inputan text*/
     height: 20px;
@@ -42,9 +44,7 @@ div#bungkus{
 /*tabel*/
 div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
-    height: 45%;
     width: 100%;
-    overflow-y: scroll;
 }
 table{
     width: 100%;
@@ -100,6 +100,10 @@ input#print{
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    article div#konten{
+        width: 100%;
+        overflow-y: unset;
+    }
     /*atasnya tabel*/
     div#atasTabel{
         width: 100%;

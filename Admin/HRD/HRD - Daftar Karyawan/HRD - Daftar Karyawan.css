@@ -10,6 +10,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*konten*/
     text-align: center; /*taruh tengah*/
@@ -49,16 +50,15 @@ article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 
 /*daftar karyawan------*/
 article div#daftarKaryawan{ /*sekotak daftar komik*/
+    clear: both;
     margin: auto;   /*ditaruh tengah*/
-    height: 382px;
-    width: 94%;
-    overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
+    width: 98%;
 }
 article #daftarKaryawan .infoKaryawan{ /*kotak masing2 komik yang isinya info komik*/
     background-color: #F2F2F2;
     margin: 20px;
     height: 300px;
-    width: 185px;
+    width: 170px;
     float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
 }
 article #daftarKaryawan .infoKaryawan .photo{ /*utk fotonya*/
@@ -98,6 +98,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+        overflow-y: unset;
     }
     /*-----------------utk konten-----------------*/
 
@@ -106,7 +107,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin: auto;
         text-align: center;
         float: none;    /*hilangi float*/
-        
+        width: 100%;
     }
     article div#konten #searching #searchBox{
         float: none;
@@ -119,7 +120,18 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin: auto;
     }
 
- 
 
     /*--------utk article (bagian konten)---------*/
+    /*daftar karyawan------*/
+    article div#daftarKaryawan{ /*sekotak daftar komik*/
+        clear: both;
+        width: 100%;
+    }
+    article #daftarKaryawan .infoKaryawan{ /*kotak masing2 komik yang isinya info komik*/
+        background-color: #F2F2F2;
+        margin: 20px;
+        height: 300px;
+        width: 170px;
+        float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
+    }
 }

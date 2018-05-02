@@ -39,7 +39,7 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
     margin-top: 90px;
-    width: 100%;
+    width: 95%;
 }
 article #daftarKomik .infoKomik{ /*kotak masing2 komik yang isinya info komik*/
     background-color: #F2F2F2;
