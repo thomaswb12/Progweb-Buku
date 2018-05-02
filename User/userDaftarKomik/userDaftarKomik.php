@@ -43,13 +43,13 @@
                         <label id="labelSearchBy" class="blue font15">Search by :</label>
                         <br/>
                         <select id="selectSearchBy" class="font15">
-                            <option>Judul</option>
-                            <option>Pengarang</option>
-                            <option>Penerbit</option>
+                            <option value= 1>Judul</option>
+                            <option value= 2>Pengarang</option>
+                            <option value= 3>Penerbit</option>
                         </select>
                         <div id="searchBox">
-                            <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
-                            <i class="fa fa-search blue font15"></i>
+                            <input type="text" placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
+                            <i class="fa fa-search blue font15 klik" onclick="search()"></i>
                         </div>
                     </div>
                 </div>
