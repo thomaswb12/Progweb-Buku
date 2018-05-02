@@ -10,6 +10,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*konten*/
     text-align: center; /*taruh tengah*/
@@ -53,11 +54,9 @@ article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 /*daftar jabatannya------*/
 article div#konten div#daftarJabatan{ /*kotak daftar jabatan yg bisa di scroll*/
     clear: both;
-    height: 70%;
     width: 95%;
     margin: auto;   /*tengahin*/
     margin-top: 90px;
-    overflow-y: scroll;
 }
 article div#konten div#daftarJabatan div.kiri{  /*bagian kiri (id jabatan sampai gaji)*/
     float: left;
@@ -107,6 +106,7 @@ article div#konten div#daftarJabatan input.gaji{
     article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+        overflow-y: unset;
     }
     /*kepeluan search dan sort*/
     article div#konten #sorting, article div#konten #searching{ /*media search dan sort diketengahi*/

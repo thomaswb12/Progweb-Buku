@@ -12,6 +12,7 @@ body{ /*supaya mentok selayar*/
     padding: 0px;
     height: 100%;
     width: 100%;
+    position: fixed;
 }
 .blue{ /*utk font-font yg warnanya biru*/
     color: #000066;
@@ -89,6 +90,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*judul*/
     text-align: center; /*taruh tengah*/
@@ -147,6 +149,12 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    body{
+        position: unset;
+    }
+    article div#konten{
+        overflow-y: unset;
+    }
     header #logo{
         height: 80px;
     }

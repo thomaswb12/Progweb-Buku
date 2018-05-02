@@ -10,6 +10,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*konten*/
     text-align: center; /*taruh tengah*/
@@ -36,6 +37,9 @@ div#pinggirKanan{   /*sebelah kanan (id buku)*/
 div.position input[type=text]{  /*semua inputan text*/
     height: 20px;
     width: 200px;
+}
+.simbol{
+    color: rgba(94,94,94,0.9);
 }
 #simbolOrang{   /*simbol gambar orang*/
     float: left;
@@ -83,9 +87,7 @@ div#bagianTabel{
 div#tabelDaftar{  /*div bungkus tabel*/
     margin: auto;
     margin-top: 20px;
-    height: 80%;
     width: 100%;
-    overflow-y: scroll;
 }
 table{
     width: 100%;
@@ -144,6 +146,10 @@ article div#konten input#cancel{    /*tombol cancel*/
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    article div#konten{
+        width: 100%;
+        overflow-y: unset;
+    }
     /*bagian bawah header, atas tabel*/
     div.position{
         height: auto;

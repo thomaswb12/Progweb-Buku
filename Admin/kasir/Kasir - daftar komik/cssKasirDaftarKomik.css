@@ -8,6 +8,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 /*------------------------bagian judul dan searching + sorting ---------------------*/
 article div#judul h1{  /*judul "Daftar Komik"*/
@@ -44,9 +45,7 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 article div#daftarKomik{ /*sekotak daftar komik*/
     margin: auto;   /*ditaruh tengah*/
     margin-top: 90px;
-    height: 420px;
-    width: 100%;
-    overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
+    width: 95%;
 }
 article #daftarKomik .infoKomik{ /*kotak masing2 komik yang isinya info komik*/
     background-color: #F2F2F2;
@@ -195,6 +194,12 @@ div#popup div#divSinopsis{
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    article div#konten{ /*konten (sebelahnya aside)*/
+        float: none;
+        width: 100%;
+        height: auto;
+        overflow-y: unset;
+    }
     /*-----------------utk article-----------------*/
     article{ /*semua element di article di ketengahi*/
         text-align: center;   
@@ -205,7 +210,7 @@ div#popup div#divSinopsis{
         margin: auto;
         text-align: center;
         float: none;    /*hilangi float*/
-        
+        width: 100%;
     }
     article div#judul #searching #searchBox{
         float: none;

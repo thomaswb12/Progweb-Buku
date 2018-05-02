@@ -94,9 +94,10 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
     /*-----------------utk konten-----------------*/
-    article div#konten{
+    body article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+        overflow-y: unset;
     }
     article div#konten div#dataKaryawan{
         float: none;

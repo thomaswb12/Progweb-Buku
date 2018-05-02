@@ -114,11 +114,10 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
 
 /*------------------------bagian isi (daftar nya)---------------------*/
 article div#daftar{ /*sekotak daftar */
+    clear: both;
     margin-left: 50px; /*ditaruh tengah*/
     margin-right: 0px;
-    height: 400px;
-    width: 95.5%;
-    overflow-y: scroll;  /*apabila lebih overflow secara vertical, di scroll*/
+    width: 95%;
 }
 article #daftar .info{ /*kotak masing2  yang isinya info */
     border: 0.1px solid #F2F2F2;
@@ -237,6 +236,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*judul*/
     text-align: center; /*taruh tengah*/
