@@ -3,19 +3,19 @@ session_start();
 include "../../getDataBuku.php";
 $buku = getDetailBuku($_POST['idBuku']);
 
-echo '<i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
+echo '<i id="tombolClose" class="fas fa-times simbolX" onclick="pencetBlur()"></i>
         <br/><br/>
         <div id="popupScroll">
             <p id="popupJudul"></p>
             <div id="divImg">
-                <img class="komik" src="miiko19.jpg"/>
+                <img class="komik" src="../../'.$buku['Location'].'"/>
             </div>
             <div id="istimewa">
                 <h3 id="popupPopular" style="color:red;"></h3>
                 <h3 id="popupSpecial" style="color:orange;"></h3>
             </div>
             <div id="penting">
-                <p>Status : <span id="popupStatus"></span></p>
+                <p>Status : <span id="popupStatus">'.(($buku['Available']>0)?'available':'unavailable').'</span></p>
                 <p>Harga Sewa : <span id="popupHarga"></span></p>
                 <p>Lama Sewa : <span id="popupLama"></span></p>
             </div>
@@ -39,11 +39,11 @@ echo '<i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
                 <tr><td>Text</td>
                     <td id="popupText">'.$buku['NamaPenerbit'].'</td></tr>
                 <tr><td>Stok</td>
-                    <td id="popupStok">'.$buku['NamaPenerbit'].'</td></tr>
+                    <td id="popupStok">'.$buku['jumlahEksemplar'].'</td></tr>
                 <tr><td>Tersedia</td>
-                    <td id="popupTersedia">'.$buku['NamaPenerbit'].'</td></tr>
+                    <td id="popupTersedia">'.$buku['Available'].'</td></tr>
                 <tr><td>Dipinjam</td>
-                    <td id="popupDipinjam">'.$buku['NamaPenerbit'].'</td></tr>
+                    <td id="popupDipinjam">'.$buku['Dipinjam'].'</td></tr>
                 <tr><td>Genre</td>
                     <td id="popupGenre">'.$buku['NamaPenerbit'].'</td></tr>
                 <tr><td>Rating</td>
