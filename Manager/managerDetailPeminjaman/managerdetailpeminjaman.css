@@ -2,6 +2,12 @@
 /*------------------------bagian aside---------------------*/
 
 /*------------------------bagian konten---------------------*/
+article div#konten{ /*konten (sebelahnya aside)*/
+    float: left;
+    width: 80%;
+    height: 100%;
+    overflow-y: scroll;
+}
 /*-----bagian data umum--------*/
 article div#konten table#dataMember{ /*data id, nama, email, dll*/
     margin-left: 4%;
@@ -67,6 +73,7 @@ article div#konten table#tabelDaftarKomik .peringatan{ /*kolom untuk menampilkan
     article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+        overflow-y: unset;
     }
     /*-----bagian data--------*/
     article div#konten table#dataMember{ /*data id, nama, email, dll*/

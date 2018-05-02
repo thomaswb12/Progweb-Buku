@@ -10,6 +10,7 @@ article div#konten{ /*konten (sebelahnya aside)*/
     float: left;
     width: 80%;
     height: 100%;
+    overflow-y: scroll;
 }
 article div#konten h1{  /*konten*/
     text-align: center; /*taruh tengah*/
@@ -49,9 +50,7 @@ article div#konten div#periode #periodeAwal, article div#konten div#periode #per
 }
 /*tabel laporan------*/
 article div#konten div#tabel{ /*div pembungkus tabel*/
-    height: 65%;
     width: 98%;
-    overflow-y: scroll;  /*scroll horizontal kalau overflow*/
     margin: auto;   /*ketengahin*/
     margin-top: 60px;
     clear: both;
@@ -119,6 +118,7 @@ td{
     article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+        overflow-y: unset;
     }
     /*-----------------utk konten-----------------*/
     /*periode----------*/
