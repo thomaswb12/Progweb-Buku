@@ -23,6 +23,10 @@ article div#judul #searching{ /*"search by" (label, dropbox, input, dan icon-nya
     width: 300px;
     margin-right: 2%; /*jarak dgn sort by*/
 }
+
+#tombolClose,#blur,.infoKomik,select,input,option:hover{
+    cursor: pointer;
+}
 article div#judul #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
     float: right;   /*lettakkan di kanan parent #searching*/
 }
