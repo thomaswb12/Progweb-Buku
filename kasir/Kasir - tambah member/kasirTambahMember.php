@@ -1,15 +1,9 @@
-<?php
-    $sql="SELECT id FROM member ORDER BY id DESC LIMIT 1";
-    $result= mysqli_query($conn,$sql);
-?>
 <h1>Tambah Member</h1>
 <form action="kasirTambahMember.php" method="post">
     <div id="kiri">
         <label>ID Member</label><br/>
         <i class="fas fa-id-card-alt simbol"></i>
         <input type="text" id="idMember" name="idMember" value="<?php
-            $sql="SELECT id FROM member ORDER BY id DESC LIMIT 1";
-            $result= mysqli_query($conn,$sql);
         ?>"/><br/><br/><br/>
 
         <label>Nama Member</label><br/>
