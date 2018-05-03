@@ -15,7 +15,7 @@
             <title>User - Daftar Komik</title>
             <link href="../UserDefault.css" type="text/css" rel="stylesheet">
             <link href="userdaftarkomik.css" type="text/css" rel="stylesheet">
-            <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+            <script type="text/javascript" src="../../jquery-3.3.1.min.js"></script>
             <script src="../UserDefault.js"></script>
             <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         </head>
@@ -24,34 +24,7 @@
                 <img src="../../logobaru.png" id="logo"/>
                 <p class="blue font15" id="welcome">Welcome, <span id="namaUser">our customer</span> | <a href="../../"><span id="logOut">Log Out</span></a></p>
                 <p id="tanggal" class="blue font15">
-                <?php
-                    $hari;
-                    $bulan;
-                    
-                    //atur hari bahasa indonesia
-                    if(date("D")=='Mon') $hari="Senin";
-                    else if(date("D")=='Tue') $hari="Selasa";
-                    else if(date("D")=='Wed') $hari="Rabu";
-                    else if(date("D")=='Thu') $hari="Kamis";
-                    else if(date("D")=='Fri') $hari="Jum'at";
-                    else if(date("D")=='Dat') $hari="Sabtu";
-
-                    //atur bulan bahasa indonesia
-                    if(date("m")=='01') $bulan="Januari";
-                    else if(date("m")=='02') $bulan="Februari";
-                    else if(date("m")=='03') $bulan="Maret";
-                    else if(date("m")=='04') $bulan="April";
-                    else if(date("m")=='05') $bulan="Mei";
-                    else if(date("m")=='06') $bulan="Juni";
-                    else if(date("m")=='07') $bulan="Juli";
-                    else if(date("m")=='08') $bulan="Agustus";
-                    else if(date("m")=='09') $bulan="September";
-                    else if(date("m")=='10') $bulan="Oktober";
-                    else if(date("m")=='11') $bulan="November";
-                    else if(date("m")=='12') $bulan="Desember";
-
-                    echo $hari.', '.date("d")." ".$bulan." ".date("Y");
-                ?>
+                <?php include "../../getTanggal.php"?>
                 </p>
             </header>
             <article>
@@ -62,9 +35,9 @@
                         <label id="labelSortBy" class="blue font15">Sort by :</label>
                         <br/>
                         <select id="selectSortBy" class="font15">
-                            <option>Terbaru</option>
-                            <option>Terpopuler</option>
-                            <option>Stok terbanyak</option>
+                            <option value = 1>Terbaru</option>
+                            <option value = 2>Terpopuler</option>
+                            <option value = 3>Stok terbanyak</option>
                         </select>
                     </div>
 
