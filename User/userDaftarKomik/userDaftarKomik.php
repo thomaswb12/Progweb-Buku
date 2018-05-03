@@ -55,17 +55,7 @@
                 </div>
                 <div id="daftarKomik" class="font15">
                 <?php 
-                    include "../../getDataBuku.php";
-                    $buku = getBuku();
-                    foreach($buku as $value){
-                        echo '<div class="infoKomik favorit specialEdition" onclick="munculPopup('."'".$value['idBuku']."'".')">
-                                <img class="komik" src="../../'.$value['Location'].'"/>
-                                <h4 class="judul">'.$value['judulBuku'].'</h4>
-                                <p>Stok : <span class="stok">'.$value['jumlahEksemplar'].'</span></p>
-                                <p style="float:left;">Tersedia : <span class="tersedia">1</span></p>
-                                <p class="status">Available</p>
-                            </div>';
-                    }
+                    include "isiKonten.php";
                 ?>
                 </div>
             </article>
@@ -78,4 +68,3 @@
         <?php
     }
 ?>
-

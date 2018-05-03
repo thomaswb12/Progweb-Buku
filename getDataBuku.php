@@ -20,6 +20,28 @@
             } 
         }
 
+        function getBukuWith($kata,$dari,$sort){
+            global $conn;
+            switch($dari){
+                case 1 : $dari = "judulBuku"; break;
+                case 2 : $dari = "namaPenulis";break;
+                case 3 : $dari = "NamaPenerbit";break;
+            }
+            $sql =  " SELECT * FROM buku where ";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while($rows = $result->fetch_assoc()){
+                    $data[] = $rows;
+                }
+                $conn->close();
+                return $data;
+            }
+            else{
+                echo "gagal";
+                $conn->close();
+            } 
+        }
+
         function getDetailBuku($temp){
             global $conn;
             $sql =  "SELECT b.*,p.namaPenulis,pe.NamaPenerbit,r.namaRak FROM `buku` as b,penulis as p, penerbit as pe, rak as r WHERE `idBuku` = '$temp' AND p.idPenulis = b.idPenulis AND pe.idPenerbit = b.idPenerbit AND r.idRak = b.idRak ";
