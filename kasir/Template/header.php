@@ -1,3 +1,6 @@
+<?php
+    require  "../koneksi.php";
+?>
     <div>
         <img src="../logobaru.png" id="logo"/>
         <p class="blue font15" id="welcome">Welcome, Erinda Resha |  <a href="../"><span id="logOut">Log Out</span></a></p>
