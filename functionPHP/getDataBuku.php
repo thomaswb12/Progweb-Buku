@@ -1,6 +1,6 @@
 <?php
     //if(isset($_SESSION['id']) || $_SESSION['control'] != 1){
-        require("koneksi.php");
+        require "koneksi.php";
 
 
         function getBuku(){

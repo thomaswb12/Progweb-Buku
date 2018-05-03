@@ -1,5 +1,5 @@
 <?php
-     include "../../getDataBuku.php";
+     include "../../functionPHP/getDataBuku.php";
      if(isset($_POST['kata'])&&isset($_POST['dari'])&&isset($_POST['sorting']))
         $buku = getBukuWith($_POST['kata'],$_POST['dari'],$_POST['sorting']);
      else

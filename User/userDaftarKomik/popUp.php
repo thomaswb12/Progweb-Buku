@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../../getDataBuku.php";
+include "../../functionPHP/getDataBuku.php";
 $buku = getDetailBuku($_POST['idBuku']);
 
 echo '<i id="tombolClose" class="fas fa-times simbolX" onclick="pencetBlur()"></i>
