@@ -51,13 +51,13 @@ function search(){
     $.ajax({
         type : 'post',
         data : {'kata':kata,'dari':dari,'sorting':sorting},
-        url: 'popUp.php',
+        url: 'isiKonten.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
-            $("#popup").html(response);
+            $("#daftarKomik").html(response);
         }
     });
-    alert($kata);
+    alert($kata + " " + $dari +" " + $sorting);
 }
 
 function pencetBlur(){
