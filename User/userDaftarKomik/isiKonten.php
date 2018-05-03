@@ -1,7 +1,7 @@
 <?php
      include "../../getDataBuku.php";
      if(isset($_POST['kata'])&&isset($_POST['dari'])&&isset($_POST['sorting']))
-        $buku = getBukuWith($kata,$dari,$sort);
+        $buku = getBukuWith($_POST['kata'],$_POST['dari'],$_POST['sorting']);
      else
         $buku = getBuku();
      foreach($buku as $value){

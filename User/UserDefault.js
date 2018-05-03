@@ -59,19 +59,18 @@ function munculPopup(temp){
 }
 
 function search(){
-    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata = "*";
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata = "";
     $dari = $('#selectSearchBy').val();
     $sorting = $('#selectSortBy').val();
     $.ajax({
         type : 'post',
-        data : {'kata':kata,'dari':dari,'sorting':sorting},
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting},
         url: 'isiKonten.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
             $("#daftarKomik").html(response);
         }
     });
-    alert($kata + " " + $dari +" " + $sorting);
 }
 
 function pencetBlur(){

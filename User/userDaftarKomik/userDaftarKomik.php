@@ -33,9 +33,9 @@
                         <label id="labelSortBy" class="blue font15">Sort by :</label>
                         <br/>
                         <select id="selectSortBy" class="font15">
-                            <option>Terbaru</option>
-                            <option>Terpopuler</option>
-                            <option>Stok terbanyak</option>
+                            <option value = 1>Terbaru</option>
+                            <option value = 2>Terpopuler</option>
+                            <option value = 3>Stok terbanyak</option>
                         </select>
                     </div>
 

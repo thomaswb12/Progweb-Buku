@@ -1,5 +1,5 @@
 <?php
-    if(isset($_SESSION['id']) || $_SESSION['control'] != 1){
+    //if(isset($_SESSION['id']) || $_SESSION['control'] != 1){
         require("koneksi.php");
 
 
@@ -27,7 +27,13 @@
                 case 2 : $dari = "namaPenulis";break;
                 case 3 : $dari = "NamaPenerbit";break;
             }
-            $sql =  " SELECT * FROM buku where $dari like '$kata%' ";
+            switch($sort){
+                case 1 : $sort = "tanggalTiba"; break;
+                case 2 : $sort = "Dipinjam";break;
+                case 3 : $sort = "jumlahEksemplar";break;
+            }
+
+            $sql =  " SELECT * FROM buku where $dari like '$kata%' order by $sort DESC";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($rows = $result->fetch_assoc()){
@@ -61,10 +67,10 @@
             }
             
         }
-    }
-    else{
+    //}
+    /*else{
         $_SESSION['error'] = 2;
         header("location:index.php");
-    }
+    }*/
     
 ?>
