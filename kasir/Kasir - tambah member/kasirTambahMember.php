@@ -4,7 +4,6 @@
         <label>ID Member</label><br/>
         <i class="fas fa-id-card-alt simbol"></i>
         <input type="text" id="idMember" name="idMember" value="<?php
-            
         ?>"/><br/><br/><br/>
 
         <label>Nama Member</label><br/>
