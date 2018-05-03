@@ -15,7 +15,7 @@
             <title>User - Daftar Komik</title>
             <link href="../UserDefault.css" type="text/css" rel="stylesheet">
             <link href="userdaftarkomik.css" type="text/css" rel="stylesheet">
-            <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+            <script type="text/javascript" src="../../jquery-3.3.1.min.js"></script>
             <script src="../UserDefault.js"></script>
             <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         </head>
@@ -35,9 +35,9 @@
                         <label id="labelSortBy" class="blue font15">Sort by :</label>
                         <br/>
                         <select id="selectSortBy" class="font15">
-                            <option>Terbaru</option>
-                            <option>Terpopuler</option>
-                            <option>Stok terbanyak</option>
+                            <option value = 1>Terbaru</option>
+                            <option value = 2>Terpopuler</option>
+                            <option value = 3>Stok terbanyak</option>
                         </select>
                     </div>
 

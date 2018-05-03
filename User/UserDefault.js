@@ -45,9 +45,10 @@ function munculPopup(temp){
 }
 
 function search(){
-    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata = "";
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
     $dari = $('#selectSearchBy').val();
     $sorting = $('#selectSortBy').val();
+    alert ($kata + " "+  $dari +" "+ $sorting);
     $.ajax({
         type : 'post',
         data : {'kata':$kata,'dari':$dari,'sorting':$sorting},
@@ -57,6 +58,7 @@ function search(){
             $("#daftarKomik").html(response);
         }
     });
+    
 }
 
 function pencetBlur(){

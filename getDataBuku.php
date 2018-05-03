@@ -63,6 +63,7 @@
                 } 
             }
             else{
+                $conn->close();
                 echo "gagal";
             }
             
