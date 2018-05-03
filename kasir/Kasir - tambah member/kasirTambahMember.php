@@ -2,12 +2,12 @@
     include "../../functionPHP/member.php";
 ?>
 <h1>Tambah Member</h1>
-<form action="kasirTambahMember.php" method="post">
+<form action="../functionPHP/tambahMember.php" method="post">
     <div id="kiri">
         <label>ID Member</label><br/>
         <i class="fas fa-id-card-alt simbol"></i>
         <input type="text" id="idMember" class="disable" name="idMember" disabled="disabled" value="<?php
-            getLastIdMember();
+            echo getLastIdMember();
         ?>"/><br/><br/><br/>
 
         <label>Nama Member</label><br/>
@@ -49,21 +49,5 @@
 </form>
 
 <?php
-    if(!empty($_POST["tombolOk"])){
-        $id=$_POST["idMember"];
-        $nama=$_POST["namaMember"];
-        $noIdentitas=$_POST["namaMember"];
-        $gender=$_POST["gender"];
-        $lahir=$_POST["tanggalLahir"];
-        $email=$_POST["email"];
-        $noTelp=$_POST["noTelp"];
-        $alamat=$_POST["alamat"];
-        if($nama==""||$noIdentitas==""||$lahir==""||$email==""||$noTelp==""||$alamat==""){
-            ?>
-            <script>
-                alert("Data belum lengkap!");
-            </script>
-            <?php
-        }
-    }
+
 ?>

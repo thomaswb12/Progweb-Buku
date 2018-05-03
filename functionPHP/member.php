@@ -16,6 +16,6 @@
         for($i=0;$i<6-$numlength;$i++){
             $newId=$newId."0";
         }
-        echo "M".$newId.$id;
+        return "M".$newId.$id;
     }
 ?>
