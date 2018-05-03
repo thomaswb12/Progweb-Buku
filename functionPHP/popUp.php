@@ -8,7 +8,7 @@ echo '<i id="tombolClose" class="fas fa-times simbolX" onclick="pencetBlur()"></
         <div id="popupScroll">
             <p id="popupJudul"></p>
             <div id="divImg">
-                <img class="komik" src="../../'.$buku['Location'].'"/>
+                <img class="komik" src="C:/xampp/htdocs/project-akhir/Progweb-Buku/'.$buku['Location'].'"/>
             </div>
             <div id="istimewa">
                 <h3 id="popupPopular" style="color:red;"></h3>
