@@ -24,155 +24,24 @@
     </div>
 </div>
 <div id="daftarKomik" class="font15">
-    <div class="infoKomik">
-        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        <h4 class="judul">Miiko vol 19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-        <img class="new" src="../label_new.png"/>
-    </div>
-    <div class="infoKomik">
-        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-        <img class="new" src="../label_new.png"/>
-    </div>
-    <div class="infoKomik favorit">
-        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik">
-        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik">
-        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik specialEdition">
-        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
-    <div class="infoKomik favorit specialEdition" onclick="popupDetailKomik($(this))">
-        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p>Stok : <span class="stok">5</span></p>
-        <p style="float:left;">Tersedia : <span class="tersedia">1</span></p>
-        <p class="status">Available</p>
-        <!-- yg perlu ditampilkan di popup, tp gaperlu tampil di page-nya -->
-        <div class="keperluanPopup" style="display: none">
-            <p class="idBuku">83742</p>
-            <p class="penulis">Masashi</p>
-            <p class="penerbit">Elex Media</p>
-            <p class="tanggalTerbit">4 Mei 2007</p>
-            <p class="jumlahHalaman">56</p>
-            <p class="beratBuku">500</p>
-            <p class="jenisCover">Soft Cover</p>
-            <p class="dimensi">8x15</p>
-            <p class="text">Bahasa Indonesia</p>
-            <p class="dipinjam">2023</p>
-            <p class="genre">Action</p>
-            <p class="rating">Semua umur</p>
-            <p class="rak">A1</p>
-            <h3 class="popular">Popular</h3>
-            <h3 class="specialEdition">Special Edition</h3>
-            <p class="hargaSewa">1500</p>
-            <p class="lamaSewa">7 </p>
-            <p class="isiSinopsis">
-                Hai, Miiko! (juga dikenal sebagai Kocchi Muite! Miiko) adalah manga seri karya seorang mangaka Jepang, Ono Eriko.
-                Menceritakan tentang gadis kelas 5 SD bernama Yamada Miiko beserta dengan teman-temannya.
-                Di Inggris manga ini dikenal dengan nama Hi, Michelle!.
-                Terdapat versi terdahulu dari Hai, Miiko! yang berudul Namaku Miiko! berjumlah 4 jilid.
-                Seri ini menceritakan tentang Miiko dan kawan-kawan saat kelas 4 SD menjelang kenaikan kelas.
-                Saat ini manga Hai, Miiko! sudah mencapai jilid 29, menceritakan Miiko dan kawan-kawan yang telah naik kelas ke kelas 6 SD.
-                Miiko dikenal sangat Aktif dan Ceria. karena itu Tappei dan Yoshida menyukai Miiko.
-                Miiko sangat ingin bertambah tinggi lantaran Tappei sering mengejek Miiko kecil karena tingginya hanya 122 cm.
-                Walaupun Tappei sering mengejek Miiko, tappei sering membantu dan menghibur Miiko saat terkena masalah.
-            </p>
-        </div>
-    </div>
-    <div class="infoKomik">
-        <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        <h4 class="judul">Hai Miiko! Vol.19</h4>
-        <p class="stok">Stok : 5</p>
-        <p class="tersedia">Tersedia : 1</p>
-        <p class="status">Available</p>
-    </div>
+    <?php
+        include "../../functionPHP/getDataBuku.php";
+        if(isset($_POST['kata'])&&isset($_POST['dari'])&&isset($_POST['sorting']))
+            $buku = getBukuWith($_POST['kata'],$_POST['dari'],$_POST['sorting']);
+        else
+            $buku = getBuku();
+        foreach($buku as $value){
+            echo '<div class="infoKomik favorit specialEdition" onclick="munculPopup('."'".$value['idBuku']."'".')">
+                    <img class="komik" src="../'.$value['Location'].'"/>
+                    <h4 class="judul">'.$value['judulBuku'].'</h4>
+                    <p>Stok : <span class="stok">'.$value['jumlahEksemplar'].'</span></p>
+                    <p style="float:left;">Tersedia : <span class="tersedia">'.$value['jumlahEksemplar'].'</span></p>
+                    <p class="status">'.(($value['Available']>0)?'available':'unavailable').'</p>
+                </div>';
+        }
+    ?>
 </div>
 <!-- keperluan popup-->
 <div id="blur" onclick="pencetBlur()">
 </div>
-<div id="popup">
-    <i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
-    <br/><br/>
-    <div id="popupScroll" onscroll="scrollDown()">
-        <p id="popupJudul"></p>
-        <div id="divImg">
-            <img class="komik" src="Kasir - daftar komik/miiko19.jpg"/>
-        </div>
-        <div id="istimewa">
-            <h3 id="popupPopular" style="color:red;"></h3>
-            <h3 id="popupSpecial" style="color:orange;"></h3>
-        </div>
-        <div id="penting">
-            <p>Status : <span id="popupStatus"></span></p>
-            <p>Harga Sewa : <span id="popupHarga"></span></p>
-            <p>Lama Sewa : <span id="popupLama"></span></p>
-        </div>
-        <table>
-            <tr><td>ID Buku</td>
-                <td id="popupIdBuku"></td></tr>
-            <tr><td>Penulis</td>
-                <td id="popupPenulis"></td></tr>
-            <tr><td>Penerbit</td>
-                <td id="popupPenerbit"></td></tr>
-            <tr><td>Tanggal Terbit</td>
-                <td id="popupTanggalTerbit"></td></tr>
-            <tr><td>Jumlah Halaman</td>
-                <td id="popupJumlahHalaman"></td></tr>
-            <tr><td>Berat</td>
-                <td id="popupBerat"></td></tr>
-            <tr><td>JenisCover</td>
-                <td id="popupJenisCover"></td></tr>
-            <tr><td>Dimensi</td>
-                <td id="popupDimensi"></td></tr>
-            <tr><td>Text</td>
-                <td id="popupText"></td></tr>
-            <tr><td>Stok</td>
-                <td id="popupStok"></td></tr>
-            <tr><td>Tersedia</td>
-                <td id="popupTersedia"></td></tr>
-            <tr><td>Dipinjam</td>
-                <td id="popupDipinjam"></td></tr>
-            <tr><td>Genre</td>
-                <td id="popupGenre"></td></tr>
-            <tr><td>Rating</td>
-                <td id="popupRating"></td></tr>
-            <tr><td>Rak</td>
-                <td id="popupRak"></td></tr>
-        </table>
-        <div id="divSinopsis">
-            <p>Sinopsis</p>
-            <p id="popupSinopsis"></p>
-        </div>
-        <div id="tombolDown">
-            <i class="fas fa-chevron-circle-down"></i>
-            <p>Scroll</p>
-        </div>
-    </div>
-</div>
+<div id="popup"></div>

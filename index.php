@@ -28,7 +28,7 @@
 </head>
 <body>
     <div id="box">
-        <form action="controAccess.php" method="POST">
+        <form action="functionPHP/controAccess.php" method="POST">
             <table>
                 <tr>
                     <td>

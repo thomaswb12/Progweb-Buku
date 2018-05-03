@@ -5,12 +5,12 @@
         if($_POST['id'] == "admin" && $_POST['password'] == "admin"){ //untuk login ke page user
             $_SESSION['id'] = $_POST['id'];
             $_SESSION['control'] = 1;
-            header("location:User/UserDaftarKomik/UserDaftarKomik.php");//untuk pindah ke page tersebut
+            header("location:../User/UserDaftarKomik/UserDaftarKomik.php");//untuk pindah ke page tersebut
         }
         else{
             if($_POST['id'] == "" || $_POST['password'] == ""){
                 $_SESSION['error'] = 1;
-                header("location:index.php");
+                header("location:../index.php");
             }
             else{
                 $_SESSION['id'] = $_POST['id'];
