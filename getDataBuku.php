@@ -5,7 +5,7 @@
 
         function getBuku(){
             global $conn;
-            $sql =  " SELECT * FROM buku";
+            $sql =  " SELECT * FROM buku order by judulBuku";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($rows = $result->fetch_assoc()){
@@ -27,7 +27,7 @@
                 case 2 : $dari = "namaPenulis";break;
                 case 3 : $dari = "NamaPenerbit";break;
             }
-            $sql =  " SELECT * FROM buku where ";
+            $sql =  " SELECT * FROM buku where $dari like '$kata%' ";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($rows = $result->fetch_assoc()){
