@@ -1,9 +1,13 @@
+<?php
+    include "../../functionPHP/member.php";
+?>
 <h1>Tambah Member</h1>
 <form action="kasirTambahMember.php" method="post">
     <div id="kiri">
         <label>ID Member</label><br/>
         <i class="fas fa-id-card-alt simbol"></i>
-        <input type="text" id="idMember" name="idMember" value="<?php
+        <input type="text" id="idMember" class="disable" name="idMember" disabled="disabled" value="<?php
+            getLastIdMember();
         ?>"/><br/><br/><br/>
 
         <label>Nama Member</label><br/>
@@ -16,7 +20,7 @@
 
         <label>Gender</label><br/>
         <i class="fas fa-transgender simbol"></i>
-        <select>
+        <select name="gender">
             <option>Perempuan</option>
             <option>Laki-laki</option>
         </select><br/>
@@ -40,11 +44,26 @@
         <textarea type="text" id="alamat" name="alamat"></textarea><br/>
         </div>
     </div>
-    <input class="tombol tebal" type="submit" id="tombolOk" name="tombolOk" value="OK">
-</div>
+        <input class="tombol tebal" type="submit" id="tombolOk" name="tombolOk" value="OK">
+    </div>
+</form>
 
 <?php
     if(!empty($_POST["tombolOk"])){
-        
+        $id=$_POST["idMember"];
+        $nama=$_POST["namaMember"];
+        $noIdentitas=$_POST["namaMember"];
+        $gender=$_POST["gender"];
+        $lahir=$_POST["tanggalLahir"];
+        $email=$_POST["email"];
+        $noTelp=$_POST["noTelp"];
+        $alamat=$_POST["alamat"];
+        if($nama==""||$noIdentitas==""||$lahir==""||$email==""||$noTelp==""||$alamat==""){
+            ?>
+            <script>
+                alert("Data belum lengkap!");
+            </script>
+            <?php
+        }
     }
 ?>
