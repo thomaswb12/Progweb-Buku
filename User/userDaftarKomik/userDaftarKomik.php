@@ -57,7 +57,7 @@
                 </div>
                 <div id="daftarKomik" class="font15">
                 <?php 
-                    include "isiKonten.php";
+                    include "../../functionPHP/isiKonten.php";
                 ?>
                 </div>
             </article>
