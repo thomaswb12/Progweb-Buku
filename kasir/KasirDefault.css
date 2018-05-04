@@ -142,6 +142,10 @@ article div#konten input.tombol:hover{
     border: none;
 }
 
+input,select,.infoKomik,#option,.klik{
+    cursor: pointer;
+}
+
 .green{background-color: rgba(0, 100, 0, 0.6) !important;}
 /*------------------------bagian konten---------------------*/
 
