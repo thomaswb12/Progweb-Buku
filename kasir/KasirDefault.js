@@ -54,8 +54,8 @@ function aside3(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20daftar%20komik/KontenKasirDaftarKomik.php");
-    $("div#gantiHead").load("Kasir%20-%20daftar%20komik/HeadKasirDaftarKomik.php");
+    $("div#konten").load("kasirDaftarKomik/KontenKasirDaftarKomik.php");
+    $("div#gantiHead").load("kasirDaftarKomik/HeadKasirDaftarKomik.php");
     $.session.set('page','3');
 }
 function aside4(){
