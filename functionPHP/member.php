@@ -32,6 +32,35 @@
         return $data;
     }
 
+    //ambil member yg di search / & sort
+    function getAllMemberWith($kata,$dari,$sort){
+        global $conn;
+        switch($dari){
+            case 1 : $dari = "id"; break;
+            case 2 : $dari = "nama";break;
+            case 3 : $dari = "email";break;
+        }
+        switch($sort){
+            case 1 : $sort = "id"; break;
+            case 2 : $sort = "nama";break;
+            case 3 : $sort = "email";break;
+        }
+
+        $sql =  " SELECT * FROM member where $dari like '$kata%' order by $sort ASC";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while($rows = $result->fetch_assoc()){
+                $data[] = $rows;
+            }
+            $conn->close();
+            return $data;
+        }
+        else{
+            echo "gagal";
+            $conn->close();
+        } 
+    }
+
     //tampilkan semua member di tabel --> dipakai di kasir daftar member
     function tampilMemberDalamTabel(){
         $hasil = getAllMember();

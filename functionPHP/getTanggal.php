@@ -1,6 +1,6 @@
 <?php
-    $hari;
-    $bulan;
+    $hari="";
+    $bulan="";
     
     //atur hari bahasa indonesia
     if(date("D")=='Mon') $hari="Senin";
@@ -8,7 +8,7 @@
     else if(date("D")=='Wed') $hari="Rabu";
     else if(date("D")=='Thu') $hari="Kamis";
     else if(date("D")=='Fri') $hari="Jum'at";
-    else if(date("D")=='Dat') $hari="Sabtu";
+    else if(date("D")=='Sat') $hari="Sabtu";
 
     //atur bulan bahasa indonesia
     if(date("m")=='01') $bulan="Januari";
