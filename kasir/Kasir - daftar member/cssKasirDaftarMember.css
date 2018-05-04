@@ -73,23 +73,25 @@ div#blur{       /*utk blur semuanya*/
     left: 0px;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color:rgba(50,50,50,0.7);    
     display: none;
 }
 div#popup{  /*kotak popup*/
     position: fixed;
     top: 5%;
+    left: 15%;
     height: 90%;
     width: 70%;
-    background-color:rgba(50,50,50,0.9);
-    color: white;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
     display: none;
 }
 div#popup .simbolX{ /*simbol x untuk close popup*/
     float: right;
     margin-top: 10px;
     margin-right: 10px;
-    color: white;
+    color: black;
     font-size: 30px;
 }
 div#popup table{    /*tabel di popup*/

@@ -1,3 +1,8 @@
+<?php
+    include "../../functionPHP/member.php";
+    session_start();
+?>
+
 <h1>Daftar Member</h1>
 <div id="searching">
     <label id="labelSearchBy" class="blue font15">Search by :</label>
@@ -24,14 +29,9 @@
             <th class="noIdentitas">No Identitas</th>
         </thead>
         <tbody>
-            <tr onclick="pencetTR($(this))">
-                <td class="nomor">1</td>
-                <td class="idMember">1234567890</td>
-                <td class="namaMember">Namanya siapa yaaa</td>
-                <td class="email">email@gmail.com</td>
-                <td class="gender">Perempuan</td>
-                <td class="noIdentitas">12345632862312</td>
-            </tr>
+            <?php
+                tampilMemberDalamTabel();
+            ?>
         </tbody>
     </table>
 </div>

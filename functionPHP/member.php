@@ -1,6 +1,7 @@
 <?php
     require "koneksi.php";
 
+    //ambil id terakhir yg terdaftar di tabel (utk generate id berikutnya) --> dipakai di kasir - tambah member
     function getLastIdMember(){
         global $conn;
         $sql = "SELECT id FROM member ORDER BY id DESC LIMIT 1";
@@ -16,6 +17,37 @@
         for($i=0;$i<6-$numlength;$i++){
             $newId=$newId."0";
         }
+        $conn->close();        
         return "M".$newId.$id;
+    }
+
+    //ambil semua di tabel member
+    function getAllMember(){
+        global $conn;
+        $sql = "SELECT * FROM member ORDER BY id ASC";
+        $result=mysqli_query($conn,$sql);
+        $data=array();
+        while($row=mysqli_fetch_assoc($result)){
+            $data[]=$row;
+        }
+        $conn->close();
+        return $data;
+    }
+
+    //tampilkan semua member di tabel --> dipakai di kasir daftar member
+    function tampilMemberDalamTabel(){
+        $hasil = getAllMember();
+        $i=1;
+        foreach($hasil as $member){
+            echo    '<tr onclick="pencetTR($(this))">
+                        <td class="nomor">'.$i.'</td>
+                        <td class="idMember">'.$member['id'].'</td>
+                        <td class="namaMember">'.$member['nama'].'</td>
+                        <td class="email">'.$member['email'].'</td>
+                        <td class="gender">'.$member['gender'].'</td>
+                        <td class="noIdentitas">'.$member['idIdentitas'].'</td>
+                    </tr>';
+            $i++;                    
+        }
     }
 ?>
