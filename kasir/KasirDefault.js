@@ -75,6 +75,7 @@ function aside5(){
     $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
     $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
     $.session.set('page','5');
+    searchDaftarMember();
 }
 
 function pencetTRPengembalian(temp){
@@ -94,13 +95,13 @@ function pencetTR(temp){
     var email = temp.children("td:nth-of-type(4)").html();
     var gender = temp.children("td:nth-of-type(5)").html();
     var noIdentitas = temp.children("td:nth-of-type(6)").html(); 
-    $("#popup").fadeIn();
-    $("#blur").fadeIn();
     $("#popupIdMember").text(": "+idMember);
     $("#popupNamaMember").text(": "+namaMember);
     $("#popupEmail").text(": "+email);
     $("#popupGender").text(": "+gender);
     $("#popupNoIdentitas").text(": "+noIdentitas);
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
 }
 
 function pencetBlur(){
@@ -181,4 +182,19 @@ function search(){
         }
     });
     
+}
+
+function searchDaftarMember(){
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
+    $dari = $('#selectSearchBy').val();
+    $sorting = $('#selectSortBy').val();
+    $.ajax({
+        type : 'post',
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':0},
+        url: '../functionPHP/isiKontenDaftarMember.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("tbody").html(response);
+        }
+    });
 }

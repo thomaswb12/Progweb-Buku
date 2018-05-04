@@ -10,19 +10,20 @@
     <select id="selectSortBy" class="font15">
         <option value = 1>ID Member</option>
         <option value = 2>Nama</option>
+        <option value = 3>Email</option>
     </select>
 </div>
 <div id="searching">
     <label id="labelSearchBy" class="blue font15">Search by :</label>
     <br/>
     <select id="selectSearchBy" class="font15">
-        <option>ID member</option>
-        <option>Nama member</option>
-        <option>Email</option>
+        <option value = 1>ID member</option>
+        <option value = 2>Nama member</option>
+        <option value = 3>Email</option>
     </select>
     <div id="searchBox">
         <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
-        <i class="fa fa-search blue font15"></i>
+        <i class="fa fa-search blue font15 klik" onclick="searchDaftarMember()"></i>
     </div>
 </div>
 <!--bagian daftar member-->
@@ -37,9 +38,7 @@
             <th class="noIdentitas">No Identitas</th>
         </thead>
         <tbody>
-            <?php
-                tampilMemberDalamTabel();
-            ?>
+            
         </tbody>
     </table>
 </div>
@@ -51,31 +50,25 @@
 <div id="popup">
     <i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
     <br/><br/>
-    <table>
-        <tr>
-            <td><i class="fas fa-id-card-alt simbolPopup"></i><td>
-            <td class="atribut">ID Member</td>
-            <td class="value" id="popupIdMember">: </td>
-        </tr>
-        <tr>
-            <td><i class="fas fa-user simbolPopup"></i><td>
-            <td class="atribut">Nama</td>
-            <td class="value" id="popupNamaMember">: </td>
-        </tr>
-        <tr>
-            <td><i class="fas fa-id-card simbolPopup"></i><td>
-            <td class="atribut">No Identitas</td>
-            <td class="value" id="popupNoIdentitas">: </td>
-        </tr>
-        <tr>
-            <td><i class="fas fa-transgender simbolPopup"></i><td>
-            <td class="atribut">Gender</td>
-            <td class="value" id="popupGender">: </td>
-        </tr>  
-        <tr>
-            <td><i class="fas fa-envelope simbolPopup"></i><td>
-            <td class="atribut">Email</td>
-            <td class="value" id="popupEmail">: </td>
-        </tr>      
-    </table>
+    <div id="isiPopup">
+        <div class="divSimbolPopup"><i class="fas fa-id-card-alt simbolPopup"></i></div>
+        <p class="atribut">ID Member </p>
+        <p class="value" id="popupIdMember">: </p>
+        <br/>
+        <div class="divSimbolPopup"><i class="fas fa-user simbolPopup"></i></div>
+        <label class="atribut">Nama</label>
+        <p class="value" id="popupNamaMember">: </p>
+        <br/>
+        <div class="divSimbolPopup"><i class="fas fa-id-card simbolPopup"></i></div>
+        <label class="atribut">No Identitas</label>
+        <p class="value" id="popupNoIdentitas">: </p>
+        <br/>
+        <div class="divSimbolPopup"><i class="fas fa-transgender simbolPopup"></i></div>
+        <label class="atribut">Gender</label>
+        <p class="value" id="popupGender">: </p>
+        <br/>
+        <div class="divSimbolPopup"><i class="fas fa-envelope simbolPopup"></i></div>
+        <label class="atribut">Email</label>
+        <p class="value" id="popupEmail">: </p>
+    </div>
 </div>

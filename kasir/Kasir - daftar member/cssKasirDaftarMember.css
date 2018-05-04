@@ -70,7 +70,7 @@ div#tabel table td{
     width: 40%;
 }
 .noIdentitas, .gender{
-    display: none
+    display: none;
 }
 /*tabel daftar peminjaman------*/
 
@@ -102,25 +102,26 @@ div#popup .simbolX{ /*simbol x untuk close popup*/
     color: black;
     font-size: 30px;
 }
-div#popup table{    /*tabel di popup*/
-    clear: both;
+div#popup div#isiPopup{
     margin: auto;
-    margin-top: 145px;
-    width: 70%;
-    table-layout: fixed;
+    margin-top: 20px;
+    width: 60%;
 }
-div#popup td{   /*semua kolom*/
-    border: transparent;
-    padding: 10px;
+div#popup div#isiPopup div.divSimbolPopup{
+    width: 80px;
+    height: 50px;
+    clear: both;
+    float: left;
 }
 div#popup .simbolPopup{ /*font awesome di popup*/
     font-size: 40px;
-    width: auto;
 }
 div#popup .atribut{ /*nama:, id: ,gender: , dll*/
     width: 20%;
+    float: left;
 }
 div#popup .value{   /*valuenya (no,nama,email)*/
+    float: left;
     width: 45%;
     overflow: hidden;   /*jika data melebihi batas tabel, di hidden*/
     text-overflow: ellipsis; /*supaya teks panjang berubah jadi ...*/
@@ -179,13 +180,7 @@ div#popup .value{   /*valuenya (no,nama,email)*/
     div#popup .simbolX{     /*X utk close popup*/
         font-size: 20px;
     }
-    div#popup table{    /*tabel dalam popup*/
-        font-size: 13px;
-        margin-top: 45px;
-        width: 100%;
-        margin-right: 50px;
-    }
-    div#popup table .simbolPopup{   /*fontawesome ditiadakan*/
+    div#popup .simbolPopup{   /*fontawesome ditiadakan*/
         display: none;
     }
     div#popup .atribut{
