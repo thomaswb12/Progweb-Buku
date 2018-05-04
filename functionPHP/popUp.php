@@ -3,7 +3,7 @@ session_start();
 include "getDataBuku.php";
 $buku = getDetailBuku($_POST['idBuku']);
 
-echo '<i id="tombolClose" class="fas fa-times simbolX" onclick="pencetBlur()"></i>
+echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
         <br/><br/>
         <div id="popupScroll">
             <p id="popupJudul"></p>

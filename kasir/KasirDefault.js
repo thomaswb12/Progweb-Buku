@@ -26,8 +26,9 @@ $(window).on('load', function () {
         aside1();
     else if(c == 2)
         aside2();
-    else if(c == 3)
+    else if(c == 3){
         aside3();
+    }
     else if(c == 4)
         aside4();
     else if(c == 5)
@@ -57,6 +58,7 @@ function aside3(){
     $("div#konten").load("kasirDaftarKomik/KontenKasirDaftarKomik.php");
     $("div#gantiHead").load("kasirDaftarKomik/HeadKasirDaftarKomik.php");
     $.session.set('page','3');
+    search();
 }
 function aside4(){
     $(".blue").removeClass('terpilih');
@@ -119,7 +121,6 @@ function searchNama(){
      });
 }
 
-
 //------------------ fungsi ketika window di resize --------------
 $(window).resize(function(){
     if ($(window).width() > 680) {   //ukuran dekstop
@@ -170,11 +171,10 @@ function search(){
     $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
     $dari = $('#selectSearchBy').val();
     $sorting = $('#selectSortBy').val();
-    alert ($kata + " "+  $dari +" "+ $sorting);
     $.ajax({
         type : 'post',
-        data : {'kata':$kata,'dari':$dari,'sorting':$sorting},
-        url: 'isiKonten.php',
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':0},
+        url: '../functionPHP/isiKonten.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
             $("#daftarKomik").html(response);

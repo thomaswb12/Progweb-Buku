@@ -7,6 +7,8 @@ $(document).ready(function(){
     $("#popupScroll").on('scroll', function () {
         scrollDown();
     });
+    search();
+
 });
 
 //----- fungsi menampilkan & sembunyikan tombol utk balik ke atas ---------
@@ -48,11 +50,10 @@ function search(){
     $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
     $dari = $('#selectSearchBy').val();
     $sorting = $('#selectSortBy').val();
-    alert ($kata + " "+  $dari +" "+ $sorting);
     $.ajax({
         type : 'post',
-        data : {'kata':$kata,'dari':$dari,'sorting':$sorting},
-        url: 'isiKonten.php',
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':1},
+        url: '../../functionPHP/isiKonten.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
             $("#daftarKomik").html(response);
