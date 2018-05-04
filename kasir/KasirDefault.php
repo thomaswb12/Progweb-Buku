@@ -27,8 +27,7 @@
         ?>
     </header>
     <article>
-        <?php 
-            echo '../images/buku/Naruto_Volume_42_Indonesia.jpg';
+        <?php
             include "Template/aside.php"
         ?>
         <div id="konten">

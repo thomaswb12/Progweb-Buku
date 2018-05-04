@@ -56,9 +56,6 @@
                     </div>
                 </div>
                 <div id="daftarKomik" class="font15">
-                <?php 
-                    include "../../functionPHP/isiKonten.php";
-                ?>
                 </div>
             </article>
             <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
