@@ -1,6 +1,8 @@
 <?php
     include "../../functionPHP/member.php";
+    session_start();
 ?>
+
 <h1>Tambah Member</h1>
 <form action="../functionPHP/tambahMember.php" method="post">
     <div id="kiri">
@@ -49,5 +51,30 @@
 </form>
 
 <?php
+    if(isset($_SESSION["sudahJadiMember"])){
+        unset($_SESSION["sudahJadiMember"]);
+        ?>
+        <script type="text/javascript">
+            alert("Sudah menjadi member!");
+        </script>
+        <?php
+    }
 
+    if(isset($_SESSION["belumLengkap"])){
+        unset($_SESSION["belumLengkap"]);
+        ?>
+        <script type="text/javascript">
+            alert("Data belum lengkap!");
+        </script>
+        <?php
+    }
+
+    if(isset($_SESSION["berhasil"])){
+        unset($_SESSION["berhasil"]);
+        ?>
+        <script type="text/javascript">
+            alert("Member berhasil ditambahkan :)");
+        </script>
+        <?php
+    }
 ?>
