@@ -29,12 +29,12 @@
 
         <label>Tanggal Lahir</label><br/>
         <i class="fas fa-birthday-cake simbol"></i>
-        <input type="text" id="tanggalLahir" name="tanggalLahir"/><br/>
+        <input type="date" id="tanggalLahir" name="tanggalLahir"/><br/>
     </div>
     <div id="kanan">
         <label>E-mail</label><br/>
         <i class="fas fa-envelope simbol"></i>
-        <input type="text" id="email" name="email"/><br/>
+        <input type="email" id="email" name="email"/><br/>
 
         <label>No. Telp.</label><br/>
         <i class="fas fa-phone simbol"></i>
@@ -51,15 +51,7 @@
 </form>
 
 <?php
-    if(isset($_SESSION["sudahJadiMember"])){
-        unset($_SESSION["sudahJadiMember"]);
-        ?>
-        <script type="text/javascript">
-            alert("Sudah menjadi member!");
-        </script>
-        <?php
-    }
-
+    //kalau data yang diisi belum lengkap
     if(isset($_SESSION["belumLengkap"])){
         unset($_SESSION["belumLengkap"]);
         ?>
@@ -69,6 +61,17 @@
         <?php
     }
 
+    //kalau orang itu sudah jadi member
+    if(isset($_SESSION["sudahJadiMember"])){
+        unset($_SESSION["sudahJadiMember"]);
+        ?>
+        <script type="text/javascript">
+            alert("Sudah menjadi member!");
+        </script>
+        <?php
+    }
+
+    //kalau berhasil didaftarkan menjadi member
     if(isset($_SESSION["berhasil"])){
         unset($_SESSION["berhasil"]);
         ?>
