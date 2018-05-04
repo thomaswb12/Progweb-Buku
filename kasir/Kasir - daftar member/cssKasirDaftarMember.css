@@ -1,9 +1,17 @@
 
 /*keperluan search------*/
+article div#konten #sorting{ /*"sort by" (label dan dropbox-nya)*/
+    float: right;   /*taruh pojok kanan*/
+    margin-right: 7%;   /*beri jarak dengan pojok*/
+}
+article div#konten #sorting #selectSortBy{ /*"sort by" (dropbox-nya)*/
+    margin-left: 15px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 100px;   /*lebar dropbox*/
+}
 article div#konten #searching{ /*"search by" (label, dropbox, input, dan icon-nya)*/
-    float: right;   /*letakkan di kanan*/
+    float: right;   /*letakkan di kanan, sebelahan dg sort by*/
     width: 350px;
-    margin-right: 90px;
+    margin-right: 2%; /*jarak dgn sort by*/
 }
 article div#konten #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
     float: right;   /*lettakkan di kanan parent #searching*/
@@ -123,8 +131,12 @@ div#popup .value{   /*valuenya (no,nama,email)*/
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    article div#konten #sorting{
+        float: left;
+    }
     /*keperluan searching -------*/
     article div#konten #searching{
+        clear: both;
         margin: auto;
         float: left; 
         margin: 0px;
