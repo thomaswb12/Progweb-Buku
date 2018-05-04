@@ -16,8 +16,7 @@
         $newId="";
         for($i=0;$i<6-$numlength;$i++){
             $newId=$newId."0";
-        }
-        $conn->close();        
+        }        
         return "M".$newId.$id;
     }
 
@@ -30,7 +29,6 @@
         while($row=mysqli_fetch_assoc($result)){
             $data[]=$row;
         }
-        $conn->close();
         return $data;
     }
 

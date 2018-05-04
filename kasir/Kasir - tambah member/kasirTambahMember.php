@@ -56,7 +56,7 @@
         unset($_SESSION["belumLengkap"]);
         ?>
         <script type="text/javascript">
-            alert("Data belum lengkap!");
+            alert("Gagal ditambahkan: Data belum lengkap!");
         </script>
         <?php
     }
@@ -66,7 +66,7 @@
         unset($_SESSION["sudahJadiMember"]);
         ?>
         <script type="text/javascript">
-            alert("Sudah menjadi member!");
+            alert("Gagal ditambahkan: Customer ini sudah menjadi member!");
         </script>
         <?php
     }

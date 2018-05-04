@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "member.php";
+
     //kalau tombol OK dipencet
     if(!empty($_POST["tombolOk"])){
         $id=getLastIdMember();  //adalah fungsi yang ada di member.php
