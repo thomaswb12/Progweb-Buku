@@ -7,9 +7,10 @@ echo '<i id="tombolClose" class="fas fa-times simbolX" onclick="pencetBlur()"></
         <br/><br/>
         <div id="popupScroll">
             <p id="popupJudul"></p>
-            <div id="divImg">
-                <img class="komik" src="../../'.$buku['Location'].'"/>
-            </div>
+            <div id="divImg">';
+                if($_POST['status']==1) echo '<img class="komik" src="../../'.$buku['Location'].'"/>';
+                else echo '<img class="komik" src="../'.$buku['Location'].'"/>';
+            echo '</div>
             <div id="istimewa">
                 <h3 id="popupPopular" style="color:red;"></h3>
                 <h3 id="popupSpecial" style="color:orange;"></h3>
