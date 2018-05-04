@@ -4,6 +4,14 @@
 ?>
 
 <h1>Daftar Member</h1>
+<div id="sorting">
+    <label id="labelSortBy" class="blue font15">Sort by :</label>
+    <br/>
+    <select id="selectSortBy" class="font15">
+        <option value = 1>ID Member</option>
+        <option value = 2>Nama</option>
+    </select>
+</div>
 <div id="searching">
     <label id="labelSearchBy" class="blue font15">Search by :</label>
     <br/>
