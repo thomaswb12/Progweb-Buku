@@ -3,8 +3,9 @@
 <div id="sorting">
     <label id="labelSortBy" class="blue font15">Order by :</label><br/>
         <select id="selectSortBy" class="font15">
-            <option>Asc</option>
-            <option>Dsc</option>
+            <option>ID</option>
+            <option>Nama</option>
+            <option>Jabatan</option>
         </select>
 </div>
 
