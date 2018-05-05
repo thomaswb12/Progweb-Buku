@@ -39,6 +39,36 @@ article div#judul #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
     margin-left: 3px;   /*memberi jarak ke kanan dengan label yg diatasnya*/
     margin-right: 10px; /*memberi jarak dengan box inputan*/
 }
+article div#judul div#simple a{
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 20px;
+}
+article div#judul div#advanced a{
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 20px;
+}
+article div#judul div#advanced label{
+    margin-left: 20px;
+}
+article div#judul input{
+    width: 90%;
+}
+article div#judul input#jdl{
+    margin-left: 50px;
+}
+article div#judul input#pnl{
+    margin-left: 38px;
+}
+article div#judul input#pnb{
+    margin-left: 28px;
+}
+article div#judul input#submit{
+    float: right;
+    width: 60px;
+    margin: 22px;
+}
 
 /*------------------------bagian isi (daftar komiknya)---------------------*/
 article div#daftarKomik{ /*sekotak daftar komik*/
@@ -250,6 +280,20 @@ div#popup div#divSinopsis{
     article #daftarKomik .infoKomik .new{ /*icon new dikecilkan dan dinaikkan sedikit*/
         width: 20px;
         margin-top: -5px;
+    }
+
+    article div#judul input#jdl{
+        margin: auto;
+    }
+    article div#judul input#pnl{
+        margin: auto;
+    }
+    article div#judul input#pnb{
+        margin: auto;
+    }
+    article div#judul input#submit{
+        margin-right: 0px;
+        float: none;
     }
 
     /*pop up message*/
