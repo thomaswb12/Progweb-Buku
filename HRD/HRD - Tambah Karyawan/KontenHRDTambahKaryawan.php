@@ -39,7 +39,6 @@
             <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
             <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/><br><br><br>
             <!-- tombol save -->
-            <input type="button" id="tombolCancel" name="tombokCancel" class="tombol" value="CANCEL" onclick="aside2()"/>
             <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="aside2()"/>
         </div>
     </div>

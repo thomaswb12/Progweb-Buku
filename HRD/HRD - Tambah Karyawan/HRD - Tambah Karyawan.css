@@ -73,11 +73,6 @@ article div#konten input#tombolSave{
     float: right;
     margin-top: 35%;
 }
-article div#konten input#tombolCancel{
-    width: 100px;
-    float: right;
-    margin-top: 35%;
-}
 /*------------------------bagian konten---------------------*/
 
 /*----------tombol utk up ke atas----------*/
@@ -141,7 +136,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#konten input#pass2{
         margin-left: 10px;
     }
-    article div#konten input#tombolSave, article div#konten input#tombolCancel{
+    article div#konten input#tombolSave{
         float: none;
         margin: auto;
     }
