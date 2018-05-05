@@ -25,7 +25,7 @@
         }
         //kalau data sudah lengkap
         else{
-            //untuk cek apakah org itu sudah ada di database (berdasarkan no identitasnya)
+            //untuk ganti semuanya berdasar id-nya
 /*            $query = "SELECT * FROM member WHERE idIdentitas = '$noIdentitas'";
             $hasil = mysqli_query($conn,$query);
             $count = mysqli_num_rows($hasil);
