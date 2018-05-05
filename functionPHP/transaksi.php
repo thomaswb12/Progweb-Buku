@@ -6,7 +6,8 @@
         case 1: echo buatIdTransaksi();break;
         case 2 : $a = $_POST['id']; searchNama($a);break;
         case 3 : $a = $_POST['id'];cariBuku($a);break;
-        case 4 : transaksi();break;
+        case 4 : transaksi($_POST[''],$_POST[''],$_POST[''],$_POST['']);break;
+        case 6 : truncate();break;
     }
 
     function buatIdTransaksi(){
@@ -72,8 +73,16 @@
         $conn->close();
     }
 
-    function tranksaksi(){
+    function transaksi(){
 
     }
 
+    function truncate(){
+        global $conn;
+        $sql = "TRUNCATE table dummydetailtransaksi";
+        if($conn->query($sql)){
+            $conn->close();
+        }
+        $conn->close();
+    }
 ?>

@@ -23,7 +23,7 @@
                 <label>ID Eks Buku</label><br>
                 <input oninput="transaksi(3)" class="margin" type="text" name="inputIdBuku" id="inputIdEksBuku">
             </div>
-            <div id="divSimbolPlus"><i onclick="tambahPeminjaman()" class="klik fas fa-plus-circle simbol" id="simbolPlus"></i></div>
+            <div id="divSimbolPlus"><i onclick="transaksi(4)" class="klik fas fa-plus-circle simbol" id="simbolPlus"></i></div>
             <p id="tidakAdaEks" class="warning">Buku tidak ada</p>
         </div>
     </div>
@@ -68,7 +68,7 @@
     </div>
     <div id="divTombol">
         <input class="tombol" id="print" name="print" type="button" value="Print Nota">
-        <input class="tombol" id="cancel" name="cancel" type="button" value="Cancel">
+        <input class="tombol" onclick="transaksi(6)" id="cancel" name="cancel" type="button" value="Cancel">
     </div>
     <script src="Kasir - peminjaman/Kasir - peminjaman.js"></script>
 </div>

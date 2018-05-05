@@ -118,15 +118,6 @@ function pencetBlur(){
     $("#blur").css('display','none');
 }
 
-function tambahPeminjaman(){
-    if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
-        alert("good");
-    }
-    else{
-        alert("pastikan input benar");
-    }
-}
-
 function transaksi($temp=1){
     $data ="";
     $function="";
@@ -155,6 +146,19 @@ function transaksi($temp=1){
                         }
                     }
                     break;
+        case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
+                        $data = {'function':$temp, 'idEksBuku':$("#inputIdEksBuku").val(), 'idMember':$("#inputID").val(), 'idTransaksi':$("#idTransaksi").val()};
+                        $function = function(response){
+                            alert("sukses");
+                        }
+                    }
+                    else{
+                        alert("pastikan input benar");
+                    }
+        case 6  :   $data = {'function':$temp};
+                    $function = function (response) {//response is value returned from php (for your example it's "bye bye"
+                        
+                    }
         default:
                     break;
     }
