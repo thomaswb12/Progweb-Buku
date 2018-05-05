@@ -6,6 +6,7 @@
         case 1: echo buatIdTransaksi();break;
         case 2 : $a = $_POST['id']; searchNama($a);break;
         case 3 : $a = $_POST['id'];cariBuku($a);break;
+        case 4 : transaksi();break;
     }
 
     function buatIdTransaksi(){
@@ -54,7 +55,7 @@
 
     function cariBuku($a){
         global $conn;
-        $sql = "SELECT * FROM eksbuku WHERE idEksBuku = '$a'";
+        $sql = "SELECT * FROM eksbuku WHERE idEksBuku = '$a' and eksbuku.Status = 'Tersedia' ";
         if($result = $conn->query($sql)){
             if ($result->num_rows == 1) {
                 while($row = $result->fetch_assoc()) {
@@ -69,6 +70,10 @@
             echo "ga ada";
         }
         $conn->close();
+    }
+
+    function tranksaksi(){
+
     }
 
 ?>
