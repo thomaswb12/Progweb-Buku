@@ -39,8 +39,8 @@ function aside1(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20peminjaman/KontenKasirPeminjaman.php");
-    $("div#gantiHead").load("Kasir%20-%20peminjaman/HeadKasirPeminjaman.php");
+    $("div#konten").load("kasirPeminjaman/KontenKasirPeminjaman.php");
+    $("div#gantiHead").load("kasirPeminjaman/HeadKasirPeminjaman.php");
     $.session.set('page','1');
 }
 function aside2(){
@@ -131,7 +131,7 @@ function searchNama(){
                     data : {'id':a},
                     url: '../functionPHP/getTablePeminjaman.php',
                     success: function (response){
-                        
+
                     }
                 });
             }
