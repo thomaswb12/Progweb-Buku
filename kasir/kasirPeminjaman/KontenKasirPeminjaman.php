@@ -20,11 +20,11 @@
         <div id="divSimbolBuku"><i class="fas fa-book simbol" id="simbolBuku"></i></div>
         <div id="divIdDanPlus">
             <div id="divInputIdBuku">
-                <label>ID Buku</label><br>
-                <input class="margin" type="text" name="inputIdBuku" id="inputIdBuku">
+                <label>ID Eks Buku</label><br>
+                <input oninput="cariBuku()" class="margin" type="text" name="inputIdBuku" id="inputIdEksBuku">
             </div>
-            <div id="divSimbolPlus"><i class="fas fa-plus-circle simbol" id="simbolPlus"></i></div>
-            <p class="warning">Buku tidak ada</p>
+            <div id="divSimbolPlus"><i onclick="tambahPeminjaman()" class="klik fas fa-plus-circle simbol" id="simbolPlus"></i></div>
+            <p id="tidakAdaEks" class="warning">Buku tidak ada</p>
         </div>
     </div>
 </div>
@@ -32,13 +32,20 @@
     <div id="tabelDaftar">
         <table>
             <thead>
-                <th class="idBuku">ID Buku</th>
+                <th class="idBuku">ID Eks Buku</th>
                 <th class="judulBuku">Judul Buku</th>
                 <th class="tanggalPengembalian">Tanggal Pengembalian</th>
                 <th class="hargaSewa">Harga Sewa</th>
                 <th class="peringatan"></th>
             </thead>
-            <tbody>
+            <tbody id="bodytable">
+                <tr>
+                    <td class="idBuku"></td>
+                    <td class="judulBuku"></td>
+                    <td class="tanggalPengembalian"></td>
+                    <td class="hargaSewa"></td>
+                    <td class="peringatan"><i class="fas fa-trash-alt"></i></td>
+                </tr>
                 <tr>
                     <td class="idBuku">1234</td>
                     <td class="judulBuku">Naruto ketemu monika sujanto asdas</td>

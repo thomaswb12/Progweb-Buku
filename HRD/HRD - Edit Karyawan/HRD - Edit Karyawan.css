@@ -65,6 +65,12 @@ article div#konten input#tombolSave{
     width: 100px;
     float: right;
     margin-top: 35%;
+    margin-right: 30px;
+}
+article div#konten input#tombolCancel{
+    width: 100px;
+    float: right;
+    margin-top: 35%;
 }
 /*------------------------bagian konten---------------------*/
 
@@ -97,7 +103,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin: auto;
     }
     article div#konten div#inputan{
-        margin-left: 0px;
+        margin-left: 10px;
     }
     article div#konten #selectJabatan{
         margin-left: 88px;
@@ -105,6 +111,14 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     }
     article div#konten input, article div#konten textarea#alamat{ /*semua kotak input dan textarea*/
         width: 150px;
+    }
+    article div#konten input#tombolSave, article div#konten input#tombolCancel{
+        float: none;
+        margin: auto;
+    }
+    article div#konten div#dataKaryawan div.kanan{
+        float: none;
+        margin-right: 0px;
     }
     /*-----------------utk konten-----------------*/
 }

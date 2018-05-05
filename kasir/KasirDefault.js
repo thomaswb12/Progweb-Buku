@@ -26,9 +26,8 @@ $(window).on('load', function () {
         aside1();
     else if(c == 2)
         aside2();
-    else if(c == 3){
+    else if(c == 3)
         aside3();
-    }
     else if(c == 4)
         aside4();
     else if(c == 5)
@@ -39,16 +38,16 @@ function aside1(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20peminjaman/KontenKasirPeminjaman.php");
-    $("div#gantiHead").load("Kasir%20-%20peminjaman/HeadKasirPeminjaman.php");
+    $("div#konten").load("kasirPeminjaman/KontenKasirPeminjaman.php");
+    $("div#gantiHead").load("kasirPeminjaman/HeadKasirPeminjaman.php");
     $.session.set('page','1');
 }
 function aside2(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20pengembalian/KontenKasirPengembalian.php");
-    $("div#gantiHead").load("Kasir%20-%20pengembalian/HeadKasirPengembalian.php");
+    $("div#konten").load("kasirPengembalian/KontenKasirPengembalian.php");
+    $("div#gantiHead").load("kasirPengembalian/HeadKasirPengembalian.php");
     $.session.set('page','2');
 }
 function aside3(){
@@ -118,15 +117,55 @@ function pencetBlur(){
     $("#blur").css('display','none');
 }
 
+function tambahPeminjaman(){
+    if($('#simbolPlus').css('color') == 'green'){
+        alert($('#simbolPlus').css('color'));
+    }
+    else{
+        alert("pastikan input benar");
+    }
+}
+
+function cariBuku(){
+    var a = $("#inputIdEksBuku").val();
+    $.ajax({
+        type : 'post',
+        data : {'id':a},
+        url: '../functionPHP/cariBuku.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            if(response == "ada"){
+                $("#tidakAdaEks").css('display','none');
+                $('#simbolPlus').css('color','green');
+            }
+            else{
+                $("#tidakAdaEks").css('display','block');
+                $('#simbolPlus').css('color','rgba(94,94,94,0.9)');
+            }
+        }
+     });
+}
+
 function searchNama(){
     var a = $("#inputID").val();
     $.ajax({
         type : 'post',
         data : {'id':a},
-        url: 'PHP/Kasir%20-%20peminjaman/getNama.php',
+        url: '../functionPHP/getNama.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
-            //alert(response);
-            $("#namaMember").val(response);
+            if(response == "ga ada"){
+
+            }
+            else{
+                $("#namaMember").val(response);
+                $.ajax({
+                    type : 'post',
+                    data : {'id':a},
+                    url: '../functionPHP/getTablePeminjaman.php',
+                    success: function (response){
+
+                    }
+                });
+            }
         }
      });
 }

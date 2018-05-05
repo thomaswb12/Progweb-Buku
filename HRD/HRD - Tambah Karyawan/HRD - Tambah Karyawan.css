@@ -94,7 +94,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
     /*-----------------utk konten-----------------*/
-    body article div#konten{
+    article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
         overflow-y: unset;
@@ -137,8 +137,12 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin-left: 10px;
     }
     article div#konten input#tombolSave{
-        margin-top: 0px;
-        margin-right: 3%;
+        float: none;
+        margin: auto;
+    }
+    article div#konten div#dataKaryawan div.kanan{
+        float: none;
+        margin-right: 0px;
     }
     /*-----------------utk konten-----------------*/
 }

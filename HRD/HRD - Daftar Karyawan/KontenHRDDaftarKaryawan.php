@@ -3,8 +3,9 @@
 <div id="sorting">
     <label id="labelSortBy" class="blue font15">Order by :</label><br/>
         <select id="selectSortBy" class="font15">
-            <option>Asc</option>
-            <option>Dsc</option>
+            <option>ID</option>
+            <option>Nama</option>
+            <option>Jabatan</option>
         </select>
 </div>
 
@@ -40,7 +41,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more" onclick="aside2()">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -63,7 +64,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -86,7 +87,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -109,7 +110,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -132,7 +133,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -155,7 +156,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -178,7 +179,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>

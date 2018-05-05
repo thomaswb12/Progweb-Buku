@@ -10,7 +10,7 @@
         <hr/>
         <h3 class="blue" id="aside4"><span></span>Tambah Karyawan</h3>
         <hr/>
-        <h3 class="blue" id="aside5"><span></span>Daftar Jabatan</h3>
+        <h3 class="blue" id="aside5"><span></span>Edit Jabatan</h3>
         <hr/>
         <h3 class="blue" id="aside6"><span></span>Tambah Jabatan</h3>
         <hr/>

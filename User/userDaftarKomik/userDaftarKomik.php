@@ -17,7 +17,7 @@
             <link href="userdaftarkomik.css" type="text/css" rel="stylesheet">
             <script type="text/javascript" src="../../jquery-3.3.1.min.js"></script>
             <script src="../UserDefault.js"></script>
-            <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
         </head>
         <body>
             <header>
