@@ -4,8 +4,9 @@
 
     switch($callFunction){
         case 1: echo buatIdTransaksi();break;
+        case 2 : $a = $_POST['id']; searchNama($a);break;
+        case 3 : $a = $_POST['id'];cariBuku($a);break;
     }
-
 
     function buatIdTransaksi(){
         global $conn;
@@ -29,6 +30,44 @@
             return $string; 
         }
         return "";
+        $conn->close();
+    }
+
+    function searchNama($a){
+        global $conn;
+        $sql = "SELECT nama FROM member WHERE id like '$a'";
+        if($result = $conn->query($sql)){
+            if ($result->num_rows == 1) {
+                while($row = $result->fetch_assoc()) {
+                    echo $row['nama'];
+                }
+            }
+            else{
+                echo "ga ada";
+            }
+        }
+        else{
+            echo "ga ada";
+        }
+        $conn->close();
+    }
+
+    function cariBuku($a){
+        global $conn;
+        $sql = "SELECT * FROM eksbuku WHERE idEksBuku = '$a'";
+        if($result = $conn->query($sql)){
+            if ($result->num_rows == 1) {
+                while($row = $result->fetch_assoc()) {
+                    echo "ada";
+                }
+            }
+            else{
+                echo "ga ada";
+            }
+        }
+        else{
+            echo "ga ada";
+        }
         $conn->close();
     }
 

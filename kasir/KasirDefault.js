@@ -41,7 +41,7 @@ function aside1(){
     $("div#konten").load("kasirPeminjaman/KontenKasirPeminjaman.php");
     $("div#gantiHead").load("kasirPeminjaman/HeadKasirPeminjaman.php");
     $.session.set('page','1');
-    getIdTransaksi();
+    transaksi(1);
 }
 function aside2(){
     $(".blue").removeClass('terpilih');
@@ -119,67 +119,51 @@ function pencetBlur(){
 }
 
 function tambahPeminjaman(){
-    if($('#simbolPlus').css('color') == 'green'){
-        alert($('#simbolPlus').css('color'));
+    if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
+        alert("good");
     }
     else{
         alert("pastikan input benar");
     }
 }
 
-function cariBuku(){
-    var a = $("#inputIdEksBuku").val();
-    $.ajax({
-        type : 'post',
-        data : {'id':a},
-        url: '../functionPHP/cariBuku.php',
-        success: function (response) {//response is value returned from php (for your example it's "bye bye"
-            if(response == "ada"){
-                $("#tidakAdaEks").css('display','none');
-                $('#simbolPlus').css('color','green');
-            }
-            else{
-                $("#tidakAdaEks").css('display','block');
-                $('#simbolPlus').css('color','rgba(94,94,94,0.9)');
-            }
-        }
-     });
-}
-
-function getIdTransaksi(){
-    $.ajax({
-        type : 'post',
-        data : {'function':1},
-        url: '../functionPHP/transaksi.php',
-        success: function (response) {//response is value returned from php (for your example it's "bye bye"    
-        $("#idTransaksi").val(response);
-        }
-    });
-}
-
-function searchNama(){
-    var a = $("#inputID").val();
-    $.ajax({
-        type : 'post',
-        data : {'id':a},
-        url: '../functionPHP/getNama.php',
-        success: function (response) {//response is value returned from php (for your example it's "bye bye"
-            if(response == "ga ada"){
-
-            }
-            else{
-                $("#namaMember").val(response);
-                $.ajax({
-                    type : 'post',
-                    data : {'id':a},
-                    url: '../functionPHP/getTablePeminjaman.php',
-                    success: function (response){
-
+function transaksi($temp=1){
+    $data ="";
+    $function="";
+    switch ($temp) {
+        case 1:     $data = {'function':$temp};$function=function(response){$("#idTransaksi").val(response);};
+                    break;
+        case 2 :    $data = {'function':$temp,'id':$("#inputID").val()};
+                    $function = function (response) {//response is value returned from php (for your example it's "bye bye"
+                        if(response == "ga ada"){
+                            $("#namaMember").val("");
+                        }
+                        else{
+                            $("#namaMember").val(response);
+                        }
+                    };
+                    break;
+        case 3 :    $data = {'function':$temp,'id':$("#inputIdEksBuku").val()};
+                    $function = function (response) {//response is value returned from php (for your example it's "bye bye"
+                        if(response == "ada"){
+                            $("#tidakAdaEks").css('display','none');
+                            $('#simbolPlus').css('color','green');
+                        }
+                        else{
+                            $("#tidakAdaEks").css('display','block');
+                            $('#simbolPlus').css('color','rgba(94,94,94,0.9)');
+                        }
                     }
-                });
-            }
-        }
-     });
+                    break;
+        default:
+                    break;
+    }
+    $.ajax({
+        type : 'post',
+        data : $data,
+        url: '../functionPHP/transaksi.php',
+        success: $function
+    });
 }
 
 //------------------ fungsi ketika window di resize --------------

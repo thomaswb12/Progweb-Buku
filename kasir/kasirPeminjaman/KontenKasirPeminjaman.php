@@ -5,7 +5,7 @@
         <div class="floatKanan margin" id="divInputKiri">
             <label for="">ID Member</label>
             <br>
-            <input id="inputID" oninput="searchNama()" type="text"><br>
+            <input id="inputID" oninput="transaksi(2)" type="text"><br>
             <label>Nama</label><br>
             <input id="namaMember" class="disable" type="text" disabled="disabled">
         </div>
@@ -21,7 +21,7 @@
         <div id="divIdDanPlus">
             <div id="divInputIdBuku">
                 <label>ID Eks Buku</label><br>
-                <input oninput="cariBuku()" class="margin" type="text" name="inputIdBuku" id="inputIdEksBuku">
+                <input oninput="transaksi(3)" class="margin" type="text" name="inputIdBuku" id="inputIdEksBuku">
             </div>
             <div id="divSimbolPlus"><i onclick="tambahPeminjaman()" class="klik fas fa-plus-circle simbol" id="simbolPlus"></i></div>
             <p id="tidakAdaEks" class="warning">Buku tidak ada</p>
