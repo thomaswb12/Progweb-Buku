@@ -95,11 +95,16 @@ function pencetTR(temp){
     var email = temp.children("td:nth-of-type(4)").html();
     var gender = temp.children("td:nth-of-type(5)").html();
     var noIdentitas = temp.children("td:nth-of-type(6)").html(); 
-    $("#popupIdMember").text(": "+idMember);
-    $("#popupNamaMember").text(": "+namaMember);
-    $("#popupEmail").text(": "+email);
-    $("#popupGender").text(": "+gender);
-    $("#popupNoIdentitas").text(": "+noIdentitas);
+    var alamat = temp.children("td:nth-of-type(7)").html(); 
+    var tanggalLahir = temp.children("td:nth-of-type(8)").html(); 
+    $("#popupIdMember").val(idMember);
+    $("#popupNamaMember").val(namaMember);
+    $("#popupEmail").val(email);
+    $("#popupGender").val(gender);
+    $("#popupNoIdentitas").val(noIdentitas);
+    $("#popupAlamat").val(alamat);
+    $("#popupTanggalLahir").val(tanggalLahir);
+    
     $("#popup").fadeIn();
     $("#blur").fadeIn();
 }

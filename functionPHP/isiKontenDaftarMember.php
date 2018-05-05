@@ -14,6 +14,8 @@
                     <td class="email">'.$member['email'].'</td>
                     <td class="gender">'.$member['gender'].'</td>
                     <td class="noIdentitas">'.$member['idIdentitas'].'</td>
+                    <td class="alamat">'.$member['alamat'].'</td>
+                    <td class="tanggalLahir">'.$member['birtday'].'</td>
                 </tr>';
         $i++;                    
     }
