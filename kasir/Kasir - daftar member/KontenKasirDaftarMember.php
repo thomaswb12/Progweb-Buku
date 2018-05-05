@@ -47,9 +47,9 @@
 </div>
 
 <!-- utk pop up message -->
-
 <div id="blur" onclick="pencetBlur()">
 </div>
+<form action="../functionPHP/editMember.php" method="post">
 <div id="popup">
     <i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
     <br/><br/>
@@ -107,5 +107,18 @@
             <br>
         </div>
     </div>
-    <input type="button" class="tombol" id="tombolDetailMember" name="tombolDetailMember" value="EDIT">
+    <input type="submit" class="tombol" id="tombolDetailMember" name="tombolDetailMember" value="EDIT">
 </div>
+</form>
+
+<?php
+    //kalau data yang diisi belum lengkap
+    if(isset($_SESSION["belumLengkap"])){
+        unset($_SESSION["belumLengkap"]);
+        ?>
+        <script type="text/javascript">
+            alert("Gagal diedit: Data belum lengkap!");
+        </script>
+        <?php
+    }
+?>
