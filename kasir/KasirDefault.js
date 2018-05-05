@@ -47,8 +47,8 @@ function aside2(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20pengembalian/KontenKasirPengembalian.php");
-    $("div#gantiHead").load("Kasir%20-%20pengembalian/HeadKasirPengembalian.php");
+    $("div#konten").load("kasirPengembalian/KontenKasirPengembalian.php");
+    $("div#gantiHead").load("kasirPengembalian/HeadKasirPengembalian.php");
     $.session.set('page','2');
 }
 function aside3(){
