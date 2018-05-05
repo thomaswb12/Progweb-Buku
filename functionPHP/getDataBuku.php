@@ -6,18 +6,23 @@
         function getBuku(){
             global $conn;
             $sql =  " SELECT * FROM buku order by judulBuku";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($rows = $result->fetch_assoc()){
-                    $data[] = $rows;
+            if($result = $conn->query($sql)){
+                if ($result->num_rows > 0) {
+                    while($rows = $result->fetch_assoc()){
+                        $data[] = $rows;
+                    }
+                    $conn->close();
+                    return $data;
                 }
-                $conn->close();
-                return $data;
+                else{
+                    $conn->close();
+                    echo "gagal";
+                } 
             }
             else{
-                echo "gagal";
                 $conn->close();
-            } 
+                echo "gagal";
+            }
         }
 
         function getBukuWith($kata,$dari,$sort){
@@ -33,19 +38,26 @@
                 case 3 : $sort = "jumlahEksemplar";break;
             }
 
-            $sql =  " SELECT * FROM buku where $dari like '$kata%' order by $sort DESC";
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-                while($rows = $result->fetch_assoc()){
-                    $data[] = $rows;
+            //$sql =  " SELECT * FROM buku, where $dari like '$kata%' order by $sort DESC";
+            $sql =  "SELECT b.*,p.namaPenulis,pe.NamaPenerbit FROM `buku` as b,penulis as p, penerbit as pe WHERE $dari like '$kata%' AND p.idPenulis = b.idPenulis AND pe.idPenerbit = b.idPenerbit  order by $sort DESC";
+            if($result = $conn->query($sql)){
+                if ($result->num_rows > 0) {
+                    while($rows = $result->fetch_assoc()){
+                        $data[] = $rows;
+                    }
+                    $conn->close();
+                    return $data;
                 }
-                $conn->close();
-                return $data;
+                else{
+                    $conn->close();
+                    echo "gagal";
+                } 
             }
             else{
-                echo "gagal";
                 $conn->close();
-            } 
+                echo "gagal";
+            }
+            
         }
 
         function getDetailBuku($temp){
