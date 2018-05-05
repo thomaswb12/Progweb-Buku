@@ -100,6 +100,7 @@ function pencetTR(temp){
     var tanggalLahir = temp.children("td:nth-of-type(8)").html(); 
     var telepon = temp.children("td:nth-of-type(9)").html(); 
     $("#popupIdMember").val(idMember);
+    $("#popupIdMemberDummy").val(idMember);
     $("#popupNamaMember").val(namaMember);
     $("#popupEmail").val(email);
     $("#popupGender").val(gender);
