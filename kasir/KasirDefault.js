@@ -119,10 +119,22 @@ function searchNama(){
     $.ajax({
         type : 'post',
         data : {'id':a},
-        url: 'PHP/Kasir%20-%20peminjaman/getNama.php',
+        url: '../functionPHP/getNama.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
-            //alert(response);
-            $("#namaMember").val(response);
+            if(response == "ga ada"){
+
+            }
+            else{
+                $("#namaMember").val(response);
+                $.ajax({
+                    type : 'post',
+                    data : {'id':a},
+                    url: '../functionPHP/getTablePeminjaman.php',
+                    success: function (response){
+                        
+                    }
+                });
+            }
         }
      });
 }
