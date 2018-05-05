@@ -11,6 +11,12 @@
         </div>
     </div>
     <div id="pinggirKanan">
+        <div id="divSimbolTransaksi"><i class="fas fa-sticky-note simbol" id="simbolTransaksi"></i></div>
+        <div id="divIdTransaksi">
+            <label>ID Transaksi</label><br>
+            <input id="idTransaksi" class="disable" type="text" disabled="disabled">
+        </div>
+        <br>
         <div id="divSimbolBuku"><i class="fas fa-book simbol" id="simbolBuku"></i></div>
         <div id="divIdDanPlus">
             <div id="divInputIdBuku">
