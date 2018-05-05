@@ -17,7 +17,9 @@
                 $_SESSION['pass'] = $_POST['password'];
                 require("getIdentitas.php");
                 switch ($_SESSION['idJabatan']){
-                    case "KSRR" : header("location:kasir/Kasir - peminjaman/Kasir - peminjaman.php");break;
+                    case "KSRR" :   $_SESSION['id'] = $_POST['id'];
+                                    $_SESSION['control'] = 2;
+                                    header("location:../kasir/KasirDefault.php");break;
                 }
             }
             $conn->close();
