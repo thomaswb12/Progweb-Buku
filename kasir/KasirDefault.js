@@ -114,6 +114,34 @@ function pencetBlur(){
     $("#blur").css('display','none');
 }
 
+function tambahPeminjaman(){
+    if($('#simbolPlus').css('color') == 'green'){
+        alert($('#simbolPlus').css('color'));
+    }
+    else{
+        alert("pastikan input benar");
+    }
+}
+
+function cariBuku(){
+    var a = $("#inputIdEksBuku").val();
+    $.ajax({
+        type : 'post',
+        data : {'id':a},
+        url: '../functionPHP/cariBuku.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            if(response == "ada"){
+                $("#tidakAdaEks").css('display','none');
+                $('#simbolPlus').css('color','green');
+            }
+            else{
+                $("#tidakAdaEks").css('display','block');
+                $('#simbolPlus').css('color','rgba(94,94,94,0.9)');
+            }
+        }
+     });
+}
+
 function searchNama(){
     var a = $("#inputID").val();
     $.ajax({
