@@ -1,51 +1,37 @@
+<h1>Data Karyawan</h1>
 
-            <h1>Data Karyawan</h1>
-
-            <div id="dataKaryawan" class="font15">
-                <div class="detailKaryawan">
-                    <div class="kanan">
-                        <button type="button" class="tombol" name="tombolEdit" onclick="aside3()"><i class="fas fa-edit"></i>Edit</button><br><br>
-                        <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/>
-                    </div>
-                    <div class="kiri">
-                        <table>
-                            <br><br>
-                            <tr>
-                                <td><p class="label">ID</p></td>
-                                <td>:</td>
-                                <td><p class="isi">17000012</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="label">Nama</p></td>
-                                <td>:</td>
-                                <td><p class="isi">Leonardo Randy S</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="label">Jabatan</p></td>
-                                <td>:</td>
-                                <td><p class="isi">Kasir</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="label">Email</p></td>
-                                <td>:</td>
-                                <td><p class="isi">leonardorandy@gmail.com</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="label">No. Telp</p></td>
-                                <td>:</td>
-                                <td><p class="isi">0123456</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="label">Alamat</p></td>
-                                <td>:</td>
-                                <td><p class="isi">Jl. Klitren Lor No.1, Yogyakarta</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="label">Password</p></td>
-                                <td>:</td>
-                                <td><p class="isi">**********</p></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+<div id="dataKaryawan" class="font15">
+     <div class="detailKaryawan">
+        <div class="kiri">
+            <div id="inputan">
+                <label>ID</label>
+                <span id="idKaryawan">17000012</span>
+                <br/><br/><br/>
+                <label>Nama</label>
+                <span id="namaKaryawan">Leonardo Randy S</span>
+                <br/><br/><br/>
+                <label>Jabatan</label>
+                <span id="selectJabatan">Kasir</span>
+                <br/><br/><br/>
+                <label>Email</label>
+                <span id="email">leonardo@email.com</span>
+                <br/><br/><br/>
+                <label>No. Telp</label>
+                <span id="telepon">085123456789</span>
+                <br/><br/><br/>
+                <div id="divAl"><label>Alamat</label></div>
+                <span id="alamat">JL. Klitren no.10, Yogyakarta</span>
+                <br/><br/><br/><br/><hr><br>
+                <label>Password</label>
+                <span id="pass">************</span>
+                <br/><br/><br/><br/>
+            </div>  
+        </div>
+        <div class="kanan">
+            <label>Photo Profile</label><br/><br/>
+            <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/><br><br><br>
+            <!-- tombol save -->
+            <input type="button" id="tombolEdit" name="tombokEdit" class="tombol" value="EDIT" onclick="aside3()"/>
+        </div>
+    </div>
+</div>

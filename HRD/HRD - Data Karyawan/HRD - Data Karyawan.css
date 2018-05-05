@@ -1,34 +1,102 @@
-
 /*------------------------bagian konten---------------------*/
-
-/*data karyawan------*/
-article div#dataKaryawan{ /*area data karyawan*/
-    margin: auto; 
-    height: 400px;
-    width: 94%;
+article div#konten{ /*konten (sebelahnya aside)*/
+    float: left;
+    width: 80%;
+    height: 100%;
+    overflow-y: scroll;
+}
+article div#konten h1{  /*judul*/
+    text-align: center; /*taruh tengah*/
+    font-size: 35px;
+    text-transform:uppercase;   /*supaya capslock*/
+}
+article div#konten div#dataKaryawan div.kiri{
+    float: left;
+}
+article div#konten div#dataKaryawan div/*------------------------bagian konten---------------------*/
+article div#konten{ /*konten (sebelahnya aside)*/
+    float: left;
+    width: 80%;
+    height: 100%;
+    overflow-y: scroll;
+}
+article div#konten h1{  /*judul*/
+    text-align: center; /*taruh tengah*/
+    font-size: 35px;
+    text-transform:uppercase;   /*supaya capslock*/
 }
 article div#konten div#dataKaryawan div.kiri{
     float: left;
 }
 article div#konten div#dataKaryawan div.kanan{
     float: right;
+    margin-right: 50px;
+}
+article #dataKaryawan .detailKaryawan .peraturan{ /*format foto*/
+    font-size: 13px;
 }
 article #dataKaryawan .detailKaryawan .photo{ /*utk fotonya*/
     height: 300px;
     width: inherit; /*selebar kotak putih*/
 }
-article #dataKaryawan .detailKaryawan p{ /*info karyawan*/
-    margin: 1px; /*jarak 1px dg kotaknya*/
+article div#konten div#inputan{
+    margin-left: 50px;
 }
-article #dataKaryawan .detailKaryawan .tombol{ /*info karyawan*/
-    margin: auto;
-    margin-left: 79%;
-    font-weight: bold;
-    text-align: center;
+article div#konten span#idKaryawan{
+    margin-left: 130px;
 }
-/*daftar karyawan------*/
-
+article div#konten span#namaKaryawan{
+    margin-left: 105px;
+}
+article div#konten #selectJabatan{ /*"sort by" (dropbox-nya)*/
+    margin-left: 88px;  /*supaya letak dropbox agak ke kanan dibanding labelnya*/
+    width: 220px;   /*lebar dropbox*/
+}
+article div#konten span#email{
+    margin-left: 106px;
+}
+article div#konten span#telepon{
+    margin-left: 86px;
+}
+article div#konten div#divAl{
+    float: left;
+}
+article div#konten span#alamat{
+    width: 300px;
+    height: 100px;
+    margin-left: 100px;
+}
+article div#konten textarea#alamat{
+    width: 300px;
+    height: 100px;
+    margin-left: 100px;
+}
+article div#konten span#pass{
+    margin-left: 83px;
+}
+/*tombol utk save -------*/
+article div#konten input#tombolEdit{
+    width: 100px;
+    float: right;
+    margin-top: 35%;
+}
 /*------------------------bagian konten---------------------*/
+
+/*----------tombol utk up ke atas----------*/
+a#tombolUp{ /*peletakkannya dikanan bawah dan fixed*/
+    position: fixed; /*tetap ada di bawah walau discroll*/
+    bottom: 2px;     /*jarak dengan bottom window*/
+    right: 2px;      /*jarak dg kanan window*/
+    padding: 5px;
+    font-size: 30px; /*besar tombol*/
+    opacity: 0.3; /*transparancy*/
+    display: none; /*tidak ditampilkan (ditampilkan saat scrolldown dan di media query utk HP, setting di file .js)*/
+}
+a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
+    opacity: 0.6;
+}
+/*----------tombol utk up ke atas----------*/
+
 
 /*---------------------------media query---------------------------*/
 @media screen and (max-width: 680px){ /*view port kecil, utk HP*/
@@ -36,6 +104,30 @@ article #dataKaryawan .detailKaryawan .tombol{ /*info karyawan*/
     article div#konten{
         float: none; /*hilangkan float agar pindah kebawah*/
         width: 100%;
+    }
+    article div#konten div#dataKaryawan{
+        float: none;
+        text-align: center;
+        margin: auto;
+    }
+    article div#konten div#inputan{
+        text-align: left;
+        margin-left: 10%;
+    }
+    article div#konten #selectJabatan{
+        margin-left: 88px;
+        width: 170px;
+    }
+    article div#konten input#tombolEdit{
+        float: none;
+    }
+    article div#konten div#dataKaryawan div.kanan{
+        float: none;
+        margin-right: 0px;
+    }
+    article div#konten input#tombolEdit{
+        float: none;
+        margin: auto;
     }
     /*-----------------utk konten-----------------*/
 }
