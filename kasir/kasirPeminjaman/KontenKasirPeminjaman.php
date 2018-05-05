@@ -32,7 +32,14 @@
                 <th class="hargaSewa">Harga Sewa</th>
                 <th class="peringatan"></th>
             </thead>
-            <tbody>
+            <tbody id="bodytable">
+                <tr>
+                    <td class="idBuku"></td>
+                    <td class="judulBuku"></td>
+                    <td class="tanggalPengembalian"></td>
+                    <td class="hargaSewa"></td>
+                    <td class="peringatan"><i class="fas fa-trash-alt"></i></td>
+                </tr>
                 <tr>
                     <td class="idBuku">1234</td>
                     <td class="judulBuku">Naruto ketemu monika sujanto asdas</td>

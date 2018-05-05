@@ -26,9 +26,8 @@ $(window).on('load', function () {
         aside1();
     else if(c == 2)
         aside2();
-    else if(c == 3){
+    else if(c == 3)
         aside3();
-    }
     else if(c == 4)
         aside4();
     else if(c == 5)
