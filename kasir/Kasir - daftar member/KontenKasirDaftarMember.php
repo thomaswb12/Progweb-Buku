@@ -22,7 +22,7 @@
         <option value = 3>Email</option>
     </select>
     <div id="searchBox">
-        <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
+        <input type="text"  placeholder="Search" class="font15" id="memberInputSearchBy" name="memberInputSearchBy"/>
         <i class="fa fa-search blue font15 klik" onclick="searchDaftarMember()"></i>
     </div>
 </div>
@@ -59,6 +59,7 @@
                 <div class="divSimbolPopup"><i class="fas fa-id-card-alt simbolPopup"></i></div>
                 <div class="atribut"><label>ID Member </label></div>
                 <input class="value" id="popupIdMember" name="popupIdMember" value="" disabled/>
+                <input class="value" id="popupIdMemberDummy" name="popupIdMemberDummy" value="" style="display:none;"/>
                 <br/>
             </div>
             <div class="popupSatuan">
@@ -118,6 +119,26 @@
         ?>
         <script type="text/javascript">
             alert("Gagal diedit: Data belum lengkap!");
+        </script>
+        <?php
+    }
+    
+    //berhasil diubah
+    if(isset($_SESSION["berhasil"])){
+        unset($_SESSION["berhasil"]);
+        ?>
+        <script type="text/javascript">
+            alert("Berhasil diedit :)");
+        </script>
+        <?php
+    }
+
+    //tidak ada data yang berubah
+    if(isset($_SESSION["tidakBerubah"])){
+        unset($_SESSION["tidakBerubah"]);
+        ?>
+        <script type="text/javascript">
+            alert("Tidak ada data yang berubah");
         </script>
         <?php
     }
