@@ -6,7 +6,7 @@
         case 1: echo buatIdTransaksi();break;
         case 2 : $a = $_POST['id']; searchNama($a);break;
         case 3 : $a = $_POST['id'];cariBuku($a);break;
-        case 4 : transaksi($_POST[''],$_POST[''],$_POST[''],$_POST['']);break;
+        case 4 : transaksi($_POST['idEksBuku'],$_POST['idMember'],$_POST['idTransaksi']);break;
         case 6 : truncate();break;
     }
 
@@ -31,7 +31,7 @@
             $conn->close();
             return $string; 
         }
-        return "";
+        return "gagal";
         $conn->close();
     }
 
@@ -73,8 +73,16 @@
         $conn->close();
     }
 
-    function transaksi(){
-
+    function transaksi($idEksBuku,$idMember,$idTransaksi){
+        global $conn;
+        $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',0,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
+        if($conn->query($sql)){
+            echo "berhasil";
+        }
+        else{
+            echo "gagal";
+        }
+        $conn->close();
     }
 
     function truncate(){

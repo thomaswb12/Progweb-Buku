@@ -122,6 +122,7 @@ function pencetBlur(){
 function transaksi($temp=1){
     $data ="";
     $function="";
+    $pass = 1;
     switch ($temp) {
         case 1:     $data = {'function':$temp};$function=function(response){$("#idTransaksi").val(response);};
                     break;
@@ -155,20 +156,22 @@ function transaksi($temp=1){
                     }
                     else{
                         alert("pastikan input benar");
+                        $pass = 0;
                     }
         case 6  :   $data = {'function':$temp};
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
-                        
                     }
         default:
                     break;
     }
-    $.ajax({
-        type : 'post',
-        data : $data,
-        url: '../functionPHP/transaksi.php',
-        success: $function
-    });
+    if($pass==1){
+        $.ajax({
+            type : 'post',
+            data : $data,
+            url: '../functionPHP/transaksi.php',
+            success: $function
+        });
+    }
 }
 
 //------------------ fungsi ketika window di resize --------------
