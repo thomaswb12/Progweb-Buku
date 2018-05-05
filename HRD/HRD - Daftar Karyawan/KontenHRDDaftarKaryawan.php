@@ -40,7 +40,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more" onclick="aside2()">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -63,7 +63,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -86,7 +86,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -109,7 +109,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -132,7 +132,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -155,7 +155,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>
@@ -178,7 +178,7 @@
                 <td><p class="isi">Kasir</p></td>
             </tr>
             <tr>
-                <td class="more">Details >></td>
+                <td><a href="" class="more" onclick="aside2()">Details >></a></td>
             </tr>
         </table>
     </div>

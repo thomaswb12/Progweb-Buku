@@ -57,12 +57,12 @@ article div#daftarKaryawan{ /*sekotak daftar komik*/
 article #daftarKaryawan .infoKaryawan{ /*kotak masing2 komik yang isinya info komik*/
     background-color: #F2F2F2;
     margin: 20px;
-    height: 300px;
-    width: 170px;
+    height: 330px;
+    width: 195px;
     float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
 }
 article #daftarKaryawan .infoKaryawan .photo{ /*utk fotonya*/
-    height: 200px;
+    height: 210px;
     width: inherit; /*selebar kotak putih*/
 }
 article #daftarKaryawan .infoKaryawan p{ /*info komiknya (stok, tersedia, available)*/
@@ -71,6 +71,7 @@ article #daftarKaryawan .infoKaryawan p{ /*info komiknya (stok, tersedia, availa
 article #daftarKaryawan .infoKaryawan .more{ /*info komiknya (stok, tersedia, available)*/
     margin: 1px; /*jarak 1px dg kotaknya*/
     color: blue;
+    font-weight: bold;
 }
 /*daftar karyawan------*/
 
@@ -128,12 +129,9 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article #daftarKaryawan .infoKaryawan{ /*kotak masing2 komik yang isinya info komik*/
         background-color: #F2F2F2;
         margin: 20px;
-        height: 300px;
-        width: 170px;
+        height: 330px;
+        width: 195px;
         float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
     }
-
- 
-
     /*--------utk article (bagian konten)---------*/
 }
