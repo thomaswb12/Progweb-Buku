@@ -45,20 +45,14 @@
             case 2 : $sort = "nama";break;
             case 3 : $sort = "email";break;
         }
-
+        $data=array();
         $sql =  " SELECT * FROM member where $dari like '$kata%' order by $sort ASC";
         $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while($rows = $result->fetch_assoc()){
-                $data[] = $rows;
-            }
-            $conn->close();
-            return $data;
+        while($rows = $result->fetch_assoc()){
+            $data[] = $rows;
         }
-        else{
-            echo "gagal";
-            $conn->close();
-        } 
+        $conn->close();
+        return $data;
     }
 
     //tampilkan semua member di tabel --> dipakai di kasir daftar member

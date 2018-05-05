@@ -16,7 +16,7 @@ article div#konten #searching{ /*"search by" (label, dropbox, input, dan icon-ny
 article div#konten #searching #searchBox{ /*"search by" (input, dan icon-nya)*/
     float: right;   /*lettakkan di kanan parent #searching*/
 }
-article div#konten #searching #searchBox #inputSearchBy{ /*"search by" (input-nya)*/
+article div#konten #searching #searchBox #memberInputSearchBy{ /*"search by" (input-nya)*/
     width: 150px;
 }
 article div#konten #searching #selectSearchBy{ /*"search by" (dropbox-nya)*/
@@ -174,7 +174,7 @@ input#tombolDetailMember{
         margin: 5px;
         margin-bottom: 20px;
     }
-    article div#konten #searching #searchBox #inputSearchBy{ /*box inputan*/
+    article div#konten #searching #searchBox #memberInputSearchBy{ /*box inputan*/
         margin: auto; /*tengah*/
     }
     /*keperluan searching -------*/

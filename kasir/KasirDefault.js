@@ -101,6 +101,7 @@ function pencetTR(temp){
     var tanggalLahir = temp.children("td:nth-of-type(8)").html(); 
     var telepon = temp.children("td:nth-of-type(9)").html(); 
     $("#popupIdMember").val(idMember);
+    $("#popupIdMemberDummy").val(idMember);
     $("#popupNamaMember").val(namaMember);
     $("#popupEmail").val(email);
     $("#popupGender").val(gender);
@@ -229,12 +230,12 @@ function search(){
 }
 
 function searchDaftarMember(){
-    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
-    $dari = $('#selectSearchBy').val();
-    $sorting = $('#selectSortBy').val();
+    $('#memberInputSearchBy').val() !="" ? $keyword = $('#memberInputSearchBy').val(): $keyword ="";
+    $searchby = $('#selectSearchBy').val();
+    $sortby = $('#selectSortBy').val();
     $.ajax({
         type : 'post',
-        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':0},
+        data : {'keyword':$keyword,'searchby':$searchby,'sortby':$sortby,'status':0},
         url: '../functionPHP/isiKontenDaftarMember.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);

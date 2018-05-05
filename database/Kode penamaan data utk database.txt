@@ -4,4 +4,7 @@ CC -> kode rak
 DD, EE, FF, GG, HH, II, JJ -> kode id buku
 kode id exemplar = kode id buku + KK
 
-M -> kode id member
+Mxxxxxx -> kode id member
+
+
+Txxxxxxx -> kode utk transaksi
