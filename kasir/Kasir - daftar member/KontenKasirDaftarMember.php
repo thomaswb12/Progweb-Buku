@@ -22,7 +22,7 @@
         <option value = 3>Email</option>
     </select>
     <div id="searchBox">
-        <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
+        <input type="text"  placeholder="Search" class="font15" id="memberInputSearchBy" name="memberInputSearchBy"/>
         <i class="fa fa-search blue font15 klik" onclick="searchDaftarMember()"></i>
     </div>
 </div>
