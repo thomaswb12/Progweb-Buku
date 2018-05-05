@@ -1,5 +1,3 @@
-var cek;
-
 $(document).ready(function(){
     //------ kalau discroll, panggil fungsi backToTop(), utk membuat tombol UP muncul -------------
     $(window).on('scroll', function () {
