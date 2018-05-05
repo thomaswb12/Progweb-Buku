@@ -36,6 +36,8 @@
             <th class="email">Email</th>
             <th class="gender">Gender</th>
             <th class="noIdentitas">No Identitas</th>
+            <th class="alamat">Alamat</th>
+            <th class="tanggalLahir">Tanggal Lahir</th>
         </thead>
         <tbody>
             
@@ -51,24 +53,46 @@
     <i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
     <br/><br/>
     <div id="isiPopup">
-        <div class="divSimbolPopup"><i class="fas fa-id-card-alt simbolPopup"></i></div>
-        <p class="atribut">ID Member </p>
-        <p class="value" id="popupIdMember">: </p>
-        <br/>
-        <div class="divSimbolPopup"><i class="fas fa-user simbolPopup"></i></div>
-        <label class="atribut">Nama</label>
-        <p class="value" id="popupNamaMember">: </p>
-        <br/>
-        <div class="divSimbolPopup"><i class="fas fa-id-card simbolPopup"></i></div>
-        <label class="atribut">No Identitas</label>
-        <p class="value" id="popupNoIdentitas">: </p>
-        <br/>
-        <div class="divSimbolPopup"><i class="fas fa-transgender simbolPopup"></i></div>
-        <label class="atribut">Gender</label>
-        <p class="value" id="popupGender">: </p>
-        <br/>
-        <div class="divSimbolPopup"><i class="fas fa-envelope simbolPopup"></i></div>
-        <label class="atribut">Email</label>
-        <p class="value" id="popupEmail">: </p>
+        <div class="popupSatuan">
+            <div class="divSimbolPopup"><i class="fas fa-id-card-alt simbolPopup"></i></div>
+            <div class="atribut"><label>ID Member </label></div>
+            <input class="value" id="popupIdMember" value=""/>
+            <br/>
+        </div>
+        <div class="popupSatuan">
+            <div class="divSimbolPopup"><i class="fas fa-user simbolPopup"></i></div>
+            <label class="atribut">Nama</label>
+            <input class="value" id="popupNamaMember" value=""/>
+            <br/>
+        </div>
+        <div class="popupSatuan">
+            <div class="divSimbolPopup"><i class="fas fa-id-card simbolPopup"></i></div>
+            <label class="atribut">No Identitas</label>
+            <input class="value" id="popupNoIdentitas" value=""/>
+            <br/>
+        </div>
+        <div class="popupSatuan">
+            <div class="divSimbolPopup"><i class="fas fa-transgender simbolPopup"></i></div>
+            <label class="atribut">Gender</label>
+            <input class="value" id="popupGender" value=""/>
+            <br/>
+        </div>
+        <div class="popupSatuan">
+            <div class="divSimbolPopup"><i class="fas fa-envelope simbolPopup"></i></div>
+            <label class="atribut">Email</label>
+            <input class="value" id="popupEmail" value=""/>
+            <br/>
+        </div>
+        <div class="popupSatuan">
+            <div class="divSimbolPopup"><i class="fas fa-birthday-cake simbolPopup"></i></div>
+            <label class="atribut">Tanggal Lahir</label>
+            <input class="value" id="popupTanggalLahir" value=""/>
+            <br/>
+        </div>
+        <div class="popupSatuan">
+            <div class="divSimbolPopup"><i class="fas fa-home simbolPopup"></i></div>
+            <label class="atribut">Alamat</label>
+            <input class="value" id="popupAlamat" value=""/>
+        </div>
     </div>
 </div>
