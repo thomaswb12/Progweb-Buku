@@ -41,6 +41,7 @@ function aside1(){
     $("div#konten").load("kasirPeminjaman/KontenKasirPeminjaman.php");
     $("div#gantiHead").load("kasirPeminjaman/HeadKasirPeminjaman.php");
     $.session.set('page','1');
+    getIdTransaksi();
 }
 function aside2(){
     $(".blue").removeClass('terpilih');
@@ -144,6 +145,17 @@ function cariBuku(){
             }
         }
      });
+}
+
+function getIdTransaksi(){
+    $.ajax({
+        type : 'post',
+        data : {'function':1},
+        url: '../functionPHP/transaksi.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"    
+        $("#idTransaksi").val(response);
+        }
+    });
 }
 
 function searchNama(){
