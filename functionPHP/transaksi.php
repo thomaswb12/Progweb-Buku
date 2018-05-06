@@ -10,6 +10,16 @@
         case 4 : transaksi($_POST['idEksBuku'],$_POST['idMember'],$_POST['idTransaksi']);break;
         case 5 : buatTabel();break;
         case 6 : truncate();break;
+        case 7 : hapus($_POST['id']);break;
+    }
+
+    function hapus($a){
+        global $conn;
+        $sql = "DELETE FROM dummydetailtransaksi where idEksBuku = '$a'";
+        if($conn->query($sql)){
+        }
+        $conn->close();
+
     }
 
     function buatTabel(){
@@ -23,7 +33,7 @@
                             <td class="judulBuku">'.$row['judulBuku'].'</td>
                             <td class="tanggalPengembalian">'.$row['tanggalAturanKembali'].'</td>
                             <td class="hargaSewa">'.$row['harga'].'</td>
-                            <td class="peringatan"><i onclick="transaksi(7)" class="fas fa-trash-alt"></i></td>
+                            <td class="peringatan"><i onclick="transaksiHapus(7,$(this))" i="'.$row['idEksBuku'].'" class="klik fas fa-trash-alt"></i></td>
                         </tr>';
                 }
             }
@@ -115,7 +125,6 @@
         global $conn;
         $sql = "TRUNCATE table dummydetailtransaksi";
         if($conn->query($sql)){
-            $conn->close();
         }
         $conn->close();
     }

@@ -58,5 +58,4 @@
         <input class="tombol" id="print" name="print" type="button" value="Print Nota">
         <input class="tombol" onclick="transaksi(6)" id="cancel" name="cancel" type="button" value="Cancel">
     </div>
-    <script src="Kasir - peminjaman/Kasir - peminjaman.js"></script>
 </div>

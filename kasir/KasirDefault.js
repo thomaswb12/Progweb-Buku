@@ -133,6 +133,17 @@ function load(){
     });
 }
 
+function transaksiHapus(tamp,temp){
+    $.ajax({
+        type : 'post',
+        data : {'function':tamp,'id':temp.attr('i')},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            load();
+        }
+    });
+}
+
 function transaksi($temp=1){
     $data ="";
     $function="";
@@ -177,10 +188,6 @@ function transaksi($temp=1){
                     }
                     break;
         case 6  :   $data = {'function':$temp};
-                    $function = function (response) {//response is value returned from php (for your example it's "bye bye"
-                    }
-                    break;
-        case 7 :    $data = {'function':$temp,'idHapus':$(asd)};
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                     }
                     break;
