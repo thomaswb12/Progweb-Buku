@@ -66,16 +66,16 @@ function aside4(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
     $("#aside4").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20tambah%20member/kasirTambahMember.php");
-    $("div#gantiHead").load("Kasir%20-%20tambah%20member/HeadTambahMember.php");
+    $("div#konten").load("kasirTambahMember/kasirTambahMember.php");
+    $("div#gantiHead").load("kasirTambahMember/HeadTambahMember.php");
     $.session.set('page','4');
 }
 function aside5(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside5 span');
     $("#aside5").addClass('terpilih');
-    $("div#konten").load("Kasir%20-%20daftar%20member/KontenKasirDaftarMember.php");
-    $("div#gantiHead").load("Kasir%20-%20daftar%20member/HeadKasirDaftarMember.php");
+    $("div#konten").load("kasirDaftarMember/KontenKasirDaftarMember.php");
+    $("div#gantiHead").load("kasirDaftarMember/HeadKasirDaftarMember.php");
     $.session.set('page','5');
     searchDaftarMember();
 }
@@ -96,8 +96,8 @@ function pencetTR(temp){
     var namaMember = temp.children("td:nth-of-type(3)").html();
     var email = temp.children("td:nth-of-type(4)").html();
     var gender = temp.children("td:nth-of-type(5)").html();
-        if(gender=="Pria") gender=2;
-        else gender=1;
+        if(gender=="Wanita") gender=1;
+        else gender=2;
     var noIdentitas = temp.children("td:nth-of-type(6)").html(); 
     var alamat = temp.children("td:nth-of-type(7)").html(); 
     var tanggalLahir = temp.children("td:nth-of-type(8)").html(); 
