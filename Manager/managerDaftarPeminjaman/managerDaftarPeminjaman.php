@@ -1,3 +1,4 @@
+
 <h1>Daftar Peminjaman</h1>
 <div id="searching">
     <label id="labelSearchBy" class="blue font15">Search by :</label>
@@ -20,26 +21,9 @@
             <th class="namaMember">Nama Member</th>
             <th class="peringatan"></th>
         </thead>
-        <tbody>
+        <tbody id="daftarPeminjaman">
         
-            <tr onclick="aside2()">
-                <td>2343</td>
-                <td>idid</td>
-                <td>nama coba</td>
-                <td class="peringatan"><i class="fas fa-exclamation-triangle" style="color:red"></i></td>
-            </tr>
-            <tr onclick="aside2()">
-                <td>2343</td>
-                <td>idid2</td>
-                <td>nama coba2</td>
-                <td class="peringatan"><i class="fas fa-exclamation-triangle" style="color:red"></i></td>
-            </tr>
-            <tr onclick="aside2()">
-                <td>234e</td>
-                <td>idid3</td>
-                <td>nama coba3</td>
-                <td class="peringatan"></td>
-            </tr>
+            
         </tbody>
     </table>
 </div>
