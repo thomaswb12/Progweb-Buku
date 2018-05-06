@@ -2,23 +2,44 @@
 session_start();
 include "getDataBuku.php";
 $buku = getDetailBuku($_POST['idBuku']);
+ //cek available atau tidak
+if($buku['Available']>0){
+    $status='AVAILABLE';
+    $warna='green';
+}
+else{
+    $status='UNAVAILABLE';
+    $warna='red';
+}
+//cek apakah special edition dan favorit
+$special='';
+$favorit='';
+if($buku['specialEdition']=="Ya"){
+    $special='Special Edition';
+}
+if($buku['Dipinjam']>2500){
+    $favorit='Favorit';
+}
+//hitung harga dan lama pinjam
+$harga=getHargaBuku($buku['tanggalTerbit']);
+$lamapinjam=getLamaPinjam($buku['tanggalTerbit']);
 
 echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
         <br/><br/>
         <div id="popupScroll">
-            <p id="popupJudul"></p>
+            <p id="popupJudul">'.$buku['judulBuku'].'</p>
             <div id="divImg">';
                 if($_POST['status']==1) echo '<img class="komik" src="../../'.$buku['Location'].'"/>';
                 else echo '<img class="komik" src="../'.$buku['Location'].'"/>';
             echo '</div>
             <div id="istimewa">
-                <h3 id="popupPopular" style="color:red;"></h3>
-                <h3 id="popupSpecial" style="color:orange;"></h3>
+                <h3 id="popupPopular" style="color:red;">'.$favorit.'</h3>
+                <h3 id="popupSpecial" style="color:orange;">'.$special.'</h3>
             </div>
             <div id="penting">
-                <p>Status : <span id="popupStatus">'.(($buku['Available']>0)?'available':'unavailable').'</span></p>
-                <p>Harga Sewa : <span id="popupHarga"></span></p>
-                <p>Lama Sewa : <span id="popupLama"></span></p>
+                <p>Status : <span id="popupStatus" style="color:'.$warna.'">'.$status.'</span></p>
+                <p>Harga Sewa : Rp <span id="popupHarga">'.$harga.'</span></p>
+                <p>Lama Sewa : <span id="popupLama">'.$lamapinjam.'</span> hari</p>
             </div>
             <table>
                 <tr><td>ID Buku</td>

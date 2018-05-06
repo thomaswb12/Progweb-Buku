@@ -66,10 +66,28 @@
             }
             
         }
-    //}
-    /*else{
-        $_SESSION['error'] = 2;
-        header("location:index.php");
-    }*/
-    
+
+        //hitung selisih tanggal buku terbit dg tanggal sekarang
+        function getSelisihHari($tanggalTerbit){
+            $ts1=strtotime($tanggalTerbit);
+            $ts2=strtotime(date("Y-m-d"));
+            $seconds_diff = ($ts2 - $ts1)/86400;
+            return $seconds_diff;
+        }
+
+        //hitung harga buku
+        function getHargaBuku($tanggalTerbit){
+            $selisih=getSelisihHari($tanggalTerbit);
+            if($selisih<30) $harga=6000;
+            else $harga=3000;
+            return $harga;
+        }
+
+        //hitung lama pinjam buku
+        function getLamaPinjam($tanggalTerbit){
+            $selisih=getSelisihHari($tanggalTerbit);
+            if($selisih<30) $lamapinjam=3;
+            else $lamapinjam=7;
+            return $lamapinjam;
+        }
 ?>
