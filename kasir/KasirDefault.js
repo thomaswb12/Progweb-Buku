@@ -167,6 +167,8 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                     }
                     break;
+        case 7 :    
+                    break;
         default:
                     break;
     }
