@@ -163,13 +163,11 @@ function transaksi($temp=1){
                     }
                     break;
         case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
-                        alert("masuk");
                         $data = {'function':$temp, 'idEksBuku':$("#inputIdEksBuku").val(), 'idMember':$("#inputID").val(), 'idTransaksi':$("#idTransaksi").val()};
                         $function = function(response){
                             $("#tidakAdaEks").css('display','block');
                             $('#simbolPlus').css('color','rgba(94,94,94,0.9)');
-                            $('#inputIdEksBuku').val('');
-                            alert("masuk");
+                            $('#inputIdEksBuku').val(''); 
                             load();
                         };
                     }
@@ -182,7 +180,7 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                     }
                     break;
-        case 7 :    $data = {'function':$temp,'idHapus':};
+        case 7 :    $data = {'function':$temp,'idHapus':$(asd)};
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                     }
                     break;
