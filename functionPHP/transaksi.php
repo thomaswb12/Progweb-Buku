@@ -11,6 +11,7 @@
         case 5 : buatTabel();break;
         case 6 : truncate();break;
         case 7 : hapus($_POST['id']);break;
+        case 8 : insert($_POST['id']);
     }
 
     function hapus($a){
@@ -117,7 +118,6 @@
         else{
             echo "ga ada";
         }
-
         $conn->close();
     }
 
