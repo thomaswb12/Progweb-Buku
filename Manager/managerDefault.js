@@ -1,5 +1,6 @@
 $(document).ready(function(){
     //------ kalau discroll, panggil fungsi backToTop(), utk membuat tombol UP muncul -------------
+    aside1();
     $(window).on('scroll', function () {
         backToTop();
     });
@@ -26,6 +27,7 @@ function aside1(){
     $("#aside1").addClass('terpilih');
     $("div#konten").load("managerDaftarPeminjaman/managerDaftarPeminjaman.php");
     $("div#gantiHead").load("managerDaftarPeminjaman/headManagerDaftarPeminjaman.php");
+    searchDaftarPeminjaman();
 }
 
 function aside2(){
@@ -64,4 +66,18 @@ function backToTop(){
     } else { //bila user belum scroll jauh, tombol disembunyikan
         $('#tombolUp').css('display','none');
     }
+}
+
+//----- fungsi menampilkan daftar peminjaman ke managerDaftarPeminjaman ---------
+function searchDaftarPeminjaman(){
+    $('#inputSearchBy').val() !="" ? $keyword = $('#inputSearchBy').val(): $keyword ="";
+    $searchby = $('#selectSearchBy').val();
+    $.ajax({
+        type : 'post',
+        data : {'keyword':$keyword,'searchby':$searchby,'status':0},
+        url: '../functionPHP/isiKontenDaftarPeminjaman.php',
+        success: function (response) {
+            $("tbody").html(response);
+        }
+    });
 }
