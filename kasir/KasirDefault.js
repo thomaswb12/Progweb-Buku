@@ -152,6 +152,9 @@ function transaksi($temp=1){
         case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
                         $data = {'function':$temp, 'idEksBuku':$("#inputIdEksBuku").val(), 'idMember':$("#inputID").val(), 'idTransaksi':$("#idTransaksi").val()};
                         $function = function(response){
+                            $("#tidakAdaEks").css('display','block');
+                            $('#simbolPlus').css('color','rgba(94,94,94,0.9)');
+                            $('#inputIdEksBuku').val('');
                             alert(response);
                         };
                     }
