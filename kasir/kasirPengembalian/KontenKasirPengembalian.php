@@ -3,16 +3,26 @@
     <div>
         <form action="">
             <div id="atasTabel">
-                <i class="fas fa-user simbol" id="simbolOrang"></i>
-                <div>
-                    <label>ID Member</label><br>
-                    <input id="inputID" oninput="searchNama()" type="text"><br>
-                    <label>Nama</label><br>
-                    <input id="namaMember" class="disable" type="text" disabled="disabled">
+                <div id="kiri">
+                    <i class="fas fa-user simbol" id="simbolOrang"></i>
+                    <div>
+                        <label>ID Member</label><br>
+                        <input id="inputID" oninput="searchNama()" type="text"><br>
+                        <label>Nama</label><br>
+                        <input id="namaMember" class="disable" type="text" disabled="disabled">
+                    </div>
+                </div>
+                <div id="kanan">
+                    <div id="divSimbolTransaksi"><i class="fas fa-sticky-note simbol" id="simbolTransaksi"></i></div>
+                    <div id="divIdTransaksi">
+                        <label>ID Transaksi</label><br>
+                        <input id="idTransaksiPengembalian" name="idTransaksiPengembalian" class="disable" type="text" disabled="disabled">
+                    </div>
                 </div>
             </div>
         </form>
     </div>
+    <br>
     <div id="tabelDaftar">
         <table>
             <thead>
