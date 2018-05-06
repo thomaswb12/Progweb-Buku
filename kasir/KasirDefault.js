@@ -131,6 +131,7 @@ function load(){
             $('#bodytable').html(response);
         }
     });
+    total();
 }
 
 function transaksiHapus(tamp,temp){
@@ -140,6 +141,18 @@ function transaksiHapus(tamp,temp){
         url: '../functionPHP/transaksi.php',
         success: function(response){
             load();
+        }
+    });
+}
+
+function total(){
+    $.ajax({
+        type : 'post',
+        data : {'function':9},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            //alert(response);
+            $('#total').text(response);
         }
     });
 }
@@ -176,6 +189,7 @@ function transaksi($temp=1){
         case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
                         $data = {'function':$temp, 'idEksBuku':$("#inputIdEksBuku").val(), 'idMember':$("#inputID").val(), 'idTransaksi':$("#idTransaksi").val()};
                         $function = function(response){
+                            alert(response);
                             $("#tidakAdaEks").css('display','block');
                             $('#simbolPlus').css('color','rgba(94,94,94,0.9)');
                             $('#inputIdEksBuku').val(''); 

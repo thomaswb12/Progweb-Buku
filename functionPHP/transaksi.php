@@ -12,6 +12,22 @@
         case 6 : truncate();break;
         case 7 : hapus($_POST['id']);break;
         case 8 : insert($_POST['idMember'],$_POST['idEksBuku'],$_POST['idTransaksi'],$_SESSION['id']);break;
+        case 9 : total();break;
+    }
+
+    function total(){
+        include "curency.php";
+        global $conn;
+        $sql = "SELECT harga FROM dummydetailtransaksi";
+        $tamp = 0;
+        if($result = $conn->query($sql)){
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+                    $tamp += $row['harga'];
+                }
+            }
+        }
+        echo toRp($tamp);
     }
 
     function insert($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
@@ -29,6 +45,7 @@
 
     function buatTabel(){
         global $conn;
+        include "curency.php";
         $sql = "SELECT d.*,b.judulBuku FROM dummydetailtransaksi as d , eksbuku as e, buku as b where d.idEksBuku = e.idEksBuku and e.idBuku = b.idBuku";
         if($result = $conn->query($sql)){
             if($result->num_rows>0){
@@ -36,8 +53,8 @@
                     echo '<tr>
                             <td class="idBuku">'.$row['idEksBuku'].'</td>
                             <td class="judulBuku">'.$row['judulBuku'].'</td>
-                            <td class="tanggalPengembalian">'.$row['tanggalAturanKembali'].'</td>
-                            <td class="hargaSewa">'.$row['harga'].'</td>
+                            <td class="tanggalPengembalian">'.tanggal($row['tanggalAturanKembali']).'</td>
+                            <td class="hargaSewa">'.toRp($row['harga']).'</td>
                             <td class="peringatan"><i onclick="transaksiHapus(7,$(this))" i="'.$row['idEksBuku'].'" class="klik fas fa-trash-alt"></i></td>
                         </tr>';
                 }
@@ -46,22 +63,20 @@
     }
 
     function transaksi($idEksBuku,$idMember,$idTransaksi){
-        include "getDataBuku";
-        
+        include "getDataBuku.php";
         $tgl="";
         $special="";
         $sql = "SELECT b.tanggalTerbit,b.specialEdition FROM buku as b, eksbuku as e where b.idBuku = e.idBuku and e.idEksBuku = '$idEksBuku'";
         if($result = $conn->query($sql)){
-            if($result->num_rows == 1){
-                $tgl = $result->fetch_assoc()['tanggalTerbit'];
-                $special = $result->fetch_assoc()['specialEdition'];
+            if($result->num_rows==1){
+                $row = $result->fetch_assoc();
+                $tgl = $row['tanggalTerbit'];
+                $special = $row['specialEdition'];
             }
         }
-        
         $get_harga = getHargaBuku($tgl,$special);
         
-        global $conn;
-        $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',(int)$get_harga,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
+        $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',$get_harga,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
         if($conn->query($sql)){
             echo "berhasil";
         }
