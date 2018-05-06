@@ -76,18 +76,19 @@
         }
 
         //hitung harga buku
-        function getHargaBuku($tanggalTerbit){
+        function getHargaBuku($tanggalTerbit,$specialEdition){
             $selisih=getSelisihHari($tanggalTerbit);
-            if($selisih<30) $harga=6000;
-            else $harga=3000;
+            if($selisih<30) $harga=6000;        //komik baru (>1bulan) harganya 6rb
+            else $harga=3000;                   //komik lama harganya 3rb
+            if($specialEdition=="Ya") $harga+=2000;     //kalau special edition, harga lebih mahal 2ribu
             return $harga;
         }
 
         //hitung lama pinjam buku
         function getLamaPinjam($tanggalTerbit){
             $selisih=getSelisihHari($tanggalTerbit);
-            if($selisih<30) $lamapinjam=3;
-            else $lamapinjam=7;
+            if($selisih<30) $lamapinjam=3;      //komik baru (>1bulan) boleh dipinjam cuma 3 hari
+            else $lamapinjam=7;                 //komik lama boleh dipinjam 7 hari
             return $lamapinjam;
         }
 ?>

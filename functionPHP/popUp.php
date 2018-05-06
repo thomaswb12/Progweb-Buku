@@ -20,8 +20,9 @@ if($buku['specialEdition']=="Ya"){
 if($buku['Dipinjam']>2500){
     $favorit='Favorit';
 }
+
 //hitung harga dan lama pinjam
-$harga=getHargaBuku($buku['tanggalTerbit']);
+$harga=getHargaBuku($buku['tanggalTerbit'],$buku['specialEdition']);
 $lamapinjam=getLamaPinjam($buku['tanggalTerbit']);
 
 echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
