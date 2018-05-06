@@ -207,6 +207,9 @@ function transaksi($temp=1){
                     break;
         case 8  :   if($('#inputID').val() != ""){
                         $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val()};
+                        $function = function (response) {//response is value returned from php (for your example it's "bye bye"
+                            alert(response);
+                        };
                     }
                     else{
                         alert("ID Member belum ada");

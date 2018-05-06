@@ -12,10 +12,10 @@
         case 6 : truncate();break;
         case 7 : hapus($_POST['id']);break;
         case 8 : insert($_POST['idMember'],$_POST['idEksBuku'],$_POST['idTransaksi'],$_SESSION['id']);break;
-        case 9 : total();break;
+        case 9 : total(1);break;
     }
 
-    function total(){
+    function total($cek){
         include "curency.php";
         global $conn;
         $sql = "SELECT harga FROM dummydetailtransaksi";
@@ -27,11 +27,24 @@
                 }
             }
         }
-        echo toRp($tamp);
+        if($cek==1)
+            echo toRp($tamp);
+        else
+            return $tamp; 
+            $conn->close();
     }
 
     function insert($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
-        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi',date,'$idMember','idKaryaawan',0)";
+        $total = total(2);
+        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', 'date()','$idMember','$idKaryaawan',$total)";
+        global $conn;
+        if ($conn->query($sql) === TRUE) {
+            echo $sql;
+        } 
+        else {
+            echo "gagal";
+        }
+        $conn->close();
     }
 
     function hapus($a){
