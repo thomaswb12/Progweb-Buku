@@ -9,6 +9,7 @@
     else if(date("D")=='Thu') $hari="Kamis";
     else if(date("D")=='Fri') $hari="Jum'at";
     else if(date("D")=='Sat') $hari="Sabtu";
+    else if(date("D")=='Sun') $hari="Minggu";
 
     //atur bulan bahasa indonesia
     if(date("m")=='01') $bulan="Januari";
