@@ -39,6 +39,8 @@
                 <th class="peringatan"></th>
             </thead>
             <tbody id="bodytable">
+                <tr style="color: 1px solid black;">
+                </tr>
             </tbody>
             <tfoot>
                 <tr>
