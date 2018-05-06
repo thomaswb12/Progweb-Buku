@@ -88,11 +88,16 @@
 
     function cariBuku($a){
         global $conn;
-        $sql = "SELECT * FROM eksbuku WHERE idEksBuku = '$a' and eksbuku.Status = 'Tersedia' ";
+        $sql = "SELECT e.idEksBuku FROM eksbuku as e WHERE e.idEksBuku = '$a' and e.Status = 'Tersedia'";
         if($result = $conn->query($sql)){
             if ($result->num_rows == 1) {
-                while($row = $result->fetch_assoc()) {
+                $sql1 = "SELECT d.idEksBuku FROM dummydetailtransaksi as d WHERE d.idEksBuku = '$a'";
+                $result1 = $conn->query($sql1);
+                if($result1->num_rows == 0){
                     echo "ada";
+                }
+                else{
+                    echo "ga ada";
                 }
             }
             else{
@@ -102,6 +107,7 @@
         else{
             echo "ga ada";
         }
+
         $conn->close();
     }
 
