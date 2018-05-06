@@ -95,8 +95,8 @@ function pencetTR(temp){
     var namaMember = temp.children("td:nth-of-type(3)").html();
     var email = temp.children("td:nth-of-type(4)").html();
     var gender = temp.children("td:nth-of-type(5)").html();
-        if(gender=="Pria") gender=2;
-        else gender=1;
+        if(gender=="Wanita") gender=1;
+        else gender=2;
     var noIdentitas = temp.children("td:nth-of-type(6)").html(); 
     var alamat = temp.children("td:nth-of-type(7)").html(); 
     var tanggalLahir = temp.children("td:nth-of-type(8)").html(); 
