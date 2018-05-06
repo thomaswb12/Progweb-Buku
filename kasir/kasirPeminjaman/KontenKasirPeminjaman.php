@@ -55,7 +55,7 @@
         </table>
     </div>
     <div id="divTombol">
-        <input class="tombol" id="print" name="print" type="button" value="Print Nota">
+        <input class="tombol" onclick="transaksi(8)" id="print" name="print" type="button" value="Print Nota">
         <input class="tombol" onclick="transaksi(6)" id="cancel" name="cancel" type="button" value="Cancel">
     </div>
 </div>

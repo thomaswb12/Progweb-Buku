@@ -191,6 +191,14 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                     }
                     break;
+        case 8  :   if($('#inputID').val() != ""){
+                        $data
+                    }
+                    else{
+                        alert("ID Member belum ada");
+                        $pass = 0;
+                    }
+                    break;
         default:
                     break;
     }
