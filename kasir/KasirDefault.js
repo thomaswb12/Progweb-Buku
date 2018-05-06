@@ -120,6 +120,17 @@ function pencetBlur(){
     $("#blur").css('display','none');
 }
 
+function load(){
+    $.ajax({
+        type : 'post',
+        data : {'function':5},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            $('#bodytable').html(response);
+        }
+    });
+}
+
 function transaksi($temp=1){
     $data ="";
     $function="";
@@ -180,14 +191,7 @@ function transaksi($temp=1){
             success: $function
         });
     }
-    $.ajax({
-        type : 'post',
-        data : {'function':5},
-        url: '../functionPHP/transaksi.php',
-        success: function(response){
-            $('#bodytable').html(response);
-        }
-    });
+    load();
 }
 
 //------------------ fungsi ketika window di resize --------------
