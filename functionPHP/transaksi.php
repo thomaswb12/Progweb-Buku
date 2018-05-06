@@ -2,7 +2,7 @@
     require "koneksi.php";
     $callFunction = $_POST['function'];
     
-
+    session_start();
     switch($callFunction){
         case 1: echo buatIdTransaksi();break;
         case 2 : $a = $_POST['id']; searchNama($a);break;
@@ -11,11 +11,11 @@
         case 5 : buatTabel();break;
         case 6 : truncate();break;
         case 7 : hapus($_POST['id']);break;
-        case 8 : insert($_POST['idMember']);break;
+        case 8 : insert($_POST['idMember'],$_POST['idEksBuku'],$_POST['idTransaksi'],$_SESSION['id']);break;
     }
 
-    function insert($idMember){
-        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ()";
+    function insert($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
+        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi',date,'$idMember','idKaryaawan',0)";
     }
 
     function hapus($a){

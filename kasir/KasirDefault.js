@@ -192,7 +192,7 @@ function transaksi($temp=1){
                     }
                     break;
         case 8  :   if($('#inputID').val() != ""){
-                        $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val()};
+                        $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val()};
                     }
                     else{
                         alert("ID Member belum ada");
