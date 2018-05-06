@@ -11,7 +11,11 @@
         case 5 : buatTabel();break;
         case 6 : truncate();break;
         case 7 : hapus($_POST['id']);break;
-        case 8 : insert($_POST['id']);
+        case 8 : insert($_POST['idMember']);break;
+    }
+
+    function insert($idMember){
+        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ()";
     }
 
     function hapus($a){
