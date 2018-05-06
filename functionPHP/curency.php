@@ -19,7 +19,7 @@
                 $hasil_biasa .= $temp[$i];
             }
         }
-        return $hasil_biasa;
+        return (int)$hasil_biasa;
     }
 
 ?>
