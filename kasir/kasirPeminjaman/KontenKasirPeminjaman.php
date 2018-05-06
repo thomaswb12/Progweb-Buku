@@ -49,7 +49,7 @@
                 </tr>
                 <tr class="tebal">
                     <td colspan="3">Total</td>
-                    <td>Rp 6.000</td>
+                    <td>Rp 0</td>
                 </tr>
             </tfoot>
         </table>

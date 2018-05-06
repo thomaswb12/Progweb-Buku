@@ -46,8 +46,22 @@
     }
 
     function transaksi($idEksBuku,$idMember,$idTransaksi){
+        include "getDataBuku";
+        
+        $tgl="";
+        $special="";
+        $sql = "SELECT b.tanggalTerbit,b.specialEdition FROM buku as b, eksbuku as e where b.idBuku = e.idBuku and e.idEksBuku = '$idEksBuku'";
+        if($result = $conn->query($sql)){
+            if($result->num_rows == 1){
+                $tgl = $result->fetch_assoc()['tanggalTerbit'];
+                $special = $result->fetch_assoc()['specialEdition'];
+            }
+        }
+        
+        $get_harga = getHargaBuku($tgl,$special);
+        
         global $conn;
-        $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',0,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
+        $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',(int)$get_harga,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
         if($conn->query($sql)){
             echo "berhasil";
         }
