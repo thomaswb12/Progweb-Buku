@@ -39,20 +39,6 @@
                 <th class="peringatan"></th>
             </thead>
             <tbody id="bodytable">
-                <tr>
-                    <td class="idBuku"></td>
-                    <td class="judulBuku"></td>
-                    <td class="tanggalPengembalian"></td>
-                    <td class="hargaSewa"></td>
-                    <td class="peringatan"><i class="fas fa-trash-alt"></i></td>
-                </tr>
-                <tr>
-                    <td class="idBuku">1234</td>
-                    <td class="judulBuku">Naruto ketemu monika sujanto asdas</td>
-                    <td class="tanggalPengembalian">08/12/2018</td>
-                    <td class="hargaSewa">Rp 10000</td>
-                    <td class="peringatan"><i class="fas fa-trash-alt"></i></td>
-                </tr>
             </tbody>
             <tfoot>
                 <tr>

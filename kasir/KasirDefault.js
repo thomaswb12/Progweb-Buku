@@ -42,6 +42,7 @@ function aside1(){
     $("div#gantiHead").load("kasirPeminjaman/HeadKasirPeminjaman.php");
     $.session.set('page','1');
     transaksi(1);
+    transaksi(6);
 }
 function aside2(){
     $(".blue").removeClass('terpilih');
@@ -151,16 +152,18 @@ function transaksi($temp=1){
         case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
                         $data = {'function':$temp, 'idEksBuku':$("#inputIdEksBuku").val(), 'idMember':$("#inputID").val(), 'idTransaksi':$("#idTransaksi").val()};
                         $function = function(response){
-                            alert("sukses");
-                        }
+                            alert(response);
+                        };
                     }
                     else{
                         alert("pastikan input benar");
                         $pass = 0;
                     }
+                    break;
         case 6  :   $data = {'function':$temp};
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                     }
+                    break;
         default:
                     break;
     }
@@ -172,6 +175,14 @@ function transaksi($temp=1){
             success: $function
         });
     }
+    $.ajax({
+        type : 'post',
+        data : {'function':5},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            $('#bodytable').html(response);
+        }
+    });
 }
 
 //------------------ fungsi ketika window di resize --------------

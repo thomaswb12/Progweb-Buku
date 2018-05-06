@@ -1,13 +1,46 @@
 <?php
     require "koneksi.php";
     $callFunction = $_POST['function'];
+    
 
     switch($callFunction){
         case 1: echo buatIdTransaksi();break;
         case 2 : $a = $_POST['id']; searchNama($a);break;
         case 3 : $a = $_POST['id'];cariBuku($a);break;
         case 4 : transaksi($_POST['idEksBuku'],$_POST['idMember'],$_POST['idTransaksi']);break;
+        case 5 : buatTabel();break;
         case 6 : truncate();break;
+    }
+
+    function buatTabel(){
+        global $conn;
+        $sql = "SELECT d.*,b.judulBuku FROM dummydetailtransaksi as d , eksbuku as e, buku as b where d.idEksBuku = e.idEksBuku and e.idBuku = b.idBuku";
+        if($result = $conn->query($sql)){
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+                    $a = $row;
+                    echo '<tr>
+                            <td class="idBuku">'.$row['idEksBuku'].'</td>
+                            <td class="judulBuku">'.$row['judulBuku'].'</td>
+                            <td class="tanggalPengembalian">'.$row['tanggalAturanKembali'].'</td>
+                            <td class="hargaSewa">'.$row['harga'].'</td>
+                            <td class="peringatan"><i class="fas fa-trash-alt"></i></td>
+                        </tr>';
+                }
+            }
+        }
+    }
+
+    function transaksi($idEksBuku,$idMember,$idTransaksi){
+        global $conn;
+        $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',0,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
+        if($conn->query($sql)){
+            echo "berhasil";
+        }
+        else{
+            echo "gagal";
+        }
+        $conn->close();
     }
 
     function buatIdTransaksi(){
@@ -69,18 +102,6 @@
         }
         else{
             echo "ga ada";
-        }
-        $conn->close();
-    }
-
-    function transaksi($idEksBuku,$idMember,$idTransaksi){
-        global $conn;
-        $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',0,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
-        if($conn->query($sql)){
-            echo "berhasil";
-        }
-        else{
-            echo "gagal";
         }
         $conn->close();
     }
