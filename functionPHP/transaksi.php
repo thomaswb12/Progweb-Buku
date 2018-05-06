@@ -36,7 +36,8 @@
 
     function insert($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
         $total = total(2);
-        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', 'date()','$idMember','$idKaryaawan',$total)";
+        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total)";
+        $sql1 = "INSERT INTO detail transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total)";
         global $conn;
         if ($conn->query($sql) === TRUE) {
             echo $sql;
