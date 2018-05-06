@@ -41,8 +41,9 @@ function aside1(){
     $("div#konten").load("kasirPeminjaman/KontenKasirPeminjaman.php");
     $("div#gantiHead").load("kasirPeminjaman/HeadKasirPeminjaman.php");
     $.session.set('page','1');
-    transaksi(1);
     transaksi(6);
+    transaksi(1);
+    load();
 }
 function aside2(){
     $(".blue").removeClass('terpilih');
@@ -126,6 +127,7 @@ function load(){
         data : {'function':5},
         url: '../functionPHP/transaksi.php',
         success: function(response){
+            //alert(response);
             $('#bodytable').html(response);
         }
     });
@@ -161,12 +163,14 @@ function transaksi($temp=1){
                     }
                     break;
         case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
+                        alert("masuk");
                         $data = {'function':$temp, 'idEksBuku':$("#inputIdEksBuku").val(), 'idMember':$("#inputID").val(), 'idTransaksi':$("#idTransaksi").val()};
                         $function = function(response){
                             $("#tidakAdaEks").css('display','block');
                             $('#simbolPlus').css('color','rgba(94,94,94,0.9)');
                             $('#inputIdEksBuku').val('');
-                            alert(response);
+                            alert("masuk");
+                            load();
                         };
                     }
                     else{
@@ -178,7 +182,9 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                     }
                     break;
-        case 7 :    
+        case 7 :    $data = {'function':$temp,'idHapus':};
+                    $function = function (response) {//response is value returned from php (for your example it's "bye bye"
+                    }
                     break;
         default:
                     break;
