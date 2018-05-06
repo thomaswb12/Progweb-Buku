@@ -55,7 +55,7 @@
             $sql =  "SELECT b.*,p.namaPenulis,pe.NamaPenerbit,r.namaRak FROM `buku` as b,penulis as p, penerbit as pe, rak as r WHERE `idBuku` = '$temp' AND p.idPenulis = b.idPenulis AND pe.idPenerbit = b.idPenerbit AND r.idRak = b.idRak ";
             if($result = $conn->query($sql)){
                 while($rows = $result->fetch_assoc()){
-                    $data[] = $rows;
+                    $data = $rows;
                 }
                 $conn->close();
                 return $data;

@@ -23,7 +23,7 @@
                             <td class="judulBuku">'.$row['judulBuku'].'</td>
                             <td class="tanggalPengembalian">'.$row['tanggalAturanKembali'].'</td>
                             <td class="hargaSewa">'.$row['harga'].'</td>
-                            <td class="peringatan"><i class="fas fa-trash-alt"></i></td>
+                            <td class="peringatan"><i onclick="transaksi(7)" class="fas fa-trash-alt"></i></td>
                         </tr>';
                 }
             }
