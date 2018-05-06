@@ -16,7 +16,7 @@
         $noTelp=$_POST["popupTelepon"];
         $alamat=$_POST["popupAlamat"];
         //kalau data belum lengkap
-        if($nama==""||$noIdentitas==""||$lahir=="--"||$email==""||$noTelp==""||$alamat==""){
+        if($nama==""||$noIdentitas==""||$lahir==""||$email==""||$noTelp==""||$alamat==""){
             $_SESSION["belumLengkap"]=1;
         }
         //kalau data sudah lengkap
