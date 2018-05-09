@@ -11,7 +11,7 @@
     } 
     else {
         $_SESSION['error'] = 1;
-        header("location:index.php");
+        header("location:../index.php");
     }
 
     $conn->close();
