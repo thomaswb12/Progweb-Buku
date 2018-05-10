@@ -209,10 +209,14 @@ function transaksi($temp=1){
                         $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val()};
                         $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                             if(response == "berhasil"){
+                                alert("Transaksi berhasil");
                                 $('#namaMember').val('');
                                 $('#inputID').val('');
                                 load();
                                 load();
+                            }
+                            else{
+                                alert("Transaksi gagal");
                             }
                         };
                     }
