@@ -1,7 +1,7 @@
 <?php
 
     function toRp($temp){
-        $hasil_rupiah = "Rp. " . number_format($temp,2,',','.');
+        $hasil_rupiah = "Rp. " . number_format($temp,0,',','.');
         return $hasil_rupiah;
     }
 
