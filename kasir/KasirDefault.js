@@ -205,10 +205,15 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                     }
                     break;
-        case 8  :   if($('#inputID').val() != ""){
+        case 8  :   if($('#namaMember').val() != ""){
                         $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val()};
                         $function = function (response) {//response is value returned from php (for your example it's "bye bye"
-                            alert(response);
+                            if(response == "berhasil"){
+                                $('#namaMember').val('');
+                                $('#inputID').val('');
+                                load();
+                                load();
+                            }
                         };
                     }
                     else{
