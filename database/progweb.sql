@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Bulan Mei 2018 pada 09.20
+-- Waktu pembuatan: 10 Bulan Mei 2018 pada 19.16
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.4
 
@@ -54,7 +54,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`, `Dipinjam`, `idPenerbit`, `idPenulis`, `Rating`, `idRak`, `jumlahEksemplar`, `Location`, `Available`, `specialEdition`) VALUES
-('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 27340, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images\\buku\\Naruto_Volume_42_Indonesia.jpg', 2, 'Ya'),
+('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 2, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images\\buku\\Naruto_Volume_42_Indonesia.jpg', 0, 'Ya'),
 ('DD000002', 'Naruto Vol. 4', '2018-05-01', 50, 100, 'Soft', 'Sasuke gugur saat melindungi Naruto…!! Saat itu, terjadi keanehan pada diri Naurto!! Haku yang terkena pukulan kemarahan pun menyadari hal tersebut. Sementara itu, pertarungan antara Zabuza vs Kakashi semakin sengit, siapakah yang menang? Inilah babak akhir dari pergolakan di Negara Nami!!\r\n', 8, 15, 2512, 'AA000001', 'BB000001', 'remaja', 'CC000001', 0, 'images\\buku\\Naruto_Volume_4_Indonesia.jpg', 0, 'Tidak'),
 ('DD000003', 'Doraemon Vol. 2', '2018-04-03', 50, 50, 'Soft', '\r\nKumpulan cerita tentang Nilai Nol dan Pergi dari Rumah\r\n', 8, 15, 0, 'AA000001', 'BB000001', 'anak-anak', 'CC000002', 0, 'images\\buku\\Doraemon_Volume_2_Indonesia.jpg', 0, 'Ya');
 
@@ -93,6 +93,30 @@ CREATE TABLE `detailtransaksi` (
   `idTransaksi` char(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `detailtransaksi`
+--
+
+INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`) VALUES
+('asd', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000001'),
+('asd', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000002'),
+('asd', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000003'),
+('asde', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000003'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004');
+
+--
+-- Trigger `detailtransaksi`
+--
+DELIMITER $$
+CREATE TRIGGER `Insert_eksBuku` AFTER INSERT ON `detailtransaksi` FOR EACH ROW BEGIN
+
+	update eksbuku set Status = "Dipinjam" where idEksBuku = NEW.idEksBuku;
+
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -108,6 +132,14 @@ CREATE TABLE `dummydetailtransaksi` (
   `denda` double NOT NULL DEFAULT '0',
   `idTransaksi` char(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `dummydetailtransaksi`
+--
+
+INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`) VALUES
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004');
 
 -- --------------------------------------------------------
 
@@ -168,8 +200,12 @@ DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `triger_after_update` AFTER UPDATE ON `eksbuku` FOR EACH ROW BEGIN
 	DECLARE P1 INT;
+    DECLARE P2 INT;
     SELECT COUNT(eksbuku.idEksBuku) INTO P1 FROM eksbuku WHERE idBuku=NEW.idBuku AND eksbuku.Status = "Tersedia";
-    UPDATE buku set buku.Available = p1 WHERE buku.idBuku = NEW.idBuku;
+    IF(NEW.Status = "Dipinjam") then 
+    	SELECT b.DiPinjam INTO P2 FROM eksbuku as e, buku as b WHERE e.idBuku = b.idBuku and e.idEksbuku = NEW.idEksbuku and NEW.Status = "Dipinjam";
+	    UPDATE buku set buku.Available = P1,buku.DiPinjam = (P2+1) WHERE buku.idBuku = NEW.idBuku;    	
+    END IF;
 END
 $$
 DELIMITER ;
@@ -262,8 +298,9 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idIdentitas`, `gender`, `email`) VALUES
-('M000001', 'Thomas Widiarya', 'asdsa', '2018-05-23', '0', '123456789789', '1234567897894561', 'Pria', 'asdasd@gmail.com'),
-('M000002', 'Sylvia Putri R. G.', 'ahgshg', '1998-02-07', '0', '085828763665', '3300101010', 'Wanita', 'sylvia@gmail.com');
+('M000001', 'Thomas Widiarya', 'asdsa', '2018-05-23', '0', '123456789789', '1234567897894561', 'Wanita', 'asdasd@gmail.com'),
+('M000002', 'Sylvia Putri R. G.', 'ahgshgnnj', '1998-02-07', '0', '085828763665', '3300101010', 'Wanita', 'sylvia@gmail.com'),
+('M000003', 'Resha Tepozz', 'paling tepoz', '2018-05-05', '0', '085828763665', '123', 'Pria', 'tepoz@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -335,6 +372,16 @@ CREATE TABLE `transaksi` (
   `idKaryawan` char(8) NOT NULL,
   `total` double NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `transaksi`
+--
+
+INSERT INTO `transaksi` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKaryawan`, `total`) VALUES
+('T000001', '2018-05-08 00:09:20', 'm000001', 'KSRR0001', 8000),
+('T000002', '2018-05-08 00:11:42', 'm000001', 'KSRR0001', 8000),
+('T000003', '2018-05-08 00:27:32', 'm000001', 'KSRR0001', 16000),
+('T000004', '2018-05-11 00:01:32', 'm000001', 'KSRR0001', 16000);
 
 --
 -- Indexes for dumped tables
