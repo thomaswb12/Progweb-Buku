@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Bulan Mei 2018 pada 19.16
+-- Waktu pembuatan: 10 Bulan Mei 2018 pada 20.03
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.4
 
@@ -54,7 +54,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`, `Dipinjam`, `idPenerbit`, `idPenulis`, `Rating`, `idRak`, `jumlahEksemplar`, `Location`, `Available`, `specialEdition`) VALUES
-('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 2, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images\\buku\\Naruto_Volume_42_Indonesia.jpg', 0, 'Ya'),
+('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 14, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images\\buku\\Naruto_Volume_42_Indonesia.jpg', 1, 'Ya'),
 ('DD000002', 'Naruto Vol. 4', '2018-05-01', 50, 100, 'Soft', 'Sasuke gugur saat melindungi Naruto…!! Saat itu, terjadi keanehan pada diri Naurto!! Haku yang terkena pukulan kemarahan pun menyadari hal tersebut. Sementara itu, pertarungan antara Zabuza vs Kakashi semakin sengit, siapakah yang menang? Inilah babak akhir dari pergolakan di Negara Nami!!\r\n', 8, 15, 2512, 'AA000001', 'BB000001', 'remaja', 'CC000001', 0, 'images\\buku\\Naruto_Volume_4_Indonesia.jpg', 0, 'Tidak'),
 ('DD000003', 'Doraemon Vol. 2', '2018-04-03', 50, 50, 'Soft', '\r\nKumpulan cerita tentang Nilai Nol dan Pergi dari Rumah\r\n', 8, 15, 0, 'AA000001', 'BB000001', 'anak-anak', 'CC000002', 0, 'images\\buku\\Doraemon_Volume_2_Indonesia.jpg', 0, 'Ya');
 
@@ -76,6 +76,46 @@ CREATE TABLE `contoh` (
 
 INSERT INTO `contoh` (`idbuku`, `ideks`, `total`) VALUES
 ('DD000001', 'asd', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `detailpengembalian`
+--
+
+CREATE TABLE `detailpengembalian` (
+  `idEksBuku` char(8) NOT NULL,
+  `harga` double NOT NULL,
+  `tanggalPinjam` date NOT NULL,
+  `tanggalKembali` date DEFAULT NULL,
+  `tanggalAturanKembali` date DEFAULT NULL,
+  `denda` double NOT NULL DEFAULT '0',
+  `idTransaksi` char(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `detailpengembalian`
+--
+
+INSERT INTO `detailpengembalian` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`) VALUES
+('asd', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000001'),
+('asd', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000002'),
+('asd', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000003'),
+('asde', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000003'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000005'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000006'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000006'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000007'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000008'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000009'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000010'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000011'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000011'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000012'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000013'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000014');
 
 -- --------------------------------------------------------
 
@@ -103,7 +143,19 @@ INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKe
 ('asd', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000003'),
 ('asde', 8000, '2018-05-08', NULL, '2018-05-15', 0, 'T000003'),
 ('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004'),
-('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004');
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000005'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000006'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000006'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000007'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000008'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000009'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000010'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000011'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000011'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000012'),
+('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000013'),
+('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000014');
 
 --
 -- Trigger `detailtransaksi`
@@ -120,6 +172,22 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `dummydetailpengembalian`
+--
+
+CREATE TABLE `dummydetailpengembalian` (
+  `idEksBuku` char(8) NOT NULL,
+  `harga` double NOT NULL,
+  `tanggalPinjam` date NOT NULL,
+  `tanggalKembali` date DEFAULT NULL,
+  `tanggalAturanKembali` date DEFAULT NULL,
+  `denda` double NOT NULL DEFAULT '0',
+  `idTransaksi` char(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `dummydetailtransaksi`
 --
 
@@ -132,14 +200,6 @@ CREATE TABLE `dummydetailtransaksi` (
   `denda` double NOT NULL DEFAULT '0',
   `idTransaksi` char(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `dummydetailtransaksi`
---
-
-INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`) VALUES
-('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004'),
-('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000004');
 
 -- --------------------------------------------------------
 
@@ -173,7 +233,7 @@ CREATE TABLE `eksbuku` (
 --
 
 INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`, `tanggalTiba`) VALUES
-('asd', 'DD000001', 'Tersedia', '2018-04-21'),
+('asd', 'DD000001', 'Dipinjam', '2018-04-21'),
 ('asde', 'DD000001', 'Tersedia', '2018-04-21');
 
 --
@@ -323,6 +383,40 @@ INSERT INTO `penerbit` (`idPenerbit`, `NamaPenerbit`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `pengembalian`
+--
+
+CREATE TABLE `pengembalian` (
+  `idTransaksi` char(8) NOT NULL,
+  `tanggalTransaksi` datetime NOT NULL,
+  `idMember` char(8) NOT NULL,
+  `idKaryawan` char(8) NOT NULL,
+  `total` double NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pengembalian`
+--
+
+INSERT INTO `pengembalian` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKaryawan`, `total`) VALUES
+('T000001', '2018-05-08 00:09:20', 'm000001', 'KSRR0001', 8000),
+('T000002', '2018-05-08 00:11:42', 'm000001', 'KSRR0001', 8000),
+('T000003', '2018-05-08 00:27:32', 'm000001', 'KSRR0001', 16000),
+('T000004', '2018-05-11 00:01:32', 'm000001', 'KSRR0001', 16000),
+('T000005', '2018-05-11 00:27:00', 'm000001', 'KSRR0001', 8000),
+('T000006', '2018-05-11 00:29:01', 'm000001', 'KSRR0001', 16000),
+('T000007', '2018-05-11 00:31:34', 'm000001', 'KSRR0001', 8000),
+('T000008', '2018-05-11 00:31:55', 'm000001', 'KSRR0001', 8000),
+('T000009', '2018-05-11 00:33:16', 'm000001', 'KSRR0001', 8000),
+('T000010', '2018-05-11 00:34:20', 'm000001', 'KSRR0001', 8000),
+('T000011', '2018-05-11 00:36:03', 'm000001', 'KSRR0001', 16000),
+('T000012', '2018-05-11 00:37:28', 'm000001', 'KSRR0001', 8000),
+('T000013', '2018-05-11 00:44:43', 'm000001', 'KSRR0001', 8000),
+('T000014', '2018-05-11 00:48:05', 'm000001', 'KSRR0001', 8000);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `penulis`
 --
 
@@ -381,7 +475,17 @@ INSERT INTO `transaksi` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKarya
 ('T000001', '2018-05-08 00:09:20', 'm000001', 'KSRR0001', 8000),
 ('T000002', '2018-05-08 00:11:42', 'm000001', 'KSRR0001', 8000),
 ('T000003', '2018-05-08 00:27:32', 'm000001', 'KSRR0001', 16000),
-('T000004', '2018-05-11 00:01:32', 'm000001', 'KSRR0001', 16000);
+('T000004', '2018-05-11 00:01:32', 'm000001', 'KSRR0001', 16000),
+('T000005', '2018-05-11 00:27:00', 'm000001', 'KSRR0001', 8000),
+('T000006', '2018-05-11 00:29:01', 'm000001', 'KSRR0001', 16000),
+('T000007', '2018-05-11 00:31:34', 'm000001', 'KSRR0001', 8000),
+('T000008', '2018-05-11 00:31:55', 'm000001', 'KSRR0001', 8000),
+('T000009', '2018-05-11 00:33:16', 'm000001', 'KSRR0001', 8000),
+('T000010', '2018-05-11 00:34:20', 'm000001', 'KSRR0001', 8000),
+('T000011', '2018-05-11 00:36:03', 'm000001', 'KSRR0001', 16000),
+('T000012', '2018-05-11 00:37:28', 'm000001', 'KSRR0001', 8000),
+('T000013', '2018-05-11 00:44:43', 'm000001', 'KSRR0001', 8000),
+('T000014', '2018-05-11 00:48:05', 'm000001', 'KSRR0001', 8000);
 
 --
 -- Indexes for dumped tables
