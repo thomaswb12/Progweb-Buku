@@ -38,13 +38,14 @@
         $total = total(2);
         $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total);";
         $sql .= "INSERT INTO detailtransaksi SELECT * FROM dummydetailtransaksi;";
+        $sql .= "TRUNCATE table dummydetailtransaksi;";
 
         global $conn;
         if ($conn->multi_query($sql) === TRUE) {
-            echo $sql;
+            echo "berhasil";
         } 
         else {
-            echo $sql;
+            echo "gagal";
         }
         $conn->close();
     }
