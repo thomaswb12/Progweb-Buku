@@ -36,14 +36,15 @@
 
     function insert($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
         $total = total(2);
-        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total)";
-        $sql1 = "INSERT INTO detail transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total)";
+        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total);";
+        $sql .= "INSERT INTO detailtransaksi SELECT * FROM dummydetailtransaksi;";
+
         global $conn;
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->multi_query($sql) === TRUE) {
             echo $sql;
         } 
         else {
-            echo "gagal";
+            echo $sql;
         }
         $conn->close();
     }
