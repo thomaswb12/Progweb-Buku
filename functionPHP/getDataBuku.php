@@ -5,7 +5,7 @@
 
         function getBuku(){
             global $conn;
-            $sql =  " SELECT * FROM buku order by judulBuku";
+            $sql =  " SELECT * FROM buku order by tanggalTerbit DESC";
             if($result = $conn->query($sql)){
                 while($rows = $result->fetch_assoc()){
                     $data[] = $rows;
@@ -27,7 +27,7 @@
                 case 3 : $dari = "NamaPenerbit";break;
             }
             switch($sort){
-                case 1 : $sort = "tanggalTiba"; break;
+                case 1 : $sort = "tanggalTerbit"; break;
                 case 2 : $sort = "Dipinjam";break;
                 case 3 : $sort = "jumlahEksemplar";break;
             }
