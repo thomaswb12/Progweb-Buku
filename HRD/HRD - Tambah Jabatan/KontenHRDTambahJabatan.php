@@ -5,22 +5,30 @@
 <script>
     //belum kupindah ke HRDDefault.js
     $(document).ready(function(){
-        $("#gaji").on("input",function(){
-            var coba = $("#gaji").val().toString().replace('Rp. ','').replace(/\./g, '');
-            $.ajax({
-                type : 'post',
-                data : {'function': 1, 'isiInput':coba},
-                url: '../functionPHP/HRD.php',
-                success: function(response){
-                    //alert(response);
-                    $("#gaji").val(response);
-                }
-            });
+        $("#tambahGaji").on("input",function(){
+            var coba = $("#tambahGaji").val().toString().replace('Rp. ','').replace(/\./g, '');
+            if(coba=="") $("#tambahGaji").val("");
+            else if(!$.isNumeric(coba)){
+                $("#tambahGaji").val("");
+                alert("Input harus berupa angka");
+            }
+            else{
+                $.ajax({
+                    type : 'post',
+                    data : {'function': 1, 'isiInput':coba},
+                    url: '../functionPHP/HRD.php',
+                    success: function(response){
+                        //alert(response);
+                        $("#tambahGaji").val(response);
+                    }
+                });
+            } 
         });
     });
 </script>
+
 <h1>Tambah Jabatan</h1><br/>
-<form action="../functionPHP/KontenHRDTambahJabatan.php" method="post">
+<form action="../functionPHP/tambahJabatan.php" method="post">
     <div id="inputan">
         <label>ID Jabatan</label>
         <input type="text" id="idJabatan" name="idJabatan"/>
@@ -29,12 +37,54 @@
         <input type="text" id="namaJabatan" name="namaJabatan"/>
         <br/><br/>
         <label>Gaji</label>
-        <input type="text" id="gaji" name="gaji"/>
+        <input type="text" id="tambahGaji" name="tambahGaji"/>
         <br/><br/>
         <div id="divKet"><label>Keterangan</label></div>
         <textarea id="keterangan" name="keterangan"></textarea>
         <br/><br/>
         <!-- tombol save -->
-        <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
+        <input type="submit" id="tombolSave" name="tombolSave" class="tombol" value="SAVE"/>
     </div> 
 </form>
+
+<?php
+    //kalau data yang diisi belum lengkap
+    if(isset($_SESSION["belumLengkap"])){
+        unset($_SESSION["belumLengkap"]);
+        ?>
+        <script type="text/javascript">
+            alert("Gagal ditambahkan: Data belum lengkap!");
+        </script>
+        <?php
+    }
+
+    //kalau id jabatan sudah ada di database
+    if(isset($_SESSION["idSudahAda"])){
+        unset($_SESSION["idSudahAda"]);
+        ?>
+        <script type="text/javascript">
+            alert("Gagal ditambahkan: ID ini sudah pernah dibuat!");
+        </script>
+        <?php
+    }
+
+    //kalau nama jabatan sudah ada di database
+    if(isset($_SESSION["namaSudahAda"])){
+        unset($_SESSION["namaSudahAda"]);
+        ?>
+        <script type="text/javascript">
+            alert("Gagal ditambahkan: Nama jabatan ini sudah ada!");
+        </script>
+        <?php
+    }
+
+    //kalau berhasil didaftarkan menjadi member
+    if(isset($_SESSION["berhasil"])){
+        unset($_SESSION["berhasil"]);
+        ?>
+        <script type="text/javascript">
+            alert("Jabatan berhasil ditambahkan :)");
+        </script>
+        <?php
+    }
+?>

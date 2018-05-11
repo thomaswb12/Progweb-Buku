@@ -11,7 +11,7 @@ article div#konten input#idJabatan{ /*inputan ID jabatan*/
 article div#konten input#namaJabatan{   /*inputan nama jabatan*/
     margin-left: 5px;
 }
-article div#konten input#gaji{  /*inputan gaji*/
+article div#konten input#tambahGaji{  /*inputan gaji*/
     margin-left: 76px;
 }
 article div#konten div#divKet{  /*tulisan "Keterangan"*/

@@ -5,4 +5,7 @@
         case 1 : echo toRp($_POST['isiInput']); break;
     }
     
+    function tambahJabatan(){
+        
+    }
 ?>
