@@ -1,7 +1,5 @@
-
-
 <div id="judul">
-    <h1>Tambah Komik</h1>
+    <h1>Edit Komik</h1>
 </div>
 <form method="POST" action="../functionPHP/tambahKomik.php">
     <div id="kiri">
@@ -12,7 +10,16 @@
         <input type="text" id="judul" name="judul"/><br/>
 
         <label>Genre</label><br/>
-        <input type="text" id="genre" name="genre"/><br/>
+        <select id="genre" name="genre">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option>Action</option>
+            <option>Romance</option>
+            <option>Fantasi</option>
+            <option>Comedy</option>
+            <option>Thriller</option>
+            <option>Horor</option>
+            <option>Sci-fi</option>
+        </select><br/>
 
         <label>Rating</label><br/>
         <select id="rating" name="rating">
@@ -67,7 +74,7 @@
         <input type="text" id="lebar" name="lebar"/><br/>
     </div>
     <input type="submit" id="tombol" name="tombolOk" value="SAVE">
-    <input type="button" id="tombol" name="tombol" value="CANCEL" onclick="aside1()">
+    <input type="button" id="tombol" name="tombol" value="CANCEL">
 </form>
 
 <?php
