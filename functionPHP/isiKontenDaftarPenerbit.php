@@ -1,7 +1,11 @@
 <?php
     include "penerbit.php";
-
-    $hasil = getAllPenerbit();
+    
+    if(isset($_POST['keyword'])&&isset($_POST['searchby'])&&isset($_POST['sortby']))
+        $hasil = getAllPenerbitWith($_POST['keyword'],$_POST['searchby'],$_POST['sortby']);
+        //$hasil = getBukuWith($_POST['keyword'],$_POST['searchby'],$_POST['sortby']);
+    else
+        $hasil = getAllPenerbit();
     $i=1;
     foreach($hasil as $penerbit){
         echo '<div class="info">';

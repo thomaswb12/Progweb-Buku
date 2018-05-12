@@ -1,31 +1,25 @@
 <?php
-    include "../../functionPHP/penerbit.php";
+    include "../../functionPHP/pengarang.php";
     session_start();
 ?>
 <div id="judul">
-    <h1>Tambah Penerbit</h1>
+    <h1>Tambah Pengarang</h1>
 </div>
-<form method="POST" action="../functionPHP/tambahPenerbit.php">
+<form method="POST" action="../functionPHP/tambahPengarang.php">
     <div id="kiri">
         <label>Gambar</label><br/>
         <input type="file" id="gambar" name="gambar"/><br/>
 
-        <label>ID Penerbit</label><br/>
-        <input type="text" id="idPenerbit" name="idPenerbit" disabled="disabled" value="<?php echo getLastIdPenerbit(); ?>" /><br/>
-
-        <label>Nama Penerbit</label><br/>
-        <input type="text" id="namaPenerbit" name="namaPenerbit"/><br/> 
-
-        <label>Email</label><br/>
-        <input type="text" id="email" name="email"/><br/> 
+        <label>ID Pengarang</label><br/>
+        <input type="text" id="idPengarang" name="idPengarang" disabled="disabled" value="<?php echo getLastIdPengarang(); ?>" /><br/>
     </div>
 
     <div id="kanan">
-        <label>No. Telp</label><br/>
-        <input type="text" id="noTelp" name="noTelp"/><br/>
+        <label>Nama Pengarang</label><br/>
+        <input type="text" id="namaPengarang" name="namaPengarang"/><br/> 
 
-        <label>Alamat</label><br/>
-        <textarea type="text" id="alamt" name="alamat"></textarea><br/>
+        <label>Asal</label><br/>
+        <input type="text" id="asal" name="asal"/><br/> 
     </div>
     <input type="submit" id="tombol" name="tombolOk" value="SAVE">
     <input type="button" id="tombol" name="tombol" value="CANCEL">
@@ -47,7 +41,7 @@
         unset($_SESSION["sudahAda"]);
         ?>
         <script type="text/javascript">
-            alert("Gagal ditambahkan: Penerbit sudah ada!");
+            alert("Gagal ditambahkan: Pengarang sudah ada!");
         </script>
         <?php
     }
@@ -57,7 +51,7 @@
         unset($_SESSION["berhasil"]);
         ?>
         <script type="text/javascript">
-            alert("Penerbit berhasil ditambahkan :)");
+            alert("Pengarang berhasil ditambahkan :)");
         </script>
         <?php
     }

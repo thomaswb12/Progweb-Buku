@@ -30,12 +30,4 @@
     </div>
 </div>
 <div id="daftar" class="font15">
-    <div class="info">
-        <img class="foto" src="logo.jpg"/>
-        <p class="ID">ID : </p>
-        <p class="nama">Nama : </p>
-        <p class="asal">Asal : </p>
-        <p class="email">Email : </p>
-        <p class="alamat">Alamat : </p>
-    </div>
 </div>

@@ -152,7 +152,7 @@ function aside3(){
     $("div#konten").load("Gudang%20-%20Daftar%20Penerbit/daftarPenerbit.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Penerbit/headDaftarPenerbit.php");
     $.session.set('page','3');
-    search();
+    searchPenerbit();
 }
 
 function aside4(){
@@ -177,6 +177,7 @@ function aside5(){
     $("div#konten").load("Gudang%20-%20Daftar%20Pengarang/daftarPengarang.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Pengarang/headDaftarPengarang.php");
     $.session.set('page','5');
+    searchPengarang();
 }
 
 function aside6(){
@@ -186,7 +187,7 @@ function aside6(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Tambah%20Pengarang/tambahPengarang.html");
+    $("div#konten").load("Gudang%20-%20Tambah%20Pengarang/tambahPengarang.php");
     $("div#gantiHead").load("Gudang%20-%20Tambah%20Pengarang/headTambahPengarang.html");
     $.session.set('page','6');
 }
@@ -243,7 +244,7 @@ function fungsi($temp=1){
         });
 }
 
-function search(){
+function searchPenerbit(){
     $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
     $dari = $('#selectSearchBy').val();
     $sorting = $('#selectSortBy').val();
@@ -256,5 +257,19 @@ function search(){
             $("#daftar").html(response);
         }
     });
-    
+}
+
+function searchPengarang(){
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
+    $dari = $('#selectSearchBy').val();
+    $sorting = $('#selectSortBy').val();
+    $.ajax({
+        type : 'post',
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':1},
+        url: '../functionPHP/isiKontenDaftarPengarang.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#daftar").html(response);
+        }
+    });
 }
