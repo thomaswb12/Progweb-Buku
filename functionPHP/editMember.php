@@ -29,7 +29,7 @@
                 $_SESSION["berhasil"]=1;
             }
             else if ($count==0){
-                $_SESSION["Gagal diedit :("]=1;
+                $_SESSION["tidakBerubah"]=1;
             }
        }
         header ("location:../kasir/KasirDefault.php");
