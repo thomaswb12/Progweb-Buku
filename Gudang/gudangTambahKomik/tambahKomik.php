@@ -12,7 +12,7 @@
 
     <div id="kanan">
         <label>ID Komik</label><br/>
-        <input type="text" id="idKomik" name="idKomik"/><br/>
+        <input type="text" id="idKomik" name="idKomik" disabled="disabled"/><br/>
 
         <label>Judul</label><br/>
         <input type="text" id="judul" name="judul"/><br/>
@@ -24,13 +24,10 @@
         <input type="text" id="penerbit" name="penerbit"/><br/>
 
         <label>Tanggal Terbit</label><br/>
-        <input type="text" id="tanggalTerbit" name="tanggalTerbit"/><br/>
+        <input type="date" id="tanggalTerbit" name="tanggalTerbit"/><br/>
 
         <label>Jumlah Halaman</label><br/>
         <input type="text" id="jumlahHalaman" name="jumlahHalaman"/><br/>
-
-        <label>Jumlah Eksemplar</label><br/>
-        <input type="text" id="jumlaEksemplar" name="jumlahEksemplar"/><br/>
 
         <label>Berat Komik</label><br/>
         <input type="text" id="beratBuku" name="beratBuku"/><br/>

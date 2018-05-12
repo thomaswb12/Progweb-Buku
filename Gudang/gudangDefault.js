@@ -136,9 +136,10 @@ function aside2(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Tambah%20Komik/tambahKomik.html");
-    $("div#gantiHead").load("Gudang%20-%20Tambah%20Komik/headTambahKomik.html");
+    $("div#konten").load("gudangTambahKomik/tambahKomik.php");
+    $("div#gantiHead").load("gudangTambahKomik/headTambahKomik.php");
     $.session.set('page','2');
+    fungsi(1);
 }
 
 function aside3(){
@@ -221,4 +222,22 @@ function backToTop(){
     } else { //bila user belum scroll jauh, tombol disembunyikan
         $('#tombolUp').css('display','none');
     }
+}
+
+function fungsi($temp=1){
+    $data ="";
+    $function="";
+    $pass = 1;
+    switch ($temp) {
+        case 1:     $data = {'function':$temp};$function=function(response){$("#idKomik").val(response);};
+                    break;
+        default:
+                    break;
+    }
+        $.ajax({
+            type : 'post',
+            data : $data,
+            url: '../functionPHP/gudang.php',
+            success: $function
+        });
 }
