@@ -40,7 +40,7 @@ $(document).ready(function(){
     });
     $("#asideEksemplar").click(function(){
         asideEksemplar();
-    })
+    });
 });
 
 $(window).on('load', function () {
@@ -136,9 +136,10 @@ function aside2(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Tambah%20Komik/tambahKomik.html");
-    $("div#gantiHead").load("Gudang%20-%20Tambah%20Komik/headTambahKomik.html");
+    $("div#konten").load("gudangTambahKomik/tambahKomik.php");
+    $("div#gantiHead").load("gudangTambahKomik/headTambahKomik.php");
     $.session.set('page','2');
+    fungsi(1);
 }
 
 function aside3(){
@@ -151,6 +152,7 @@ function aside3(){
     $("div#konten").load("Gudang%20-%20Daftar%20Penerbit/daftarPenerbit.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Penerbit/headDaftarPenerbit.php");
     $.session.set('page','3');
+    search();
 }
 
 function aside4(){
@@ -160,7 +162,7 @@ function aside4(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.html");
+    $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.php");
     $("div#gantiHead").load("Gudang%20-%20Tambah%20Penerbit/headTambahPenerbit.html");
     $.session.set('page','4');
 }
@@ -221,4 +223,38 @@ function backToTop(){
     } else { //bila user belum scroll jauh, tombol disembunyikan
         $('#tombolUp').css('display','none');
     }
+}
+
+function fungsi($temp=1){
+    $data ="";
+    $function="";
+    $pass = 1;
+    switch ($temp) {
+        case 1:     $data = {'function':$temp};$function=function(response){$("#idKomik").val(response);};
+                    break;
+        default:
+                    break;
+    }
+        $.ajax({
+            type : 'post',
+            data : $data,
+            url: '../functionPHP/gudang.php',
+            success: $function
+        });
+}
+
+function search(){
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
+    $dari = $('#selectSearchBy').val();
+    $sorting = $('#selectSortBy').val();
+    $.ajax({
+        type : 'post',
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':1},
+        url: '../functionPHP/isiKontenDaftarPenerbit.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#daftar").html(response);
+        }
+    });
+    
 }

@@ -274,7 +274,7 @@ article div#konten textarea{
     resize: none;
 }
 article div#konten select{
-    width: 270px;
+    width: 266px;
 }
 article div#konten input[type=text]:focus, article div#konten textarea:focus{ /*warna background berubah ketika focus*/
     background-color: cornflowerblue;

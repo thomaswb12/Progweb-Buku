@@ -52,6 +52,7 @@ function aside2(){
     $("div#konten").load("kasirPengembalian/KontenKasirPengembalian.php");
     $("div#gantiHead").load("kasirPengembalian/HeadKasirPengembalian.php");
     $.session.set('page','2');
+    transaksi(10);
 }
 function aside3(){
     $(".blue").removeClass('terpilih');
@@ -157,6 +158,18 @@ function total(){
     });
 }
 
+function loadTable(load){
+    $.ajax({
+        type : 'post',
+        data : {'function':11,'idMember':load},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            //alert(response);
+            $('#tabelDaftar tbody').html(response);
+        }
+    });
+}
+
 function transaksi($temp=1){
     $data ="";
     $function="";
@@ -225,6 +238,21 @@ function transaksi($temp=1){
                         $pass = 0;
                     }
                     break;
+        case 10 :   $data = {'function':$temp};
+                    $function=function(response){
+                        $("#idTransaksiPengembalian").val(response);
+                    };
+                    break;
+        case 11 :   $data = {'function':2,'id':$("#inputID").val()};
+                    $function = function (response) {//response is value returned from php (for your example it's "bye bye"
+                        if(response == "ga ada"){
+                            $("#namaMember").val("");
+                        }
+                        else{
+                            $("#namaMember").val(response);
+                            loadTable($("#inputID").val());
+                        }
+                    };break;
         default:
                     break;
     }

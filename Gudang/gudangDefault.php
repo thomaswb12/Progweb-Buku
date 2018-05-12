@@ -24,38 +24,7 @@
         </head>
         <body>
             <header>
-                <img src="../logobaru.png" id="logo"/>
-                <p class="blue font15" id="welcome">Welcome, <span id="namaUser">Erinda Resha</span> | <a href="../" style="text-decoration:none;"><span id="logOut">Log Out</span></a></p>
-                <p id="tanggal" class="blue font15">
-                <?php
-                    $hari;
-                    $bulan;
-                    
-                    //atur hari bahasa indonesia
-                    if(date("D")=='Mon') $hari="Senin";
-                    else if(date("D")=='Tue') $hari="Selasa";
-                    else if(date("D")=='Wed') $hari="Rabu";
-                    else if(date("D")=='Thu') $hari="Kamis";
-                    else if(date("D")=='Fri') $hari="Jum'at";
-                    else if(date("D")=='Dat') $hari="Sabtu";
-
-                    //atur bulan bahasa indonesia
-                    if(date("m")=='01') $bulan="Januari";
-                    else if(date("m")=='02') $bulan="Februari";
-                    else if(date("m")=='03') $bulan="Maret";
-                    else if(date("m")=='04') $bulan="April";
-                    else if(date("m")=='05') $bulan="Mei";
-                    else if(date("m")=='06') $bulan="Juni";
-                    else if(date("m")=='07') $bulan="Juli";
-                    else if(date("m")=='08') $bulan="Agustus";
-                    else if(date("m")=='09') $bulan="September";
-                    else if(date("m")=='10') $bulan="Oktober";
-                    else if(date("m")=='11') $bulan="November";
-                    else if(date("m")=='12') $bulan="Desember";
-
-                    echo $hari.', '.date("d")." ".$bulan." ".date("Y");
-                ?>
-                </p>
+                <?php  include "template/header.php"?>
             </header>
             <article>
                 <div id="aside">
@@ -64,26 +33,7 @@
                         <hr/>
                     </div>
                     <div id="option">
-                        <h3 class="blue terpilih" id="aside1"> <span><i class="fas fa-angle-down" id="dropdown"></i><i class="fas fa-angle-right" id="centang"></i></span> Daftar Komik</h3>
-                        <hr/>
-                        <h3 class="blue" id="asideDetail"><span></span> Detail Komik</h3>
-                        <hr/>
-                        <h3 class="blue" id="aside2"><span></span> Tambah Komik</h3>
-                        <hr/>
-                        <h3 class="blue" id="asideEksemplar"><span></span> Tambah Eksemplar</h3>
-                        <hr/>
-                        <h3 class="blue" id="aside3"><span></span> Daftar Penerbit</h3>
-                        <hr/>
-                        <h3 class="blue" id="aside4"><span></span> Tambah Penerbit</h3>
-                        <hr/>
-                        <h3 class="blue" id="aside5"><span></span> Daftar Pengarang</h3>
-                        <hr/>
-                        <h3 class="blue" id="aside6"><span></span> Tambah Pengarang</h3>
-                        <hr/>
-                        <h3 class="blue" id="aside7"><span></span> Daftar Supplier</h3>
-                        <hr/>
-                        <h3 class="blue" id="aside8"><span></span> Tambah Supplier</h3>
-                        <hr/>
+                    <?php  include "template/aside.php"?>
                     </div>
                 </div>
                 <div id="konten">
