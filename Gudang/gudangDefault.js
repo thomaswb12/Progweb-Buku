@@ -40,7 +40,7 @@ $(document).ready(function(){
     });
     $("#asideEksemplar").click(function(){
         asideEksemplar();
-    })
+    });
 });
 
 $(window).on('load', function () {
@@ -152,6 +152,7 @@ function aside3(){
     $("div#konten").load("Gudang%20-%20Daftar%20Penerbit/daftarPenerbit.php");
     $("div#gantiHead").load("Gudang%20-%20Daftar%20Penerbit/headDaftarPenerbit.php");
     $.session.set('page','3');
+    search();
 }
 
 function aside4(){
@@ -161,7 +162,7 @@ function aside4(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.html");
+    $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.php");
     $("div#gantiHead").load("Gudang%20-%20Tambah%20Penerbit/headTambahPenerbit.html");
     $.session.set('page','4');
 }
@@ -240,4 +241,20 @@ function fungsi($temp=1){
             url: '../functionPHP/gudang.php',
             success: $function
         });
+}
+
+function search(){
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
+    $dari = $('#selectSearchBy').val();
+    $sorting = $('#selectSortBy').val();
+    $.ajax({
+        type : 'post',
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':1},
+        url: '../functionPHP/isiKontenDaftarPenerbit.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#daftar").html(response);
+        }
+    });
+    
 }
