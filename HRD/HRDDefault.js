@@ -157,3 +157,15 @@ function backToTop(){
         $('#tombolUp').css('display','none');
     }
 }
+
+function pilihJabatan($data){
+    $.ajax({
+        type : 'post',
+        data : {'function':2,'data':$data},
+        url: '../functionPHP/HRD.php',
+        success: function(response){
+            //alert(response);
+            $('#isi').html(response);
+        }
+    });
+}

@@ -39,11 +39,15 @@ article div#konten textarea#keterangan{ /*inputan keterangan*/
     height: 150px;
 }
 /*tombol utk save -------*/
-article div#konten input#tombolSave{
-    width: 100px;
+article div#konten div#divTombol{
     float: right;
+    width: 270px;
+}
+article div#konten input#tombolSave, article div#konten input#tombolDelete{
+    float: right;
+    width: 100px;
     margin-top: 30px;
-    margin-right: 30px;
+    margin-right: 10px;
 }
 /*------------------------bagian konten---------------------*/
 
@@ -62,10 +66,10 @@ article div#konten input#tombolSave{
         width: 150px;
     }
     /*tombol utk save -------*/
-    article div#konten input#tombolSave{
-        float: none;
+    article div#konten input#tombolSave, article div#konten input#tombolDelete{
         margin-top: 0px;
-        margin-left: 110px;
+        margin-bottom: 20px;
+        margin-left: 5px;
         width: 80px;
     }
     /*-----------------utk konten-----------------*/

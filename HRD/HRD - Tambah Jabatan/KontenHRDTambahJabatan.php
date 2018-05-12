@@ -3,7 +3,7 @@
 ?>
 
 <script>
-    //belum kupindah ke HRDDefault.js
+    //kalau dipindah ke HRDDefault.js malah gaisa
     $(document).ready(function(){
         $("#tambahGaji").on("input",function(){
             var coba = $("#tambahGaji").val().toString().replace('Rp. ','').replace(/\./g, '');
