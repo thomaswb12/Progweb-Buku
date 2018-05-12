@@ -34,7 +34,11 @@
         else if($bulan =='10') $bulan="Oktober";
         else if($bulan =='11') $bulan="November";
         else if($bulan =='12') $bulan="Desember";
-        return "$hari, $bulan $tahun";
+        return "$hari $bulan $tahun";
+    }
+
+    function telat(){
+        
     }
 
 ?>

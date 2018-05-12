@@ -4,7 +4,7 @@
     
     session_start();
     switch($callFunction){
-        case 1: echo buatIdTransaksi();break;
+        case 1: echo buatIdTransaksi(1);break;
         case 2 : $a = $_POST['id']; searchNama($a);break;
         case 3 : $a = $_POST['id'];cariBuku($a);break;
         case 4 : transaksi($_POST['idEksBuku'],$_POST['idMember'],$_POST['idTransaksi']);break;
@@ -13,6 +13,30 @@
         case 7 : hapus($_POST['id']);break;
         case 8 : insert($_POST['idMember'],$_POST['idEksBuku'],$_POST['idTransaksi'],$_SESSION['id']);break;
         case 9 : total(1);break;
+        case 10 : echo buatIdTransaksi(2); break;
+        case 11 : buatTabelPengembalian($_POST['idMember']); break;
+    }
+
+    function buatTabelPengembalian($idMember){
+        global $conn;
+        include "curency.php";
+        $sql = "SELECT d.*,b.judulBuku FROM transaksi as t,detailtransaksi as d , eksbuku as e, buku as b where d.idEksBuku = e.idEksBuku and e.idBuku = b.idBuku and d.idTransaksi = t.idTransaksi and t.idMember = '$idMember' and d.tanggalKembali is NULL;";
+        if($result = $conn->query($sql)){
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+                    echo '<tr onclick="pencetTRPengembalian($(this))">
+                            <td class="tandaTable"><i class="fas fa-check" style="color:grey"></i></td>
+                            <td class="idBuku ganti">'.$row['idEksBuku'].'</td>
+                            <td class="judulBuku ganti">'.$row['judulBuku'].'</td>
+                            <td class="tanggalPinjam ganti">'.tanggal($row['tanggalPinjam']).' </td>
+                            <td class="tanggalPengembalian ganti">'.tanggal($row['tanggalAturanKembali']).'</td>
+                            <td class="telat ganti">-</td>
+                            <td class="denda ganti">Rp 0</td>
+                        </tr>';
+                }
+            }
+        }
+        $conn->close();
     }
 
     function total($cek){
@@ -76,6 +100,7 @@
                 }
             }
         }
+        $conn->close();
     }
 
     function transaksi($idEksBuku,$idMember,$idTransaksi){
@@ -102,16 +127,21 @@
         $conn->close();
     }
 
-    function buatIdTransaksi(){
+    function buatIdTransaksi($kode){
         global $conn;
-        $sql = "select * from transaksi";
+        if($kode==1)
+            $sql = "select * from transaksi";
+        else
+            $sql = "select * from pengembalian";
+
         if($result = $conn->query($sql)){
             $tamp = ($result->num_rows)+1;
             $ukuran = strlen($tamp);
             $string = "";
             for($i=0;$i<8-$ukuran;$i++){
                 if($i==0){
-                    $string .="T";
+                    if($kode == 1)$string .="T";
+                    else $string .="P";
                 }
                 else if($i == (8-$ukuran)-1){
                     $string.="$tamp";
@@ -123,7 +153,7 @@
             $conn->close();
             return $string; 
         }
-        return "gagal";
+        return $tamp;
         $conn->close();
     }
 
