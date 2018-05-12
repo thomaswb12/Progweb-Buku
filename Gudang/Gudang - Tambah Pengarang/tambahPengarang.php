@@ -2,6 +2,11 @@
     include "../../functionPHP/pengarang.php";
     session_start();
 ?>
+<style type="text/css">
+    article div#konten{
+        overflow-y: hidden;
+    }
+</style>
 <div id="judul">
     <h1>Tambah Pengarang</h1>
 </div>

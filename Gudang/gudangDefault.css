@@ -260,7 +260,7 @@ article div#konten label{   /*semua label taruh diatas inputan*/
     font-size: 12px;
     margin-left: 5px;
 }
-article div#konten input, article div#konten select, article div#konten textarea{   /*kotak yang utk input*/
+article div#konten input, article div#konten select, article div#konten select option, article div#konten textarea{   /*kotak yang utk input*/
     margin-bottom: 8px;
     font-size: 12px;
     padding: 8px;
