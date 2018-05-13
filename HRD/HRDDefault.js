@@ -44,6 +44,7 @@ function aside1(){
     $("div#konten").load("hrdDaftarKaryawan/KontenHRDDaftarKaryawan.php");
     $("div#gantiHead").load("hrdDaftarKaryawan/HeadHRDDaftarKaryawan.php");
     $.session.set('page','1');
+    load();
 }
 function aside2(){
     $("#aside3").hide();
@@ -51,8 +52,8 @@ function aside2(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside2 span');
     $("#aside2").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Data%20Karyawan/KontenHRDDataKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Data%20Karyawan/HeadHRDDataKaryawan.php");
+    $("div#konten").load("hrdDataKaryawan/KontenHRDDataKaryawan.php");
+    $("div#gantiHead").load("hrdDataKaryawan/HeadHRDDataKaryawan.php");
     $.session.set('page','2');
 }
 function aside3(){
@@ -138,11 +139,42 @@ function searchNama(){
 }
 
 function load(){
-    
+    $.ajax({
+        type : 'post',
+        data : {'function':3},
+        url: '../functionPHP/HRD.php',
+        success: function(response){
+            $("#daftarKaryawan").html(response);
+        }
+    });
+}
+
+function viewKaryawan(data){
+    aside2();
+    $.ajax({
+        type : 'post',
+        data : {'function':4,'data':data},
+        url: '../functionPHP/HRD.php',
+        success: function(response){
+            alert(response);
+        }
+    });
 }
 
 function pilihan($temp=1){
-
+    $data ="";
+    $function="";
+    switch ($temp) {
+        case 4: aside2();
+                alert("halo");
+    }
+    /*
+    $.ajax({
+        type : 'post',
+        data : $data,
+        url: '../functionPHP/HRD.php',
+        success: $function
+    });*/
 }
 
 

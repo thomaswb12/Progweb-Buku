@@ -6,6 +6,54 @@
     switch($callFunction){
         case 1 : echo toRp($_POST['isiInput']); break;
         case 2 : tampilkanJabatan($_POST['data']); break;
+        case 3 : loadKaryawan();break;
+        case 4 : loadDetail($_POST['data']);break;
+    }
+
+    
+    function loadDetail($data){
+        global $conn;
+        $sql = "";
+        $conn->close();
+        echo $data;
+    }
+
+
+    function loadKaryawan(){
+        global $conn;
+        $sql = "SELECT * FROM karyawan, jabatankaryawan where karyawan.idJabatan = jabatankaryawan.idJabatan;";
+        if($result = $conn->query($sql)){
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo '<div class="infoKaryawan">
+                            <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/>
+                            <table>
+                                <tr>
+                                    <td><p class="label">ID</p></td>
+                                    <td>:</td>
+                                    <td><p class="isi">'.$row['idKaryawan'].'</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="label">Nama</p></td>
+                                    <td>:</td>
+                                    <td><p class="isi">'.$row['nama'].'</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p class="label">Jabatan</p></td>
+                                    <td>:</td>
+                                    <td><p class="isi">'.$row['namaJabatan'].'</p></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="more" onclick="viewKaryawan('."'".$row['idKaryawan']."'".')">Details >></a></td>
+                                </tr>
+                            </table>
+                        </div>';
+                }
+            }else{
+                echo "";
+            }
+        }
+        $conn->close();
     }
 
     function tampilkanJabatan($data){
