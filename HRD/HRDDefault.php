@@ -16,8 +16,6 @@
                     <meta http-equiv="X-UA-Compatible" content="ie=edge">
                     <link rel="stylesheet" href="HRDDefault.css" type="text/css">
                     <div id="gantiHead">
-                        <title>HRD - Daftar Karyawan</title>
-                        <link href="HRD - Daftar Karyawan/HRD - Daftar Karyawan.css" type="text/css" rel="stylesheet">
                     </div>
                     <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
                     <script src="HRDDefault.js"></script>
@@ -28,7 +26,7 @@
                     <header>';include "Template/header.php";
                 echo '</header>
                     <article>';include "Template/aside.php";
-                echo '<div id="konten">';include "HRD - Daftar Karyawan/KontenHRDDaftarKaryawan.php";
+                echo '<div id="konten">';
                 echo '    </div>
                     </article>
                     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>

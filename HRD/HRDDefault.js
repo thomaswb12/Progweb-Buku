@@ -41,8 +41,8 @@ function aside1(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Daftar%20Karyawan/KontenHRDDaftarKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Daftar%20Karyawan/HeadHRDDaftarKaryawan.php");
+    $("div#konten").load("hrdDaftarKaryawan/KontenHRDDaftarKaryawan.php");
+    $("div#gantiHead").load("hrdDaftarKaryawan/HeadHRDDaftarKaryawan.php");
     $.session.set('page','1');
 }
 function aside2(){
@@ -135,6 +135,10 @@ function searchNama(){
             $("#namaMember").val(response);
         }
      });
+}
+
+function piliha($temp=1){
+    
 }
 
 
