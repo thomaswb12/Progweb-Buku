@@ -61,6 +61,9 @@ article #daftarKaryawan .infoKaryawan{ /*kotak masing2 komik yang isinya info ko
     width: 195px;
     float: left; /*di taruh kiri, supaya bersebelahan dengan gambar2 lainnya*/
 }
+article #daftarKaryawan .infoKaryawan table td.attr{
+    width: 20%;
+}
 article #daftarKaryawan .infoKaryawan .photo{ /*utk fotonya*/
     height: 210px;
     width: inherit; /*selebar kotak putih*/

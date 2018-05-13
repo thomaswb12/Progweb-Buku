@@ -21,33 +21,49 @@
                             <div class="kiri">
                                 <div id="inputan">
                                     <label>ID</label>
-                                    <span id="idKaryawan">'.$row['idKaryawan'].'</span>
+                                    <input type="text" id="idKaryawan" class="disable" value="'.$row['idKaryawan'].'" disable="disabled"/>
                                     <br/><br/><br/>
                                     <label>Nama</label>
-                                    <span id="namaKaryawan">'.$row['nama'].'</span>
+                                    <input type="text" id="namaKaryawan" value="'.$row['nama'].'"/>
                                     <br/><br/><br/>
                                     <label>Jabatan</label>
-                                    <span id="selectJabatan">'.$row['namaJabatan'].'</span>
+                                    <select id="selectJabatan">';
+                                       $query = "SELECT * FROM jabatankaryawan";
+                                       $hasil = $conn->query($query);
+                                       while($baris = $hasil->fetch_assoc()){
+                                            if($baris['namaJabatan'] == $row['namaJabatan'])
+                                                echo '<option value="'.$baris['idJabatan'].'" selected="selected">'.$baris['namaJabatan'].'</option>';
+                                            else   
+                                                echo '<option value="'.$baris['idJabatan'].'">'.$baris['namaJabatan'].'</option>'; 
+                                       }
+                    echo           '</select>
                                     <br/><br/><br/>
                                     <label>Email</label>
-                                    <span id="email">'.$row['email'].'</span>
+                                    <input type="email" id="email" value="'.$row['email'].'"/>
                                     <br/><br/><br/>
                                     <label>No. Telp</label>
-                                    <span id="telepon">'.$row['noTelp'].'</span>
+                                    <input type="text" id="telepon" value="'.$row['noTelp'].'">
                                     <br/><br/><br/>
                                     <div id="divAl"><label>Alamat</label></div>
-                                    <span id="alamat">JL. Klitren no.10, Yogyakarta</span>
+                                    <textarea id="alamat" name="alamat">JL. Klitren no.10, Yogyakarta</textarea>
                                     <br/><br/><br/><br/><hr><br>
                                     <label>Password</label>
-                                    <span id="pass">************</span>
-                                    <br/><br/><br/><br/>
+                                    <input type="password" id="pass1" name="pass1" oninput="cekPassword()"/>
+                                    <br/><br/>
+                                    <label>Re-Input Password</label>
+                                    <input type="password" id="pass2" name="pass2" oninput="cekPassword()"/>
+                                    <br/>
+                                    <p id="warningPass" style="display:none;color:red;">*password tidak sama</p>
+                                    <br/><br/><br/>
                                 </div>  
                             </div>
                             <div class="kanan">
-                                <label>Photo Profile</label><br/><br/>
-                                <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/><br><br><br>
-                                <!-- tombol save -->
-                                <input type="button" id="tombolEdit" name="tombokEdit" class="tombol" value="EDIT" onclick="aside3()"/>
+                            <label>Photo Profile</label>
+                                <input type="file" id="gambar" name="gambar"/><br/>
+                                <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
+                                <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>
+                                <input type="button" id="tombolCancel" name="tombokCancel" class="tombol" value="CANCEL" onclick="aside1()"/>
+                                <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="pilihan(5)"/>
                             </div>
                         </div>';
                 }
@@ -70,22 +86,22 @@
                             <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/>
                             <table>
                                 <tr>
-                                    <td><p class="label">ID</p></td>
+                                    <td class="attr"><p class="label">ID</p></td>
                                     <td>:</td>
                                     <td><p class="isi">'.$row['idKaryawan'].'</p></td>
                                 </tr>
                                 <tr>
-                                    <td><p class="label">Nama</p></td>
+                                    <td class="attr"><p class="label">Nama</p></td>
                                     <td>:</td>
                                     <td><p class="isi">'.$row['nama'].'</p></td>
                                 </tr>
                                 <tr>
-                                    <td><p class="label">Jabatan</p></td>
+                                    <td class="attr"><p class="label">Jabatan</p></td>
                                     <td>:</td>
                                     <td><p class="isi">'.$row['namaJabatan'].'</p></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="#" class="more" onclick="viewKaryawan('."'".$row['idKaryawan']."'".')">Details >></a></td>
+                                    <td colspan="3"><a href="#" class="more" onclick="viewKaryawan('."'".$row['idKaryawan']."'".')">Details >></a></td>
                                 </tr>
                             </table>
                         </div>';

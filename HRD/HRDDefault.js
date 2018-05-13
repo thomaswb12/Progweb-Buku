@@ -26,7 +26,7 @@ $(window).on('load', function () {
     else if(c == 2)
         aside2();
     else if(c == 3)
-        aside3();
+        aside1();
     else if(c == 4)
         aside4();
     else if(c == 5)
@@ -62,8 +62,8 @@ function aside3(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Edit%20Karyawan/KontenHRDEditKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Edit%20Karyawan/HeadHRDEditKaryawan.php");
+    $("div#konten").load("HRDEditKaryawan/KontenHRDEditKaryawan.php");
+    $("div#gantiHead").load("HRDEditKaryawan/HeadHRDEditKaryawan.php");
     $.session.set('page','3');
 }
 function aside4(){
@@ -72,8 +72,8 @@ function aside4(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
     $("#aside4").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Tambah%20Karyawan/KontenHRDTambahKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Tambah%20Karyawan/HeadHRDTambahKaryawan.php");
+    $("div#konten").load("HRDTambahKaryawan/KontenHRDTambahKaryawan.php");
+    $("div#gantiHead").load("HRDTambahKaryawan/HeadHRDTambahKaryawan.php");
     $.session.set('page','4');
 }
 function aside5(){
@@ -150,7 +150,7 @@ function load(){
 }
 
 function viewKaryawan(data){
-    aside2();
+    aside3();
     $.ajax({
         type : 'post',
         data : {'function':4,'data':data},
@@ -161,20 +161,33 @@ function viewKaryawan(data){
     });
 }
 
+function cekPassword(){
+    var pass1 = $("#pass1").val();
+    var pass2 = $("#pass2").val();
+    if(pass1!=pass2){
+        $("#warningPass").css("display","block");
+        $("#tombolSave").hide();
+    }
+    else{
+        $("#warningPass").css("display","none");
+        $("#tombolSave").show();
+    }
+}
+
 function pilihan($temp=1){
     $data ="";
     $function="";
     switch ($temp) {
-        case 4: aside2();
-                alert("halo");
+        case 5: $data = {'id':$('#idKaryawan').val(),'nama':$('#namaKaryawan').val(),'jabatan':$('#selectJabatan').val(),'email':$('#email').val(),'noTelp':$('#telepon').val(),'alamat':$('#alamat').val(),'password':$('#pass1').val()};
+                break;
     }
-    /*
+    
     $.ajax({
         type : 'post',
         data : $data,
         url: '../functionPHP/HRD.php',
         success: $function
-    });*/
+    });
 }
 
 
