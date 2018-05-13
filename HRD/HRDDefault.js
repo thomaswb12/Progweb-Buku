@@ -156,7 +156,7 @@ function viewKaryawan(data){
         data : {'function':4,'data':data},
         url: '../functionPHP/HRD.php',
         success: function(response){
-            alert(response);
+            $('#dataKaryawan').html(response);
         }
     });
 }
