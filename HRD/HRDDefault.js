@@ -137,8 +137,12 @@ function searchNama(){
      });
 }
 
-function piliha($temp=1){
+function load(){
     
+}
+
+function pilihan($temp=1){
+
 }
 
 
