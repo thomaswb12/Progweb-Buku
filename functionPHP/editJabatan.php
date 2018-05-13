@@ -40,28 +40,29 @@
     if(!empty($_POST["tombolDelete"])){
         ?>
         <script>
-            if(!confirm("Apakah Anda yakin akan menghapus Jabatan ini?")){
-                document.location.href = '../HRD/HRDDefault.php';
+            var konfirm = confirm("Apakah Anda yakin akan menghapus Jabatan ini?");
+            if(konfirm){
+                <?php
+                    $idJabatan=$_POST["idJabatanCadangan"];
+                    if($idJabatan==""){
+                        $_SESSION["belumPilih"]=1;
+                    }
+                    else{
+                        $query = "DELETE FROM `jabatankaryawan` WHERE `jabatankaryawan`.`idJabatan` = '$idJabatan'";
+                        $hasil = mysqli_query($conn,$query);
+                        $count = mysqli_affected_rows($conn);
+                        if($count==1){
+                            $_SESSION["hapusBerhasil"]=1;
+                        }
+                        else if ($count==0){
+                            $_SESSION["hapusGagal"]=1;
+                        }
+        //             header ("location:../HRD/HRDDefault.php");
+                    }
+                ?>
             }
             else{
-                <?php
-                $idJabatan=$_POST["idJabatanCadangan"];
-                if($idJabatan==""){
-                    $_SESSION["belumPilih"]=1;
-                }
-                else{
-                    $query = "DELETE FROM `jabatankaryawan` WHERE `jabatankaryawan`.`idJabatan` = '$idJabatan'";
-                    $hasil = mysqli_query($conn,$query);
-                    $count = mysqli_affected_rows($conn);
-                    if($count==1){
-                        $_SESSION["hapusBerhasil"]=1;
-                    }
-                    else if ($count==0){
-                        $_SESSION["hapusGagal"]=1;
-                    }
-      //             header ("location:../HRD/HRDDefault.php");
-                }
-                ?>
+                document.location.href = '../HRD/HRDDefault.php';
             }
         </script>
         <?php
