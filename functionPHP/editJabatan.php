@@ -36,14 +36,12 @@
         header ("location:../HRD/HRDDefault.php");
     }
 
-    //kalau tombol delete dipencet
+    //kalau tombol delete dipencet //under maintenance
     if(!empty($_POST["tombolDelete"])){
         ?>
         <script>
-            if(confirm("Apakah Anda yakin akan menghapus Jabatan ini?")){
-                <?php
-                    header ("location:../HRD/HRDDefault.php");
-                ?>
+            if(!confirm("Apakah Anda yakin akan menghapus Jabatan ini?")){
+                document.location.href = '../HRD/HRDDefault.php';
             }
             else{
                 <?php
@@ -61,7 +59,7 @@
                     else if ($count==0){
                         $_SESSION["hapusGagal"]=1;
                     }
-                    header ("location:../HRD/HRDDefault.php");
+      //             header ("location:../HRD/HRDDefault.php");
                 }
                 ?>
             }

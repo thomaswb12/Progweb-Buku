@@ -1,5 +1,3 @@
-
-
 <div id="judul">
     <h1>Tambah Komik</h1>
 </div>
@@ -12,7 +10,16 @@
         <input type="text" id="judul" name="judul"/><br/>
 
         <label>Genre</label><br/>
-        <input type="text" id="genre" name="genre"/><br/>
+        <select id="genre" name="genre">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option>Action</option>
+            <option>Romance</option>
+            <option>Fantasi</option>
+            <option>Comedy</option>
+            <option>Thriller</option>
+            <option>Horor</option>
+            <option>Sci-fi</option>
+        </select><br/>
 
         <label>Rating</label><br/>
         <select id="rating" name="rating">
