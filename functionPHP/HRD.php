@@ -8,8 +8,12 @@
         case 2 : tampilkanJabatan($_POST['data']); break;
         case 3 : loadKaryawan();break;
         case 4 : loadDetail($_POST['data']);break;
+        case 6 : ajaxTampilGambar($_FILES['foto']);break;
     }
 
+    function tampilinGambar($tamp){
+        echo is_array($tamp);
+    }
     
     function loadDetail($data){
         global $conn;
@@ -45,7 +49,7 @@
                                     <input type="text" id="telepon" value="'.$row['noTelp'].'">
                                     <br/><br/><br/>
                                     <div id="divAl"><label>Alamat</label></div>
-                                    <textarea id="alamat" name="alamat">JL. Klitren no.10, Yogyakarta</textarea>
+                                    <textarea id="alamat" name="alamat">'.$row['Alamat'].'</textarea>
                                     <br/><br/><br/><br/><hr><br>
                                     <label>Password</label>
                                     <input type="password" id="pass1" name="pass1" oninput="cekPassword()"/>
@@ -59,9 +63,9 @@
                             </div>
                             <div class="kanan">
                             <label>Photo Profile</label>
-                                <input type="file" id="gambar" name="gambar"/><br/>
+                                <input  onchange="readURL(this)" type="file" id="gambar" name="gambar"/><br/>
                                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
-                                <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>
+                                <img id="foto200px" class="photo" src="../'.$row['foto'].'"/><br><br><br>
                                 <input type="button" id="tombolCancel" name="tombokCancel" class="tombol" value="CANCEL" onclick="aside1()"/>
                                 <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="pilihan(5)"/>
                             </div>
@@ -83,7 +87,7 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo '<div class="infoKaryawan">
-                            <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/>
+                            <img class="photo" src="../'.$row['foto'].'"/>
                             <table>
                                 <tr>
                                     <td class="attr"><p class="label">ID</p></td>

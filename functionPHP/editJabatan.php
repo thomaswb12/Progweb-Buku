@@ -61,7 +61,7 @@
                     }
                 ?>
             }
-            else{
+            else if(!konfirm){
                 document.location.href = '../HRD/HRDDefault.php';
             }
         </script>
