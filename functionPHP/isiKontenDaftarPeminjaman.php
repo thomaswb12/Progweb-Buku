@@ -1,5 +1,7 @@
 <?php
      include "manager.php";
+     require "koneksi.php";
+
 //     if(isset($_POST['keyword'])&&isset($_POST['searchby']))
 //        $hasil = getAllPeminjamanWith($_POST['keyword'],$_POST['searchby']);
 //     else
