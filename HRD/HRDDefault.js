@@ -12,19 +12,39 @@ $(document).ready(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
     $("#aside1").click(function(){aside1();});
-    $("#aside2").click(function(){aside2();});
     $("#aside3").click(function(){aside3();});
     $("#aside4").click(function(){aside4();});
     $("#aside5").click(function(){aside5();});
     $("#aside6").click(function(){aside6();});
+
+    function readURL(input) {
+        alert(1);
+        /*if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                if(e!=""){
+                    $('#foto200px').show();
+                    $('#foto200px').attr('src', e.target.result);
+                }
+                else{
+                    $('#foto200px').show();
+                }
+            }
+            reader.readAsDataURL(input.files[0]);
+        }*/
+    }
+
+    $("input#gambar").click(function(){
+        alert(1);
+        //readURL(this);
+    });
+
 });
 
 $(window).on('load', function () {
     var c = $.session.get('page');
     if(c == null || c == 1)
         aside1();
-    else if(c == 2)
-        aside2();
     else if(c == 3)
         aside1();
     else if(c == 4)
@@ -45,16 +65,6 @@ function aside1(){
     $("div#gantiHead").load("hrdDaftarKaryawan/HeadHRDDaftarKaryawan.php");
     $.session.set('page','1');
     load();
-}
-function aside2(){
-    $("#aside3").hide();
-    $("#aside2").show();
-    $(".blue").removeClass('terpilih');
-    $("#centang").appendTo('#aside2 span');
-    $("#aside2").addClass('terpilih');
-    $("div#konten").load("hrdDataKaryawan/KontenHRDDataKaryawan.php");
-    $("div#gantiHead").load("hrdDataKaryawan/HeadHRDDataKaryawan.php");
-    $.session.set('page','2');
 }
 function aside3(){
     $("#aside2").hide();
