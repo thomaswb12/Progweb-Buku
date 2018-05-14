@@ -88,6 +88,11 @@ a#tombolUp{ /*peletakkannya dikanan bawah dan fixed*/
 a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     opacity: 0.6;
 }
+
+img#foto200px{
+    width: 300px !important;
+    height: 300px !important;
+}
 /*----------tombol utk up ke atas----------*/
 
 

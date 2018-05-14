@@ -157,6 +157,8 @@ function viewKaryawan(data){
         url: '../functionPHP/HRD.php',
         success: function(response){
             $('#dataKaryawan').html(response);
+            $('img#foto200px').css('width','300px');
+            $('img#foto200px').css('height','300px');
         }
     });
 }
@@ -179,6 +181,15 @@ function pilihan($temp=1){
     $function="";
     switch ($temp) {
         case 5: $data = {'id':$('#idKaryawan').val(),'nama':$('#namaKaryawan').val(),'jabatan':$('#selectJabatan').val(),'email':$('#email').val(),'noTelp':$('#telepon').val(),'alamat':$('#alamat').val(),'password':$('#pass1').val()};
+                break;
+        case 6: $data = {'function':6,'foto':$('#gambar').val()};
+                $function = function(response){
+                    var idxslice=$('#gambar').val().lastIndexOf('\\');
+                    var sumber=$('#gambar').val().substr(idxslice);
+                    $('img#foto200px').attr("src","sumber");
+                    alert($('#gambar').val());
+                    alert(idxslice);
+                }
                 break;
     }
     
