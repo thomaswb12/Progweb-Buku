@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2018 at 06:39 PM
+-- Generation Time: May 14, 2018 at 09:41 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -54,9 +54,9 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`, `Dipinjam`, `idPenerbit`, `idPenulis`, `Rating`, `idRak`, `jumlahEksemplar`, `Location`, `Available`, `specialEdition`) VALUES
-('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 15, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images\\buku\\Naruto_Volume_42_Indonesia.jpg', 0, 'Ya'),
+('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 16, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images\\buku\\Naruto_Volume_42_Indonesia.jpg', 0, 'Ya'),
 ('DD000002', 'Naruto Vol. 4', '2018-05-01', 50, 100, 'Soft', 'Sasuke gugur saat melindungi Naruto…!! Saat itu, terjadi keanehan pada diri Naurto!! Haku yang terkena pukulan kemarahan pun menyadari hal tersebut. Sementara itu, pertarungan antara Zabuza vs Kakashi semakin sengit, siapakah yang menang? Inilah babak akhir dari pergolakan di Negara Nami!!\r\n', 8, 15, 2512, 'AA000001', 'BB000001', 'remaja', 'CC000001', 0, 'images\\buku\\Naruto_Volume_4_Indonesia.jpg', 0, 'Tidak'),
-('DD000003', 'Doraemon Vol. 2', '2018-04-03', 50, 50, 'Soft', '\r\nKumpulan cerita tentang Nilai Nol dan Pergi dari Rumah\r\n', 8, 15, 1, 'AA000001', 'BB000001', 'anak-anak', 'CC000002', 4, 'images\\buku\\Doraemon_Volume_2_Indonesia.jpg', 3, 'Ya');
+('DD000003', 'Doraemon Vol. 2', '2018-04-03', 50, 50, 'Soft', '\r\nKumpulan cerita tentang Nilai Nol dan Pergi dari Rumah\r\n', 8, 15, 4, 'AA000001', 'BB000001', 'anak-anak', 'CC000002', 4, 'images\\buku\\Doraemon_Volume_2_Indonesia.jpg', 1, 'Ya');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,8 @@ INSERT INTO `detailpengembalian` (`idEksBuku`, `harga`, `tanggalPinjam`, `tangga
 ('asde', 8000, '2018-05-11', '2018-05-11', '2018-05-18', 0, 'P000011'),
 ('asd', 8000, '2018-05-11', '2018-05-11', '2018-05-18', 0, 'P000012'),
 ('asde', 8000, '2018-05-11', '2018-05-11', '2018-05-18', 0, 'P000013'),
-('asd', 8000, '2018-05-11', '2018-05-20', '2018-05-18', 1000, 'P000014');
+('asd', 8000, '2018-05-11', '2018-05-20', '2018-05-18', 1000, 'P000014'),
+('asde', 8000, '2018-05-14', '2018-05-15', '2018-05-21', 0, 'P000015');
 
 -- --------------------------------------------------------
 
@@ -157,7 +158,9 @@ INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKe
 ('asde', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000013'),
 ('asd', 8000, '2018-05-11', NULL, '2018-05-18', 0, 'T000014'),
 ('asde', 8000, '2018-05-14', NULL, '2018-05-21', 0, 'T000015'),
-('DD000003KK000001', 5000, '2018-05-14', NULL, '2018-05-21', 0, 'T000017');
+('DD000003KK000001', 5000, '2018-05-15', NULL, '2018-05-22', 0, 'T000016'),
+('DD000003KK000003', 5000, '2018-05-15', NULL, '2018-05-22', 0, 'T000016'),
+('DD000003KK000004', 5000, '2018-05-15', NULL, '2018-05-22', 0, 'T000017');
 
 --
 -- Triggers `detailtransaksi`
@@ -250,11 +253,11 @@ CREATE TABLE `eksbuku` (
 
 INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`, `tanggalTiba`) VALUES
 ('asd', 'DD000001', 'Dipinjam', '2018-04-21'),
-('asde', 'DD000001', 'Dipinjam', '2018-04-21'),
+('asde', 'DD000001', 'Tersedia', '2018-04-21'),
 ('DD000003KK000001', 'DD000003', 'Dipinjam', '2018-05-13'),
 ('DD000003KK000002', 'DD000003', 'Tersedia', '2018-05-14'),
-('DD000003KK000003', 'DD000003', 'Tersedia', '2018-05-14'),
-('DD000003KK000004', 'DD000003', 'Tersedia', '2018-05-14');
+('DD000003KK000003', 'DD000003', 'Dipinjam', '2018-05-14'),
+('DD000003KK000004', 'DD000003', 'Dipinjam', '2018-05-14');
 
 --
 -- Triggers `eksbuku`
@@ -450,7 +453,8 @@ INSERT INTO `pengembalian` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKa
 ('P000011', '2018-05-11 00:11:00', 'M000001', 'KSRR0001', 0),
 ('P000012', '2018-05-11 00:12:00', 'M000001', 'KSRR0001', 0),
 ('P000013', '2018-05-11 00:13:00', 'M000001', 'KSRR0001', 0),
-('P000014', '2018-05-11 00:14:00', 'M000001', 'KSRR0001', 1000);
+('P000014', '2018-05-11 00:14:00', 'M000001', 'KSRR0001', 1000),
+('P000015', '2018-05-15 00:14:00', 'M000001', 'KSRR0001', 0);
 
 -- --------------------------------------------------------
 
@@ -525,7 +529,8 @@ INSERT INTO `transaksi` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKarya
 ('T000013', '2018-05-11 00:44:43', 'm000001', 'KSRR0001', 8000),
 ('T000014', '2018-05-11 00:48:05', 'm000001', 'KSRR0001', 8000),
 ('T000015', '2018-05-14 15:24:07', 'm000001', 'KSRR0001', 8000),
-('T000017', '2018-05-14 23:16:05', 'M000002', 'KSRR0001', 5000);
+('T000016', '2018-05-15 00:34:46', 'M000002', 'KSRR0001', 10000),
+('T000017', '2018-05-15 00:42:08', 'M000001', 'KSRR0001', 5000);
 
 --
 -- Indexes for dumped tables
