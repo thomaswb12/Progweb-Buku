@@ -63,7 +63,7 @@
                             </div>
                             <div class="kanan">
                             <label>Photo Profile</label>
-                                <input  onchange="readURL(this)" type="file" id="gambar" name="gambar"/><br/>
+                                <input onchange="readURL($(this))"; type="file" id="gambar" name="gambar"/><br/>
                                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
                                 <img id="foto200px" class="photo" src="../'.$row['foto'].'"/><br><br><br>
                                 <input type="button" id="tombolCancel" name="tombokCancel" class="tombol" value="CANCEL" onclick="aside1()"/>
