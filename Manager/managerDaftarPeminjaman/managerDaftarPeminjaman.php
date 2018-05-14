@@ -4,12 +4,12 @@
     <label id="labelSearchBy" class="blue font15">Search by :</label>
     <br/>
     <select id="selectSearchBy" class="font15">
-        <option>ID member</option>
-        <option>Nama member</option>
+        <option value = 1>ID member</option>
+        <option value = 2>Nama member</option>
     </select>
     <div id="searchBox">
         <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
-        <i class="fa fa-search blue font15"></i>
+        <i class="fa fa-search blue font15" onclick="searchDaftarPeminjaman()"></i>
     </div>
 </div>
 <!--bagian daftar peminjaman-->

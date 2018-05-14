@@ -83,7 +83,7 @@ function backToTop(){
 //----- fungsi menampilkan daftar peminjaman ke managerDaftarPeminjaman ---------
 function searchDaftarPeminjaman(){
     $('#inputSearchBy').val() !="" ? $keyword = $('#inputSearchBy').val(): $keyword ="";
-    $searchby = $('#selectSearchBy').val();
+    $searchby = $('select#selectSearchBy').val();
     $.ajax({
         type : 'post',
         data : {'keyword':$keyword,'searchby':$searchby,'status':0},
