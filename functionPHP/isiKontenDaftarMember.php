@@ -1,8 +1,8 @@
 <?php
      include "member.php";
-     if(isset($_POST['kata'])&&isset($_POST['dari'])&&isset($_POST['sorting']))
-        $hasil = getAllMemberWith($_POST['kata'],$_POST['dari'],$_POST['sorting']);
-        //$hasil = getBukuWith($_POST['kata'],$_POST['dari'],$_POST['sorting']);
+     if(isset($_POST['keyword'])&&isset($_POST['searchby'])&&isset($_POST['sortby']))
+        $hasil = getAllMemberWith($_POST['keyword'],$_POST['searchby'],$_POST['sortby']);
+        //$hasil = getBukuWith($_POST['keyword'],$_POST['searchby'],$_POST['sortby']);
      else
         $hasil = getAllMember();
     $i=1;

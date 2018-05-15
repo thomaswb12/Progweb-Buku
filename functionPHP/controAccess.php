@@ -20,6 +20,12 @@
                     case "KSRR" :   $_SESSION['id'] = $_POST['id'];
                                     $_SESSION['control'] = 2;
                                     header("location:../kasir/KasirDefault.php");break;
+                    case "MNGR" :   $_SESSION['id'] = $_POST['id'];
+                                    $_SESSION['control'] = 3;
+                                    header("location:../Manager/managerDefault.php");break;
+                    case "HRDD" :   $_SESSION['id'] = $_POST['id'];
+                                    $_SESSION['control'] = 4;
+                                    header("location:../HRD/HRDDefault.php");break;
                 }
             }
             $conn->close();

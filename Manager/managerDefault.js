@@ -5,8 +5,8 @@ $(document).ready(function(){
     });
 
     //------ menandai option aside yg sedang terpilih ----
-    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
-    $('#aside2').hide();
+//    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
+//    $('#aside2').hide();
 
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
@@ -19,6 +19,16 @@ $(document).ready(function(){
 
 });
 
+$(window).on('load', function () {
+    var c = $.session.get('page');
+    if(c == null || c == 1)
+        aside1();
+    else if(c == 2)
+        aside2();
+    else if(c == 3)
+        aside3();
+});
+
 function aside1(){
     $("#aside2").hide();
     $(".blue").removeClass('terpilih');
@@ -26,6 +36,8 @@ function aside1(){
     $("#aside1").addClass('terpilih');
     $("div#konten").load("managerDaftarPeminjaman/managerDaftarPeminjaman.php");
     $("div#gantiHead").load("managerDaftarPeminjaman/headManagerDaftarPeminjaman.php");
+    $.session.set('page','1');
+    searchDaftarPeminjaman();
 }
 
 function aside2(){
@@ -34,6 +46,7 @@ function aside2(){
     $("#aside2").show().addClass('terpilih');
     $("div#konten").load("managerDetailPeminjaman/kontenManagerDetailPeminjaman.php");
     $("div#gantiHead").load("managerDetailPeminjaman/headManagerDetailPeminjaman.php");
+    $.session.set('page','2');
 }
 
 function aside3(){
@@ -43,6 +56,7 @@ function aside3(){
     $("#aside3").addClass('terpilih');
     $("div#konten").load("managerLaporanKeuangan/kontenManagerLaporanKeuangan.php");
     $("div#gantiHead").load("managerLaporanKeuangan/headManagerLaporanKeuangan.php");
+    $.session.set('page','3');
 }
 
 
@@ -64,4 +78,18 @@ function backToTop(){
     } else { //bila user belum scroll jauh, tombol disembunyikan
         $('#tombolUp').css('display','none');
     }
+}
+
+//----- fungsi menampilkan daftar peminjaman ke managerDaftarPeminjaman ---------
+function searchDaftarPeminjaman(){
+    $('#inputSearchBy').val() !="" ? $keyword = $('#inputSearchBy').val(): $keyword ="";
+    $searchby = $('select#selectSearchBy').val();
+    $.ajax({
+        type : 'post',
+        data : {'keyword':$keyword,'searchby':$searchby,'status':0},
+        url: '../functionPHP/isiKontenDaftarPeminjaman.php',
+        success: function (response) {
+            $("tbody").html(response);
+        }
+    });
 }

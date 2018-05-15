@@ -20,6 +20,10 @@ body{ /*supaya mentok selayar*/
 .font15{ /*utk font yang ukurannya 15px*/
     font-size: 15px;
 }
+.disable{
+    background-color: grey !important;
+    color: white !important;
+}
 
 /*------------------------bagian header---------------------*/
 header{ /*bagian atas yang isinya logo, tulisan welcome, logout dan tanggal*/

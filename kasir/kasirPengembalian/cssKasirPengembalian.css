@@ -1,13 +1,33 @@
 /*atasnya tabel*/
 div#atasTabel{
     width: 95%;
+    height: 100px;
     margin-bottom: 3%;
     margin-left: 3%;
+}
+div#atasTabel div#kiri{
+    float: left;
+    width: 55%;
+}
+div#atasTabel div#kanan{
+    float: right;
+    width: 30%;
 }
 #simbolOrang{   /*simbol gambar orang*/
     float: left;
     font-size: 110px;
     margin-right: 20px;
+}
+#divSimbolTransaksi{
+    float: left;
+    font-size: 40px;
+    margin-right: 15px;
+}
+#simbolTransaksi{
+    margin-top: 20px;
+}
+#idTransaksiPengembalian{
+    float: left;
 }
 div#atasTabel input[type=text]{  /*semua inputan text*/
     height: 20px;
@@ -85,6 +105,26 @@ input#print{
         margin: auto;
         margin-left: 0px;
         text-align: center;
+        height: 320px;
+    }
+    div#atasTabel div#kiri{
+        float: none;
+        width: 100%;
+    }
+    div#atasTabel div#kanan{
+        float: none;
+        width: 100%;
+    }
+    div#divSimbolTransaksi{  /*div pembungkus simbol buku*/
+        clear: both;
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    #simbolTransaksi{    /*div pembungkus input id buku*/
+        text-align: center;
+        font-size: 50px;
+        margin: 30px 0px 10px 0px;
     }
     #simbolOrang{   /*simbol gambar orang*/
         float: none;
@@ -97,9 +137,20 @@ input#print{
         height: 20px;
         width: 200px;
     }
+    div#divIdTransaksi{
+        width: 100%;
+        float: none;
+        margin: auto;
+        text-align: center;
+    }
+    div#divIdTransaksi #idTransaksiPengembalian{
+        float: none;
+        width: 200px;
+    }
     /*atasnya tabel*
     /*tabel*/
     div#tabelDaftar{  /*div bungkus tabel*/
+        clear: both;
         margin-top: 20px;
         width: auto;
         overflow-x: scroll; /*scroll ke samping*/

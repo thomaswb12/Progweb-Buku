@@ -12,15 +12,11 @@
             if($gender=="Perempuan") $gender="Wanita";
             else if($gender=="Laki-laki") $gender="Pria";        
         $lahir=$_POST["tanggalLahir"];
-            $tanggal = substr($lahir,5,2);
-            $bulan = substr($lahir,0,2);
-            $tahun = substr($lahir,10,4);
-            $lahir=$tahun."-".$bulan."-".$tanggal;
         $email=$_POST["email"];
         $noTelp=$_POST["noTelp"];
         $alamat=$_POST["alamat"];
         //kalau data belum lengkap
-        if($nama==""||$noIdentitas==""||$lahir=="--"||$email==""||$noTelp==""||$alamat==""){
+        if($nama==""||$noIdentitas==""||$lahir==""||$email==""||$noTelp==""||$alamat==""){
             $_SESSION["belumLengkap"]=1;
         }
         //kalau data sudah lengkap

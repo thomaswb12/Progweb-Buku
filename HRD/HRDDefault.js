@@ -12,21 +12,41 @@ $(document).ready(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
     $("#aside1").click(function(){aside1();});
-    $("#aside2").click(function(){aside2();});
     $("#aside3").click(function(){aside3();});
     $("#aside4").click(function(){aside4();});
     $("#aside5").click(function(){aside5();});
     $("#aside6").click(function(){aside6();});
+
+    function readURL(input) {
+        alert(1);
+        /*if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                if(e!=""){
+                    $('#foto200px').show();
+                    $('#foto200px').attr('src', e.target.result);
+                }
+                else{
+                    $('#foto200px').show();
+                }
+            }
+            reader.readAsDataURL(input.files[0]);
+        }*/
+    }
+
+    $("input#gambar").click(function(){
+        alert(1);
+        //readURL(this);
+    });
+
 });
 
 $(window).on('load', function () {
     var c = $.session.get('page');
     if(c == null || c == 1)
         aside1();
-    else if(c == 2)
-        aside2();
     else if(c == 3)
-        aside3();
+        aside1();
     else if(c == 4)
         aside4();
     else if(c == 5)
@@ -41,19 +61,10 @@ function aside1(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Daftar%20Karyawan/KontenHRDDaftarKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Daftar%20Karyawan/HeadHRDDaftarKaryawan.php");
+    $("div#konten").load("hrdDaftarKaryawan/KontenHRDDaftarKaryawan.php");
+    $("div#gantiHead").load("hrdDaftarKaryawan/HeadHRDDaftarKaryawan.php");
     $.session.set('page','1');
-}
-function aside2(){
-    $("#aside3").hide();
-    $("#aside2").show();
-    $(".blue").removeClass('terpilih');
-    $("#centang").appendTo('#aside2 span');
-    $("#aside2").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Data%20Karyawan/KontenHRDDataKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Data%20Karyawan/HeadHRDDataKaryawan.php");
-    $.session.set('page','2');
+    load();
 }
 function aside3(){
     $("#aside2").hide();
@@ -61,8 +72,8 @@ function aside3(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Edit%20Karyawan/KontenHRDEditKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Edit%20Karyawan/HeadHRDEditKaryawan.php");
+    $("div#konten").load("HRDEditKaryawan/KontenHRDEditKaryawan.php");
+    $("div#gantiHead").load("HRDEditKaryawan/HeadHRDEditKaryawan.php");
     $.session.set('page','3');
 }
 function aside4(){
@@ -71,8 +82,8 @@ function aside4(){
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
     $("#aside4").addClass('terpilih');
-    $("div#konten").load("HRD%20-%20Tambah%20Karyawan/KontenHRDTambahKaryawan.php");
-    $("div#gantiHead").load("HRD%20-%20Tambah%20Karyawan/HeadHRDTambahKaryawan.php");
+    $("div#konten").load("HRDTambahKaryawan/KontenHRDTambahKaryawan.php");
+    $("div#gantiHead").load("HRDTambahKaryawan/HeadHRDTambahKaryawan.php");
     $.session.set('page','4');
 }
 function aside5(){
@@ -137,6 +148,69 @@ function searchNama(){
      });
 }
 
+function load(){
+    $.ajax({
+        type : 'post',
+        data : {'function':3},
+        url: '../functionPHP/HRD.php',
+        success: function(response){
+            $("#daftarKaryawan").html(response);
+        }
+    });
+}
+
+function viewKaryawan(data){
+    aside3();
+    $.ajax({
+        type : 'post',
+        data : {'function':4,'data':data},
+        url: '../functionPHP/HRD.php',
+        success: function(response){
+            $('#dataKaryawan').html(response);
+            $('img#foto200px').css('width','300px');
+            $('img#foto200px').css('height','300px');
+        }
+    });
+}
+
+function cekPassword(){
+    var pass1 = $("#pass1").val();
+    var pass2 = $("#pass2").val();
+    if(pass1!=pass2){
+        $("#warningPass").css("display","block");
+        $("#tombolSave").hide();
+    }
+    else{
+        $("#warningPass").css("display","none");
+        $("#tombolSave").show();
+    }
+}
+
+function pilihan($temp=1){
+    $data ="";
+    $function="";
+    switch ($temp) {
+        case 5: $data = {'id':$('#idKaryawan').val(),'nama':$('#namaKaryawan').val(),'jabatan':$('#selectJabatan').val(),'email':$('#email').val(),'noTelp':$('#telepon').val(),'alamat':$('#alamat').val(),'password':$('#pass1').val()};
+                break;
+        case 6: $data = {'function':6,'foto':$('#gambar').val()};
+                $function = function(response){
+                    var idxslice=$('#gambar').val().lastIndexOf('\\');
+                    var sumber=$('#gambar').val().substr(idxslice);
+                    $('img#foto200px').attr("src","sumber");
+                    alert($('#gambar').val());
+                    alert(idxslice);
+                }
+                break;
+    }
+    
+    $.ajax({
+        type : 'post',
+        data : $data,
+        url: '../functionPHP/HRD.php',
+        success: $function
+    });
+}
+
 
 //------------------ fungsi ketika window di resize --------------
 $(window).resize(function(){
@@ -156,4 +230,16 @@ function backToTop(){
     } else { //bila user belum scroll jauh, tombol disembunyikan
         $('#tombolUp').css('display','none');
     }
+}
+
+function pilihJabatan($data){
+    $.ajax({
+        type : 'post',
+        data : {'function':2,'data':$data},
+        url: '../functionPHP/HRD.php',
+        success: function(response){
+            //alert(response);
+            $('#isi').html(response);
+        }
+    });
 }
