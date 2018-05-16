@@ -93,3 +93,33 @@ function searchDaftarPeminjaman(){
         }
     });
 }
+
+function pencetTR(temp){
+    var idMember = temp.children("td:nth-of-type(2)").html();
+    var namaMember = temp.children("td:nth-of-type(3)").html();
+    var email = temp.children("td:nth-of-type(4)").html();
+    var gender = temp.children("td:nth-of-type(5)").html();
+        if(gender=="Wanita") gender=1;
+        else gender=2;
+    var noIdentitas = temp.children("td:nth-of-type(6)").html(); 
+    var alamat = temp.children("td:nth-of-type(7)").html(); 
+    var tanggalLahir = temp.children("td:nth-of-type(8)").html(); 
+    var telepon = temp.children("td:nth-of-type(9)").html(); 
+    $("#popupIdMember").val(idMember);
+    $("#popupIdMemberDummy").val(idMember);
+    $("#popupNamaMember").val(namaMember);
+    $("#popupEmail").val(email);
+    $("#popupGender").val(gender);
+    $("#popupNoIdentitas").val(noIdentitas);
+    $("#popupAlamat").val(alamat);
+    $("#popupTanggalLahir").val(tanggalLahir);
+    $("#popupTelepon").val(telepon);
+    
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
+}
+
+function pencetBlur(){
+    $("#popup").css('display','none');
+    $("#blur").css('display','none');
+}
