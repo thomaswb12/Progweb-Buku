@@ -18,7 +18,26 @@
         case 12 : actionPengembalian($_POST['id'],$callFunction);break;
         case 13 : actionPengembalian($_POST['id'],$callFunction);break;
         case 14 : truncate(2);break;
+        case 15 : echo "coba";break;
     }
+
+    function insert1($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
+        //$total = total(2);
+        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total);";
+        $sql .= "INSERT INTO detailtransaksi SELECT * FROM dummydetailtransaksi;";
+        $sql .= "TRUNCATE table dummydetailtransaksi;";
+
+        global $conn;
+        if ($conn->multi_query($sql) === TRUE) {
+            echo "berhasil";
+        } 
+        else {
+            echo "gagal";
+        }
+        $conn->close();
+    }
+
+
 
     function actionPengembalian($data,$status){
         global $conn;
@@ -232,7 +251,7 @@
     function truncate($tamp){
         global $conn;
         if($tamp==1)$sql = "TRUNCATE table dummydetailtransaksi";
-        else $sql = "TRUNCATE table dummydetailpeminjaman";
+        else $sql = "TRUNCATE table dummydetailpengembalian";
         if($conn->query($sql)){
         }
         $conn->close();
