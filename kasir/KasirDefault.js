@@ -52,8 +52,8 @@ function aside2(){
     $("div#konten").load("kasirPengembalian/KontenKasirPengembalian.php");
     $("div#gantiHead").load("kasirPengembalian/HeadKasirPengembalian.php");
     $.session.set('page','2');
-    transaksi(10);
     transaksi(14);
+    transaksi(10);
 }
 function aside3(){
     $(".blue").removeClass('terpilih');
@@ -80,6 +80,7 @@ function aside5(){
     $("div#gantiHead").load("kasirDaftarMember/HeadKasirDaftarMember.php");
     $.session.set('page','5');
     searchDaftarMember();
+
 }
 
 function pencetTRPengembalian(temp){
@@ -290,6 +291,16 @@ function transaksi($temp=1){
         case 14 :   $data = {'function':14};
                     $function = function (response) {};
                     break;
+        case 15 :   if($('#namaMember').val()!="" && $('#idTransaksiPengembalian').val!=""){
+                        $data = {'function':15};
+                        $function = function (response) {alert(response)};  
+                    }
+                    else{
+                        alert("Data tidak valid");
+                        pass=0;
+                    }
+                    
+                    break;
         default:
                     break;
     }
@@ -375,8 +386,10 @@ function searchDaftarMember(){
         data : {'keyword':$keyword,'searchby':$searchby,'sortby':$sortby,'status':0},
         url: '../functionPHP/isiKontenDaftarMember.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
-            //alert(response);
             $("tbody").html(response);
         }
+    })
+    .done(function(response){
+        $("tbody").html(response);
     });
 }
