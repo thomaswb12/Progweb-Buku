@@ -121,6 +121,33 @@ div#popup table#tablePopup .atribut{
 div#popup table#tablePopup .value{
     width: 77%;
 }
+    /*Bagian tabel daftar komiknya*/
+div#popup div#divTablePopupDaftar{
+    margin-left: 50px;
+    width: 95%;
+    overflow-x: scroll;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar{
+    width: 110%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .popUpId{
+    width: 17%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .popUpJudul{
+    width: 60%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .popUpPinjam{
+    width: 10%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .popUpKembali{
+    width: 10%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .peringatan{
+    width: 3%;
+    text-align: left;
+    padding-left: 3px;
+}
+    /*Bagian tabel daftar komiknya*/
 /*pop up message*/
 /*------------------------bagian konten---------------------*/
 
@@ -186,6 +213,14 @@ div#popup table#tablePopup .value{
     }
     div#popup .value{
         width: 80%;
+    }
+        /*Bagian tabel daftar komiknya*/
+    div#popup div#divTablePopupDaftar{
+        margin-left: 10px;
+        width: 100%;
+    }
+    div#popup div#divTablePopupDaftar table#tablePopupDaftar{
+        width: 300%;
     }
     /*pop up message*/
     /*-----------------utk konten-----------------*/

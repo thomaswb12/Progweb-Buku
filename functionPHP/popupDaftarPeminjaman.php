@@ -88,21 +88,31 @@
     echo '  <div id="divTablePopupDaftar">
                 <table id="tablePopupDaftar">
                     <tr>
-                        <th>ID Eks. Buku</th>
-                        <th>Judul Buku</th>
-                        <th>Tanggal Pinjam</th>
-                        <th>Tanggal Aturan Pengembalian</th>
+                        <th class="popUpId">ID Eks. Buku</th>
+                        <th class="popUpJudul">Judul Buku</th>
+                        <th class="popUpPinjam">Tanggal Pinjam</th>
+                        <th class="popUpKembali">Tanggal Aturan Pengembalian</th>
                         <th class="peringatan">Peringatan</th>
                     </tr>
             ';
     foreach($data as $daftar){
+        $tanggalPinjam = tanggal($daftar['tanggalPinjam']);
+        $tanggalAturanKembali = tanggal($daftar['tanggalAturanKembali']);
         echo '  <tr>
                     <td>'.$daftar['idEksBuku'].'</td>
                     <td>'.$daftar['judulBuku'].'</td>
-                    <td>'.$daftar['tanggalPinjam'].'</td>
-                    <td>'.$daftar['tanggalAturanKembali'].'</td>
-                    <td class="peringatan"> </td>
+                    <td>'.$tanggalPinjam.'</td>
+                    <td>'.$tanggalAturanKembali.'</td>';
+        //kalau sudah telat dan belum juga dikembalikan, tampilkan peringatan
+        if(strtotime($daftar['tanggalAturanKembali']) < strtotime('now')){
+            echo        '<td class="peringatan"><i class="fas fa-exclamation-triangle" style="color:red"></i></td>
+                </tr>';                
+        }
+        //kalau belum dikembalikan, tapi belum telat, ga ada peringatan
+        else{
+            echo        '<td class="peringatan"></td>
                 </tr>';
+        }
     }
     echo '      </table>
             </div>
