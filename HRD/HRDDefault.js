@@ -15,48 +15,44 @@ $(document).ready(function(){
     $("#aside3").click(function(){aside3();});
     $("#aside4").click(function(){aside4();});
     $("#aside5").click(function(){aside5();});
-    $("#aside6").click(function(){aside6();});
+    $("#aside6").click(function(){aside6();});    
+});
 
-    function readURL(input) {
-        alert(1);
-        /*if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                if(e!=""){
-                    $('#foto200px').show();
-                    $('#foto200px').attr('src', e.target.result);
-                }
-                else{
-                    $('#foto200px').show();
-                }
-            }
-            reader.readAsDataURL(input.files[0]);
-        }*/
+function readURL(input) {   
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        if(e!=""){
+            $("#foto200px").attr("src", e.target.result);
+        }
+        else{
+        }
     }
+    reader.readAsDataURL(input.files[0]);
+    }
+}
 
-    $("input#gambar").click(function(){
-        alert(1);
-        //readURL(this);
-    });
-
+$("#gambar").change(function(){
+    alert(1);
+    readURL(this);
 });
 
 $(window).on('load', function () {
     var c = $.session.get('page');
     if(c == null || c == 1)
-        aside1();
+    aside1();
     else if(c == 3)
-        aside1();
+    aside1();
     else if(c == 4)
-        aside4();
+    aside4();
     else if(c == 5)
-        aside5();
+    aside5();
     else if(c == 6)
-        aside6();
+    aside6();
 });
 
+
 function aside1(){
-    $("#aside2").hide();
     $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
@@ -67,7 +63,6 @@ function aside1(){
     load();
 }
 function aside3(){
-    $("#aside2").hide();
     $("#aside3").show();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
@@ -77,7 +72,6 @@ function aside3(){
     $.session.set('page','3');
 }
 function aside4(){
-    $("#aside2").hide();
     $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside4 span');
@@ -87,7 +81,6 @@ function aside4(){
     $.session.set('page','4');
 }
 function aside5(){
-    $("#aside2").hide();
     $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside5 span');
@@ -97,7 +90,6 @@ function aside5(){
     $.session.set('page','5');
 }
 function aside6(){
-    $("#aside2").hide();
     $("#aside3").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside6 span');
@@ -191,15 +183,6 @@ function pilihan($temp=1){
     $function="";
     switch ($temp) {
         case 5: $data = {'id':$('#idKaryawan').val(),'nama':$('#namaKaryawan').val(),'jabatan':$('#selectJabatan').val(),'email':$('#email').val(),'noTelp':$('#telepon').val(),'alamat':$('#alamat').val(),'password':$('#pass1').val()};
-                break;
-        case 6: $data = {'function':6,'foto':$('#gambar').val()};
-                $function = function(response){
-                    var idxslice=$('#gambar').val().lastIndexOf('\\');
-                    var sumber=$('#gambar').val().substr(idxslice);
-                    $('img#foto200px').attr("src","sumber");
-                    alert($('#gambar').val());
-                    alert(idxslice);
-                }
                 break;
     }
     

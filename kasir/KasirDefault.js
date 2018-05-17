@@ -53,6 +53,7 @@ function aside2(){
     $("div#gantiHead").load("kasirPengembalian/HeadKasirPengembalian.php");
     $.session.set('page','2');
     transaksi(10);
+    transaksi(14);
 }
 function aside3(){
     $(".blue").removeClass('terpilih');
@@ -83,12 +84,17 @@ function aside5(){
 
 function pencetTRPengembalian(temp){
     if($(temp).children("td.ganti").css("background-color") == "rgba(0, 100, 0, 0.6)"){
+        //untuk menghapus green
         $(temp).children("td.ganti").removeClass("green");
         $(temp).children("td.tandaTable").html("<td class='tandaTable'><i class='fas fa-check' style='color:grey'></i></td>");
+        actionPengembalian(temp,1);
     } 
     else {
+        //untuk menambah green
         $(temp).children("td.ganti").addClass("green");
         $(temp).children("td.tandaTable").html("<td class='tandaTable'><i class='fas fa-check' style='color:green'></i></td>");
+        //transaksi(12);
+        actionPengembalian(temp,2);
     }
 }
 
@@ -133,6 +139,31 @@ function load(){
         }
     });
     total();
+}
+
+function actionPengembalian(temp,status){
+    if(status==1){//untuk hapus  
+      var no=12;
+      var data = temp.children("td:nth-of-type(2)").text();
+    }
+    else{//untuk tambah
+        var no = 13;
+        var data = {
+            'id':temp.children("td:nth-of-type(2)").text(),
+            'tglPinjam':temp.children("td:nth-of-type(4)").text(),
+            'tglKembali':temp.children("td:nth-of-type(5)").text(),
+            'denda':temp.children("td:nth-of-type(7)").text(),
+            'idTrans':$('#idTransaksiPengembalian').val()
+        };
+    }
+    $.ajax({
+        type : 'post',
+        data : {'function':no,'id':data},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            alert(response);
+        }
+    });
 }
 
 function transaksiHapus(tamp,temp){
@@ -225,6 +256,8 @@ function transaksi($temp=1){
                                 alert("Transaksi berhasil");
                                 $('#namaMember').val('');
                                 $('#inputID').val('');
+                                $('#inputIdEksBuku').val('');
+                                transaksi(1);
                                 load();
                                 load();
                             }
@@ -247,12 +280,16 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                         if(response == "ga ada"){
                             $("#namaMember").val("");
+                            loadTable($("#inputID").val());
                         }
                         else{
                             $("#namaMember").val(response);
                             loadTable($("#inputID").val());
                         }
                     };break;
+        case 14 :   $data = {'function':14};
+                    $function = function (response) {};
+                    break;
         default:
                     break;
     }

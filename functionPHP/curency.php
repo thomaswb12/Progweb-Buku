@@ -37,8 +37,26 @@
         return "$hari $bulan $tahun";
     }
 
-    function telat(){
-        
+    function toTanggal($temp){
+
+        $list =  explode( ' ', $temp ) ;
+
+        switch($list[1]){
+            case "Januari"  :    $list[1]="01";break;
+            case "Februari" :    $list[1]="01";break;
+            case "Maret"    :    $list[1]="03";break;
+            case "April"    :    $list[1]="04";break;
+            case "Mei"      :    $list[1]="05";break;
+            case "Juni"     :    $list[1]="06";break;
+            case "Juli"     :    $list[1]="07";break;
+            case "Agustus"  :    $list[1]="08";break;
+            case "September":    $list[1]="09";break;
+            case "Oktober"  :    $list[1]="10";break;
+            case "November" :    $list[1]="11";break;
+            case "Desember" :    $list[1]="12";break;
+        }
+
+        return "$list[2]-$list[1]-$list[0]";
     }
 
 ?>
