@@ -1,3 +1,4 @@
+
 <?php
      include "manager.php";
      require "koneksi.php";
@@ -9,7 +10,7 @@
         $hasil = getAllPeminjaman();
      }
     foreach($hasil as $pinjam){
-        echo    '<tr onclick="aside2()">
+        echo    '<tr onclick="tampilPopupDetailPeminjaman($(this))">
                     <td>'.$pinjam['tanggalAturanKembali'].'</td>
                     <td>'.$pinjam['id'].'</td>
                     <td>'.$pinjam['nama'].'</td>';
