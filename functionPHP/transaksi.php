@@ -9,17 +9,43 @@
         case 3 : $a = $_POST['id'];cariBuku($a);break;
         case 4 : transaksi($_POST['idEksBuku'],$_POST['idMember'],$_POST['idTransaksi']);break;
         case 5 : buatTabel();break;
-        case 6 : truncate();break;
+        case 6 : truncate(1);break;
         case 7 : hapus($_POST['id']);break;
         case 8 : insert($_POST['idMember'],$_POST['idEksBuku'],$_POST['idTransaksi'],$_SESSION['id']);break;
         case 9 : total(1);break;
         case 10 : echo buatIdTransaksi(2); break;
         case 11 : buatTabelPengembalian($_POST['idMember']); break;
+        case 12 : actionPengembalian($_POST['id'],$callFunction);break;
+        case 13 : actionPengembalian($_POST['id'],$callFunction);break;
+        case 14 : truncate(2);break;
+    }
+
+    function actionPengembalian($data,$status){
+        global $conn;
+        include "curency.php";
+        if($status==13){
+            $id = $data['id'];
+            $tglPinjam = $data['tglPinjam'];
+            $tglKembali = $data['tglKembali'];
+            $denda = $data['denda'];
+            $idTrans = $data['idTrans'];
+            $sql = "INSERT INTO `dummydetailpengembalian` (`idEksBuku`, `denda`, `tanggalPinjam`, `tanggalAturanKembali`, tanggalKembali,`idTransaksi`) VALUES ('$id',".toNumber($denda).",'".toTanggal($tglPinjam)."','".toTanggal($tglKembali)."',CURRENT_DATE(),'$idTrans')";
+        }
+        else{
+            $sql = "DELETE FROM dummydetailpengembalian WHERE idEksBuku='$data'";
+        }
+        if ($conn->query($sql) === TRUE) {
+            echo "Record deleted successfully";
+        } 
+        else {
+            echo "Error deleting record: " . $conn->error;
+        }
+        $conn->close();
     }
 
     function buatTabelPengembalian($idMember){
         global $conn;
-        include "curency.php";
+        include "telatDenda.php";
         $sql = "SELECT d.*,b.judulBuku FROM transaksi as t,detailtransaksi as d , eksbuku as e, buku as b where d.idEksBuku = e.idEksBuku and e.idBuku = b.idBuku and d.idTransaksi = t.idTransaksi and t.idMember = '$idMember' and d.tanggalKembali is NULL;";
         if($result = $conn->query($sql)){
             if($result->num_rows>0){
@@ -30,10 +56,13 @@
                             <td class="judulBuku ganti">'.$row['judulBuku'].'</td>
                             <td class="tanggalPinjam ganti">'.tanggal($row['tanggalPinjam']).' </td>
                             <td class="tanggalPengembalian ganti">'.tanggal($row['tanggalAturanKembali']).'</td>
-                            <td class="telat ganti">-</td>
-                            <td class="denda ganti">Rp 0</td>
+                            <td class="telat ganti">'.hariTelat(date("Y-m-d"),$row['tanggalAturanKembali']).'</td>
+                            <td class="denda ganti">'.dendaDalamRp(date("Y-m-d"),$row['tanggalAturanKembali']).'</td>
                         </tr>';
                 }
+            }
+            else{
+                echo ' ';
             }
         }
         $conn->close();
@@ -200,9 +229,10 @@
         $conn->close();
     }
 
-    function truncate(){
+    function truncate($tamp){
         global $conn;
-        $sql = "TRUNCATE table dummydetailtransaksi";
+        if($tamp==1)$sql = "TRUNCATE table dummydetailtransaksi";
+        else $sql = "TRUNCATE table dummydetailpeminjaman";
         if($conn->query($sql)){
         }
         $conn->close();
