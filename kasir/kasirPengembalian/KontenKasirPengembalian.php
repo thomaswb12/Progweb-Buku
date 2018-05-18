@@ -27,6 +27,7 @@
         <table>
             <thead>
                 <th class="tandaTable"></th>
+                <th class="idTransaksiPeminjaman">ID Peminjaman</th>
                 <th class="idBuku">ID Eksemplar Buku</th>
                 <th class="judulBuku">Judul Buku</th>
                 <th class="tanggalPinjam">Tanggal Pinjam</th>
@@ -39,7 +40,7 @@
             <tfoot>
                 <tr class="tebal">
                     <td class="tandaTable"></td>
-                    <td colspan="5">Total</td>
+                    <td colspan="6">Total</td>
                     <td>Rp 500</td>
                 </tr>
             </tfoot>

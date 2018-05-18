@@ -68,10 +68,13 @@
             $tglKembali = $data['tglKembali'];
             $denda = $data['denda'];
             $idTrans = $data['idTrans'];
-            $sql = "INSERT INTO `dummydetailpengembalian` (`idEksBuku`, `denda`, `tanggalPinjam`, `tanggalAturanKembali`, tanggalKembali,`idTransaksi`) VALUES ('$id',".toNumber($denda).",'".toTanggal($tglPinjam)."','".toTanggal($tglKembali)."',CURRENT_DATE(),'$idTrans')";
+            $idTransaksi = $data['idTransaksi'];
+            $sql = "INSERT INTO `dummydetailpengembalian` (idTransaksiPeminjaman,`idEksBuku`, `denda`, `tanggalPinjam`, `tanggalAturanKembali`, tanggalKembali,`idTransaksi`) VALUES ('$idTransaksi','$id',".toNumber($denda).",'".toTanggal($tglPinjam)."','".toTanggal($tglKembali)."',CURRENT_DATE(),'$idTrans')";
         }
         else{
-            $sql = "DELETE FROM dummydetailpengembalian WHERE idEksBuku='$data'";
+            $id = $data['id'];
+            $idTransaksi = $data['idTransaksi'];
+            $sql = "DELETE FROM dummydetailpengembalian WHERE idEksBuku='$id' and idTransaksiPeminjaman='$idTransaksi'";
         }
         if ($conn->query($sql) === TRUE) {
             echo "Record deleted successfully";
@@ -91,6 +94,7 @@
                 while($row = $result->fetch_assoc()){
                     echo '<tr onclick="pencetTRPengembalian($(this))">
                             <td class="tandaTable"><i class="fas fa-check" style="color:grey"></i></td>
+                            <td class="idTransaksiPeminjaman ganti">'.$row['idTransaksi'].'</td>
                             <td class="idBuku ganti">'.$row['idEksBuku'].'</td>
                             <td class="judulBuku ganti">'.$row['judulBuku'].'</td>
                             <td class="tanggalPinjam ganti">'.tanggal($row['tanggalPinjam']).' </td>
