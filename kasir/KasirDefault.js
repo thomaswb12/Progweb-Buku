@@ -299,7 +299,10 @@ function transaksi($temp=1){
                         $data = {'function':15,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksiPengembalian").val()};
                         $function = function (response) {
                             if(response == "berhasil"){
-                                alert(1);
+                                $('#inputID').val("");
+                                transaksi(11);
+                                $('#namaMember').val("");
+                                transaksi(10);
                             }
                             else{
                                 alert(response);
