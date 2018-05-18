@@ -263,7 +263,7 @@ function transaksi($temp=1){
                                 load();
                             }
                             else{
-                                alert("Transaksi gagal");
+                                alert(response);
                             }
                         };
                     }
@@ -292,14 +292,20 @@ function transaksi($temp=1){
                     $function = function (response) {};
                     break;
         case 15 :   if($('#namaMember').val()!="" && $('#idTransaksiPengembalian').val!=""){
-                        $data = {'function':15};
-                        $function = function (response) {alert(response)};  
+                        $data = {'function':15,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksiPengembalian").val()};
+                        $function = function (response) {
+                            if(response == "berhasil"){
+                                alert(1);
+                            }
+                            else{
+                                alert(response);
+                            }
+                        };
                     }
                     else{
                         alert("Data tidak valid");
                         pass=0;
                     }
-                    
                     break;
         default:
                     break;

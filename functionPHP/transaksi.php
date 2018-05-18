@@ -18,24 +18,44 @@
         case 12 : actionPengembalian($_POST['id'],$callFunction);break;
         case 13 : actionPengembalian($_POST['id'],$callFunction);break;
         case 14 : truncate(2);break;
-        case 15 : echo "coba";break;
+        case 15 : insert1($_POST['idMember'],$_POST['idTransaksi'],$_SESSION['id']);break;
     }
 
-    function insert1($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
-        //$total = total(2);
-        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total);";
-        $sql .= "INSERT INTO detailtransaksi SELECT * FROM dummydetailtransaksi;";
-        $sql .= "TRUNCATE table dummydetailtransaksi;";
+    function insert1($idMember,$idTransaksi,$idKaryaawan){
+        $total = total1(2);
+        $sql = "INSERT INTO pengembalian (idTransaksi,tanggalTransaksi,idMember,idKaryawan,totalDenda) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total);";
+        $sql .= "INSERT INTO detailpengembalian SELECT * FROM dummydetailpengembalian;";
+        $sql .= "TRUNCATE table dummydetailpengembalian;";
 
         global $conn;
         if ($conn->multi_query($sql) === TRUE) {
             echo "berhasil";
         } 
         else {
-            echo "gagal";
+            echo $sql;
         }
         $conn->close();
     }
+
+    function total1($cek){
+        include "curency.php";
+        global $conn;
+        $sql = "SELECT harga FROM dummydetailpengembalian";
+        $tamp = 0;
+        if($result = $conn->query($sql)){
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+                    $tamp += $row['denda'];
+                }
+            }
+        }
+        if($cek==1)
+            echo toRp($tamp);
+        else
+            return $tamp; 
+            $conn->close();
+    }
+
 
 
 
