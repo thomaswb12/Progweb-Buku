@@ -145,15 +145,19 @@ function load(){
 function actionPengembalian(temp,status){
     if(status==1){//untuk hapus  
       var no=12;
-      var data = temp.children("td:nth-of-type(2)").text();
+      var data = {
+          'idTransaksi':temp.children("td:nth-of-type(2)").text(),
+          'id':temp.children("td:nth-of-type(3)").text()
+      };
     }
     else{//untuk tambah
         var no = 13;
         var data = {
-            'id':temp.children("td:nth-of-type(2)").text(),
-            'tglPinjam':temp.children("td:nth-of-type(4)").text(),
-            'tglKembali':temp.children("td:nth-of-type(5)").text(),
-            'denda':temp.children("td:nth-of-type(7)").text(),
+            'idTransaksi':temp.children("td:nth-of-type(2)").text(),
+            'id':temp.children("td:nth-of-type(3)").text(),
+            'tglPinjam':temp.children("td:nth-of-type(5)").text(),
+            'tglKembali':temp.children("td:nth-of-type(6)").text(),
+            'denda':temp.children("td:nth-of-type(8)").text(),
             'idTrans':$('#idTransaksiPengembalian').val()
         };
     }
@@ -263,7 +267,7 @@ function transaksi($temp=1){
                                 load();
                             }
                             else{
-                                alert("Transaksi gagal");
+                                alert(response);
                             }
                         };
                     }
@@ -292,14 +296,23 @@ function transaksi($temp=1){
                     $function = function (response) {};
                     break;
         case 15 :   if($('#namaMember').val()!="" && $('#idTransaksiPengembalian').val!=""){
-                        $data = {'function':15};
-                        $function = function (response) {alert(response)};  
+                        $data = {'function':15,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksiPengembalian").val()};
+                        $function = function (response) {
+                            if(response == "berhasil"){
+                                $('#inputID').val("");
+                                transaksi(11);
+                                $('#namaMember').val("");
+                                transaksi(10);
+                            }
+                            else{
+                                alert(response);
+                            }
+                        };
                     }
                     else{
                         alert("Data tidak valid");
                         pass=0;
                     }
-                    
                     break;
         default:
                     break;

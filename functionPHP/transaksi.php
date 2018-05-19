@@ -18,24 +18,44 @@
         case 12 : actionPengembalian($_POST['id'],$callFunction);break;
         case 13 : actionPengembalian($_POST['id'],$callFunction);break;
         case 14 : truncate(2);break;
-        case 15 : echo "coba";break;
+        case 15 : insert1($_POST['idMember'],$_POST['idTransaksi'],$_SESSION['id']);break;
     }
 
-    function insert1($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
-        //$total = total(2);
-        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total);";
-        $sql .= "INSERT INTO detailtransaksi SELECT * FROM dummydetailtransaksi;";
-        $sql .= "TRUNCATE table dummydetailtransaksi;";
+    function insert1($idMember,$idTransaksi,$idKaryaawan){
+        $total = total1(2);
+        $sql = "INSERT INTO pengembalian (idTransaksi,tanggalTransaksi,idMember,idKaryawan,totalDenda) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total);";
+        $sql .= "INSERT INTO detailpengembalian SELECT * FROM dummydetailpengembalian;";
+        $sql .= "TRUNCATE table dummydetailpengembalian;";
 
         global $conn;
         if ($conn->multi_query($sql) === TRUE) {
             echo "berhasil";
         } 
         else {
-            echo "gagal";
+            echo $sql;
         }
         $conn->close();
     }
+
+    function total1($cek){
+        include "curency.php";
+        global $conn;
+        $sql = "SELECT harga FROM dummydetailpengembalian";
+        $tamp = 0;
+        if($result = $conn->query($sql)){
+            if($result->num_rows>0){
+                while($row = $result->fetch_assoc()){
+                    $tamp += $row['denda'];
+                }
+            }
+        }
+        if($cek==1)
+            echo toRp($tamp);
+        else
+            return $tamp; 
+            $conn->close();
+    }
+
 
 
 
@@ -48,10 +68,13 @@
             $tglKembali = $data['tglKembali'];
             $denda = $data['denda'];
             $idTrans = $data['idTrans'];
-            $sql = "INSERT INTO `dummydetailpengembalian` (`idEksBuku`, `denda`, `tanggalPinjam`, `tanggalAturanKembali`, tanggalKembali,`idTransaksi`) VALUES ('$id',".toNumber($denda).",'".toTanggal($tglPinjam)."','".toTanggal($tglKembali)."',CURRENT_DATE(),'$idTrans')";
+            $idTransaksi = $data['idTransaksi'];
+            $sql = "INSERT INTO `dummydetailpengembalian` (idTransaksiPeminjaman,`idEksBuku`, `denda`, `tanggalPinjam`, `tanggalAturanKembali`, tanggalKembali,`idTransaksi`) VALUES ('$idTransaksi','$id',".toNumber($denda).",'".toTanggal($tglPinjam)."','".toTanggal($tglKembali)."',CURRENT_DATE(),'$idTrans')";
         }
         else{
-            $sql = "DELETE FROM dummydetailpengembalian WHERE idEksBuku='$data'";
+            $id = $data['id'];
+            $idTransaksi = $data['idTransaksi'];
+            $sql = "DELETE FROM dummydetailpengembalian WHERE idEksBuku='$id' and idTransaksiPeminjaman='$idTransaksi'";
         }
         if ($conn->query($sql) === TRUE) {
             echo "Record deleted successfully";
@@ -71,6 +94,7 @@
                 while($row = $result->fetch_assoc()){
                     echo '<tr onclick="pencetTRPengembalian($(this))">
                             <td class="tandaTable"><i class="fas fa-check" style="color:grey"></i></td>
+                            <td class="idTransaksiPeminjaman ganti">'.$row['idTransaksi'].'</td>
                             <td class="idBuku ganti">'.$row['idEksBuku'].'</td>
                             <td class="judulBuku ganti">'.$row['judulBuku'].'</td>
                             <td class="tanggalPinjam ganti">'.tanggal($row['tanggalPinjam']).' </td>
