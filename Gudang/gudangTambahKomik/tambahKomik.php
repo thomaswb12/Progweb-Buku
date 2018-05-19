@@ -12,29 +12,29 @@
         <label>Genre</label><br/>
         <select id="genre" name="genre">
             <option value="" selected disabled hidden>Choose here</option>
-            <option>Action</option>
-            <option>Romance</option>
-            <option>Fantasi</option>
-            <option>Comedy</option>
-            <option>Thriller</option>
-            <option>Horor</option>
-            <option>Sci-fi</option>
+            <option value="1">Action</option>
+            <option value="2">Romance</option>
+            <option value="3">Fantasi</option>
+            <option value="4">Comedy</option>
+            <option value="5">Thriller</option>
+            <option value="6">Horor</option>
+            <option value="7">Sci-fi</option>
         </select><br/>
 
         <label>Rating</label><br/>
         <select id="rating" name="rating">
             <option value="" selected disabled hidden>Choose here</option>
-            <option>Anak-anak</option>
-            <option>Remaja</option>
-            <option>Dewasa</option>
-            <option>Semua Umur</option>
+            <option value="1">Anak-anak</option>
+            <option value="2">Remaja</option>
+            <option value="3">Dewasa</option>
+            <option value="4">Semua Umur</option>
         </select><br/>
 
         <label>Special Edition</label><br/>
         <select id="special" name="special">
             <option value="" selected disabled hidden>Choose here</option>
-            <option>Ya</option>
-            <option>Tidak</option>
+            <option value="1">Ya</option>
+            <option value="2">Tidak</option>
         </select><br/>
 
         <label>Gambar</label><br/>
@@ -63,8 +63,8 @@
         <label>Jenis Cover</label><br/>
         <select id="jenisCover" name="jenisCover">
             <option value="" selected disabled hidden>Choose here</option>
-            <option>Soft</option>
-            <option>Hard</option>
+            <option value="1">Soft</option>
+            <option value="2">Hard</option>
         </select><br/>
 
         <label>Panjang</label><br/>
@@ -104,6 +104,15 @@
         ?>
         <script type="text/javascript">
             alert("Komik berhasil ditambahkan :)");
+        </script>
+        <?php
+    }
+
+    if(isset($_SESSION["penerbit"])){
+        unset($_SESSION["penerbit"]);
+        ?>
+        <script type="text/javascript">
+            alert("Penerbit tidak ada!");
         </script>
         <?php
     }
