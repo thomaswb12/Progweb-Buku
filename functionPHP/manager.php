@@ -100,4 +100,67 @@
             echo "gagal";
         }
     }
+
+    //fungsi untuk mengambil laporan keuangan (default --> 1 bulan (15 hari sebelum hari ini smp 15 hari stlah hari ini))
+    function getAllKeuangan(){
+        global $conn;
+        $data=array();
+
+        //dari awal smpai akhir --> 1 bulan
+        $awal=date('Y-m-d H:i:s', strtotime('-15 days'));
+        $akhir=date('Y-m-d H:i:s', strtotime('+15 days'));
+
+        //ambil data dari transaksi peminjaman -->masukkan ke array $data[]
+        $sql="SELECT transaksi.tanggalTransaksi, transaksi.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, detailtransaksi.harga, detailtransaksi.denda, detailtransaksi.harga+detailtransaksi.denda AS total FROM transaksi, member, karyawan, eksbuku, detailtransaksi WHERE transaksi.idMember=member.id AND transaksi.idKaryawan=karyawan.idKaryawan AND transaksi.idTransaksi=detailtransaksi.idTransaksi AND detailtransaksi.idEksBuku=eksbuku.idEksBuku AND transaksi.tanggalTransaksi between '$awal 00:00:00' and '$akhir 23:59:00'";
+        $result=mysqli_query($conn,$sql);
+        if($result = $conn->query($sql)){
+            while($rows = $result->fetch_assoc()){
+                $data[]=$rows;
+            }
+        }
+        //ambil data dari transaksi pengembalian -->masukkan ke array $data[]
+        $sql="SELECT pengembalian.tanggalTransaksi, pengembalian.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, 0 as harga, detailpengembalian.denda, detailpengembalian.denda AS total FROM pengembalian, member, karyawan, eksbuku, detailpengembalian WHERE pengembalian.idMember=member.id AND pengembalian.idKaryawan=karyawan.idKaryawan AND pengembalian.idTransaksi=detailpengembalian.idTransaksi AND detailpengembalian.idEksBuku=eksbuku.idEksBuku AND pengembalian.tanggalTransaksi between '$awal 00:00:00' and '$akhir 23:59:00'";
+        $result=mysqli_query($conn,$sql);
+        while($rows = $result->fetch_assoc()){
+            $data[]=$rows;
+        }
+        //urutkan berdasar tanggal transaksi
+        function date_compare($a, $b){
+            $t1 = strtotime($a['tanggalTransaksi']);
+            $t2 = strtotime($b['tanggalTransaksi']);
+            return $t1 - $t2;
+        }    
+        usort($data, 'date_compare');
+        $conn->close();
+        return $data;
+    }
+
+    //fungsi untuk mengambil laporan keuangan dengan periode tertentu
+    function getAllKeuanganWith($awal, $akhir){
+        global $conn;
+        $data=array();
+        //ambil data dari transaksi peminjaman -->masukkan ke array $data[]
+        $sql="SELECT transaksi.tanggalTransaksi, transaksi.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, detailtransaksi.harga, detailtransaksi.denda, detailtransaksi.harga+detailtransaksi.denda AS total FROM transaksi, member, karyawan, eksbuku, detailtransaksi WHERE transaksi.idMember=member.id AND transaksi.idKaryawan=karyawan.idKaryawan AND transaksi.idTransaksi=detailtransaksi.idTransaksi AND detailtransaksi.idEksBuku=eksbuku.idEksBuku AND transaksi.tanggalTransaksi between '$awal 00:00:00' and '$akhir 23:59:00' ";
+        $result=mysqli_query($conn,$sql);
+        if($result = $conn->query($sql)){
+            while($rows = $result->fetch_assoc()){
+                $data[]=$rows;
+            }
+        }
+        //ambil data dari transaksi pengembalian -->masukkan ke array $data[]
+        $sql="SELECT pengembalian.tanggalTransaksi, pengembalian.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, 0 as harga, detailpengembalian.denda, detailpengembalian.denda AS total FROM pengembalian, member, karyawan, eksbuku, detailpengembalian WHERE pengembalian.idMember=member.id AND pengembalian.idKaryawan=karyawan.idKaryawan AND pengembalian.idTransaksi=detailpengembalian.idTransaksi AND detailpengembalian.idEksBuku=eksbuku.idEksBuku AND pengembalian.tanggalTransaksi between '$awal 00:00:00' and '$akhir 23:59:00'";
+        $result=mysqli_query($conn,$sql);
+        while($rows = $result->fetch_assoc()){
+            $data[]=$rows;
+        }
+        //urutkan berdasar tanggal transaksi
+        function date_compare($a, $b){
+            $t1 = strtotime($a['tanggalTransaksi']);
+            $t2 = strtotime($b['tanggalTransaksi']);
+            return $t1 - $t2;
+        }    
+        usort($data, 'date_compare');
+        $conn->close();
+        return $data;
+    }
 ?>
