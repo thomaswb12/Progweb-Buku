@@ -19,6 +19,39 @@
         case 13 : actionPengembalian($_POST['id'],$callFunction);break;
         case 14 : truncate(2);break;
         case 15 : insert1($_POST['idMember'],$_POST['idTransaksi'],$_SESSION['id']);break;
+        case 16 : diskon($_POST['data'],1,$_POST['total']);break;
+    }
+
+    function diskon($data,$cek,$total){
+        include "curency.php";
+        $sql = "SELECT birtday FROM member where id = '$data'";
+        global $conn;
+        $tamp = 0;
+        if($result = $conn->query($sql)){
+            if($result->num_rows == 1){
+                while($row = $result->fetch_assoc()){
+                    if(date("Y-m-d")==$row['birtday']){
+                        $tamp = (toNumber($total)*0.1);
+                        //echo $row['birtday'];
+                    } 
+                }
+            }
+        }
+        if($cek==1){
+            //echo $row['birtday'];
+            $returnObject = array(
+                'diskon'=>toRp($tamp),
+                'total'=>toRp(toNumber($total)-$tamp)
+            );
+        
+            $JSON_Object = json_encode($returnObject);
+            echo $JSON_Object;
+            $conn->close();
+        }
+        else{
+            $conn->close();
+            return $tamp;
+        }
     }
 
     function insert1($idMember,$idTransaksi,$idKaryaawan){
@@ -49,11 +82,14 @@
                 }
             }
         }
-        if($cek==1)
+        if($cek==1){
             echo toRp($tamp);
-        else
-            return $tamp; 
             $conn->close();
+        }
+        else{
+            $conn->close();
+            return $tamp; 
+        }
     }
 
 
@@ -123,16 +159,20 @@
                 }
             }
         }
-        if($cek==1)
+        if($cek==1){
             echo toRp($tamp);
-        else
-            return $tamp; 
             $conn->close();
+        }
+        else{
+            $conn->close();
+            return $tamp; 
+        }
     }
 
     function insert($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
         $total = total(2);
-        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total);";
+        $diskon = diskon($idMember,2);
+        $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,subTotal,diskon,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total,$diskon,($total-$diskon));";
         $sql .= "INSERT INTO detailtransaksi SELECT * FROM dummydetailtransaksi;";
         $sql .= "TRUNCATE table dummydetailtransaksi;";
 

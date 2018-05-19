@@ -99,6 +99,22 @@ function pencetTRPengembalian(temp){
     }
 }
 
+function cekDiskon(){
+    if($('#namaMember').val()!=""){
+        $.ajax({
+            type : 'post',
+            data : {'function':16,'data':$('#inputID').val(),'total':$('#subtotal').text()},
+            url: '../functionPHP/transaksi.php',
+            success: function(response){
+                var b = JSON.parse(response);
+                //alert(response[0].);
+                $('#diskon').text(b.diskon);
+                $('#total').text(b.total);
+            }
+        });
+    }
+}
+
 function pencetTR(temp){
     var idMember = temp.children("td:nth-of-type(2)").html();
     var namaMember = temp.children("td:nth-of-type(3)").html();
@@ -189,7 +205,10 @@ function total(){
         url: '../functionPHP/transaksi.php',
         success: function(response){
             //alert(response);
-            $('#total').text(response);
+            $('#subtotal').text(response);
+            if($('#inputID').val()!="" && $('#namaMember').val()!=""){
+                cekDiskon();
+            }
         }
     });
 }
