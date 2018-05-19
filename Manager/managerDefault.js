@@ -57,6 +57,7 @@ function aside3(){
     $("div#konten").load("managerLaporanKeuangan/kontenManagerLaporanKeuangan.php");
     $("div#gantiHead").load("managerLaporanKeuangan/headManagerLaporanKeuangan.php");
     $.session.set('page','3');
+    searchDaftarLaporanKeuangan();
 }
 
 
@@ -112,4 +113,17 @@ function tampilPopupDetailPeminjaman(temp){
 function pencetBlur(){
     $("#popup").css('display','none');
     $("#blur").css('display','none');
+}
+
+function searchDaftarLaporanKeuangan(){
+    $('#periodeAwal').val() !="" ? $awal = $('#periodeAwal').val(): $awal ="";
+    $('#periodeAkhir').val() !="" ? $akhir = $('#periodeAkhir').val(): $akhir ="";
+    $.ajax({
+        type : 'post',
+        data : {'awal':$awal,'akhir':$akhir},
+        url: '../functionPHP/isiKontenDaftarLaporanKeuangan.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            $("tbody").html(response);
+        }
+    })
 }

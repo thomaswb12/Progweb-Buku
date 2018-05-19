@@ -39,10 +39,10 @@ td{
     white-space: nowrap; /*supaya tidak di-newline*/
 }
 .idTransaksi{
-    width: 15%;
+    width: 10%;
 }
 .tanggalTransaksi{
-    width: 10%;
+    width: 20%;
 }
 .idMember{
     width: 10%;
@@ -51,7 +51,7 @@ td{
     width: 10%;
 }
 .idiBuku{
-    width: 20%;
+    width: 15%;
 }
 .harga{
     width: 10%;
