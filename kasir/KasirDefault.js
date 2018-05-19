@@ -274,7 +274,7 @@ function transaksi($temp=1){
                     }
                     break;
         case 8  :   if($('#namaMember').val() != ""){
-                        $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val()};
+                        $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val(),'subtotal':$('#subtotal').text()};
                         $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                             if(response == "berhasil"){
                                 alert("Transaksi berhasil");

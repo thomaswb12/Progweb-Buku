@@ -11,7 +11,7 @@
         case 5 : buatTabel();break;
         case 6 : truncate(1);break;
         case 7 : hapus($_POST['id']);break;
-        case 8 : insert($_POST['idMember'],$_POST['idEksBuku'],$_POST['idTransaksi'],$_SESSION['id']);break;
+        case 8 : insert($_POST['idMember'],$_POST['idEksBuku'],$_POST['idTransaksi'],$_SESSION['id'],$_POST['subtotal']);break;
         case 9 : total(1);break;
         case 10 : echo buatIdTransaksi(2); break;
         case 11 : buatTabelPengembalian($_POST['idMember']); break;
@@ -169,9 +169,9 @@
         }
     }
 
-    function insert($idMember,$idEksBuku,$idTransaksi,$idKaryaawan){
+    function insert($idMember,$idEksBuku,$idTransaksi,$idKaryaawan,$subtotal){
         $total = total(2);
-        $diskon = diskon($idMember,2);
+        $diskon = diskon($idMember,2,$subtotal);
         $sql = "INSERT INTO transaksi (idTransaksi,tanggalTransaksi,idMember,idKaryawan,subTotal,diskon,total) values ('$idTransaksi', now(),'$idMember','$idKaryaawan',$total,$diskon,($total-$diskon));";
         $sql .= "INSERT INTO detailtransaksi SELECT * FROM dummydetailtransaksi;";
         $sql .= "TRUNCATE table dummydetailtransaksi;";
