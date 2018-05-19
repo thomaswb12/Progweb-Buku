@@ -20,7 +20,7 @@
         if($value['specialEdition']=="Ya"){
             $special='specialEdition';
         }
-        if($value['Dipinjam']>2500){
+        if($value['Dipinjam']>200){
             $favorit='favorit';
         }
         echo   '<div class="infoKomik '.$favorit.' '.$special.'" onclick="munculPopup('."'".$value['idBuku']."'".')">';

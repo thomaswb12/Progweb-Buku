@@ -11,7 +11,7 @@
         $hasil = getAllPeminjaman();
      }
     foreach($hasil as $pinjam){
-        $tanggalPinjam = tanggal($pinjam['tanggalPinjam']);
+        $tanggalPinjam = tanggal($pinjam['tanggalAturanKembali']);
         echo    '<tr onclick="tampilPopupDetailPeminjaman($(this))">
                     <td>'.$tanggalPinjam.'</td>
                     <td>'.$pinjam['id'].'</td>
