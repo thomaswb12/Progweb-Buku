@@ -16,6 +16,21 @@
         echo is_array($tamp);
     }
     
+    ?>
+    <script>
+        var isi="";
+        function fokus(coba){
+            isi=coba.val();
+        }
+        function ceknumeric(coba){
+            if(!$.isNumeric(coba.val())){
+                coba.val(isi);
+                alert("Input harus berupa angka");
+            }
+        }
+    </script>
+    <?php
+
     function loadDetail($data){
         global $conn;
         $sql = "SELECT * FROM karyawan, jabatankaryawan where karyawan.idJabatan = jabatankaryawan.idJabatan and karyawan.idKaryawan = '$data';";
@@ -47,7 +62,7 @@
                                     <input type="email" id="email" value="'.$row['email'].'"/>
                                     <br/><br/><br/>
                                     <label>No. Telp</label>
-                                    <input type="text" id="telepon" value="'.$row['noTelp'].'">
+                                    <input type="text" id="telepon" value="'.$row['noTelp'].'" oninput="ceknumeric($(this))" onfocus="fokus($(this))">
                                     <br/><br/><br/>
                                     <div id="divAl"><label>Alamat</label></div>
                                     <textarea id="alamat" name="alamat">'.$row['Alamat'].'</textarea>
