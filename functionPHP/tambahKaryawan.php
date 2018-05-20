@@ -21,6 +21,7 @@
         if($pass1!=$pass2){
             $_SESSION["beda"]=1;
         }
+
         //kalau data belum lengkap
         if($idKaryawan==""||$namaKaryawan==""||$jabatan==""||$email==""||$telepon==""||$alamat==""||$pass1==""||$pass2==""){
             $_SESSION["belumLengkap"]=1;

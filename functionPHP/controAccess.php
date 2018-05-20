@@ -17,6 +17,9 @@
                 $_SESSION['pass'] = $_POST['password'];
                 require("getIdentitas.php");
                 switch ($_SESSION['idJabatan']){
+                    case "ADMN" :   $_SESSION['id'] = $_POST['id'];
+                                    $_SESSION['control'] = 0;
+                                    header("location:../HRD/HRDDefault.php");break;
                     case "KSRR" :   $_SESSION['id'] = $_POST['id'];
                                     $_SESSION['control'] = 2;
                                     header("location:../kasir/KasirDefault.php");break;
