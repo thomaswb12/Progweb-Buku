@@ -223,3 +223,14 @@ function pilihJabatan($data){
         }
     });
 }
+
+function isiIdJabatan($data){
+    $.ajax({
+        type : 'post',
+        data : {'function':7,'data':$data},
+        url: '../functionPHP/HRD.php',
+        success: function(response){
+            $('#idKaryawan').val(response);
+        }
+    });
+}

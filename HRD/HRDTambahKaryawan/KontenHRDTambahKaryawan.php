@@ -1,7 +1,4 @@
-<?php
-
-    echo '<h1>Tambah Karyawan</h1>
-            
+<h1>Tambah Karyawan</h1>            
     <div id="dataKaryawan" class="font15">
          <div class="detailKaryawan">
             <div class="kiri">
@@ -13,9 +10,16 @@
                     <input type="text" id="namaKaryawan" name="namaKaryawan"/>
                     <br/><br/>
                     <label>Jabatan</label>
-                    <select id="selectJabatan" class="font15">
-                        <option>Kasir</option>
-                        <option>Gudang</option>
+                    <select id="selectJabatan" class="font15" onchange="isiIdJabatan(this.value)">
+                        <option value=-1>---Jabatan---</option>
+                        <?php
+                            include "../../functionPHP/koneksi.php";
+                            $q="SELECT * FROM jabatankaryawan";
+                            $result=mysqli_query($conn,$q);
+                            while($row=mysqli_fetch_assoc($result)){
+                                echo "<option value=".$row['idJabatan'].">".$row['namaJabatan']."</option>";
+                            }
+                        ?>
                     </select>
                     <br/><br/>
                     <label>Email</label>
@@ -44,5 +48,4 @@
                 <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="aside2()"/>
             </div>
         </div>
-    </div>';
-?>
+    </div>
