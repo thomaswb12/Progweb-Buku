@@ -437,3 +437,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin-left: 10%;
     }
 }
+
+.klik,#tombolClose,#blur,.infoKomik,select,input,option:hover{
+    cursor: pointer;
+}
