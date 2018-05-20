@@ -295,6 +295,10 @@ article div#konten input#tombol{
 article div#konten input#tombol:hover{
     background-color: gray;
 }
+.disable{
+    background-color: grey !important;
+    color: white !important;
+}
 /*------------------------bagian input---------------------*/
 
 /*----------tombol utk up ke atas----------*/
@@ -432,4 +436,8 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         clear: both;
         margin-left: 10%;
     }
+}
+
+.klik,#tombolClose,#blur,.infoKomik,select,input,option:hover{
+    cursor: pointer;
 }

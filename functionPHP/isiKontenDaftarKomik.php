@@ -24,10 +24,7 @@
             $favorit=' favorit';
         }
         echo '<div class="info'.$favorit.$special.'" onclick="munculPopup('."'".$value['idBuku']."'".')">';
-            if($_POST['status']==1) 
-                echo '<img class="foto" src="../'.$value['Location'].'"/>';
-            else echo '<img class="foto" src="'.$value['Location'].'"/>';
-        //echo '<img class="foto" src="miiko19.jpg"/>';
+        echo '<img class="foto" src="'.$value['Location'].'"/>';
         echo '<div id="edit" onclick="edit()">
                 <div class="text">Edit</div>
             </div>
