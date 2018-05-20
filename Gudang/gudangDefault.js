@@ -82,10 +82,6 @@ $(window).resize(function(){
     }  
 });
 
-function edit(){
-    $("div#konten").load("gudangEditKomik/editKomik.php");
-    $("div#gantiHead").load("gudangEditKomik/headEditKomik.html");
-}
 function view(){
     $("#asideDetail").addClass('terpilih');
     $("#dropdown").show();
@@ -293,6 +289,31 @@ function pencetBlur(){
     $("#blur").css('display','none');
 }
 
-function getIdEks(){
+function edit($idKomik){
+    //$("div#konten").load("gudangEditKomik/editKomik.php");
+    $("div#gantiHead").load("gudangEditKomik/headEditKomik.html");
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
+    $dari = $('#selectSearchBy').val();
+    $sorting = $('#selectSortBy').val();
+    $.ajax({
+        type : 'post',
+        data : {'idKomik':$idKomik},
+        url: '../functionPHP/editKomik1.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#konten").html(response);
+        }
+    });
+}
 
+function deleteKomik($idKomik){
+    $.ajax({
+        type : 'post',
+        data : {'idKomik':$idKomik},
+        url: '../functionPHP/deleteKomik.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#konten").html(response);
+        }
+    });
 }
