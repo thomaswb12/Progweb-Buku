@@ -32,9 +32,8 @@
             <article>
                 <div id="judul">
                     <h1>Daftar Komik</h1>
-
                     <div id="simple">
-                        <a href="" onclick="advanced()">Advanced Search</a>
+                        <a href="#" onclick="advanced()" >Advanced Search</a>
                         <a>|</a>
                         <a>Simple Search</a>
                         <div id="sorting">
@@ -62,10 +61,10 @@
                         </div>
                     </div>
                     
-                    <div id="advanced">
+                    <div id="advanced" style="display:none">
                         <a>Advanced Search</a>
                         <a>|</a>
-                        <a href="" onclick="simple()">Simple Search</a><br><br>
+                        <a href="#" onclick="simple()" >Simple Search</a><br><br>
                         <label>Judul</label>
                         <input type="text" id="jdl"></input><br><br>
                         <label>Penulis</label>
