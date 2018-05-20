@@ -3,7 +3,6 @@
 <head>
     <?php 
         session_start();
-        $_SESSION['id']="admin";
         $_SESSION['control']=0;
     ?>
     <meta charset="UTF-8">
