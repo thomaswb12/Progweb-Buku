@@ -4,9 +4,6 @@ $(document).ready(function(){
         backToTop();
     });
 
-    //------ menandai option aside yg sedang terpilih ----
-    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
-
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
