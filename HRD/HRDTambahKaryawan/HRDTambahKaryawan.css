@@ -1,3 +1,7 @@
+.disable{
+    background-color: grey !important;
+    color: white !important;
+}
 /*------------------------bagian artikel---------------------*/
 article{ /*article adlah semua yang ada dibawah header*/
     height: 80%;

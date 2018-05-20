@@ -1,11 +1,18 @@
-<h1>Tambah Karyawan</h1>            
+<?php
+    session_start();
+?>
+
+<h1>Tambah Karyawan</h1> 
     <div id="dataKaryawan" class="font15">
          <div class="detailKaryawan">
+            <form action="../functionPHP/tambahKaryawan.php" method="post">
             <div class="kiri">
                 <div id="inputan">
                     <label>ID</label>
+                  
                     <input type="text" id="idKaryawanDis" name="idKaryawanDis" class="disable" disabled/>
                     <input type="text" id="idKaryawan" name="idKaryawan" val="" style="display:none;"/>
+
                     <br/><br/>
                     <label>Nama</label>
                     <input type="text" id="namaKaryawan" name="namaKaryawan"/>
@@ -21,6 +28,7 @@
                                 echo "<option value=".$row['idJabatan'].">".$row['namaJabatan']."</option>";
                             }
                         ?>
+
                     </select>
                     <br/><br/>
                     <label>Email</label>
@@ -46,7 +54,40 @@
                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
                 <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>
                 <!-- tombol save -->
-                <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="aside2()"/>
+                <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
             </div>
+            </form>
         </div>
     </div>
+
+<?php
+    //kalau data yang diisi belum lengkap
+    if(isset($_SESSION["belumLengkap"])){
+        unset($_SESSION["belumLengkap"]);
+        ?>
+        <script type="text/javascript">
+            alert("Gagal diedit: Data tidak lengkap!");
+        </script>
+        <?php
+    }
+
+    //berhasil diubah
+    if(isset($_SESSION["berhasil"])){
+        unset($_SESSION["berhasil"]);
+        ?>
+        <script type="text/javascript">
+            alert("Berhasil diedit :)");
+        </script>
+        <?php
+    }
+
+    //tidak ada data yang berubah
+    if(isset($_SESSION["tidakBerubah"])){
+        unset($_SESSION["tidakBerubah"]);
+        ?>
+        <script type="text/javascript">
+            alert("Tidak ada data yang berubah");
+        </script>
+        <?php
+    }
+?>

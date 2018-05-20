@@ -71,7 +71,9 @@
                         <label>Penulis</label>
                         <input type="text" id="pnl"></input><br><br>
                         <label>Penerbit</label>
-                        <input type="text" id="pnb"></input><br>
+                        <input type="text" id="pnb"></input><br><br>
+                        <label>Genre</label>
+                        <input type="text" id="gnr"></input><br>
                         <input type="submit" id="submit" value="SEARCH"></input>
                     </div>
                 </div>
