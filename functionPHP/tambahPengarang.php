@@ -6,8 +6,11 @@
     if(!empty($_POST["tombolOk"])){
         $id=getLastIdPengarang();  //adalah fungsi yang ada di member.php
         //masukkan ke variabel
-        $nama=$_POST["namaPengarang"];
-        if($nama==""){
+        $nama = $_POST["namaPengarang"];
+        $asal = $_POST["asal"];
+        $foto = "../images/pengarang/".$_FILES['gambar']['name'];
+        move_uploaded_file($_FILES['gambar']['tmp_name'], $foto);
+        if($nama == "" || $asal == ""){
             $_SESSION["belumLengkap"]=1;
         }
         //kalau data sudah lengkap
@@ -22,7 +25,7 @@
             }
             //kalau belum ada di DB -> tambahkan ke DB
             else{
-                $query="INSERT INTO `penulis` (`idPenulis`, `namaPenulis`) VALUES ('$id', '$nama');";
+                $query="INSERT INTO `penulis` (`idPenulis`, `namaPenulis`, `asal`, `foto`) VALUES ('$id', '$nama', '$asal', '$foto');";
                 $result=mysqli_query($conn,$query);
                 $_SESSION["berhasil"]=1;
             }

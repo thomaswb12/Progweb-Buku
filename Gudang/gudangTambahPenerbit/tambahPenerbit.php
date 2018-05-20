@@ -10,7 +10,7 @@
 <div id="judul">
     <h1>Tambah Penerbit</h1>
 </div>
-<form method="POST" action="../functionPHP/tambahPenerbit.php">
+<form method="POST" action="../functionPHP/tambahPenerbit.php" enctype="multipart/form-data">
     <div id="kiri">
         <label>Gambar</label><br/>
         <input type="file" id="gambar" name="gambar"/><br/>
@@ -27,10 +27,10 @@
 
     <div id="kanan">
         <label>No. Telp</label><br/>
-        <input type="text" id="noTelp" name="noTelp"/><br/>
+        <input type="text" id="noTelp" name="noTelp"/><br/> 
 
         <label>Alamat</label><br/>
-        <textarea type="text" id="alamt" name="alamat"></textarea><br/>
+        <textarea type="text" id="alamat" name="alamat"></textarea><br/>
     </div>
     <input type="submit" id="tombol" name="tombolOk" value="SAVE">
     <input type="button" id="tombol" name="tombol" value="CANCEL">

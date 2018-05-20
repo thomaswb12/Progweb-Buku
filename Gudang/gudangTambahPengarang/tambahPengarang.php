@@ -10,7 +10,7 @@
 <div id="judul">
     <h1>Tambah Pengarang</h1>
 </div>
-<form method="POST" action="../functionPHP/tambahPengarang.php">
+<form method="POST" action="../functionPHP/tambahPengarang.php" enctype="multipart/form-data">
     <div id="kiri">
         <label>Gambar</label><br/>
         <input type="file" id="gambar" name="gambar"/><br/>
