@@ -16,6 +16,7 @@
         $panjang = $_POST['panjang'];
         $lebar = $_POST['lebar'];
         $foto = "../images/buku/".$_FILES['gambar']['name'];
+        $location = "images/buku/".$_FILES['gambar']['name'];
         move_uploaded_file($_FILES['gambar']['tmp_name'], $foto);
         switch ($_POST['genre']) {
             case 1: $genre = 'Action';break;
@@ -74,7 +75,7 @@
                 $idRak = "CC000001";
                 $satu = 1;
                 $nol = 0;
-                $query="INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`,`Dipinjam`,`idPenerbit`,`idPenulis`,`Rating`,`idRak`,`jumlahEksemplar`,`Location`,`Available`,`specialEdition`) VALUES ('$id', '$judul', '$tgl', '$jml', '$berat', '$jenisCover', '$sinopsis', '$panjang', '$lebar', '$nol', '$idPenerbit', '$idPengarang', '$rating', '$idRak', '$satu', '$foto', '1', '$specialEdition');";
+                $query="INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`,`Dipinjam`,`idPenerbit`,`idPenulis`,`Rating`,`idRak`,`jumlahEksemplar`,`Location`,`Available`,`specialEdition`) VALUES ('$id', '$judul', '$tgl', '$jml', '$berat', '$jenisCover', '$sinopsis', '$panjang', '$lebar', '$nol', '$idPenerbit', '$idPengarang', '$rating', '$idRak', '$satu', '$location', '1', '$specialEdition');";
                 $result=mysqli_query($conn,$query);
                 $_SESSION["berhasil"]=1;
                 //echo $query;

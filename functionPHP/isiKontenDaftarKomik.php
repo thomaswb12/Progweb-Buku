@@ -24,13 +24,7 @@
             $favorit=' favorit';
         }
         echo '<div class="info'.$favorit.$special.'" onclick="munculPopup('."'".$value['idBuku']."'".')">';
-        echo '<img class="foto" src="'.$value['Location'].'"/>';
-        echo '<div id="edit" onclick="edit()">
-                <div class="text">Edit</div>
-            </div>
-            <div id="view" onclick="view()">
-                <div class="text">View</div>
-            </div>';
+        echo '<img class="foto" src="../'.$value['Location'].'"/>';
         echo '<h4 class="judul">'.$value['judulBuku'].'</h4>
                 <p>Stok : <span class="stok">'.$value['jumlahEksemplar'].'</span></p>
                 <p>Tersedia : <span class="tersedia">'.$value['jumlahEksemplar'].'</span></p>
