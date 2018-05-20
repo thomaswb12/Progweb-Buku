@@ -61,12 +61,22 @@
     </div>
 
 <?php
+    //kalau pass beda
+    iif(isset($_SESSION["beda"])){
+        unset($_SESSION["beda"]);
+        ?>
+        <script type="text/javascript">
+            alert("Gagal: Password berbeda!");
+        </script>
+        <?php
+    }
+
     //kalau data yang diisi belum lengkap
     if(isset($_SESSION["belumLengkap"])){
         unset($_SESSION["belumLengkap"]);
         ?>
         <script type="text/javascript">
-            alert("Gagal diedit: Data tidak lengkap!");
+            alert("Gagal: Data tidak lengkap!");
         </script>
         <?php
     }
@@ -76,18 +86,8 @@
         unset($_SESSION["berhasil"]);
         ?>
         <script type="text/javascript">
-            alert("Berhasil diedit :)");
+            alert("Berhasil ditambahkan!)");
         </script>
         <?php
-    }
-
-    //tidak ada data yang berubah
-    if(isset($_SESSION["tidakBerubah"])){
-        unset($_SESSION["tidakBerubah"]);
-        ?>
-        <script type="text/javascript">
-            alert("Tidak ada data yang berubah");
-        </script>
-        <?php
-    }
+    
 ?>
