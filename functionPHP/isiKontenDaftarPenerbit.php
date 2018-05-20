@@ -12,9 +12,6 @@
         echo '<img class="foto" src="'.$penerbit['foto'].'"/>';
         echo '<p class="ID">ID : '.$penerbit['idPenerbit'].'</p>
                 <p class="Penerbit">Penerbit : '.$penerbit['NamaPenerbit'].'</p>
-                <p class="noTelp">No. Telp : '.$penerbit['noTelp'].'</p>
-                <p class="email">Email : '.$penerbit['email'].'</p>
-                <p class="alamat">Alamat : '.$penerbit['alamat'].'</p>
              </div>';
         $i++;                    
     }

@@ -49,6 +49,7 @@ $(document).ready(function(){
 $(window).on('load', function () {
     $("#aside1+hr").hide();
     $("#dropdown").hide();
+    $("#asideEdit").hide();
     $("#asideDetail").hide();
     var c = $.session.get('page');
     if(c == null || c == 1)
@@ -105,6 +106,7 @@ function asideEksemplar(){
     $("#asideDetail").hide();
     $("div#konten").load("gudangTambahEksemplar/tambahEksemplar.php");
     $("div#gantiHead").load("gudangTambahEksemplar/headTambahEksemplar.html");
+    $("#error").hide();
     $.session.set('page','9');
 }
 
@@ -224,8 +226,7 @@ function searchKomik(){
             //alert(response);
             $("#daftar").html(response);
         }
-    });
-    
+    });  
 }
 
 function searchPenerbit(){
@@ -258,13 +259,26 @@ function searchPengarang(){
     });
 }
 
+function getIdEksemplar(){
+    $id = $('#idKomik').val();
+    $.ajax({
+        type : 'post',
+        data : {'idKomik':$id},
+        url: '../functionPHP/eksemplar.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#idEksemplar").html(response);
+        }
+    });   
+}
+
 /*tampilkan pop up detail komik*/
 function munculPopup(temp){
     var a = temp;
     $.ajax({
         type : 'post',
         data : {'idBuku':a},
-        url: '../functionPHP/popUpGudang.php',
+        url: '../functionPHP/popUpGudangKomik.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
             $("#popup").html(response);
@@ -277,4 +291,8 @@ function munculPopup(temp){
 function pencetBlur(){
     $("#popup").css('display','none');
     $("#blur").css('display','none');
+}
+
+function getIdEks(){
+
 }
