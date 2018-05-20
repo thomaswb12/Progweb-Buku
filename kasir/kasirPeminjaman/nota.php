@@ -4,8 +4,16 @@
     $password = "ceria";
     $dbname = "progweb";
     $conn = new mysqli($servername, $username, $password, $dbname);
+    $sql="SELECT transaksi.idTransaksi FROM transaksi ORDER BY tanggalTransaksi DESC LIMIT 1 ";
+    $result=mysqli_query($conn,$sql);
+    $idTrans="";
+    if($result = $conn->query($sql)){
+        while($rows = $result->fetch_assoc()){
+            $idTrans=$rows["idTransaksi"];
+        }
+    }
 
-    $sql="SELECT transaksi.idTransaksi,transaksi.tanggalTransaksi,member.nama as namaMember, member.id as idMember, karyawan.nama as namaKaryawan, karyawan.idKaryawan, transaksi.total, detailtransaksi.idEksBuku, buku.judulBuku, detailtransaksi.harga FROM transaksi, detailtransaksi,member,karyawan, buku, eksbuku WHERE detailtransaksi.idTransaksi=transaksi.idTransaksi AND transaksi.idMember=member.id AND transaksi.idKaryawan=karyawan.idKaryawan AND detailtransaksi.idEksBuku=eksbuku.idEksBuku AND eksbuku.idBuku=buku.idBuku ORDER BY tanggalTransaksi DESC LIMIT 1";
+    $sql="SELECT transaksi.idTransaksi,transaksi.tanggalTransaksi,member.nama as namaMember, member.id as idMember, karyawan.nama as namaKaryawan, karyawan.idKaryawan, transaksi.total, detailtransaksi.idEksBuku, buku.judulBuku, detailtransaksi.harga FROM transaksi, detailtransaksi,member,karyawan, buku, eksbuku WHERE detailtransaksi.idTransaksi=transaksi.idTransaksi AND transaksi.idMember=member.id AND transaksi.idKaryawan=karyawan.idKaryawan AND detailtransaksi.idEksBuku=eksbuku.idEksBuku AND eksbuku.idBuku=buku.idBuku AND transaksi.idTransaksi='$idTrans'";
     $result=mysqli_query($conn,$sql);
     $data=array();
     if($result = $conn->query($sql)){
