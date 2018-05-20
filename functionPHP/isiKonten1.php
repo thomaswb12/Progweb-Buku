@@ -1,6 +1,6 @@
 <?php
      include "getDataBuku.php";
-     $buku = getBukuWith($_POST['kata'],$_POST['dari'],$_POST['sorting']);
+     $buku = getBukuWith1($_POST['jdl'],$_POST['pnl'],$_POST['pnb'],$_POST['gnr']);
      foreach($buku as $value){
          //cek available atau tidak
         if($value['Available']>0){

@@ -300,7 +300,7 @@ function transaksi($temp=1){
                                 transaksi(1);
                                 load();
                                 load();
-                                $(location).attr('href','exportExcel.php');
+                                $(location).attr('href','exportExcelPeminjaman.php');
                             }
                             else{
                                 alert(response);
@@ -339,6 +339,7 @@ function transaksi($temp=1){
                                 transaksi(11);
                                 $('#namaMember').val("");
                                 transaksi(10);
+                                $(location).attr('href','exportExcelPengembalian.php');
                             }
                             else{
                                 alert(response);

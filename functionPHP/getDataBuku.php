@@ -81,20 +81,10 @@
 
         function getBukuWith1($judul,$penulis,$penerbit,$genre){
             global $conn;
-            switch($dari){
-                case 1 : $dari = "judulBuku"; break;
-                case 2 : $dari = "namaPenulis";break;
-                case 3 : $dari = "NamaPenerbit";break;
-            }
-            switch($sort){
-                case 1 : $sort = "tanggalTerbit"; break;
-                case 2 : $sort = "Dipinjam";break;
-                case 3 : $sort = "jumlahEksemplar";break;
-            }
             
             $data=array();
             //$sql =  " SELECT * FROM buku, where $dari like '$kata%' order by $sort DESC";
-            $sql =  "SELECT b.*,p.namaPenulis,pe.NamaPenerbit FROM `buku` as b,penulis as p, penerbit as pe WHERE $dari like '$kata%' AND p.idPenulis = b.idPenulis AND pe.idPenerbit = b.idPenerbit  order by $sort DESC";
+            $sql =  "SELECT DISTINCT buku.*,penulis.namaPenulis,penerbit.NamaPenerbit from buku,penulis,penerbit,genre,genrebuku WHERE buku.idPenulis = penulis.idPenulis AND buku.idPenerbit = penerbit.idPenerbit AND buku.idBuku = genrebuku.idBuku AND genre.idGenre = genrebuku.idGenre AND buku.judulBuku LIKE '$judul%' AND penulis.namaPenulis LIKE '$penulis%' AND penerbit.NamaPenerbit LIKE '$penerbit%' AND genre.namaGenre LIKE '$genre%';";
             if($result = $conn->query($sql)){
                 while($rows = $result->fetch_assoc()){
                     $data[] = $rows;
