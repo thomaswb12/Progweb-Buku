@@ -3,6 +3,19 @@
     session_start();
 ?>
 
+<script>
+    var isi="";
+    function fokus(coba){
+        isi=coba.val();
+    }
+    function ceknumeric(coba){
+        if(!$.isNumeric(coba.val())){
+            coba.val(isi);
+            alert("Input harus berupa angka");
+        }
+    }
+</script>
+
 <h1>Daftar Member</h1>
 <div id="sorting">
     <label id="labelSortBy" class="blue font15">Sort by :</label>
@@ -71,13 +84,13 @@
             <div class="popupSatuan">
                 <div class="divSimbolPopup"><i class="fas fa-id-card simbolPopup"></i></div>
                 <div class="atribut"><label>No Identitas</label></div>
-                <input class="value" id="popupNoIdentitas" name="popupNoIdentitas" value=""/>
+                <input class="value" id="popupNoIdentitas" name="popupNoIdentitas" value="" onfocus="fokus($(this))" oninput="ceknumeric($(this))"/>
                 <br/>
             </div>
             <div class="popupSatuan">
                 <div class="divSimbolPopup"><i class="fas fa-phone simbolPopup"></i></div>
                 <div class="atribut"><label>No Telp.</label></div>
-                <input class="value" id="popupTelepon" name="popupTelepon" value=""/>
+                <input class="value" id="popupTelepon" name="popupTelepon" value="" onfocus="fokus($(this))" oninput="ceknumeric($(this))"/>
             </div>
             <div class="popupSatuan">
                 <div class="divSimbolPopup"><i class="fas fa-transgender simbolPopup"></i></div>

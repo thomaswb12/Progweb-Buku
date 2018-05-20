@@ -9,12 +9,12 @@
     $i=1;
     foreach($hasil as $penerbit){
         echo '<div class="info">';
-        echo '<img class="foto" src="logo.jpg"/>';
+        echo '<img class="foto" src="'.$penerbit['foto'].'"/>';
         echo '<p class="ID">ID : '.$penerbit['idPenerbit'].'</p>
                 <p class="Penerbit">Penerbit : '.$penerbit['NamaPenerbit'].'</p>
-                <p class="noTelp">No. Telp : </p>
-                <p class="email">Email : </p>
-                <p class="alamat">Alamat : </p>
+                <p class="noTelp">No. Telp : '.$penerbit['noTelp'].'</p>
+                <p class="email">Email : '.$penerbit['email'].'</p>
+                <p class="alamat">Alamat : '.$penerbit['alamat'].'</p>
              </div>';
         $i++;                    
     }

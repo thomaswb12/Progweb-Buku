@@ -6,7 +6,7 @@
 <div id="judul">
     <h1>Tambah Supplier</h1>
 </div>
-<form>
+<form method="POST" action="../functionPHP/tambahSupplier.php" enctype="multipart/form-data">
     <div id="kiri">
         <label>Gambar</label><br/>
         <input type="file" id="gambar" name="gambar"/><br/>

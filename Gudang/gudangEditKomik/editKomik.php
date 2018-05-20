@@ -74,7 +74,7 @@
         <input type="text" id="lebar" name="lebar"/><br/>
     </div>
     <input type="submit" id="tombol" name="tombolOk" value="SAVE">
-    <input type="button" id="tombol" name="tombol" value="CANCEL">
+    <input type="button" id="tombol" name="tombolCancel" value="CANCEL">
 </form>
 
 <?php

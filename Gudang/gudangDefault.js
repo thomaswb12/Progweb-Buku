@@ -41,6 +41,9 @@ $(document).ready(function(){
     $("#asideEksemplar").click(function(){
         asideEksemplar();
     });
+    $("#tombolCancel").click(function(){
+        aside1();
+    })
 });
 
 $(window).on('load', function () {
@@ -79,8 +82,8 @@ $(window).resize(function(){
 });
 
 function edit(){
-    $("div#konten").load("Gudang-EditKomik/editKomik.php");
-    $("div#gantiHead").load("Gudang-EditKomik/headEditKomik.html");
+    $("div#konten").load("gudangEditKomik/editKomik.php");
+    $("div#gantiHead").load("gudangEditKomik/headEditKomik.html");
 }
 function view(){
     $("#asideDetail").addClass('terpilih');
@@ -89,20 +92,8 @@ function view(){
     $("#asideDetail").show();
     $("#dropdown").appendTo('#aside1 span');
     $("#centang").appendTo('#asideDetail span');
-    $("div#konten").load("Gudang-detailKomik/detailKomik.html");
-    $("div#gantiHead").load("Gudang-detailKomik/headDetailKomik.html");
-}
-
-function back(){
-    $(".blue").removeClass('terpilih');
-    $("#centang").appendTo('#aside1 span');
-    $("#aside1+hr").hide();    
-    $("#dropdown").hide();
-    $("#asideDetail").hide();
-    $("#aside1").addClass('terpilih');
-    $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
-    $("div#gantiHead").load("Gudang%20-%20Daftar%20Komik/headDaftarKomik.php");
-    $.session.set('page','1');
+    $("div#konten").load("gudangDetailKomik/detailKomik.html");
+    $("div#gantiHead").load("gudangDetailKomik/headDetailKomik.html");
 }
 
 function asideEksemplar(){
@@ -112,8 +103,8 @@ function asideEksemplar(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang-TambahEksemplar/tambahEksemplar.html");
-    $("div#gantiHead").load("Gudang-TambahEksemplar/headTambahEksemplar.html");
+    $("div#konten").load("gudangTambahEksemplar/tambahEksemplar.html");
+    $("div#gantiHead").load("gudangTambahEksemplar/headTambahEksemplar.html");
     $.session.set('page','9');
 }
 
@@ -124,8 +115,9 @@ function aside1(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Daftar%20Komik/daftarKomik.php");
-    $("div#gantiHead").load("Gudang%20-%20Daftar%20Komik/headDaftarKomik.php");
+    $("div#konten").load("gudangDaftarKomik/daftarKomik.php");
+    $("div#gantiHead").load("gudangDaftarKomik/headDaftarKomik.php");
+    search();
     $.session.set('page','1');
 }
 
@@ -149,8 +141,8 @@ function aside3(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Daftar%20Penerbit/daftarPenerbit.php");
-    $("div#gantiHead").load("Gudang%20-%20Daftar%20Penerbit/headDaftarPenerbit.php");
+    $("div#konten").load("gudangDaftarPenerbit/daftarPenerbit.php");
+    $("div#gantiHead").load("gudangDaftarPenerbit/headDaftarPenerbit.php");
     $.session.set('page','3');
     searchPenerbit();
 }
@@ -162,8 +154,8 @@ function aside4(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Tambah%20Penerbit/tambahPenerbit.php");
-    $("div#gantiHead").load("Gudang%20-%20Tambah%20Penerbit/headTambahPenerbit.html");
+    $("div#konten").load("gudangTambahPenerbit/tambahPenerbit.php");
+    $("div#gantiHead").load("gudangTambahPenerbit/headTambahPenerbit.html");
     $.session.set('page','4');
 }
 
@@ -174,8 +166,8 @@ function aside5(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Daftar%20Pengarang/daftarPengarang.php");
-    $("div#gantiHead").load("Gudang%20-%20Daftar%20Pengarang/headDaftarPengarang.php");
+    $("div#konten").load("gudangDaftarPengarang/daftarPengarang.php");
+    $("div#gantiHead").load("gudangDaftarPengarang/headDaftarPengarang.php");
     $.session.set('page','5');
     searchPengarang();
 }
@@ -187,8 +179,8 @@ function aside6(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Tambah%20Pengarang/tambahPengarang.php");
-    $("div#gantiHead").load("Gudang%20-%20Tambah%20Pengarang/headTambahPengarang.html");
+    $("div#konten").load("gudangTambahPengarang/tambahPengarang.php");
+    $("div#gantiHead").load("gudangTambahPengarang/headTambahPengarang.html");
     $.session.set('page','6');
 }
 
@@ -199,8 +191,8 @@ function aside7(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Daftar%20Supplier/daftarSupplier.php");
-    $("div#gantiHead").load("Gudang%20-%20Daftar%20Supplier/headDaftarSupplier.php");
+    $("div#konten").load("gudangDaftarSupplier/daftarSupplier.php");
+    $("div#gantiHead").load("gudangDaftarSupplier/headDaftarSupplier.php");
     $.session.set('page','7');
 }
 
@@ -211,8 +203,8 @@ function aside8(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("Gudang%20-%20Tambah%20Supplier/tambahSupplier.html");
-    $("div#gantiHead").load("Gudang%20-%20Tambah%20Supplier/headTambahSupplier.html");
+    $("div#konten").load("gudangTambahSupplier/tambahSupplier.html");
+    $("div#gantiHead").load("gudangTambahSupplier/headTambahSupplier.html");
     $.session.set('page','8');
 }
 
@@ -242,6 +234,22 @@ function fungsi($temp=1){
             url: '../functionPHP/gudang.php',
             success: $function
         });
+}
+
+function search(){
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
+    $dari = $('#selectSearchBy').val();
+    $sorting = $('#selectSortBy').val();
+    $.ajax({
+        type : 'post',
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':1},
+        url: '../functionPHP/isiKontenDaftarKomik.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#daftar").html(response);
+        }
+    });
+    
 }
 
 function searchPenerbit(){
