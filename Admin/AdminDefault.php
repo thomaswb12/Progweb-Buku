@@ -28,11 +28,11 @@
     <article>
         <div class="sidebar">
             <ul>
-                <li id="menu1"><a href="../User/UserDaftarKomik/UserDaftarKomik.php">CUSTOMER <p>(Menu user)</p></a></li>
-                <li id="menu2"><a href="../Gudang/gudangDefault.php">GUDANG</a></li>
-                <li id="menu3"><a href="../HRD/HRDDefault.php">HRD</a></li>
-                <li id="menu4"><a href="../kasir/KasirDefault.php">KASIR</a></li>
-                <li id="menu5"><a href="../Manager/managerDefault.php">MANAGER</a></li>
+                <li id="menu1"><a href="../User/UserDaftarKomik/UserDaftarKomik.php"><h2>CUSTOMER</h2><i class="fas fa-user"></i> (Menu User)</a></li>
+                <li id="menu3"><a href="../HRD/HRDDefault.php"><h2>HRD</h2><i class="fas fa-desktop"></i> (Menu HRD)</a></li>
+                <li id="menu4"><a href="../kasir/KasirDefault.php"><h2>KASIR</h2><i class="fas fa-credit-card"></i></i> (Menu Kasir)</a></li>
+                <li id="menu5"><a href="../Manager/managerDefault.php"><h2>MANAGER</h2><i class="fas fa-calendar-check"></i> (Menu Manager)</a></li>
+                <li id="menu2"><a href="../Gudang/gudangDefault.php"><h2>GUDANG</h2><i class="fas fa-box"></i> (Menu Gudang)</a></li>
 
             </ul>
         </div>

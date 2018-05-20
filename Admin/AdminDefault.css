@@ -99,12 +99,13 @@ body div.sidebar li a{
     display: block;
     color: white;
     text-align: center;
-    padding: 20px 20px;
+    padding: 20px 10px;
     text-decoration: none;
     border: 2px white solid;
     border-radius: 5px;
-    background-color: #222;
-    margin:100px;
+    background-color: #4b345a;
+    margin:50px 42px;
+    width: 200px;
 }
 body div.sidebar li a:hover{
     background-color: #333;
