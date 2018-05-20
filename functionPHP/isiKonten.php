@@ -28,7 +28,7 @@
                    else echo '<img class="komik" src="../'.$value['Location'].'"/>';
         echo   '<h4 class="judul">'.$value['judulBuku'].'</h4>
                     <p>Stok : <span class="stok">'.$value['jumlahEksemplar'].'</span></p>
-                    <p style="float:left;">Tersedia : <span class="tersedia">'.$value['jumlahEksemplar'].'</span></p>
+                    <p style="float:left;">Tersedia : <span class="tersedia">'.$value['Available'].'</span></p>
                     <p class="status" style="color:'.$warna.'">'.$status.'</p>
              </div>';
      }
