@@ -29,7 +29,7 @@
         $hariini=date("Y-m-d");
         $bulan=date("m");
         if($val==1)
-            $sql = "SELECT * FROM transaksi where tanggalTransaksi = '$hariini'";
+            $sql = "SELECT * FROM transaksi where DATE(tanggalTransaksi) = '$hariini'";
         else $sql = "SELECT * FROM transaksi where MONTH(tanggalTransaksi) = '$bulan'";
         $result=mysqli_query($conn,$sql);
         return mysqli_affected_rows($conn);        
@@ -40,7 +40,7 @@
         $hariini=date("Y-m-d");
         $bulan=date("m");
         if($val==1)
-            $sql = "SELECT * FROM pengembalian where tanggalTransaksi = '$hariini'";
+            $sql = "SELECT * FROM pengembalian where DATE(tanggalTransaksi) = '$hariini'";
         else $sql = "SELECT * FROM pengembalian where MONTH(tanggalTransaksi) = '$bulan'";
         $result=mysqli_query($conn,$sql);
         return mysqli_affected_rows($conn);        
@@ -51,8 +51,8 @@
         $hariini=date("Y-m-d");
         $bulan=date("m");
         if($val==1)
-            $sql = "SELECT SUM(total) as total FROM transaksi where tanggalTransaksi = '$hariini'";
-        else $sql = "SELECT SUM(total) as total FROM transaksi where MONTH(tanggalTransaksi) = '$bulan'";
+            $sql = "SELECT SUM(subTotal) as total FROM transaksi where DATE(tanggalTransaksi) = '$hariini'";
+        else $sql = "SELECT SUM(subTotal) as total FROM transaksi where MONTH(tanggalTransaksi) = '$bulan'";
         $result=mysqli_query($conn,$sql);
         $total=0;
         while($rows = $result->fetch_assoc()) $total=$rows;
@@ -64,12 +64,12 @@
         $hariini=date("Y-m-d");
         $bulan=date("m");
         if($val==1)
-            $sql = "SELECT SUM(totalDenda) as total FROM pengembalian where tanggalTransaksi = '$hariini'";
-        else $sql = "SELECT SUM(totalDenda) as total FROM pengembalian where MONTH(tanggalTransaksi) = '$bulan'";
+            $sql = "SELECT SUM(totalDenda) as totalDenda FROM pengembalian where DATE(tanggalTransaksi) = '$hariini'";
+        else $sql = "SELECT SUM(totalDenda) as totalDenda FROM pengembalian where MONTH(tanggalTransaksi) = '$bulan'";
         $result=mysqli_query($conn,$sql);
         $total=0;
         while($rows = $result->fetch_assoc()) $total=$rows;
-        return toRp($total['total']);
+        return toRp($total['totalDenda']);
     }
 
     function getTotalUang($val){
@@ -77,15 +77,15 @@
         $hariini=date("Y-m-d");
         $bulan=date("m");
         if($val==1)
-            $sql = "SELECT SUM(total) as total FROM transaksi where tanggalTransaksi = '$hariini'";
-        else $sql = "SELECT SUM(total) as total FROM transaksi where MONTH(tanggalTransaksi) = '$bulan'";
+            $sql = "SELECT SUM(subTotal) as total FROM transaksi where DATE(tanggalTransaksi) = '$hariini'";
+        else $sql = "SELECT SUM(subTotal) as total FROM transaksi where MONTH(tanggalTransaksi) = '$bulan'";
         $result=mysqli_query($conn,$sql);
         $total=0;
         while($rows = $result->fetch_assoc()) $total=$rows;
         $jumlah=$total['total'];
 
         if($val==1)
-            $sql = "SELECT SUM(totalDenda) as total FROM pengembalian where tanggalTransaksi = '$hariini'";
+            $sql = "SELECT SUM(totalDenda) as total FROM pengembalian where DATE(tanggalTransaksi) = '$hariini'";
         else $sql = "SELECT SUM(totalDenda) as total FROM pengembalian where MONTH(tanggalTransaksi) = '$bulan'";
         $result=mysqli_query($conn,$sql);
         $total=0;
