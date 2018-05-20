@@ -34,6 +34,32 @@
         }
     }
     $tagihan=$data[0]["total"]-$diskon;
+
+    function toRp($temp){
+        $hasil_rupiah = "Rp. " . number_format($temp,0,',','.');
+        return $hasil_rupiah;
+    }
+
+    function tanggal($temp){
+        //atur bulan bahasa indonesia
+        $tahun =  substr($temp,0,4);
+        $bulan = substr($temp,5,2);
+        $hari =  substr($temp,8,2);
+
+        if($bulan =='01') $bulan="Januari";
+        else if($bulan =='02') $bulan="Februari";
+        else if($bulan =='03') $bulan="Maret";
+        else if($bulan =='04') $bulan="April";
+        else if($bulan =='05') $bulan="Mei";
+        else if($bulan =='06') $bulan="Juni";
+        else if($bulan =='07') $bulan="Juli";
+        else if($bulan =='08') $bulan="Agustus";
+        else if($bulan =='09') $bulan="September";
+        else if($bulan =='10') $bulan="Oktober";
+        else if($bulan =='11') $bulan="November";
+        else if($bulan =='12') $bulan="Desember";
+        return "$hari $bulan $tahun";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -79,8 +105,12 @@
         <br/>
     </header>
     <section>
+        <?php
+            $tanggal = tanggal(substr($data[0]["tanggalTransaksi"],0,10));
+            $jam = substr($data[0]["tanggalTransaksi"],10);
+        ?>
         <p class="right">No. : <?php echo $data[0]["idTransaksi"]; ?> </p>
-        <p><?php echo $data[0]["tanggalTransaksi"]; ?> </p>
+        <p><?php echo $tanggal.' '.$jam; ?> </p>
         <p>Kasir: <?php echo $data[0]["namaKaryawan"].' ('.$data[0]["idKaryawan"].')'; ?> </p>
         <p>To. : <?php echo $data[0]["namaMember"].' ('.$data[0]["idMember"].')'; ?> </p>
         <p>Rincian: <p><br/><br/>
@@ -96,20 +126,20 @@
                     echo '  <tr style="border-bottom: 1px dashed black;">
                                 <td style="text-align: center;">'.$hasil['idEksBuku'].'</td>
                                 <td style="text-align: center;">'.$hasil['judulBuku'].'</td>
-                                <td style="text-align: right;">'.$hasil['harga'].'</td>
+                                <td style="text-align: right;">'.toRp($hasil['harga']).'</td>
                             </tr>';
                 }
                 echo '  <tr>
                             <td colspan="2">SUBTOTAL</td>
-                            <td style="text-align: right;">'.$data[0]["total"].'</td>
+                            <td style="text-align: right;">'.toRp($data[0]["total"]).'</td>
                         </tr>
                         <tr>
                             <td colspan="2">DISKON</td>
-                            <td style="text-align: right;">'.$diskon.'</td>
+                            <td style="text-align: right;">'.toRp($diskon).'</td>
                         </tr>
                         <tr>
                             <td colspan="2">TOTAL</td>
-                            <td style="text-align: right;">'.$tagihan.'</td>
+                            <td style="text-align: right;">'.toRp($tagihan).'</td>
                         </tr>';
             ?>
         </table>
