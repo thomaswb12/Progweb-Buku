@@ -32,6 +32,11 @@
     <div id="inputan">
         <label>ID Jabatan</label>
         <input type="text" id="idJabatan" name="idJabatan"/>
+        <div id="aturanIdJabatan">
+            <p><b>Aturan penamaan ID Jabatan:</b></p>
+            <p>Terdiri dari 4 huruf yang berupa unsur dari nama jabatannya</p>
+            <p>Contoh : Manager -> MNGR</p>
+        </div>
         <br/><br/>
         <label>Nama Jabatan</label>
         <input type="text" id="namaJabatan" name="namaJabatan"/>

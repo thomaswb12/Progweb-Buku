@@ -72,7 +72,16 @@ td{
     margin-top: 20px;
     margin-right: 10px;
     width: 100px;
+    padding: 5px;
+    border: 1px solid black;
+    color: black;
+    background-color: darkgray;
+    border-radius: 5px;
 }
+#print:hover{
+    background-color: gray;
+}
+
 /*------------------------bagian konten---------------------*/
 
 
