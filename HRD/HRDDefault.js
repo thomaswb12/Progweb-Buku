@@ -230,6 +230,7 @@ function isiIdJabatan($data){
         data : {'function':7,'data':$data},
         url: '../functionPHP/HRD.php',
         success: function(response){
+            $('#idKaryawanDis').val(response);
             $('#idKaryawan').val(response);
         }
     });
