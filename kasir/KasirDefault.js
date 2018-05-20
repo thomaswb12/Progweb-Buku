@@ -300,6 +300,7 @@ function transaksi($temp=1){
                                 transaksi(1);
                                 load();
                                 load();
+                                $(location).attr('href','exportExcel.php');
                             }
                             else{
                                 alert(response);
