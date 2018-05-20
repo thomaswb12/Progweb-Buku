@@ -14,7 +14,3 @@
 <hr/>
 <h3 class="blue" id="aside6"><span></span> Tambah Pengarang</h3>
 <hr/>
-<h3 class="blue" id="aside7"><span></span> Daftar Supplier</h3>
-<hr/>
-<h3 class="blue" id="aside8"><span></span> Tambah Supplier</h3>
-<hr/>
