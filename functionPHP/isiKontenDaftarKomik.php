@@ -27,7 +27,7 @@
         echo '<img class="foto" src="../'.$value['Location'].'"/>';
         echo '<h4 class="judul">'.$value['judulBuku'].'</h4>
                 <p>Stok : <span class="stok">'.$value['jumlahEksemplar'].'</span></p>
-                <p>Tersedia : <span class="tersedia">'.$value['jumlahEksemplar'].'</span></p>
+                <p>Tersedia : <span class="tersedia">'.$value['Available'].'</span></p>
                 <p class="status">'.$status.'</p>
             </div>';
      }
