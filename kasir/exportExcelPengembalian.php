@@ -3,8 +3,8 @@
 header("Content-type: application/vnd-ms-excel");
  
 // Mendefinisikan nama file ekspor "hasil-export.xls"
-header("Content-Disposition: attachment; filename=laporanKeuangan.xls");
+header("Content-Disposition: attachment; filename=notaPengembalian.xls");
  
 // Tambahkan table
-include 'kasirPeminjaman/nota.php';
+include 'kasirPengembalian/nota.php';
 ?>
