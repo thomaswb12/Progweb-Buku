@@ -242,24 +242,32 @@
 
     function transaksi($idEksBuku,$idMember,$idTransaksi){
         include "getDataBuku.php";
-        $tgl="";
-        $special="";
-        $sql = "SELECT b.tanggalTerbit,b.specialEdition FROM buku as b, eksbuku as e where b.idBuku = e.idBuku and e.idEksBuku = '$idEksBuku'";
-        if($result = $conn->query($sql)){
-            if($result->num_rows==1){
-                $row = $result->fetch_assoc();
-                $tgl = $row['tanggalTerbit'];
-                $special = $row['specialEdition'];
+        $umur = getUmur($idMember);
+        $bolehMasuk = getHarusUmur($idEksBuku);
+        if($umur>$bolehMasuk){
+            $sql = "";
+            $tgl="";
+            $special="";
+            $sql = "SELECT b.tanggalTerbit,b.specialEdition FROM buku as b, eksbuku as e where b.idBuku = e.idBuku and e.idEksBuku = '$idEksBuku'";
+            if($result = $conn->query($sql)){
+                if($result->num_rows==1){
+                    $row = $result->fetch_assoc();
+                    $tgl = $row['tanggalTerbit'];
+                    $special = $row['specialEdition'];
+                }
+            }
+            $get_harga = getHargaBuku($tgl,$special);
+            
+            $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',$get_harga,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
+            if($conn->query($sql)){
+                echo "berhasil";
+            }
+            else{
+                echo "gagal";
             }
         }
-        $get_harga = getHargaBuku($tgl,$special);
-        
-        $sql = "INSERT INTO `dummydetailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalAturanKembali`, `idTransaksi`) VALUES ('$idEksBuku',$get_harga,CURRENT_DATE(),date(CURRENT_DATE()+7),'$idTransaksi')";
-        if($conn->query($sql)){
-            echo "berhasil";
-        }
         else{
-            echo "gagal";
+            echo "tidak boleh";
         }
         $conn->close();
     }
