@@ -69,7 +69,7 @@
                 <label>Photo Profile</label>
                 <input type="file" id="gambar" name="gambar"/><br/>
                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
-                <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>
+                <!-- <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/> --><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <!-- tombol save -->
                 <input type="submit" id="tombolSave" name="tombolSave" class="tombol" value="SAVE"/>
             </div>
