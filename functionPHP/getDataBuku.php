@@ -84,7 +84,7 @@
             
             $data=array();
             //$sql =  " SELECT * FROM buku, where $dari like '$kata%' order by $sort DESC";
-            $sql =  "SELECT DISTINCT buku.*,penulis.namaPenulis,penerbit.NamaPenerbit from buku,penulis,penerbit,genre,genrebuku WHERE buku.idPenulis = penulis.idPenulis AND buku.idPenerbit = penerbit.idPenerbit AND buku.idBuku = genrebuku.idBuku AND genre.idGenre = genrebuku.idGenre AND buku.judulBuku LIKE '$judul%' AND penulis.namaPenulis LIKE '$penulis%' AND penerbit.NamaPenerbit LIKE '$penerbit%' AND genre.namaGenre LIKE '$genre%';";
+            $sql =  "SELECT DISTINCT buku.*,penulis.namaPenulis,penerbit.NamaPenerbit from buku,penulis,penerbit,genre,genrebuku WHERE buku.idPenulis = penulis.idPenulis AND buku.idPenerbit = penerbit.idPenerbit AND buku.idBuku = genrebuku.idBuku AND genre.idGenre = genrebuku.idGenre AND buku.judulBuku LIKE '%$judul%' AND penulis.namaPenulis LIKE '%$penulis%' AND penerbit.NamaPenerbit LIKE '%$penerbit%' AND genre.namaGenre LIKE '%$genre%';";
             if($result = $conn->query($sql)){
                 while($rows = $result->fetch_assoc()){
                     $data[] = $rows;
