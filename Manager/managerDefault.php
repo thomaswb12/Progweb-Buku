@@ -13,7 +13,7 @@
                         </div>
                         <link href="managerDefault.css" type="text/css" rel="stylesheet">
                         <link href="managerdaftarpeminjaman.css" type="text/css" rel="stylesheet">
-                        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+                        <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
                         <script src="managerDefault.js"></script>
                         <script src="jquery.session.js" ></script>
                         <script defer src="../fontawesome-free-5.0.13\svg-with-js\js\fontawesome-all.min.js"></script>
