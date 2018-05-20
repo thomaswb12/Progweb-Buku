@@ -24,6 +24,7 @@ if($buku['Dipinjam']>2500){
 //hitung harga dan lama pinjam
 $harga=getHargaBuku($buku['tanggalTerbit'],$buku['specialEdition']);
 $lamapinjam=getLamaPinjam($buku['tanggalTerbit']);
+global $conn;
 
 echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
         <br/><br/>
@@ -68,7 +69,7 @@ echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur(
                 <tr><td>Dipinjam</td>
                     <td id="popupDipinjam">'.$buku['Dipinjam'].'</td></tr>
                 <tr><td>Genre</td>
-                    <td id="popupGenre">'.$buku['namaGenre'].'</td></tr>
+                    <td id="popupGenre">'.getGenre($buku['idBuku'],$conn).'</td></tr>
                 <tr><td>Rating</td>
                     <td id="popupRating">'.$buku['Rating'].'</td></tr>
                 <tr><td>Rak</td>
