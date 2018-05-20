@@ -2,10 +2,25 @@
     session_start();
 ?>
 
+<script>
+    function cekpass(){
+        if($("#pass1").val()!=$("#pass2").val()){
+            $("#peringatanPass").css("display","block");
+        }
+        else $("#peringatanPass").css("display","none");
+    }
+    function cekNumeric(){
+        if(!$.isNumeric($("#telepon").val())){
+            alert("Inputan harus angka!");
+            $("#telepon").val("");
+        }
+    }
+</script>
+
 <h1>Tambah Karyawan</h1> 
     <div id="dataKaryawan" class="font15">
          <div class="detailKaryawan">
-            <form action="../functionPHP/tambahKaryawan.php" method="post">
+            <form action="../functionPHP/tambahKaryawan.php" method="post" enctype="multipart/form-data">
             <div class="kiri">
                 <div id="inputan">
                     <label>ID</label>
@@ -18,7 +33,7 @@
                     <input type="text" id="namaKaryawan" name="namaKaryawan"/>
                     <br/><br/>
                     <label>Jabatan</label>
-                    <select id="selectJabatan" class="font15" onchange="isiIdJabatan(this.value)">
+                    <select id="selectJabatan" name="selectJabatan" class="font15" onchange="isiIdJabatan(this.value)">
                         <option value=-1>---Jabatan---</option>
                         <?php
                             include "../../functionPHP/koneksi.php";
@@ -32,10 +47,10 @@
                     </select>
                     <br/><br/>
                     <label>Email</label>
-                    <input type="text" id="email" name="email"/>
+                    <input type="email" id="email" name="email"/>
                     <br/><br/>
                     <label>No. Telp</label>
-                    <input type="text" id="telepon" name="telepon"/>
+                    <input type="text" id="telepon" name="telepon" oninput="cekNumeric()"/>
                     <br/><br/>
                     <div id="divAl"><label>Alamat</label></div>
                     <textarea id="alamat" name="alamat"></textarea>
@@ -56,7 +71,7 @@
                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
                 <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>
                 <!-- tombol save -->
-                <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
+                <input type="submit" id="tombolSave" name="tombolSave" class="tombol" value="SAVE"/>
             </div>
             </form>
         </div>
