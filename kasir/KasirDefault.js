@@ -107,7 +107,7 @@ function cekDiskon(){
             url: '../functionPHP/transaksi.php',
             success: function(response){
                 var b = JSON.parse(response);
-                //alert(response[0].);
+                //alert(response);
                 $('#diskon').text(b.diskon);
                 $('#total').text(b.total);
             }
