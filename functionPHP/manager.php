@@ -110,7 +110,7 @@
         $bulan=date('m');
 
         //ambil data dari transaksi peminjaman -->masukkan ke array $data[]
-        $sql="SELECT transaksi.tanggalTransaksi, transaksi.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, detailtransaksi.harga, detailtransaksi.denda, detailtransaksi.harga+detailtransaksi.denda AS total FROM transaksi, member, karyawan, eksbuku, detailtransaksi WHERE transaksi.idMember=member.id AND transaksi.idKaryawan=karyawan.idKaryawan AND transaksi.idTransaksi=detailtransaksi.idTransaksi AND detailtransaksi.idEksBuku=eksbuku.idEksBuku AND MONTH(transaksi.tanggalTransaksi)=$bulan";
+        $sql="SELECT transaksi.tanggalTransaksi, transaksi.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, detailtransaksi.harga, 0 as denda, detailtransaksi.harga AS total FROM transaksi, member, karyawan, eksbuku, detailtransaksi WHERE transaksi.idMember=member.id AND transaksi.idKaryawan=karyawan.idKaryawan AND transaksi.idTransaksi=detailtransaksi.idTransaksi AND detailtransaksi.idEksBuku=eksbuku.idEksBuku AND MONTH(transaksi.tanggalTransaksi)=$bulan";
         $result=mysqli_query($conn,$sql);
         if($result = $conn->query($sql)){
             while($rows = $result->fetch_assoc()){
