@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Bulan Mei 2018 pada 11.36
+-- Waktu pembuatan: 20 Bulan Mei 2018 pada 13.13
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.4
 
@@ -54,7 +54,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`, `Dipinjam`, `idPenerbit`, `idPenulis`, `Rating`, `idRak`, `jumlahEksemplar`, `Location`, `Available`, `specialEdition`) VALUES
-('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 7, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images\\buku\\Naruto_Volume_42_Indonesia.jpg', 2, 'Ya'),
+('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 10, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images\\buku\\Naruto_Volume_42_Indonesia.jpg', 0, 'Ya'),
 ('DD000002', 'Naruto Vol. 4', '2018-05-01', 50, 100, 'Soft', 'Sasuke gugur saat melindungi Naruto…!! Saat itu, terjadi keanehan pada diri Naurto!! Haku yang terkena pukulan kemarahan pun menyadari hal tersebut. Sementara itu, pertarungan antara Zabuza vs Kakashi semakin sengit, siapakah yang menang? Inilah babak akhir dari pergolakan di Negara Nami!!\r\n', 8, 15, 2512, 'AA000001', 'BB000001', 'remaja', 'CC000001', 0, 'images\\buku\\Naruto_Volume_4_Indonesia.jpg', 0, 'Tidak'),
 ('DD000003', 'Doraemon Vol. 2', '2018-04-03', 50, 50, 'Soft', '\r\nKumpulan cerita tentang Nilai Nol dan Pergi dari Rumah\r\n', 8, 15, 5, 'AA000001', 'BB000001', 'anak-anak', 'CC000002', 4, 'images\\buku\\Doraemon_Volume_2_Indonesia.jpg', 4, 'Ya');
 
@@ -128,7 +128,8 @@ INSERT INTO `detailpengembalian` (`idEksBuku`, `tanggalPinjam`, `tanggalKembali`
 ('asd', '2018-04-18', '2018-05-20', '0000-00-00', 8835458, 'P000029', 'T000035'),
 ('DD000003KK000001', '2018-05-15', '2018-05-20', '2018-05-22', 0, 'P000029', 'T000016'),
 ('DD000003KK000003', '2018-05-15', '2018-05-20', '2018-05-22', 0, 'P000029', 'T000016'),
-('asd', '2018-05-20', '2018-05-20', '2018-04-18', 16000, 'P000030', 'T000036');
+('asd', '2018-05-20', '2018-05-20', '2018-04-18', 16000, 'P000030', 'T000036'),
+('asd', '2018-05-20', '2018-05-20', '2018-04-24', 13000, 'P000031', 'T000037');
 
 --
 -- Trigger `detailpengembalian`
@@ -187,7 +188,7 @@ INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKe
 ('DD000003KK000004', 5000, '2018-05-15', '2018-05-18', '2018-05-22', 0, 'T000017'),
 ('DD000003KK000002', 5000, '2018-05-17', '2018-05-18', '2018-05-24', 0, 'T000018'),
 ('asde', 8000, '2018-05-17', '2018-05-18', '2018-05-24', 0, 'T000019'),
-('asd', 8000, '2018-05-17', '2018-05-18', '2018-05-24', 0, 'T000020'),
+('asd', 8000, '2018-05-17', '2018-05-18', '2018-04-24', 0, 'T000020'),
 ('asde', 8000, '2018-05-17', '2018-05-18', '2018-05-24', 0, 'T000021'),
 ('asde', 8000, '2018-05-17', '2018-05-18', '2018-05-24', 0, 'T000022'),
 ('ASD', 8000, '2018-05-18', '2018-05-18', '2018-05-25', 0, 'T000023'),
@@ -203,7 +204,10 @@ INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKe
 ('asde', 5000, '2018-05-20', '2018-05-20', '2018-05-27', 0, 'T000033'),
 ('asd', 5000, '2018-05-20', '2018-05-20', '2018-05-27', 0, 'T000034'),
 ('asd', 5000, '2018-04-18', '2018-05-20', '0000-00-00', 0, 'T000035'),
-('asd', 5000, '2018-05-20', '2018-05-20', '2018-04-18', 0, 'T000036');
+('asd', 5000, '2018-05-20', '2018-05-20', '2018-04-18', 0, 'T000036'),
+('asd', 5000, '2018-05-20', '2018-05-20', '2018-04-24', 0, 'T000037'),
+('asd', 5000, '2018-05-20', NULL, '2018-05-27', 0, 'T000038'),
+('asde', 5000, '2018-05-20', NULL, '2018-05-27', 0, 'T000039');
 
 --
 -- Trigger `detailtransaksi`
@@ -295,8 +299,8 @@ CREATE TABLE `eksbuku` (
 --
 
 INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`, `tanggalTiba`) VALUES
-('asd', 'DD000001', 'Tersedia', '2018-04-21'),
-('asde', 'DD000001', 'Tersedia', '2018-04-21'),
+('asd', 'DD000001', 'Dipinjam', '2018-04-21'),
+('asde', 'DD000001', 'Dipinjam', '2018-04-21'),
 ('DD000003KK000001', 'DD000003', 'Tersedia', '2018-05-13'),
 ('DD000003KK000002', 'DD000003', 'Tersedia', '2018-05-14'),
 ('DD000003KK000003', 'DD000003', 'Tersedia', '2018-05-14'),
@@ -437,18 +441,20 @@ CREATE TABLE `member` (
   `noTelp` char(12) NOT NULL,
   `idIdentitas` char(16) NOT NULL,
   `gender` enum('Pria','Wanita') DEFAULT NULL,
-  `email` varchar(150) NOT NULL
+  `email` varchar(150) NOT NULL,
+  `poin` decimal(10,0) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `member`
 --
 
-INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idIdentitas`, `gender`, `email`) VALUES
-('M000001', 'Thomas Widiarya', 'asdsa', '2018-05-23', '0', '123456789789', '1234567897894561', 'Wanita', 'asdasd@gmail.com'),
-('M000002', 'Sylvia Putri R. G.', 'ahgshgnnj', '1998-02-07', '0', '085828763665', '3300101010', 'Wanita', 'sylvia@gmail.com'),
-('M000003', 'Resha Tepozz', 'paling tepoz', '2018-05-05', '0', '085828763665', '123', 'Pria', 'tepoz@gmail.com'),
-('M000004', 'thomas', 'tohomlasmdjaskdjsa', '2018-05-19', '0', '089512312313', '23232323232', 'Wanita', 'thomasbudiman05@gmail.com');
+INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idIdentitas`, `gender`, `email`, `poin`) VALUES
+('M000001', 'Thomas Widiarya', 'asdsa', '2018-05-23', '0', '123456789789', '1234567897894561', 'Wanita', 'asdasd@gmail.com', '0'),
+('M000002', 'Sylvia Putri R. G.', 'ahgshgnnj', '1998-02-07', '0', '085828763665', '3300101010', 'Wanita', 'sylvia@gmail.com', '0'),
+('M000003', 'Resha Tepozz', 'paling tepoz', '2018-05-05', '0', '085828763665', '123', 'Pria', 'tepoz@gmail.com', '0'),
+('M000004', 'thomas', 'tohomlasmdjaskdjsa', '2018-05-19', '0', '089512312313', '23232323232', 'Wanita', 'thomasbudiman05@gmail.com', '0'),
+('M000005', 'repoz', 'asdasdsad', '2018-05-20', '0', '123213', '123213213', 'Pria', 'asdsad@gmail.com', '450');
 
 -- --------------------------------------------------------
 
@@ -516,7 +522,8 @@ INSERT INTO `pengembalian` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKa
 ('P000027', '2018-05-20 16:02:46', 'm000004', 'KSRR0001', 0),
 ('P000028', '2018-05-20 16:04:20', 'm000001', 'KSRR0001', 0),
 ('P000029', '2018-05-20 16:31:05', 'm000002', 'KSRR0001', 0),
-('P000030', '2018-05-20 16:35:22', 'm000001', 'KSRR0001', 16000);
+('P000030', '2018-05-20 16:35:22', 'm000001', 'KSRR0001', 16000),
+('P000031', '2018-05-20 17:48:24', 'm000001', 'KSRR0001', 13000);
 
 -- --------------------------------------------------------
 
@@ -613,7 +620,22 @@ INSERT INTO `transaksi` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKarya
 ('T000033', '2018-05-20 16:03:40', 'm000001', 'KSRR0001', 5000, 0, 5000),
 ('T000034', '2018-05-20 16:04:01', 'm000001', 'KSRR0001', 5000, 0, 5000),
 ('T000035', '2018-05-20 16:10:42', 'm000002', 'KSRR0001', 5000, 0, 5000),
-('T000036', '2018-05-20 16:31:14', 'm000001', 'KSRR0001', 5000, 0, 5000);
+('T000036', '2018-05-20 16:31:14', 'm000001', 'KSRR0001', 5000, 0, 5000),
+('T000037', '2018-05-20 17:43:21', 'm000001', 'KSRR0001', 5000, 0, 5000),
+('T000038', '2018-05-20 18:12:20', 'm000005', 'KSRR0001', 5000, 500, 4500),
+('T000039', '2018-05-20 18:13:00', 'm000005', 'KSRR0001', 5000, 500, 4500);
+
+--
+-- Trigger `transaksi`
+--
+DELIMITER $$
+CREATE TRIGGER `after insert` AFTER INSERT ON `transaksi` FOR EACH ROW BEGIN
+	DECLARE P1 INT;
+    SELECT poin INTO P1 FROM member WHERE id =NEW.idMember;
+    UPDATE member set poin = p1 +(NEW.total*0.05) WHERE id =NEW.idMember;
+END
+$$
+DELIMITER ;
 
 --
 -- Indexes for dumped tables
