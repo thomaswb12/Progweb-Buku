@@ -2,6 +2,8 @@
 <hr/>
 <h3 class="blue" id="asideDetail"><span></span> Detail Komik</h3>
 <hr/>
+<h3 class="blue" id="asideEdit"><span></span> Edit Komik</h3>
+<hr/>
 <h3 class="blue" id="aside2"><span></span> Tambah Komik</h3>
 <hr/>
 <h3 class="blue" id="asideEksemplar"><span></span> Tambah Eksemplar</h3>

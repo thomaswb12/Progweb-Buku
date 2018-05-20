@@ -263,7 +263,7 @@ function munculPopup(temp){
     var a = temp;
     $.ajax({
         type : 'post',
-        data : {'idBuku':a,'status':2},
+        data : {'idBuku':a},
         url: '../functionPHP/popUpGudang.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);

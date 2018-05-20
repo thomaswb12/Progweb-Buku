@@ -427,6 +427,33 @@ function search(){
     
 }
 
+function search1(){
+    $jdl = $('#jdl').val();
+    $pnl = $('#pnl').val();
+    $pnb = $('#pnb').val();
+    $gnr = $('#gnr').val();
+    $.ajax({
+        type : 'post',
+        data : {'jdl':$jdl,'pnl':$pnl,'pnb':$pnb,'gnr':$gnr,'status':2},
+        url: '../functionPHP/isiKonten1.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#daftarKomik").html(response);
+        }
+    });
+    
+}
+
+function simple(){
+    $("#advanced").hide();
+    $("#simple").show();
+}
+
+function advanced(){
+    $("#simple").hide();
+    $("#advanced").show();
+}
+
 function searchDaftarMember(){
     $('#memberInputSearchBy').val() !="" ? $keyword = $('#memberInputSearchBy').val(): $keyword ="";
     $searchby = $('#selectSearchBy').val();
