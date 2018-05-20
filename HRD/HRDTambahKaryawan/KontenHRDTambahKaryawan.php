@@ -68,7 +68,7 @@
                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
                 <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>
                 <!-- tombol save -->
-                <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
+                <input type="submit" id="tombolSave" name="tombolSave" class="tombol" value="SAVE"/>
             </div>
             </form>
         </div>
