@@ -41,11 +41,13 @@
                     <textarea id="alamat" name="alamat"></textarea>
                     <br/><br/><hr><br>
                     <label>Password</label>
-                    <input type="password" id="pass1" name="pass1"/>
+                    <input type="password" id="pass1" name="pass1" oninput="cekPassword()"/>
                     <br/><br/>
                     <label>Re-Input Password</label>
-                    <input type="password" id="pass2" name="pass2"/>
-                    <br/><br/><br/><br/>
+                    <input type="password" id="pass2" name="pass2" oninput="cekPassword()"/>
+                    <br/>
+                    <p id="warningPass" style="display:none;color:red;">*password tidak sama</p>
+                    <br/><br/><br/>
                 </div>  
             </div>
             <div class="kanan">
