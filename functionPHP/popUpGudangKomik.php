@@ -1,31 +1,31 @@
 <?php
-session_start();
-include "getDataBuku.php";
-$buku = getDetailBuku($_POST['idBuku']);
- //cek available atau tidak
-if($buku['Available']>0){
-    $status='AVAILABLE';
-    $warna='green';
-}
-else{
-    $status='UNAVAILABLE';
-    $warna='red';
-}
-//cek apakah special edition dan favorit
-$special='';
-$favorit='';
-if($buku['specialEdition']=="Ya"){
-    $special='Special Edition';
-}
-if($buku['Dipinjam']>2500){
-    $favorit='Favorit';
-}
+    session_start();
+    include "getDataBuku.php";
+    $buku = getDetailBuku($_POST['idBuku']);
+     //cek available atau tidak
+    if($buku['Available']>0){
+        $status='AVAILABLE';
+        $warna='green';
+    }
+    else{
+        $status='UNAVAILABLE';
+        $warna='red';
+    }
+    //cek apakah special edition dan favorit
+    $special='';
+    $favorit='';
+    if($buku['specialEdition']=="Ya"){
+        $special='Special Edition';
+    }
+    if($buku['Dipinjam']>2500){
+        $favorit='Favorit';
+    }
 
-//hitung harga dan lama pinjam
-$harga=getHargaBuku($buku['tanggalTerbit'],$buku['specialEdition']);
-$lamapinjam=getLamaPinjam($buku['tanggalTerbit']);
+    //hitung harga dan lama pinjam
+    $harga=getHargaBuku($buku['tanggalTerbit'],$buku['specialEdition']);
+    $lamapinjam=getLamaPinjam($buku['tanggalTerbit']);
 
-echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
+    echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
         <br/><br/>
         <div id="popupScroll">
             <p id="popupJudul">'.$buku['judulBuku'].'</p>
