@@ -4,7 +4,8 @@
             <div class="kiri">
                 <div id="inputan">
                     <label>ID</label>
-                    <input type="text" id="idKaryawan" name="idKaryawan"/>
+                    <input type="text" id="idKaryawanDis" name="idKaryawanDis" class="disable" disabled/>
+                    <input type="text" id="idKaryawan" name="idKaryawan" val="" style="display:none;"/>
                     <br/><br/>
                     <label>Nama</label>
                     <input type="text" id="namaKaryawan" name="namaKaryawan"/>
@@ -43,7 +44,7 @@
                 <label>Photo Profile</label>
                 <input type="file" id="gambar" name="gambar"/><br/>
                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
-                <img class="photo" src="HRD - Daftar Karyawan/profile_pic.jpg"/><br><br><br>
+                <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>
                 <!-- tombol save -->
                 <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="aside2()"/>
             </div>
