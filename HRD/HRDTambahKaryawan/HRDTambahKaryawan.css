@@ -37,7 +37,7 @@ article div#konten div#inputan{
 article div#konten input{
     width: 200px;
 }
-article div#konten input#idKaryawan{
+article div#konten input#idKaryawanDis{
     margin-left: 130px;
 }
 article div#konten input#namaKaryawan{
@@ -107,7 +107,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#konten div#inputan{
         margin-left: 10px;
     }
-    article div#konten input#idKaryawan{
+    article div#konten input#idKaryawanDis{
         margin-left: 120px;
     }
     article div#konten input#namaKaryawan{
