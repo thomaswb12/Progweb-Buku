@@ -158,6 +158,17 @@ function load(){
     total();
 }
 
+function totalDenda(){
+    $.ajax({
+        type : 'post',
+        data : {'function':17,'cek':1},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            $('#totalDenda').text(response);
+        }
+    });
+}
+
 function actionPengembalian(temp,status){
     if(status==1){//untuk hapus  
       var no=12;
@@ -183,6 +194,7 @@ function actionPengembalian(temp,status){
         url: '../functionPHP/transaksi.php',
         success: function(response){
             alert(response);
+            totalDenda();
         }
     });
 }
@@ -281,6 +293,7 @@ function transaksi($temp=1){
                                 $('#namaMember').val('');
                                 $('#inputID').val('');
                                 $('#inputIdEksBuku').val('');
+                                $('#total').text('Rp 0');
                                 transaksi(1);
                                 load();
                                 load();
