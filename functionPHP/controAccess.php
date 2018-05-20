@@ -19,10 +19,7 @@
                 switch ($_SESSION['idJabatan']){
                     case "ADMN" :   $_SESSION['id'] = $_POST['id'];
                                     $_SESSION['control'] = 0;
-                                    header("location:../HRD/HRDDefault.php");break;
-                    case "GDNG" :   $_SESSION['id'] = $_POST['id'];
-                                    $_SESSION['control'] = 1;
-                                    header("location:../Gudang/gudangDefault.php");break;
+                                    header("location:../Admin/AdminDefault.php");break;
                     case "KSRR" :   $_SESSION['id'] = $_POST['id'];
                                     $_SESSION['control'] = 2;
                                     header("location:../kasir/KasirDefault.php");break;
@@ -32,6 +29,9 @@
                     case "HRDD" :   $_SESSION['id'] = $_POST['id'];
                                     $_SESSION['control'] = 4;
                                     header("location:../HRD/HRDDefault.php");break;
+                    case "GDNG" :   $_SESSION['id'] = $_POST['id'];
+                                    $_SESSION['control'] = 5;
+                                    header("location:../Gudang/gudangDefault.php");break;
 
                 }
             }
