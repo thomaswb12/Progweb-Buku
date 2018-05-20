@@ -62,7 +62,7 @@
 
 <?php
     //kalau pass beda
-    iif(isset($_SESSION["beda"])){
+    if(isset($_SESSION["beda"])){
         unset($_SESSION["beda"]);
         ?>
         <script type="text/javascript">
@@ -89,5 +89,5 @@
             alert("Berhasil ditambahkan!)");
         </script>
         <?php
-    
+    }
 ?>

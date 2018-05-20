@@ -24,7 +24,7 @@
         </head>
         <body>
             <header>
-                <?php  include "template/header.php"?>
+                <?php  include "template/header.php" ?>
             </header>
             <article>
                 <div id="aside">
@@ -33,7 +33,7 @@
                         <hr/>
                     </div>
                     <div id="option">
-                    <?php  include "template/aside.php"?>
+                    <?php  include "template/aside.php" ?>
                     </div>
                 </div>
                 <div id="konten">

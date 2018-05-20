@@ -24,7 +24,7 @@
             $favorit='favorit';
         }
         echo   '<div class="infoKomik '.$favorit.' '.$special.'" onclick="munculPopup('."'".$value['idBuku']."'".')">';
-                   if($_POST['status']==1) echo '<img class="komik" src="../../'.$value['Location'].'"/>';
+                   if($_POST['status']==1) echo '<img class="komik" src="../'.$value['Location'].'"/>';
                    else echo '<img class="komik" src="../'.$value['Location'].'"/>';
         echo   '<h4 class="judul">'.$value['judulBuku'].'</h4>
                     <p>Stok : <span class="stok">'.$value['jumlahEksemplar'].'</span></p>

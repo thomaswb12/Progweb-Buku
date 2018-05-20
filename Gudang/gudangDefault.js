@@ -103,7 +103,7 @@ function asideEksemplar(){
     $("#aside1+hr").hide();
     $("#dropdown").hide();
     $("#asideDetail").hide();
-    $("div#konten").load("gudangTambahEksemplar/tambahEksemplar.html");
+    $("div#konten").load("gudangTambahEksemplar/tambahEksemplar.php");
     $("div#gantiHead").load("gudangTambahEksemplar/headTambahEksemplar.html");
     $.session.set('page','9');
 }
@@ -117,7 +117,7 @@ function aside1(){
     $("#asideDetail").hide();
     $("div#konten").load("gudangDaftarKomik/daftarKomik.php");
     $("div#gantiHead").load("gudangDaftarKomik/headDaftarKomik.php");
-    search();
+    searchKomik();
     $.session.set('page','1');
 }
 
@@ -184,30 +184,6 @@ function aside6(){
     $.session.set('page','6');
 }
 
-function aside7(){
-    $(".blue").removeClass('terpilih');
-    $("#centang").appendTo('#aside7 span');
-    $("#aside7").addClass('terpilih');
-    $("#aside1+hr").hide();
-    $("#dropdown").hide();
-    $("#asideDetail").hide();
-    $("div#konten").load("gudangDaftarSupplier/daftarSupplier.php");
-    $("div#gantiHead").load("gudangDaftarSupplier/headDaftarSupplier.php");
-    $.session.set('page','7');
-}
-
-function aside8(){
-    $(".blue").removeClass('terpilih');
-    $("#centang").appendTo('#aside8 span');
-    $("#aside8").addClass('terpilih');
-    $("#aside1+hr").hide();
-    $("#dropdown").hide();
-    $("#asideDetail").hide();
-    $("div#konten").load("gudangTambahSupplier/tambahSupplier.html");
-    $("div#gantiHead").load("gudangTambahSupplier/headTambahSupplier.html");
-    $.session.set('page','8');
-}
-
 //----- fungsi menampilkan & sembunyikan tombol utk balik ke atas ---------
 function backToTop(){
     var scrollTop = $(window).scrollTop(); //sejauh apa user telah meng-scroll
@@ -236,7 +212,7 @@ function fungsi($temp=1){
         });
 }
 
-function search(){
+function searchKomik(){
     $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
     $dari = $('#selectSearchBy').val();
     $sorting = $('#selectSortBy').val();
@@ -280,4 +256,20 @@ function searchPengarang(){
             $("#daftar").html(response);
         }
     });
+}
+
+/*tampilkan pop up detail komik*/
+function munculPopup(temp){
+    var a = temp;
+    $.ajax({
+        type : 'post',
+        data : {'idBuku':a,'status':2},
+        url: '../functionPHP/popUp.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#popup").html(response);
+        }
+    });
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
 }
