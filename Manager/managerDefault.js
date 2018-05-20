@@ -9,6 +9,7 @@ $(document).ready(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
 
+    $("#aside0").click(function(){aside0();});
     $("#aside1").click(function(){aside1();});
     $("#aside3").click(function(){aside3();});
 
@@ -16,14 +17,24 @@ $(document).ready(function(){
 
 $(window).on('load', function () {
     var c = $.session.get('page');
-    if(c == null || c == 1)
+    if(c == null || c == 0)
+        aside0();
+    else if(c == 1)
         aside1();
     else if(c == 3)
         aside3();
 });
 
+function aside0(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside0 span');
+    $("#aside0").addClass('terpilih');
+    $("div#konten").load("managerDashboard/kontenManagerDashboard.php");
+    $("div#gantiHead").load("managerDashboard/headManagerDashboard.php");
+    $.session.set('page','0');
+}
+
 function aside1(){
-    $("#aside2").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
@@ -34,7 +45,6 @@ function aside1(){
 }
 
 function aside3(){
-    $("#aside2").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
