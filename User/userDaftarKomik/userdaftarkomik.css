@@ -64,6 +64,9 @@ article div#judul input#pnl{
 article div#judul input#pnb{
     margin-left: 28px;
 }
+article div#judul input#gnr{
+    margin-left: 45px;
+}
 article div#judul input#submit{
     float: right;
     width: 60px;

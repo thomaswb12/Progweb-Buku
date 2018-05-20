@@ -53,6 +53,16 @@
 </form>
 
 <?php
+    //kalau pass berbeda
+    if(isset($_SESSION["beda"])){
+        unset($_SESSION["beda"]);
+        ?>
+        <script type="text/javascript">
+            alert("Gagal ditambahkan: Password tidak sama!");
+        </script>
+        <?php
+    }
+
     //kalau data yang diisi belum lengkap
     if(isset($_SESSION["belumLengkap"])){
         unset($_SESSION["belumLengkap"]);
