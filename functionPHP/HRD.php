@@ -15,21 +15,6 @@
     function tampilinGambar($tamp){
         echo is_array($tamp);
     }
-    
-    ?>
-    <script>
-        var isi="";
-        function fokus(coba){
-            isi=coba.val();
-        }
-        function ceknumeric(coba){
-            if(!$.isNumeric(coba.val())){
-                coba.val(isi);
-                alert("Input harus berupa angka");
-            }
-        }
-    </script>
-    <?php
 
     function loadDetail($data){
         global $conn;
