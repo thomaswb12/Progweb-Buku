@@ -6,5 +6,5 @@ header("Content-type: application/vnd-ms-excel");
 header("Content-Disposition: attachment; filename=laporanKeuangan.xls");
  
 // Tambahkan table
-include 'managerLaporanKeuangan/kontenManagerLaporanKeuangan.php';
+include 'managerLaporanKeuangan/kontenExcel.php';
 ?>

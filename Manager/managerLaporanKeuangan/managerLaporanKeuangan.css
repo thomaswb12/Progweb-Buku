@@ -67,11 +67,10 @@ td{
 }
 /*tabel laporan------*/
 /*tombol print ----*/
-#print{
-    float: right;
-    margin-top: 20px;
-    margin-right: 10px;
-    width: 100px;
+a #print{
+    float: left;
+    margin-left: 25px;
+    width: 200px;
     padding: 5px;
     border: 1px solid black;
     color: black;
@@ -124,9 +123,9 @@ td{
         width: 200%;
     }
     /*tabel laporan------*/
-    #print{
-        margin-top: 10px;
-        margin-right: 5px;
+    a #print{
+        margin: 0px;
+        margin-bottom: 15px;
     }
     /*-----------------utk konten-----------------*/
 }

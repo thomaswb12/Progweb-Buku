@@ -101,17 +101,16 @@
         }
     }
 
-    //fungsi untuk mengambil laporan keuangan (default --> 1 bulan (15 hari sebelum hari ini smp 15 hari stlah hari ini))
+    //fungsi untuk mengambil laporan keuangan (default --> 1 bulan, bulan ini)
     function getAllKeuangan(){
         global $conn;
         $data=array();
 
-        //dari awal smpai akhir --> 1 bulan
-        $awal=date('Y-m-d H:i:s', strtotime('-15 days'));
-        $akhir=date('Y-m-d H:i:s', strtotime('+15 days'));
+        //dari bulan ini --> 1 bulan
+        $bulan=date('m');
 
         //ambil data dari transaksi peminjaman -->masukkan ke array $data[]
-        $sql="SELECT transaksi.tanggalTransaksi, transaksi.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, detailtransaksi.harga, detailtransaksi.denda, detailtransaksi.harga+detailtransaksi.denda AS total FROM transaksi, member, karyawan, eksbuku, detailtransaksi WHERE transaksi.idMember=member.id AND transaksi.idKaryawan=karyawan.idKaryawan AND transaksi.idTransaksi=detailtransaksi.idTransaksi AND detailtransaksi.idEksBuku=eksbuku.idEksBuku AND transaksi.tanggalTransaksi between '$awal 00:00:00' and '$akhir 23:59:00'";
+        $sql="SELECT transaksi.tanggalTransaksi, transaksi.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, detailtransaksi.harga, detailtransaksi.denda, detailtransaksi.harga+detailtransaksi.denda AS total FROM transaksi, member, karyawan, eksbuku, detailtransaksi WHERE transaksi.idMember=member.id AND transaksi.idKaryawan=karyawan.idKaryawan AND transaksi.idTransaksi=detailtransaksi.idTransaksi AND detailtransaksi.idEksBuku=eksbuku.idEksBuku AND MONTH(transaksi.tanggalTransaksi)=$bulan";
         $result=mysqli_query($conn,$sql);
         if($result = $conn->query($sql)){
             while($rows = $result->fetch_assoc()){
@@ -119,7 +118,7 @@
             }
         }
         //ambil data dari transaksi pengembalian -->masukkan ke array $data[]
-        $sql="SELECT pengembalian.tanggalTransaksi, pengembalian.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, 0 as harga, detailpengembalian.denda, detailpengembalian.denda AS total FROM pengembalian, member, karyawan, eksbuku, detailpengembalian WHERE pengembalian.idMember=member.id AND pengembalian.idKaryawan=karyawan.idKaryawan AND pengembalian.idTransaksi=detailpengembalian.idTransaksi AND detailpengembalian.idEksBuku=eksbuku.idEksBuku AND pengembalian.tanggalTransaksi between '$awal 00:00:00' and '$akhir 23:59:00'";
+        $sql="SELECT pengembalian.tanggalTransaksi, pengembalian.idTransaksi,member.id, karyawan.idKaryawan, eksbuku.idEksBuku, 0 as harga, detailpengembalian.denda, detailpengembalian.denda AS total FROM pengembalian, member, karyawan, eksbuku, detailpengembalian WHERE pengembalian.idMember=member.id AND pengembalian.idKaryawan=karyawan.idKaryawan AND pengembalian.idTransaksi=detailpengembalian.idTransaksi AND detailpengembalian.idEksBuku=eksbuku.idEksBuku AND MONTH(pengembalian.tanggalTransaksi)=$bulan";
         $result=mysqli_query($conn,$sql);
         while($rows = $result->fetch_assoc()){
             $data[]=$rows;
