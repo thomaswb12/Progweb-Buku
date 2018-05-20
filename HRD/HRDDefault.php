@@ -26,7 +26,7 @@
                     <header>';include "Template/header.php";
                 echo '</header>
                     <article>';include "Template/aside.php";
-                echo '<div id="konten">';
+                echo '<div id="konten">'; include "hrdDaftarKaryawan/KontenHRDDaftarKaryawan.php";
                 echo '    </div>
                     </article>
                     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
