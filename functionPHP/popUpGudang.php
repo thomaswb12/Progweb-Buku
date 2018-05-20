@@ -30,7 +30,7 @@ echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur(
         <div id="popupScroll">
             <p id="popupJudul">'.$buku['judulBuku'].'</p>
             <div id="divImg">';
-                echo '<img class="komik" src="'.$buku['Location'].'"/>';
+                echo '<img class="komik" src="../'.$buku['Location'].'"/>';
             echo '</div>
             <div id="istimewa">
                 <h3 id="popupPopular" style="color:red;">'.$favorit.'</h3>
