@@ -18,7 +18,7 @@
 <h1>Tambah Karyawan</h1> 
     <div id="dataKaryawan" class="font15">
          <div class="detailKaryawan">
-            <form action="../functionPHP/tambahKaryawan.php" method="post">
+            <form action="../functionPHP/tambahKaryawan.php" method="post" enctype="multipart/form-data">
             <div class="kiri">
                 <div id="inputan">
                     <label>ID</label>
@@ -31,7 +31,7 @@
                     <input type="text" id="namaKaryawan" name="namaKaryawan"/>
                     <br/><br/>
                     <label>Jabatan</label>
-                    <select id="selectJabatan" class="font15" onchange="isiIdJabatan(this.value)">
+                    <select id="selectJabatan" name="selectJabatan" class="font15" onchange="isiIdJabatan(this.value)">
                         <option value=-1>---Jabatan---</option>
                         <?php
                             include "../../functionPHP/koneksi.php";
