@@ -4,9 +4,6 @@ $(document).ready(function(){
         backToTop();
     });
 
-    //------ menandai option aside yg sedang terpilih ----
-    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
-
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
@@ -223,6 +220,18 @@ function pilihJabatan($data){
         success: function(response){
             //alert(response);
             $('#isi').html(response);
+        }
+    });
+}
+
+function isiIdJabatan($data){
+    $.ajax({
+        type : 'post',
+        data : {'function':7,'data':$data},
+        url: '../functionPHP/HRD.php',
+        success: function(response){
+            $('#idKaryawanDis').val(response);
+            $('#idKaryawan').val(response);
         }
     });
 }

@@ -107,7 +107,7 @@ function cekDiskon(){
             url: '../functionPHP/transaksi.php',
             success: function(response){
                 var b = JSON.parse(response);
-                //alert(response[0].);
+                //alert(response);
                 $('#diskon').text(b.diskon);
                 $('#total').text(b.total);
             }
@@ -158,6 +158,17 @@ function load(){
     total();
 }
 
+function totalDenda(){
+    $.ajax({
+        type : 'post',
+        data : {'function':17,'cek':1},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            $('#totalDenda').text(response);
+        }
+    });
+}
+
 function actionPengembalian(temp,status){
     if(status==1){//untuk hapus  
       var no=12;
@@ -183,6 +194,7 @@ function actionPengembalian(temp,status){
         url: '../functionPHP/transaksi.php',
         success: function(response){
             alert(response);
+            totalDenda();
         }
     });
 }
@@ -236,6 +248,9 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                         if(response == "ga ada"){
                             $("#namaMember").val("");
+                            transaksi(6);
+                            total();
+                            $('#total').text('Rp. 0');
                         }
                         else{
                             $("#namaMember").val(response);
@@ -254,7 +269,7 @@ function transaksi($temp=1){
                         }
                     }
                     break;
-        case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
+        case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)' && $('#namaMember').val()!=""){
                         $data = {'function':$temp, 'idEksBuku':$("#inputIdEksBuku").val(), 'idMember':$("#inputID").val(), 'idTransaksi':$("#idTransaksi").val()};
                         $function = function(response){
                             alert(response);
@@ -265,7 +280,7 @@ function transaksi($temp=1){
                         };
                     }
                     else{
-                        alert("pastikan input benar");
+                        alert("pastikan input benar / ada kekurangan input");
                         $pass = 0;
                     }
                     break;
@@ -274,16 +289,18 @@ function transaksi($temp=1){
                     }
                     break;
         case 8  :   if($('#namaMember').val() != ""){
-                        $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val(),'subtotal':$('#subtotal').text()};
+                        $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val(),'diskon':$('#diskon').text(),'sub':$('#subtotal').text()};
                         $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                             if(response == "berhasil"){
                                 alert("Transaksi berhasil");
                                 $('#namaMember').val('');
                                 $('#inputID').val('');
                                 $('#inputIdEksBuku').val('');
+                                $('#total').text('Rp 0');
                                 transaksi(1);
                                 load();
                                 load();
+                                $(location).attr('href','exportExcelPeminjaman.php');
                             }
                             else{
                                 alert(response);
@@ -322,6 +339,7 @@ function transaksi($temp=1){
                                 transaksi(11);
                                 $('#namaMember').val("");
                                 transaksi(10);
+                                $(location).attr('href','exportExcelPengembalian.php');
                             }
                             else{
                                 alert(response);

@@ -41,7 +41,7 @@
                 <tr class="tebal">
                     <td class="tandaTable"></td>
                     <td colspan="6">Total</td>
-                    <td>Rp 500</td>
+                    <td id="totalDenda">Rp 0</td>
                 </tr>
             </tfoot>
         </table>

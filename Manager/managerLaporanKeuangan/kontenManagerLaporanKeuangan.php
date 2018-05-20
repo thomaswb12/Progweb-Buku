@@ -6,6 +6,7 @@
     <input type="date" class="font15" id="periodeAkhir" name="periodeAkhir"/>
     <input type="button" id="OK" class="tombol" value="OK" onclick="searchDaftarLaporanKeuangan()"/>
 </div>
+<a href="exportExcel.php"><button id="print" name="print" class="tombol">Export ke Excel laporan bulan ini</button></a>
 <!--bagian tabel laporan keuangan-->
 <div id="tabel">
     <table>
@@ -29,9 +30,3 @@
     </table>
 </div>
 <!--<input type="button" id="print" name="print" class="tombol" value="PRINT"/>-->
-<a href="exportExcel.php"><button id="print" name="print" class="tombol">PRINT</button></a>
-
-
-<?php
-
-?>

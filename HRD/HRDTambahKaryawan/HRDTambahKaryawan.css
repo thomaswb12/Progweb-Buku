@@ -1,3 +1,7 @@
+.disable{
+    background-color: grey !important;
+    color: white !important;
+}
 /*------------------------bagian artikel---------------------*/
 article{ /*article adlah semua yang ada dibawah header*/
     height: 80%;
@@ -37,7 +41,7 @@ article div#konten div#inputan{
 article div#konten input{
     width: 200px;
 }
-article div#konten input#idKaryawan{
+article div#konten input#idKaryawanDis{
     margin-left: 130px;
 }
 article div#konten input#namaKaryawan{
@@ -107,7 +111,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
     article div#konten div#inputan{
         margin-left: 10px;
     }
-    article div#konten input#idKaryawan{
+    article div#konten input#idKaryawanDis{
         margin-left: 120px;
     }
     article div#konten input#namaKaryawan{
@@ -141,6 +145,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin: auto;
     }
     article div#konten div#dataKaryawan div.kanan{
+        clear: both;
         float: none;
         margin-right: 0px;
     }

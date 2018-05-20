@@ -9,12 +9,13 @@
         case 3 : loadKaryawan();break;
         case 4 : loadDetail($_POST['data']);break;
         case 6 : ajaxTampilGambar($_FILES['foto']);break;
+        case 7 : tampilkanIdJabatan($_POST['data']); break;
     }
 
     function tampilinGambar($tamp){
         echo is_array($tamp);
     }
-    
+
     function loadDetail($data){
         global $conn;
         $sql = "SELECT * FROM karyawan, jabatankaryawan where karyawan.idJabatan = jabatankaryawan.idJabatan and karyawan.idKaryawan = '$data';";
@@ -46,7 +47,7 @@
                                     <input type="email" id="email" value="'.$row['email'].'"/>
                                     <br/><br/><br/>
                                     <label>No. Telp</label>
-                                    <input type="text" id="telepon" value="'.$row['noTelp'].'">
+                                    <input type="text" id="telepon" value="'.$row['noTelp'].'" oninput="ceknumeric($(this))" onfocus="fokus($(this))">
                                     <br/><br/><br/>
                                     <div id="divAl"><label>Alamat</label></div>
                                     <textarea id="alamat" name="alamat">'.$row['Alamat'].'</textarea>
@@ -64,9 +65,13 @@
                             <div class="kanan">
                             <label>Photo Profile</label>
                                 <input type="file" id="gambar" name="gambar"/><br/>
-                                <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
-                                <img id="foto200px" class="photo" src="../'.$row['foto'].'"/><br><br><br>
-                                <input type="button" id="tombolCancel" name="tombokCancel" class="tombol" value="CANCEL" onclick="aside1()"/>
+                                <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>';
+                    if(is_null($row['foto']))
+                        echo '<img id="foto200px" class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>';
+                    else
+                        echo '<img id="foto200px" class="photo" src="../'.$row['foto'].'"/><br><br><br>';
+
+                    echo '      <input type="button" id="tombolCancel" name="tombokCancel" class="tombol" value="CANCEL" onclick="aside1()"/>
                                 <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="pilihan(5)"/>
                             </div>
                         </div>';
@@ -165,5 +170,24 @@
         <div id="divKet"><label>Keterangan</label></div>
         <textarea id="keterangan" name="keterangan">'.(($data!=-1)?''.$jabatan['keterangan'].'':'').'</textarea>
         <br/><br/>';
+    }
+
+    function tampilkanIdJabatan($data){
+        global $conn;
+        $sql = "SELECT idKaryawan FROM karyawan WHERE idJabatan='$data' ORDER BY idKaryawan DESC LIMIT 1";
+        $result=mysqli_query($conn,$sql);
+        $jabatan;
+        while($row=mysqli_fetch_assoc($result)){
+            $jabatan=$row['idKaryawan'];
+        }
+        $idJab=substr($jabatan,0,4);
+        $idKar=substr($jabatan,4)+1;
+        $numlength = strlen((string)$idKar);
+        $newId="";
+        for($i=0;$i<4-$numlength;$i++){
+            $newId=$newId."0";
+        }  
+        $jabatan="$idJab"."$newId"."$idKar";
+        echo $jabatan;
     }
 ?>

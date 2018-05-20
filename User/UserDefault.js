@@ -8,7 +8,7 @@ $(document).ready(function(){
         scrollDown();
     });
     search();
-    advanced();
+    //advanced();
 });
 
 //----- fungsi menampilkan & sembunyikan tombol utk balik ke atas ---------
@@ -58,6 +58,22 @@ function search(){
             //alert(response);
             $("#daftarKomik").html(response);
         }
+    });   
+}
+
+function search1(){
+    $jdl = $('#jdl').val();
+    $pnl = $('#pnl').val();
+    $pnb = $('#pnb').val();
+    $gnr = $('#gnr').val();
+    $.ajax({
+        type : 'post',
+        data : {'jdl':$jdl,'pnl':$pnl,'pnb':$pnb,'gnr':$gnr,'status':1},
+        url: '../../functionPHP/isiKonten1.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#daftarKomik").html(response);
+        }
     });
     
 }
@@ -65,13 +81,11 @@ function search(){
 function simple(){
     $("#advanced").hide();
     $("#simple").show();
-    $.session.set('page','1');
 }
 
 function advanced(){
-    $("#advanced").show();
     $("#simple").hide();
-    $.session.set('page','2');
+    $("#advanced").show();
 }
 
 function pencetBlur(){

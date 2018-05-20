@@ -2,6 +2,66 @@
     //if(isset($_SESSION['id']) || $_SESSION['control'] != 1){
         require "koneksi.php";
 
+        function getUmur($id){
+            global $conn;
+            $sql =  "SELECT floor(DATEDIFF(CURDATE(), birtday)/360) as umur from member where id='$id';";
+            if($result = $conn->query($sql)){
+                if($result->num_rows == 1){
+                    while($rows = $result->fetch_assoc()){
+                        return $rows['umur'];
+                    }
+                }
+            }
+            else{
+                return 1;
+            }
+            $conn->close();
+        }
+
+        function getGenre($id,$conn){
+            $tamp = "tidak ada";
+            //$sql = "SELECT * from genre";
+            $sql =  "SELECT genre.* FROM genrebuku,genre,buku WHERE genrebuku.idBuku = buku.idBuku and genrebuku.idGenre = genre.idGenre AND buku.idBuku = '$id';";
+            if($result = $conn->query($sql)){
+                if($result->num_rows>0){
+                    $tamp = "";
+                    while($rows = $result->fetch_assoc()){
+                        $tamp.= $rows['namaGenre'].", ";
+                    }
+                    $tamp[strlen($tamp)-2]=" ";
+                    return $tamp;
+                }
+                else{
+                    return $tamp;
+                }
+            }
+            else{
+                return $tamp;
+            }
+            $conn->close();
+        }
+
+        function getHarusUmur($id){
+            global $conn;
+            $sql =  "SELECT b.rating FROM buku as b, eksbuku as e WHERE b.idBuku = e.idBuku AND e.idEksBuku = '$id';";
+            if($result = $conn->query($sql)){
+                if($result->num_rows==1){
+                    while($rows = $result->fetch_assoc()){
+                        switch($rows['rating']){
+                            case "anak-anak": $tamp=13;break;
+                            case "remaja": $tamp=18;break;
+                            case "dewasa": $tamp=21;break;
+                            case "semua umur": $tamp=0;break;
+                        }
+                    }
+                    return $tamp;
+                }
+            }
+            else{
+                echo "gagal";
+            }
+            $conn->close();
+        }
 
         function getBuku(){
             global $conn;
@@ -18,6 +78,28 @@
                 echo "gagal";
             }
         }
+
+        function getBukuWith1($judul,$penulis,$penerbit,$genre){
+            global $conn;
+            
+            $data=array();
+            //$sql =  " SELECT * FROM buku, where $dari like '$kata%' order by $sort DESC";
+            $sql =  "SELECT DISTINCT buku.*,penulis.namaPenulis,penerbit.NamaPenerbit from buku,penulis,penerbit,genre,genrebuku WHERE buku.idPenulis = penulis.idPenulis AND buku.idPenerbit = penerbit.idPenerbit AND buku.idBuku = genrebuku.idBuku AND genre.idGenre = genrebuku.idGenre AND buku.judulBuku LIKE '%$judul%' AND penulis.namaPenulis LIKE '%$penulis%' AND penerbit.NamaPenerbit LIKE '%$penerbit%' AND genre.namaGenre LIKE '%$genre%';";
+            if($result = $conn->query($sql)){
+                while($rows = $result->fetch_assoc()){
+                    $data[] = $rows;
+                }
+                $conn->close();
+                return $data;
+            }
+            else{
+                $conn->close();
+                echo "gagal";
+            }
+            
+        }
+
+        
 
         function getBukuWith($kata,$dari,$sort){
             global $conn;
@@ -57,13 +139,12 @@
                 while($rows = $result->fetch_assoc()){
                     $data = $rows;
                 }
-                $conn->close();
                 return $data;
             }
             else{
-                $conn->close();
                 echo "gagal";
             }
+            $conn->close();
             
         }
 
