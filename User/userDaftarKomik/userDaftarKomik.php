@@ -73,7 +73,7 @@
                         <input type="text" id="pnb"></input><br><br>
                         <label>Genre</label>
                         <input type="text" id="gnr"></input><br>
-                        <input type="submit" id="submit" value="SEARCH"></input>
+                        <input onclick="" type="button" id="submit" value="SEARCH"></input>
                     </div>
                 </div>
                 <div id="daftarKomik" class="font15">
