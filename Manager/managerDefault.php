@@ -27,7 +27,7 @@
                             include "template/aside.php";
                     echo '</div>
                         <div id="konten">';
-                            include "managerDashboard/kontenManagerDashboard.php";
+                            
                     echo '</div>
                     </article>
                     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
