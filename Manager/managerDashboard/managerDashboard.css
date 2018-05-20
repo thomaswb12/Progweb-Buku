@@ -1,0 +1,33 @@
+div.dashboardSatuan{
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 180px;
+    height: 250px;
+    margin: 15px;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.iconDashboard{
+    font-size: 100px;
+}
+p.jumlah{
+    font-weight: bold;
+    color: rebeccapurple;
+}
+
+/*---------------------------media query---------------------------*/
+@media screen and (max-width: 680px){ /*view port kecil, utk HP*/
+    div.dashboardSatuan{
+        font-size: 12px;
+        width: 135px;
+        height: 170px;
+        margin: 3px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    .iconDashboard{
+        font-size: 50px;
+    }
+}

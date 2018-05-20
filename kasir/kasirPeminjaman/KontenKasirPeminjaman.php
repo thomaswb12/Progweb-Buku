@@ -44,8 +44,12 @@
             </tbody>
             <tfoot>
                 <tr>
+                    <td colspan="3">Subtotal</td>
+                    <td id="subtotal">Rp 0</td>
+                </tr>
+                <tr>
                     <td colspan="3">Diskon</td>
-                    <td>Rp 0</td>
+                    <td id="diskon">Rp 0</td>
                 </tr>
                 <tr class="tebal">
                     <td colspan="3">Total</td>

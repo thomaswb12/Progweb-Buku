@@ -57,6 +57,98 @@ td{
     border: none;
 }
 /*tabel daftar peminjaman------*/
+
+/*pop up message*/
+div#blur{       /*utk blur semuanya*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(50,50,50,0.7);    
+    display: none;
+}
+div#popup{  /*kotak popup*/
+    position: fixed;
+    top: 5%;
+    left: 15%;
+    height: 90%;
+    width: 70%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 1);
+    color: black;
+    display: none;
+}
+div#popup .simbolX{ /*simbol x untuk close popup*/
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: black;
+    font-size: 30px;
+}
+div#popup div#parentIsiPopup{
+    margin: auto;
+    height: 80%;
+    width: 95%;
+    margin-top: 20px;
+    overflow: hidden;
+}
+div#popup div#isiPopup{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    padding-right: 17px;        /*keperluan supaya scrollbarnya hilang, tp ttep bisa scroll*/
+    box-sizing: content-box;    /*keperluan supaya scrollbarnya hilang*/
+}
+div#popup table#tablePopup{
+    width: 80%;
+    margin-left: 0px;
+}
+div#popup table#tablePopup td, div#popup table#tablePopup tr{
+    border: none;
+    text-align: left;
+    height: 35px;
+}
+div#popup table#tablePopup .divSimbolPopup{
+    width: 8%;
+}
+div#popup table#tablePopup .divSimbolPopup .simbolPopup{
+    font-size: 25px;
+}
+div#popup table#tablePopup .atribut{
+    width: 15%;
+}
+div#popup table#tablePopup .value{
+    width: 77%;
+}
+    /*Bagian tabel daftar komiknya*/
+div#popup div#divTablePopupDaftar{
+    margin-left: 50px;
+    width: 95%;
+    overflow-x: scroll;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar{
+    width: 110%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .popUpId{
+    width: 17%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .popUpJudul{
+    width: 60%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .popUpPinjam{
+    width: 10%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .popUpKembali{
+    width: 10%;
+}
+div#popup div#divTablePopupDaftar table#tablePopupDaftar .peringatan{
+    width: 3%;
+    text-align: left;
+    padding-left: 3px;
+}
+    /*Bagian tabel daftar komiknya*/
+/*pop up message*/
 /*------------------------bagian konten---------------------*/
 
 
@@ -102,5 +194,34 @@ td{
         white-space: pre-line;  /*bisa ada new line kalau data panjang dan ada spasinya*/
     }
     /*tabel daftar peminjaman------*/
+    /*pop up message*/
+    div#popup{  
+        margin: auto;
+        top: 20%;
+        height: 60%;
+        left: 5%;
+        width: 90%;
+    }
+    div#popup .simbolX{     /*X utk close popup*/
+        font-size: 20px;
+    }
+    div#popup .simbolPopup{   /*fontawesome ditiadakan*/
+        display: none;
+    }
+    div#popup .atribut{
+        width: 20%;
+    }
+    div#popup .value{
+        width: 80%;
+    }
+        /*Bagian tabel daftar komiknya*/
+    div#popup div#divTablePopupDaftar{
+        margin-left: 10px;
+        width: 100%;
+    }
+    div#popup div#divTablePopupDaftar table#tablePopupDaftar{
+        width: 300%;
+    }
+    /*pop up message*/
     /*-----------------utk konten-----------------*/
 }

@@ -27,6 +27,7 @@
         <table>
             <thead>
                 <th class="tandaTable"></th>
+                <th class="idTransaksiPeminjaman">ID Peminjaman</th>
                 <th class="idBuku">ID Eksemplar Buku</th>
                 <th class="judulBuku">Judul Buku</th>
                 <th class="tanggalPinjam">Tanggal Pinjam</th>
@@ -39,13 +40,13 @@
             <tfoot>
                 <tr class="tebal">
                     <td class="tandaTable"></td>
-                    <td colspan="5">Total</td>
-                    <td>Rp 500</td>
+                    <td colspan="6">Total</td>
+                    <td id="totalDenda">Rp 0</td>
                 </tr>
             </tfoot>
         </table>
     </div>
     <div id="divTombol">
-        <input class="tombol" id="print" name="print" type="button" value="Print Nota">
+        <input class="tombol"  onclick="transaksi(15)" id="print" name="print" type="button" value="Print Nota">
     </div>
 </div>

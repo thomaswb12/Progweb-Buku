@@ -20,13 +20,13 @@
                     <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
                     <script src="HRDDefault.js"></script>
                     <script src="jquery.session.js" ></script>
-                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                    <script defer src="../fontawesome-free-5.0.13\svg-with-js\js\fontawesome-all.min.js"></script>
                 </head>
                 <body>
                     <header>';include "Template/header.php";
                 echo '</header>
                     <article>';include "Template/aside.php";
-                echo '<div id="konten">';
+                echo '<div id="konten">'; include "hrdDaftarKaryawan/KontenHRDDaftarKaryawan.php";
                 echo '    </div>
                     </article>
                     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>

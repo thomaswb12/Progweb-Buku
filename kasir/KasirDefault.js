@@ -52,6 +52,7 @@ function aside2(){
     $("div#konten").load("kasirPengembalian/KontenKasirPengembalian.php");
     $("div#gantiHead").load("kasirPengembalian/HeadKasirPengembalian.php");
     $.session.set('page','2');
+    transaksi(14);
     transaksi(10);
 }
 function aside3(){
@@ -79,16 +80,38 @@ function aside5(){
     $("div#gantiHead").load("kasirDaftarMember/HeadKasirDaftarMember.php");
     $.session.set('page','5');
     searchDaftarMember();
+
 }
 
 function pencetTRPengembalian(temp){
     if($(temp).children("td.ganti").css("background-color") == "rgba(0, 100, 0, 0.6)"){
+        //untuk menghapus green
         $(temp).children("td.ganti").removeClass("green");
         $(temp).children("td.tandaTable").html("<td class='tandaTable'><i class='fas fa-check' style='color:grey'></i></td>");
+        actionPengembalian(temp,1);
     } 
     else {
+        //untuk menambah green
         $(temp).children("td.ganti").addClass("green");
         $(temp).children("td.tandaTable").html("<td class='tandaTable'><i class='fas fa-check' style='color:green'></i></td>");
+        //transaksi(12);
+        actionPengembalian(temp,2);
+    }
+}
+
+function cekDiskon(){
+    if($('#namaMember').val()!=""){
+        $.ajax({
+            type : 'post',
+            data : {'function':16,'data':$('#inputID').val(),'total':$('#subtotal').text()},
+            url: '../functionPHP/transaksi.php',
+            success: function(response){
+                var b = JSON.parse(response);
+                //alert(response);
+                $('#diskon').text(b.diskon);
+                $('#total').text(b.total);
+            }
+        });
     }
 }
 
@@ -135,6 +158,47 @@ function load(){
     total();
 }
 
+function totalDenda(){
+    $.ajax({
+        type : 'post',
+        data : {'function':17,'cek':1},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            $('#totalDenda').text(response);
+        }
+    });
+}
+
+function actionPengembalian(temp,status){
+    if(status==1){//untuk hapus  
+      var no=12;
+      var data = {
+          'idTransaksi':temp.children("td:nth-of-type(2)").text(),
+          'id':temp.children("td:nth-of-type(3)").text()
+      };
+    }
+    else{//untuk tambah
+        var no = 13;
+        var data = {
+            'idTransaksi':temp.children("td:nth-of-type(2)").text(),
+            'id':temp.children("td:nth-of-type(3)").text(),
+            'tglPinjam':temp.children("td:nth-of-type(5)").text(),
+            'tglKembali':temp.children("td:nth-of-type(6)").text(),
+            'denda':temp.children("td:nth-of-type(8)").text(),
+            'idTrans':$('#idTransaksiPengembalian').val()
+        };
+    }
+    $.ajax({
+        type : 'post',
+        data : {'function':no,'id':data},
+        url: '../functionPHP/transaksi.php',
+        success: function(response){
+            alert(response);
+            totalDenda();
+        }
+    });
+}
+
 function transaksiHapus(tamp,temp){
     $.ajax({
         type : 'post',
@@ -153,7 +217,10 @@ function total(){
         url: '../functionPHP/transaksi.php',
         success: function(response){
             //alert(response);
-            $('#total').text(response);
+            $('#subtotal').text(response);
+            if($('#inputID').val()!="" && $('#namaMember').val()!=""){
+                cekDiskon();
+            }
         }
     });
 }
@@ -219,17 +286,20 @@ function transaksi($temp=1){
                     }
                     break;
         case 8  :   if($('#namaMember').val() != ""){
-                        $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val()};
+                        $data = {'function':$temp,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksi").val(),'idEksBuku':$("#inputIdEksBuku").val(),'diskon':$('#diskon').text(),'sub':$('#subtotal').text()};
                         $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                             if(response == "berhasil"){
                                 alert("Transaksi berhasil");
                                 $('#namaMember').val('');
                                 $('#inputID').val('');
+                                $('#inputIdEksBuku').val('');
+                                $('#total').text('Rp 0');
+                                transaksi(1);
                                 load();
                                 load();
                             }
                             else{
-                                alert("Transaksi gagal");
+                                alert(response);
                             }
                         };
                     }
@@ -247,12 +317,35 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                         if(response == "ga ada"){
                             $("#namaMember").val("");
+                            loadTable($("#inputID").val());
                         }
                         else{
                             $("#namaMember").val(response);
                             loadTable($("#inputID").val());
                         }
                     };break;
+        case 14 :   $data = {'function':14};
+                    $function = function (response) {};
+                    break;
+        case 15 :   if($('#namaMember').val()!="" && $('#idTransaksiPengembalian').val!=""){
+                        $data = {'function':15,'idMember':$('#inputID').val(),'idTransaksi':$("#idTransaksiPengembalian").val()};
+                        $function = function (response) {
+                            if(response == "berhasil"){
+                                $('#inputID').val("");
+                                transaksi(11);
+                                $('#namaMember').val("");
+                                transaksi(10);
+                            }
+                            else{
+                                alert(response);
+                            }
+                        };
+                    }
+                    else{
+                        alert("Data tidak valid");
+                        pass=0;
+                    }
+                    break;
         default:
                     break;
     }
@@ -338,8 +431,10 @@ function searchDaftarMember(){
         data : {'keyword':$keyword,'searchby':$searchby,'sortby':$sortby,'status':0},
         url: '../functionPHP/isiKontenDaftarMember.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
-            //alert(response);
             $("tbody").html(response);
         }
+    })
+    .done(function(response){
+        $("tbody").html(response);
     });
 }

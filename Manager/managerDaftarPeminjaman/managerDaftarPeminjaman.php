@@ -14,16 +14,17 @@
 </div>
 <!--bagian daftar peminjaman-->
 <div id="tabel">
-    <table>
-        <thead>
-            <th class="tanggalPengembalian">Tanggal Pengembalian</th>
-            <th class="idMember">ID Member</th>
-            <th class="namaMember">Nama Member</th>
-            <th class="peringatan"></th>
-        </thead>
-        <tbody id="daftarPeminjaman">
+    
+</div>
+
+
+<!-- utk pop up message -->
+<div id="blur" onclick="pencetBlur()">
+</div>
+<div id="popup">
+    <i class="fas fa-times simbolX" onclick="pencetBlur()"></i>
+    <br/><br/>
+    <div id="parentIsiPopup">
         
-            
-        </tbody>
-    </table>
+    </div>
 </div>

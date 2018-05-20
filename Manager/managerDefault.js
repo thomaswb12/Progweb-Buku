@@ -4,33 +4,37 @@ $(document).ready(function(){
         backToTop();
     });
 
-    //------ menandai option aside yg sedang terpilih ----
-//    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
-//    $('#aside2').hide();
-
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
 
+    $("#aside0").click(function(){aside0();});
     $("#aside1").click(function(){aside1();});
-    $("#aside2").click(function(){aside2();});
     $("#aside3").click(function(){aside3();});
 
 });
 
 $(window).on('load', function () {
     var c = $.session.get('page');
-    if(c == null || c == 1)
+    if(c == null || c == 0)
+        aside0();
+    else if(c == 1)
         aside1();
-    else if(c == 2)
-        aside2();
     else if(c == 3)
         aside3();
 });
 
+function aside0(){
+    $(".blue").removeClass('terpilih');
+    $("#centang").appendTo('#aside0 span');
+    $("#aside0").addClass('terpilih');
+    $("div#konten").load("managerDashboard/kontenManagerDashboard.php");
+    $("div#gantiHead").load("managerDashboard/headManagerDashboard.php");
+    $.session.set('page','0');
+}
+
 function aside1(){
-    $("#aside2").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside1 span');
     $("#aside1").addClass('terpilih');
@@ -40,23 +44,14 @@ function aside1(){
     searchDaftarPeminjaman();
 }
 
-function aside2(){
-    $(".blue").removeClass('terpilih');
-    $("#centang").appendTo('#aside2 span');
-    $("#aside2").show().addClass('terpilih');
-    $("div#konten").load("managerDetailPeminjaman/kontenManagerDetailPeminjaman.php");
-    $("div#gantiHead").load("managerDetailPeminjaman/headManagerDetailPeminjaman.php");
-    $.session.set('page','2');
-}
-
 function aside3(){
-    $("#aside2").hide();
     $(".blue").removeClass('terpilih');
     $("#centang").appendTo('#aside3 span');
     $("#aside3").addClass('terpilih');
     $("div#konten").load("managerLaporanKeuangan/kontenManagerLaporanKeuangan.php");
     $("div#gantiHead").load("managerLaporanKeuangan/headManagerLaporanKeuangan.php");
     $.session.set('page','3');
+    searchDaftarLaporanKeuangan();
 }
 
 
@@ -89,7 +84,40 @@ function searchDaftarPeminjaman(){
         data : {'keyword':$keyword,'searchby':$searchby,'status':0},
         url: '../functionPHP/isiKontenDaftarPeminjaman.php',
         success: function (response) {
-            $("tbody").html(response);
+            $("#tabel").html(response);
         }
     });
+}
+
+//tampilkan pop up detail peminjaman ketika tr tabel di manager-daftarPeminjaman di klik
+function tampilPopupDetailPeminjaman(temp){
+    $idMember = temp.children("td:nth-of-type(2)").html();
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
+    $.ajax({
+        type : 'post',
+        data : {'keyword':$idMember},
+        url: '../functionPHP/popupDaftarPeminjaman.php',
+        success: function (response) {
+            $("#parentIsiPopup").html(response);
+        }
+    });
+}
+
+function pencetBlur(){
+    $("#popup").css('display','none');
+    $("#blur").css('display','none');
+}
+
+function searchDaftarLaporanKeuangan(){
+    $('#periodeAwal').val() !="" ? $awal = $('#periodeAwal').val(): $awal ="";
+    $('#periodeAkhir').val() !="" ? $akhir = $('#periodeAkhir').val(): $akhir ="";
+    $.ajax({
+        type : 'post',
+        data : {'awal':$awal,'akhir':$akhir},
+        url: '../functionPHP/isiKontenDaftarLaporanKeuangan.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            $("tbody").html(response);
+        }
+    })
 }
