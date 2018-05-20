@@ -1,7 +1,14 @@
 <?php
     session_start();
 ?>
-
+<script>
+    function cekpass(){
+        if($("#pass1").val()!=$("#pass2").val()){
+            $("#peringatanPass").css("display","block");
+        }
+        else $("#peringatanPass").css("display","none");
+    }
+</script>
 <h1>Tambah Karyawan</h1> 
     <div id="dataKaryawan" class="font15">
          <div class="detailKaryawan">
@@ -41,11 +48,12 @@
                     <textarea id="alamat" name="alamat"></textarea>
                     <br/><br/><hr><br>
                     <label>Password</label>
-                    <input type="password" id="pass1" name="pass1"/>
+                    <input type="password" id="pass1" name="pass1" oninput="cekpass()"/>
                     <br/><br/>
                     <label>Re-Input Password</label>
-                    <input type="password" id="pass2" name="pass2"/>
-                    <br/><br/><br/><br/>
+                    <input type="password" id="pass2" name="pass2" oninput="cekpass()"/>
+                    <br/>
+                    <p id="peringatanPass" style="color:red;display:none">*Password tidak sama</p><br/><br/><br/>
                 </div>  
             </div>
             <div class="kanan">
