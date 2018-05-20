@@ -92,7 +92,7 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo '<div class="infoKaryawan">
-                            <img class="photo" src="../'.$row['foto'].'"/>
+                            <img class="photo" src="'.$row['foto'].'"/>
                             <table>
                                 <tr>
                                     <td class="attr"><p class="label">ID</p></td>

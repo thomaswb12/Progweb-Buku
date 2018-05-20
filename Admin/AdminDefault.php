@@ -3,9 +3,8 @@
 <head>
     <?php 
         session_start();
-        if(isset($_SESSION["position"])){
-            
-        }
+        $_SESSION['id']="admin";
+        $_SESSION['control']=0;
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,13 +26,18 @@
         ?>
     </header>
     <article>
-        <?php 
-            include "Template/aside.php"
-        ?>
+        <div class="sidebar">
+            <ul>
+                <li id="menu1"><a href="../User/UserDaftarKomik/UserDaftarKomik.php">CUSTOMER <p>(Menu user)</p></a></li>
+                <li id="menu2"><a href="../Gudang/gudangDefault.php">GUDANG</a></li>
+                <li id="menu3"><a href="../HRD/HRDDefault.php">HRD</a></li>
+                <li id="menu4"><a href="../kasir/KasirDefault.php">KASIR</a></li>
+                <li id="menu5"><a href="../Manager/managerDefault.php">MANAGER</a></li>
+
+            </ul>
+        </div>
         <div id="konten">
-            <?php include "kasir/Kasir - daftar komik/KontenKasirDaftarKomik.php";
-                include "kasir/Kasir - daftar komik/HeadKasirDaftarKomik.php";
-            ?>
+            
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
