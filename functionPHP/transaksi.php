@@ -27,15 +27,15 @@
         if($cek==1){
             include "curency.php";
         }
-        $sql = "SELECT birtday FROM member where id = '$data'";
+        $sql = "SELECT DATE_FORMAT(birtday, '%m-%d') as b FROM member where id = '$data'";
         global $conn;
         $tamp = 0;
         if($result = $conn->query($sql)){
             if($result->num_rows == 1){
                 while($row = $result->fetch_assoc()){
-                    if(date("Y-m-d")==$row['birtday']){
+                    if(date("m-d")==$row['b']){
                         $tamp = (toNumber($total)*0.1);
-                        //echo $row['birtday'];
+                        //echo $row['b'];
                     } 
                 }
             }
