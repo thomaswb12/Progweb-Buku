@@ -84,7 +84,7 @@ function searchDaftarPeminjaman(){
         data : {'keyword':$keyword,'searchby':$searchby,'status':0},
         url: '../functionPHP/isiKontenDaftarPeminjaman.php',
         success: function (response) {
-            $("tbody").html(response);
+            $("#tabel").html(response);
         }
     });
 }

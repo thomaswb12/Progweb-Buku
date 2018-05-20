@@ -14,18 +14,7 @@
 </div>
 <!--bagian daftar peminjaman-->
 <div id="tabel">
-    <table>
-        <thead>
-            <th class="tanggalPengembalian">Tanggal Aturan Pengembalian</th>
-            <th class="idMember">ID Member</th>
-            <th class="namaMember">Nama Member</th>
-            <th class="peringatan"></th>
-        </thead>
-        <tbody id="daftarPeminjaman">
-        
-            
-        </tbody>
-    </table>
+    
 </div>
 
 
