@@ -12,18 +12,18 @@
         $alamat=$_POST["alamat"];
         $pass1=$_POST["pass1"];
         $pass2=$_POST["pass2"];
-        $gambar=$_POST["gambar"];
+        $gambar=$_FILES["gambar"]['tmp_name'];
 
+        //kalau pass beda
+        if($pass1!=$pass2){
+            $_SESSION["beda"]=1;
+        }
         //kalau data belum lengkap
         if($idKaryawan==""||$namaKaryawan==""||$jabatan==""||$email==""||$telepon==""||$alamat==""||$pass1==""||$pass2==""){
             $_SESSION["belumLengkap"]=1;
         }
         //kalau data sudah lengkap
         else{       
-            //kalau pass beda
-            if($pass1!=$pass2){
-                $_SESSION["beda"]=1;
-            }
             else{
                 $query="INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `pass`, `foto`) VALUES ('$idKaryawan', '$namaKaryawan', '$email', '$telepon', '$jabatan', '$pass1', '$gambar');";
                 $result=mysqli_query($conn,$query);

@@ -145,6 +145,7 @@ a#tombolUp:hover{ /*kalau dihover warnanya lebih jelas*/
         margin: auto;
     }
     article div#konten div#dataKaryawan div.kanan{
+        clear: both;
         float: none;
         margin-right: 0px;
     }

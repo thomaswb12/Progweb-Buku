@@ -49,6 +49,9 @@ article div#konten input#tombolSave{
     article div#konten div#inputan{ /*bagian input2 dibawah judul*/
         margin: 0px;
     }
+    article div#konten div#aturanIdJabatan{
+        clear: both;
+    }
     article div#konten input, article div#konten textarea#keterangan{ /*semua kotak input dan textarea*/
         width: 150px;
     }
