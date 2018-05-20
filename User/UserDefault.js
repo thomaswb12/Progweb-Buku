@@ -8,7 +8,7 @@ $(document).ready(function(){
         scrollDown();
     });
     search();
-    advanced();
+    //advanced();
 });
 
 //----- fungsi menampilkan & sembunyikan tombol utk balik ke atas ---------
@@ -65,13 +65,11 @@ function search(){
 function simple(){
     $("#advanced").hide();
     $("#simple").show();
-    $.session.set('page','1');
 }
 
 function advanced(){
-    $("#advanced").show();
     $("#simple").hide();
-    $.session.set('page','2');
+    $("#advanced").show();
 }
 
 function pencetBlur(){
