@@ -7,7 +7,12 @@
         $id=getLastIdPenerbit();  //adalah fungsi yang ada di member.php
         //masukkan ke variabel
         $nama=$_POST["namaPenerbit"];
-        if($nama==""){
+        $email = $_POST["email"];
+        $noTelp = $_POST["noTelp"];
+        $alamat = $_POST["alamat"];
+        $foto = "../images/penerbit/".$_FILES['gambar']['name'];
+        move_uploaded_file($_FILES['gambar']['tmp_name'], $foto);
+        if($nama=="" || $email == "" || $noTelp == "" || $alamat == ""){
             $_SESSION["belumLengkap"]=1;
         }
         //kalau data sudah lengkap
@@ -22,7 +27,7 @@
             }
             //kalau belum ada di DB -> tambahkan ke DB
             else{
-                $query="INSERT INTO `penerbit` (`idPenerbit`, `namaPenerbit`) VALUES ('$id', '$nama');";
+                $query="INSERT INTO `penerbit` (`idPenerbit`, `NamaPenerbit`, `email`, `alamat`, `noTelp`, `foto`) VALUES ('$id', '$nama', '$email', '$noTelp', '$alamat', '$foto');";
                 $result=mysqli_query($conn,$query);
                 $_SESSION["berhasil"]=1;
             }

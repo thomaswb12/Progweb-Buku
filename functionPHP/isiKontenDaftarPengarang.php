@@ -9,9 +9,10 @@
     $i=1;
     foreach($hasil as $pengarang){
         echo '<div class="info">';
-        echo '<img class="foto" src="logo.jpg"/>';
+        echo '<img class="foto" src="'.$pengarang['foto'].'"/>';
         echo '<p class="ID">ID : '.$pengarang['idPenulis'].'</p>
-                <p class="Penerbit">Penerbit : '.$pengarang['namaPenulis'].'</p>
+            <p class="Penerbit">Penerbit : '.$pengarang['namaPenulis'].'</p>
+            <p>Asal : '.$pengarang['asal'].'</p>
              </div>';
         $i++;
     }
