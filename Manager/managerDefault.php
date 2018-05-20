@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(isset($_SESSION["id"]) && isset($_SESSION["control"])){
-        if($_SESSION["control"]==3){
+        if($_SESSION["control"]==3 || $_SESSION["control"]==0){
             echo '<!DOCTYPE html>
                     <html lang="en">
                     <head>
