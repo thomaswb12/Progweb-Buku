@@ -2,6 +2,14 @@
     include "../../functionPHP/member.php";
     session_start();
 ?>
+<script>
+    function ceknumeric(coba){
+        if(!$.isNumeric(coba.val())){
+            coba.val("");
+            alert("Input harus berupa angka");
+        }
+    }
+</script>
 
 <h1>Tambah Member</h1>
 <form action="../functionPHP/tambahMember.php" method="post">
@@ -18,7 +26,7 @@
 
         <label>No. Identitas</label><br/>
         <i class="fas fa-id-card simbol"></i>
-        <input type="text" id="nomorIdentitas" name="noIdentitas"/><br/>
+        <input type="text" id="nomorIdentitas" name="noIdentitas" oninput="ceknumeric($(this))"/><br/>
 
         <label>Gender</label><br/>
         <i class="fas fa-transgender simbol"></i>
@@ -38,7 +46,7 @@
 
         <label>No. Telp.</label><br/>
         <i class="fas fa-phone simbol"></i>
-        <input type="text" id="noTelp" name="noTelp"/><br/>
+        <input type="text" id="noTelp" name="noTelp" oninput="ceknumeric($(this))"/><br/>
 
         <label>Alamat</label><br/>
         <i class="fas fa-home simbol"></i>
