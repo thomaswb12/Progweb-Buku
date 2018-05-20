@@ -8,6 +8,12 @@
         }
         else $("#peringatanPass").css("display","none");
     }
+    function cekNumeric(){
+        if(!$.isNumeric($("#telepon").val())){
+            alert("Inputan harus angka!");
+            $("#telepon").val("");
+        }
+    }
 </script>
 <h1>Tambah Karyawan</h1> 
     <div id="dataKaryawan" class="font15">
@@ -39,10 +45,10 @@
                     </select>
                     <br/><br/>
                     <label>Email</label>
-                    <input type="text" id="email" name="email"/>
+                    <input type="email" id="email" name="email"/>
                     <br/><br/>
                     <label>No. Telp</label>
-                    <input type="text" id="telepon" name="telepon"/>
+                    <input type="text" id="telepon" name="telepon" oninput="cekNumeric()"/>
                     <br/><br/>
                     <div id="divAl"><label>Alamat</label></div>
                     <textarea id="alamat" name="alamat"></textarea>
