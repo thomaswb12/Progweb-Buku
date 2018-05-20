@@ -1,10 +1,17 @@
+<?php
+    include "../../functionPHP/komik.php";
+    session_start();
+?>
 <div id="judul">
     <h1>Tambah Komik</h1>
 </div>
-<form method="POST" action="../functionPHP/tambahKomik.php">
+<form method="POST" action="../functionPHP/tambahKomik.php" enctype="multipart/form-data">
     <div id="kiri">
         <label>ID Komik</label><br/>
-        <input type="text" id="idKomik" name="idKomik" disabled="disabled"/><br/>
+        <input type="text" id="idKomik" name="idKomik" class="disable" disabled="disabled" value="<?php echo getLastIdKomik(); ?>"/><br/>
+
+        <label>Gambar</label><br/>
+        <input type="file" id="gambar" name="gambar"/><br/>
 
         <label>Judul</label><br/>
         <input type="text" id="judul" name="judul"/><br/>
@@ -31,25 +38,22 @@
         </select><br/>
 
         <label>Special Edition</label><br/>
-        <select id="special" name="special">
+        <select id="specialEdition" name="specialEdition">
             <option value="" selected disabled hidden>Choose here</option>
             <option value="1">Ya</option>
             <option value="2">Tidak</option>
         </select><br/>
-
-        <label>Gambar</label><br/>
-        <input type="file" id="gambar" name="gambar"/><br/>
 
         <label>Sinopsis</label><br/>
         <textarea type="text" id="sinopsis" name="sinopsis"></textarea><br/>
     </div>
 
     <div id="kanan">
-        <label>Penulis</label><br/>
-        <input type="text" id="penulis" name="penulis"/><br/>
+        <label>ID Pengarang</label><br/>
+        <input type="text" id="idPengarang" name="idPengarang"/><br/>
 
-        <label>Penerbit</label><br/>
-        <input type="text" id="penerbit" name="penerbit"/><br/>
+        <label>ID Penerbit</label><br/>
+        <input type="text" id="idPenerbit" name="idPenerbit"/><br/>
 
         <label>Tanggal Terbit</label><br/>
         <input type="date" id="tanggalTerbit" name="tanggalTerbit"/><br/>
@@ -58,7 +62,7 @@
         <input type="text" id="jumlahHalaman" name="jumlahHalaman"/><br/>
 
         <label>Berat Komik</label><br/>
-        <input type="text" id="beratBuku" name="beratBuku"/><br/>
+        <input type="text" id="beratKomik" name="beratKomik"/><br/>
 
         <label>Jenis Cover</label><br/>
         <select id="jenisCover" name="jenisCover">
@@ -89,7 +93,7 @@
     }
 
     //kalau orang itu sudah jadi member
-    if(isset($_SESSION["sudahAda"])){
+    else if(isset($_SESSION["sudahAda"])){
         unset($_SESSION["sudahAda"]);
         ?>
         <script type="text/javascript">
@@ -99,7 +103,7 @@
     }
 
     //kalau berhasil didaftarkan menjadi member
-    if(isset($_SESSION["berhasil"])){
+    else if(isset($_SESSION["berhasil"])){
         unset($_SESSION["berhasil"]);
         ?>
         <script type="text/javascript">
@@ -108,11 +112,20 @@
         <?php
     }
 
-    if(isset($_SESSION["penerbit"])){
+    else if(isset($_SESSION["penerbit"])){
         unset($_SESSION["penerbit"]);
         ?>
         <script type="text/javascript">
             alert("Penerbit tidak ada!");
+        </script>
+        <?php
+    }
+
+    else if(isset($_SESSION["pengarang"])){
+        unset($_SESSION["pengarang"]);
+        ?>
+        <script type="text/javascript">
+            alert("Pengarang tidak ada!");
         </script>
         <?php
     }

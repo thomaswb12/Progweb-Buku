@@ -19,7 +19,7 @@
         </select>
         <div id="searchBox">
             <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
-            <i class="fa fa-search blue font15"></i>
+            <i class="fa fa-search blue font15"  onclick="searchPenerbit()"></i>
         </div>
     </div>
 </div>

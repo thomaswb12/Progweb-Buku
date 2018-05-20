@@ -8,13 +8,15 @@
         //masukkan ke variabel
         $judul = $_POST['judul'];
         $sinopsis = $_POST['sinopsis'];
-        $penulis = $_POST['penulis'];
-        $penerbit = $_POST['penerbit'];
+        $idPengarang = $_POST['idPengarang'];
+        $idPenerbit = $_POST['idPenerbit'];
         $tgl = $_POST['tanggalTerbit'];
         $jml = $_POST['jumlahHalaman'];
-        $berat = $_POST['beratKomik'];
+        $berat = $_POST['beratKomik'].'.0';
         $panjang = $_POST['panjang'];
         $lebar = $_POST['lebar'];
+        $foto = "../images/buku/".$_FILES['gambar']['name'];
+        move_uploaded_file($_FILES['gambar']['tmp_name'], $foto);
         switch ($_POST['genre']) {
             case 1: $genre = 'Action';break;
             case 2: $genre = 'Romance';break;
@@ -40,7 +42,7 @@
         }
 
         //kalau data belum lengkap
-        if($judul==""||$sinopsis==""||$rating==""||$penulis==""||$penerbit==""||$tgl==""||$jml==""||$berat==""||$cover==""||$panjang==""||$lebar==""){
+        if($judul==""||$sinopsis==""||$rating==""||$idPengarang==""||$idPenerbit==""||$tgl==""||$jml==""||$berat==""||$jenisCover==""||$panjang==""||$lebar==""||$rating==""||$specialEdition==""||$jenisCover==""){
             $_SESSION["belumLengkap"]=1;
         }
         //kalau data sudah lengkap
@@ -49,25 +51,49 @@
             $query = "SELECT * FROM buku WHERE judulBuku = '$judul'";
             $hasil = mysqli_query($conn,$query);
             $count = mysqli_num_rows($hasil);
+
+            $query = "SELECT * FROM penerbit WHERE idPenerbit = '$idPenerbit'";
+            $hasilPenerbit = mysqli_query($conn,$query);
+            $cekPenerbit = mysqli_num_rows($hasilPenerbit);
+
+            $query = "SELECT * FROM penulis WHERE idPenulis = '$idPengarang'";
+            $hasilPengarang = mysqli_query($conn,$query);
+            $cekPengarang = mysqli_num_rows($hasilPengarang);
             //kalau ada di DB (komik sudah ada)
             if($count>0){
                 $_SESSION["sudahAda"]=1;
             }
+            else if($cekPenerbit == 0){
+                $_SESSION["penerbit"]=1;
+            }
+            else if($cekPengarang == 0){
+                $_SESSION["pengarang"]=1;
+            }
             //kalau belum ada di DB -> tambahkan ke DB
             else{
-                $query = "SELECT idPenerbit FROM penerbit WHERE NamaPenerbit = '$penerbit'";
-                $idPenerbit = mysqli_query($conn,$query);
-                $count = mysqli_num_rows($idPenerbit);
-                if($count == 0){
-                    $_SESSION["penerbit"] = 1;
-                }
-                else{
-                    $query="INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`,`Dipinjam`,`idPenerbit`,`idPenulis`,`Rating`,`idRak`,`jumlahEksemplar`,`Location`,`Available`,`specialEdition`) VALUES ('$id', '$judul', '$tgl', '$jml', 'berat', '$cover', '$sinopsis', '$panjang', '$lebar', '0', '$idPenerbit', '$idPenulis', '$rating', '$idRak', '$jml', '$loc', '1', '$specialEdition');";
-                    $result=mysqli_query($conn,$query);
-                    $_SESSION["berhasil"]=1;
-                }
+                $idRak = "CC000001";
+                $satu = 1;
+                $nol = 0;
+                $query="INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`,`Dipinjam`,`idPenerbit`,`idPenulis`,`Rating`,`idRak`,`jumlahEksemplar`,`Location`,`Available`,`specialEdition`) VALUES ('$id', '$judul', '$tgl', '$jml', '$berat', '$jenisCover', '$sinopsis', '$panjang', '$lebar', '$nol', '$idPenerbit', '$idPengarang', '$rating', '$idRak', '$satu', '$foto', '1', '$specialEdition');";
+                $result=mysqli_query($conn,$query);
+                $_SESSION["berhasil"]=1;
+                //echo $query;
             }
         }
         header ("location:../Gudang/gudangDefault.php");
+        /*echo $judul;
+        echo $sinopsis;
+        echo $idPengarang;
+        echo $idPenerbit;
+        echo $tgl;
+        echo $jml;
+        echo $berat;
+        echo $panjang;
+        echo $lebar;
+        echo $foto;
+        echo $rating;
+        echo $genre;
+        echo $specialEdition;
+        echo $jenisCover;*/
     }
 ?>

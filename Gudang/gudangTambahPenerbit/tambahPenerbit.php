@@ -12,17 +12,17 @@
 </div>
 <form method="POST" action="../functionPHP/tambahPenerbit.php" enctype="multipart/form-data">
     <div id="kiri">
+        <label>ID Penerbit</label><br/>
+        <input type="text" id="idPenerbit" name="idPenerbit" class="disable" disabled="disabled" value="<?php echo getLastIdPenerbit(); ?>" /><br/>
+
         <label>Gambar</label><br/>
         <input type="file" id="gambar" name="gambar"/><br/>
-
-        <label>ID Penerbit</label><br/>
-        <input type="text" id="idPenerbit" name="idPenerbit" disabled="disabled" value="<?php echo getLastIdPenerbit(); ?>" /><br/>
 
         <label>Nama Penerbit</label><br/>
         <input type="text" id="namaPenerbit" name="namaPenerbit"/><br/> 
 
         <label>Email</label><br/>
-        <input type="text" id="email" name="email"/><br/> 
+        <input type="text" id="email" name="email"/><br/>       
     </div>
 
     <div id="kanan">
