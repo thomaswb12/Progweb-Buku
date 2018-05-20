@@ -24,11 +24,10 @@
         }
         //kalau data sudah lengkap
         else{       
-            else{
                 $query="INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `pass`, `foto`) VALUES ('$idKaryawan', '$namaKaryawan', '$email', '$telepon', '$jabatan', '$pass1', '$gambar');";
                 $result=mysqli_query($conn,$query);
                 $_SESSION["berhasil"]=1;
-            }
+
         }
         header ("location:../HRD/HRDDefault.php");
     }
