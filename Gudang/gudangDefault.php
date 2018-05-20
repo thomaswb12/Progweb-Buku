@@ -20,7 +20,7 @@
             <script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
             <script src="jquery.session.js"></script>
             <script src="gudangDefault.js"></script>
-            <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+            <script defer src="../fontawesome-free-5.0.13\svg-with-js\js\fontawesome-all.min.js"></script>
         </head>
         <body>
             <header>
