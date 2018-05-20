@@ -4,17 +4,12 @@ $(document).ready(function(){
         backToTop();
     });
 
-    //------ menandai option aside yg sedang terpilih ----
-//    $('#aside1').addClass('terpilih'); //asumsikan aside1 yg terpilih
-//    $('#aside2').hide();
-
     //------ men-slide option utk aside ----
     $("#minimizeOption").click(function(){
         $('#option').slideToggle("slow"); //klik tampil, klik sembunyi
     });
 
     $("#aside1").click(function(){aside1();});
-    $("#aside2").click(function(){aside2();});
     $("#aside3").click(function(){aside3();});
 
 });
@@ -23,8 +18,6 @@ $(window).on('load', function () {
     var c = $.session.get('page');
     if(c == null || c == 1)
         aside1();
-    else if(c == 2)
-        aside2();
     else if(c == 3)
         aside3();
 });
@@ -38,15 +31,6 @@ function aside1(){
     $("div#gantiHead").load("managerDaftarPeminjaman/headManagerDaftarPeminjaman.php");
     $.session.set('page','1');
     searchDaftarPeminjaman();
-}
-
-function aside2(){
-    $(".blue").removeClass('terpilih');
-    $("#centang").appendTo('#aside2 span');
-    $("#aside2").show().addClass('terpilih');
-    $("div#konten").load("managerDetailPeminjaman/kontenManagerDetailPeminjaman.php");
-    $("div#gantiHead").load("managerDetailPeminjaman/headManagerDetailPeminjaman.php");
-    $.session.set('page','2');
 }
 
 function aside3(){
