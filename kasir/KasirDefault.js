@@ -248,6 +248,9 @@ function transaksi($temp=1){
                     $function = function (response) {//response is value returned from php (for your example it's "bye bye"
                         if(response == "ga ada"){
                             $("#namaMember").val("");
+                            transaksi(6);
+                            total();
+                            $('#total').text('Rp. 0');
                         }
                         else{
                             $("#namaMember").val(response);
@@ -266,7 +269,7 @@ function transaksi($temp=1){
                         }
                     }
                     break;
-        case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)'){
+        case 4  :   if($('#simbolPlus').css('color') == 'rgb(0, 128, 0)' && $('#namaMember').val()!=""){
                         $data = {'function':$temp, 'idEksBuku':$("#inputIdEksBuku").val(), 'idMember':$("#inputID").val(), 'idTransaksi':$("#idTransaksi").val()};
                         $function = function(response){
                             alert(response);
@@ -277,7 +280,7 @@ function transaksi($temp=1){
                         };
                     }
                     else{
-                        alert("pastikan input benar");
+                        alert("pastikan input benar / ada kekurangan input");
                         $pass = 0;
                     }
                     break;

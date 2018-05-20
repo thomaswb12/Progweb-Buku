@@ -2,6 +2,43 @@
     //if(isset($_SESSION['id']) || $_SESSION['control'] != 1){
         require "koneksi.php";
 
+        function getUmur($id){
+            global $conn;
+            $sql =  "SELECT floor(DATEDIFF(CURDATE(), birtday)/360) as umur from member where id='$id';";
+            if($result = $conn->query($sql)){
+                if($result->num_rows == 1){
+                    while($rows = $result->fetch_assoc()){
+                        return $rows['umur'];
+                    }
+                }
+            }
+            else{
+                return 1;
+            }
+            $conn->close();
+        }
+
+        function getHarusUmur($id){
+            global $conn;
+            $sql =  "SELECT b.rating FROM buku as b, eksbuku as e WHERE b.idBuku = e.idBuku AND e.idEksBuku = '$id';";
+            if($result = $conn->query($sql)){
+                if($result->num_rows==1){
+                    while($rows = $result->fetch_assoc()){
+                        switch($rows['rating']){
+                            case "anak-anak": $tamp=13;break;
+                            case "remaja": $tamp=18;break;
+                            case "dewasa": $tamp=21;break;
+                            case "semua umur": $tamp=0;break;
+                        }
+                    }
+                    return $tamp;
+                }
+            }
+            else{
+                echo "gagal";
+            }
+            $conn->close();
+        }
 
         function getBuku(){
             global $conn;

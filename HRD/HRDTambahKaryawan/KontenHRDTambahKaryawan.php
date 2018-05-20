@@ -2,30 +2,33 @@
     session_start();
 ?>
 
-<h1>Tambah Karyawan</h1>
-            
+<h1>Tambah Karyawan</h1> 
     <div id="dataKaryawan" class="font15">
          <div class="detailKaryawan">
             <form action="../functionPHP/tambahKaryawan.php" method="post">
             <div class="kiri">
                 <div id="inputan">
                     <label>ID</label>
-                    <input type="text" class="disable" id="idKaryawan" name="idKaryawan" disabled="disabled"/>
+                  
+                    <input type="text" id="idKaryawanDis" name="idKaryawanDis" class="disable" disabled/>
+                    <input type="text" id="idKaryawan" name="idKaryawan" val="" style="display:none;"/>
+
                     <br/><br/>
                     <label>Nama</label>
                     <input type="text" id="namaKaryawan" name="namaKaryawan"/>
                     <br/><br/>
                     <label>Jabatan</label>
-                    <select id="selectJabatan" class="font15">'
-                    <option value=-1>---Jabatan---</option>
-                    <?php
-                        include "../../functionPHP/koneksi.php";
-                        $q="SELECT * FROM jabatankaryawan";
-                        $result=mysqli_query($conn,$q);
-                        while($row=mysqli_fetch_assoc($result)){
-                            echo "<option value=".$row['idJabatan'].">".$row['namaJabatan']."</option>";
-                        }
-                    ?>
+                    <select id="selectJabatan" class="font15" onchange="isiIdJabatan(this.value)">
+                        <option value=-1>---Jabatan---</option>
+                        <?php
+                            include "../../functionPHP/koneksi.php";
+                            $q="SELECT * FROM jabatankaryawan";
+                            $result=mysqli_query($conn,$q);
+                            while($row=mysqli_fetch_assoc($result)){
+                                echo "<option value=".$row['idJabatan'].">".$row['namaJabatan']."</option>";
+                            }
+                        ?>
+
                     </select>
                     <br/><br/>
                     <label>Email</label>
@@ -49,7 +52,7 @@
                 <label>Photo Profile</label>
                 <input type="file" id="gambar" name="gambar"/><br/>
                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>
-                <img class="photo" src="profile_pic.jpg"/><br><br><br>
+                <img class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>
                 <!-- tombol save -->
                 <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
             </div>
