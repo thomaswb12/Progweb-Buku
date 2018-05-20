@@ -31,7 +31,7 @@ echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur(
         <div id="popupScroll">
             <p id="popupJudul">'.$buku['judulBuku'].'</p>
             <div id="divImg">';
-                if($_POST['status']==1) echo '<img class="komik" src="../../'.$buku['Location'].'"/>';
+                if($_POST['status']==1) echo '<img class="komik" src="../'.$buku['Location'].'"/>';
                 else echo '<img class="komik" src="../'.$buku['Location'].'"/>';
             echo '</div>
             <div id="istimewa">

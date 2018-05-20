@@ -264,7 +264,7 @@ function munculPopup(temp){
     $.ajax({
         type : 'post',
         data : {'idBuku':a,'status':2},
-        url: '../functionPHP/popUp.php',
+        url: '../functionPHP/popUpGudang.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
             $("#popup").html(response);
@@ -272,4 +272,9 @@ function munculPopup(temp){
     });
     $("#popup").fadeIn();
     $("#blur").fadeIn();
+}
+
+function pencetBlur(){
+    $("#popup").css('display','none');
+    $("#blur").css('display','none');
 }
