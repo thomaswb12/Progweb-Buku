@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2018 pada 15.58
--- Versi server: 10.1.31-MariaDB
--- Versi PHP: 7.2.4
+-- Generation Time: May 20, 2018 at 08:31 AM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `buku`
+-- Table structure for table `buku`
 --
 
 CREATE TABLE `buku` (
@@ -50,7 +50,7 @@ CREATE TABLE `buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `buku`
+-- Dumping data for table `buku`
 --
 
 INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`, `Dipinjam`, `idPenerbit`, `idPenulis`, `Rating`, `idRak`, `jumlahEksemplar`, `Location`, `Available`, `specialEdition`) VALUES
@@ -61,7 +61,7 @@ INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `be
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `contoh`
+-- Table structure for table `contoh`
 --
 
 CREATE TABLE `contoh` (
@@ -71,7 +71,7 @@ CREATE TABLE `contoh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `contoh`
+-- Dumping data for table `contoh`
 --
 
 INSERT INTO `contoh` (`idbuku`, `ideks`, `total`) VALUES
@@ -80,7 +80,7 @@ INSERT INTO `contoh` (`idbuku`, `ideks`, `total`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detailpengembalian`
+-- Table structure for table `detailpengembalian`
 --
 
 CREATE TABLE `detailpengembalian` (
@@ -94,7 +94,7 @@ CREATE TABLE `detailpengembalian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detailpengembalian`
+-- Dumping data for table `detailpengembalian`
 --
 
 INSERT INTO `detailpengembalian` (`idEksBuku`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`, `idTransaksiPeminjaman`) VALUES
@@ -102,7 +102,7 @@ INSERT INTO `detailpengembalian` (`idEksBuku`, `tanggalPinjam`, `tanggalKembali`
 ('asde', '2018-05-17', '2018-05-18', '2018-05-24', 0, 'P000016', '');
 
 --
--- Trigger `detailpengembalian`
+-- Triggers `detailpengembalian`
 --
 DELIMITER $$
 CREATE TRIGGER `insert_pengembalian` BEFORE INSERT ON `detailpengembalian` FOR EACH ROW BEGIN
@@ -116,7 +116,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detailtransaksi`
+-- Table structure for table `detailtransaksi`
 --
 
 CREATE TABLE `detailtransaksi` (
@@ -130,7 +130,7 @@ CREATE TABLE `detailtransaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detailtransaksi`
+-- Dumping data for table `detailtransaksi`
 --
 
 INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`) VALUES
@@ -163,7 +163,7 @@ INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKe
 ('asde', 8000, '2018-05-17', '2018-05-18', '2018-05-24', 0, 'T000022');
 
 --
--- Trigger `detailtransaksi`
+-- Triggers `detailtransaksi`
 --
 DELIMITER $$
 CREATE TRIGGER `Insert_eksBuku` AFTER INSERT ON `detailtransaksi` FOR EACH ROW BEGIN
@@ -177,7 +177,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dummydetailpengembalian`
+-- Table structure for table `dummydetailpengembalian`
 --
 
 CREATE TABLE `dummydetailpengembalian` (
@@ -191,7 +191,7 @@ CREATE TABLE `dummydetailpengembalian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dummydetailpengembalian`
+-- Dumping data for table `dummydetailpengembalian`
 --
 
 INSERT INTO `dummydetailpengembalian` (`idEksBuku`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`, `idTransaksiPeminjaman`) VALUES
@@ -201,7 +201,7 @@ INSERT INTO `dummydetailpengembalian` (`idEksBuku`, `tanggalPinjam`, `tanggalKem
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dummydetailtransaksi`
+-- Table structure for table `dummydetailtransaksi`
 --
 
 CREATE TABLE `dummydetailtransaksi` (
@@ -217,7 +217,7 @@ CREATE TABLE `dummydetailtransaksi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dummypengembalian`
+-- Table structure for table `dummypengembalian`
 --
 
 CREATE TABLE `dummypengembalian` (
@@ -231,7 +231,7 @@ CREATE TABLE `dummypengembalian` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dummytransaksi`
+-- Table structure for table `dummytransaksi`
 --
 
 CREATE TABLE `dummytransaksi` (
@@ -245,7 +245,7 @@ CREATE TABLE `dummytransaksi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `eksbuku`
+-- Table structure for table `eksbuku`
 --
 
 CREATE TABLE `eksbuku` (
@@ -256,7 +256,7 @@ CREATE TABLE `eksbuku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `eksbuku`
+-- Dumping data for table `eksbuku`
 --
 
 INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`, `tanggalTiba`) VALUES
@@ -268,7 +268,7 @@ INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`, `tanggalTiba`) VALUES
 ('DD000003KK000004', 'DD000003', 'Dipinjam', '2018-05-14');
 
 --
--- Trigger `eksbuku`
+-- Triggers `eksbuku`
 --
 DELIMITER $$
 CREATE TRIGGER `triger_after_delete` AFTER DELETE ON `eksbuku` FOR EACH ROW BEGIN
@@ -304,7 +304,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `genre`
+-- Table structure for table `genre`
 --
 
 CREATE TABLE `genre` (
@@ -313,7 +313,7 @@ CREATE TABLE `genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `genre`
+-- Dumping data for table `genre`
 --
 
 INSERT INTO `genre` (`idGenre`, `namaGenre`) VALUES
@@ -328,7 +328,7 @@ INSERT INTO `genre` (`idGenre`, `namaGenre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `genrebuku`
+-- Table structure for table `genrebuku`
 --
 
 CREATE TABLE `genrebuku` (
@@ -340,7 +340,7 @@ CREATE TABLE `genrebuku` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatankaryawan`
+-- Table structure for table `jabatankaryawan`
 --
 
 CREATE TABLE `jabatankaryawan` (
@@ -351,7 +351,7 @@ CREATE TABLE `jabatankaryawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jabatankaryawan`
+-- Dumping data for table `jabatankaryawan`
 --
 
 INSERT INTO `jabatankaryawan` (`idJabatan`, `namaJabatan`, `gaji`, `keterangan`) VALUES
@@ -362,7 +362,7 @@ INSERT INTO `jabatankaryawan` (`idJabatan`, `namaJabatan`, `gaji`, `keterangan`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `karyawan`
+-- Table structure for table `karyawan`
 --
 
 CREATE TABLE `karyawan` (
@@ -376,7 +376,7 @@ CREATE TABLE `karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `karyawan`
+-- Dumping data for table `karyawan`
 --
 
 INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `pass`, `foto`) VALUES
@@ -387,7 +387,7 @@ INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `p
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `member`
+-- Table structure for table `member`
 --
 
 CREATE TABLE `member` (
@@ -403,7 +403,7 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `member`
+-- Dumping data for table `member`
 --
 
 INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idIdentitas`, `gender`, `email`) VALUES
@@ -414,25 +414,29 @@ INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idI
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penerbit`
+-- Table structure for table `penerbit`
 --
 
 CREATE TABLE `penerbit` (
   `idPenerbit` char(8) NOT NULL,
-  `NamaPenerbit` varchar(100) NOT NULL
+  `NamaPenerbit` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `noTelp` varchar(255) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `penerbit`
+-- Dumping data for table `penerbit`
 --
 
-INSERT INTO `penerbit` (`idPenerbit`, `NamaPenerbit`) VALUES
-('AA000001', 'GRAMEDIA');
+INSERT INTO `penerbit` (`idPenerbit`, `NamaPenerbit`, `email`, `noTelp`, `alamat`, `foto`) VALUES
+('AA000001', 'GRAMEDIA', 'gramedia@mail.com', '0123456789', 'Bumi', '../images/penerbit/gramedia.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengembalian`
+-- Table structure for table `pengembalian`
 --
 
 CREATE TABLE `pengembalian` (
@@ -444,7 +448,7 @@ CREATE TABLE `pengembalian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pengembalian`
+-- Dumping data for table `pengembalian`
 --
 
 INSERT INTO `pengembalian` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKaryawan`, `totalDenda`) VALUES
@@ -468,25 +472,27 @@ INSERT INTO `pengembalian` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKa
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penulis`
+-- Table structure for table `penulis`
 --
 
 CREATE TABLE `penulis` (
   `idPenulis` char(8) NOT NULL,
-  `namaPenulis` varchar(150) NOT NULL
+  `namaPenulis` varchar(150) NOT NULL,
+  `asal` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `penulis`
+-- Dumping data for table `penulis`
 --
 
-INSERT INTO `penulis` (`idPenulis`, `namaPenulis`) VALUES
-('BB000001', 'Masashi Kishimoto');
+INSERT INTO `penulis` (`idPenulis`, `namaPenulis`, `asal`, `foto`) VALUES
+('BB000001', 'Masashi Kishimoto', 'Jepang', '../images/pengarang/Masashi_Kishimoto.png');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rak`
+-- Table structure for table `rak`
 --
 
 CREATE TABLE `rak` (
@@ -497,7 +503,7 @@ CREATE TABLE `rak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `rak`
+-- Dumping data for table `rak`
 --
 
 INSERT INTO `rak` (`idRak`, `namaRak`, `tanggalRak`, `Abjad`) VALUES
@@ -507,7 +513,7 @@ INSERT INTO `rak` (`idRak`, `namaRak`, `tanggalRak`, `Abjad`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi`
+-- Table structure for table `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -519,7 +525,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `transaksi`
+-- Dumping data for table `transaksi`
 --
 
 INSERT INTO `transaksi` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKaryawan`, `total`) VALUES
@@ -551,7 +557,7 @@ INSERT INTO `transaksi` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKarya
 --
 
 --
--- Indeks untuk tabel `buku`
+-- Indexes for table `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`idBuku`),
@@ -560,66 +566,66 @@ ALTER TABLE `buku`
   ADD KEY `fk_buku3` (`idRak`);
 
 --
--- Indeks untuk tabel `detailpengembalian`
+-- Indexes for table `detailpengembalian`
 --
 ALTER TABLE `detailpengembalian`
   ADD KEY `fk_pengembaian_ideksBuku` (`idEksBuku`),
   ADD KEY `fk_foreign_idtransPengembalian` (`idTransaksi`);
 
 --
--- Indeks untuk tabel `detailtransaksi`
+-- Indexes for table `detailtransaksi`
 --
 ALTER TABLE `detailtransaksi`
   ADD KEY `FK_Det2` (`idEksBuku`),
   ADD KEY `FK_DET3` (`idTransaksi`);
 
 --
--- Indeks untuk tabel `eksbuku`
+-- Indexes for table `eksbuku`
 --
 ALTER TABLE `eksbuku`
   ADD PRIMARY KEY (`idEksBuku`),
   ADD KEY `FK_eks1` (`idBuku`);
 
 --
--- Indeks untuk tabel `genre`
+-- Indexes for table `genre`
 --
 ALTER TABLE `genre`
   ADD PRIMARY KEY (`idGenre`);
 
 --
--- Indeks untuk tabel `genrebuku`
+-- Indexes for table `genrebuku`
 --
 ALTER TABLE `genrebuku`
   ADD PRIMARY KEY (`idGenre`,`idBuku`,`id GenreBuku`) USING BTREE,
   ADD KEY `FK_genn2` (`idBuku`);
 
 --
--- Indeks untuk tabel `jabatankaryawan`
+-- Indexes for table `jabatankaryawan`
 --
 ALTER TABLE `jabatankaryawan`
   ADD PRIMARY KEY (`idJabatan`);
 
 --
--- Indeks untuk tabel `karyawan`
+-- Indexes for table `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`idKaryawan`),
   ADD KEY `FK_Karyawan` (`idJabatan`);
 
 --
--- Indeks untuk tabel `member`
+-- Indexes for table `member`
 --
 ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `penerbit`
+-- Indexes for table `penerbit`
 --
 ALTER TABLE `penerbit`
   ADD PRIMARY KEY (`idPenerbit`);
 
 --
--- Indeks untuk tabel `pengembalian`
+-- Indexes for table `pengembalian`
 --
 ALTER TABLE `pengembalian`
   ADD PRIMARY KEY (`idTransaksi`),
@@ -627,19 +633,19 @@ ALTER TABLE `pengembalian`
   ADD KEY `fk_foreign_memberPengembalian` (`idMember`);
 
 --
--- Indeks untuk tabel `penulis`
+-- Indexes for table `penulis`
 --
 ALTER TABLE `penulis`
   ADD PRIMARY KEY (`idPenulis`);
 
 --
--- Indeks untuk tabel `rak`
+-- Indexes for table `rak`
 --
 ALTER TABLE `rak`
   ADD PRIMARY KEY (`idRak`);
 
 --
--- Indeks untuk tabel `transaksi`
+-- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`idTransaksi`),
@@ -647,11 +653,11 @@ ALTER TABLE `transaksi`
   ADD KEY `FK_2` (`idKaryawan`);
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `buku`
+-- Constraints for table `buku`
 --
 ALTER TABLE `buku`
   ADD CONSTRAINT `fk_buku1` FOREIGN KEY (`idPenerbit`) REFERENCES `penerbit` (`idPenerbit`),
@@ -659,47 +665,47 @@ ALTER TABLE `buku`
   ADD CONSTRAINT `fk_buku3` FOREIGN KEY (`idRak`) REFERENCES `rak` (`idRak`);
 
 --
--- Ketidakleluasaan untuk tabel `detailpengembalian`
+-- Constraints for table `detailpengembalian`
 --
 ALTER TABLE `detailpengembalian`
   ADD CONSTRAINT `fk_foreign_idtransPengembalian` FOREIGN KEY (`idTransaksi`) REFERENCES `pengembalian` (`idTransaksi`),
   ADD CONSTRAINT `fk_pengembaian_ideksBuku` FOREIGN KEY (`idEksBuku`) REFERENCES `eksbuku` (`idEksBuku`);
 
 --
--- Ketidakleluasaan untuk tabel `detailtransaksi`
+-- Constraints for table `detailtransaksi`
 --
 ALTER TABLE `detailtransaksi`
   ADD CONSTRAINT `FK_idTran` FOREIGN KEY (`idTransaksi`) REFERENCES `transaksi` (`idTransaksi`),
   ADD CONSTRAINT `fk_foreign_ideksbuku` FOREIGN KEY (`idEksBuku`) REFERENCES `eksbuku` (`idEksBuku`);
 
 --
--- Ketidakleluasaan untuk tabel `eksbuku`
+-- Constraints for table `eksbuku`
 --
 ALTER TABLE `eksbuku`
   ADD CONSTRAINT `FK_eks1` FOREIGN KEY (`idBuku`) REFERENCES `buku` (`idBuku`);
 
 --
--- Ketidakleluasaan untuk tabel `genrebuku`
+-- Constraints for table `genrebuku`
 --
 ALTER TABLE `genrebuku`
   ADD CONSTRAINT `FK_genn1` FOREIGN KEY (`idGenre`) REFERENCES `genre` (`idGenre`),
   ADD CONSTRAINT `FK_genn2` FOREIGN KEY (`idBuku`) REFERENCES `buku` (`idBuku`);
 
 --
--- Ketidakleluasaan untuk tabel `karyawan`
+-- Constraints for table `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD CONSTRAINT `FK_Karyawan` FOREIGN KEY (`idJabatan`) REFERENCES `jabatankaryawan` (`idJabatan`);
 
 --
--- Ketidakleluasaan untuk tabel `pengembalian`
+-- Constraints for table `pengembalian`
 --
 ALTER TABLE `pengembalian`
   ADD CONSTRAINT `fk_foreign_memberPengembalian` FOREIGN KEY (`idMember`) REFERENCES `member` (`id`),
   ADD CONSTRAINT `fk_pegawai` FOREIGN KEY (`idKaryawan`) REFERENCES `karyawan` (`idKaryawan`);
 
 --
--- Ketidakleluasaan untuk tabel `transaksi`
+-- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD CONSTRAINT `FK_1` FOREIGN KEY (`idMember`) REFERENCES `member` (`id`),
