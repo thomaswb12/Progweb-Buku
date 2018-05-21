@@ -67,7 +67,7 @@
                             <label>Photo Profile</label>
                                 <input type="file" id="gambar" name="gambar"/><br/>
                                 <span class="peraturan"><i>Format : PNG, JPG, JPEG.</i></span><br><br>';
-                    if(is_null($row['foto']))
+                    if($row['foto']=="")
                         echo '<img id="foto200px" class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>';
                     else
                         echo '<img id="foto200px" class="photo" src="'.$row['foto'].'"/><br><br><br>';
