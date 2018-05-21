@@ -13,6 +13,12 @@
             $_SESSION['control'] = 1;
             header("location:../User/UserDaftarKomik/UserDaftarKomik.php");//untuk pindah ke page tersebut
         }
+        else if($_POST['id'] == "ADMN0000" && $_POST['password'] == "admin"){ //untuk login ke page user
+            $_SESSION['id'] = $_POST['id'];
+            $_SESSION['control'] = 0;
+            $_SESSION['nama'] = "Admin";
+            header("location:../Admin/AdminDefault.php");
+        }
         else{
             if($_POST['id'] == "" || $_POST['password'] == ""){
                 $_SESSION['error'] = 1;
@@ -23,9 +29,6 @@
                 $_SESSION['pass'] = $_POST['password'];
                 require("getIdentitas.php");
                 switch ($_SESSION['idJabatan']){
-                    case "ADMN" :   $_SESSION['id'] = $_POST['id'];
-                                    $_SESSION['control'] = 0;
-                                    header("location:../Admin/AdminDefault.php");break;
                     case "KSRR" :   $_SESSION['id'] = $_POST['id'];
                                     $_SESSION['control'] = 2;
                                     header("location:../kasir/KasirDefault.php");break;
