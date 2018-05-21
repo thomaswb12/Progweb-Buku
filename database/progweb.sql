@@ -1,12 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
---
--- Generation Time: May 20, 2018 at 08:13 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Waktu pembuatan: 21 Bulan Mei 2018 pada 02.31
+-- Versi server: 10.1.31-MariaDB
+-- Versi PHP: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -20,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `a`
+-- Database: `progweb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku`
+-- Struktur dari tabel `buku`
 --
 
 CREATE TABLE `buku` (
@@ -51,18 +50,18 @@ CREATE TABLE `buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `buku`
+-- Dumping data untuk tabel `buku`
 --
 
 INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`, `Dipinjam`, `idPenerbit`, `idPenulis`, `Rating`, `idRak`, `jumlahEksemplar`, `Location`, `Available`, `specialEdition`) VALUES
-('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 17, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images/buku/Naruto_Volume_42_Indonesia.jpg', 2, 'Ya'),
-('DD000002', 'Naruto Vol. 4', '2018-05-01', 50, 100, 'Soft', 'Sasuke gugur saat melindungi Naruto…!! Saat itu, terjadi keanehan pada diri Naurto!! Haku yang terkena pukulan kemarahan pun menyadari hal tersebut. Sementara itu, pertarungan antara Zabuza vs Kakashi semakin sengit, siapakah yang menang? Inilah babak akhir dari pergolakan di Negara Nami!!\r\n', 8, 15, 2512, 'AA000001', 'BB000001', 'remaja', 'CC000001', 0, 'images/buku/Naruto_Volume_4_Indonesia.jpg', 0, 'Tidak'),
+('DD000001', 'Naruto Vol. 42', '2018-04-20', 56, 500, 'Soft', 'Kehidupan Naruto sebagai Genin pun dimulai dengan terbentuknya Tim 7 yang beranggotakan Naruto, Sasuke Uchiha dan Sakura Haruno, dengan Kakashi Hatake sebagai guru mereka. Saat menjalankan tes dengan Kakashi, Naruto, Sasuke dan Sakura nyaris tidak lulus. Karena melihat kekompakan tim antara Naruto dan Sasuke maka Kakashi pun meluluskan mereka, dengan alasan yang pernah dikatakan temannya yaitu Obito dari klan Uchiha, \"Orang yang tidak taat pada peraturan adalah sampah tetapi orang yang membiarkan temannya menderita lebih hina daripada sampah!\" Misi Naruto dan kawan-kawan dimulai, yaitu melindungi Tazuna dan arsitek lainnya selama pembangunan jembatan di negeri Air berlangsung. Naruto, Sakura, Sasuke dan Kakashi berhadapan dengan dua ninja kuat pelarian dari negeri kabut yaitu Haku dan Zabuza yang dikirim oleh seorang gangster kaya raya untuk menghentikan pembangunan jembatan oleh penduduk negeri Air yang miskin. Pertarungan sengit terjadi, Haku hendak menyerang Naruto tetapi malah terkena Sasuke yang melindungi Naruto. Mengira Sasuke tewas, Naruto marah serta segel chakra Kyuubi terbuka, sehingga chakra merah pun keluar membuat Haku kewalahan. Kakashi yang hendak menghabisi Zabuza dengan jurus Raikiri mengenai Haku yang melindungi Zabuza. Karena terharu atas pengorbanan Haku dan merasa dikhianati oleh pihak gangster yang malah mencoba membunuhnya, Zabuza pun mengamuk dan membunuh ketua gangster dengan kunai kecil di mulutnya.', 8, 15, 17, 'AA000001', 'BB000001', 'remaja', 'CC000001', 5, 'images/buku/Naruto_Volume_42_Indonesia.jpg', 2, 'Ya'),
+('DD000002', 'Naruto Vol. 4', '2018-05-01', 50, 100, 'Soft', 'Sasuke gugur saat melindungi Naruto…!! Saat itu, terjadi keanehan pada diri Naurto!! Haku yang terkena pukulan kemarahan pun menyadari hal tersebut. Sementara itu, pertarungan antara Zabuza vs Kakashi semakin sengit, siapakah yang menang? Inilah babak akhir dari pergolakan di Negara Nami!!\r\n', 8, 15, 2512, 'AA000001', 'BB000001', 'remaja', 'CC000001', 2, 'images/buku/Naruto_Volume_4_Indonesia.jpg', 2, 'Tidak'),
 ('DD000003', 'Doraemon Vol. 2', '2018-04-03', 50, 50, 'Soft', '\r\nKumpulan cerita tentang Nilai Nol dan Pergi dari Rumah', 8, 15, 5, 'AA000001', 'BB000001', 'anak-anak', 'CC000002', 4, 'images/buku/Doraemon_Volume_2_Indonesia.jpg', 4, 'Ya');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contoh`
+-- Struktur dari tabel `contoh`
 --
 
 CREATE TABLE `contoh` (
@@ -72,7 +71,7 @@ CREATE TABLE `contoh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `contoh`
+-- Dumping data untuk tabel `contoh`
 --
 
 INSERT INTO `contoh` (`idbuku`, `ideks`, `total`) VALUES
@@ -81,7 +80,7 @@ INSERT INTO `contoh` (`idbuku`, `ideks`, `total`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detailpengembalian`
+-- Struktur dari tabel `detailpengembalian`
 --
 
 CREATE TABLE `detailpengembalian` (
@@ -95,7 +94,7 @@ CREATE TABLE `detailpengembalian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detailpengembalian`
+-- Dumping data untuk tabel `detailpengembalian`
 --
 
 INSERT INTO `detailpengembalian` (`idEksBuku`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`, `idTransaksiPeminjaman`) VALUES
@@ -142,7 +141,7 @@ INSERT INTO `detailpengembalian` (`idEksBuku`, `tanggalPinjam`, `tanggalKembali`
 ('asde', '2018-05-20', '2018-05-20', '2018-05-27', 0, 'P000037', 'T000044');
 
 --
--- Triggers `detailpengembalian`
+-- Trigger `detailpengembalian`
 --
 DELIMITER $$
 CREATE TRIGGER `insert_pengembalian` AFTER INSERT ON `detailpengembalian` FOR EACH ROW BEGIN
@@ -156,7 +155,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detailtransaksi`
+-- Struktur dari tabel `detailtransaksi`
 --
 
 CREATE TABLE `detailtransaksi` (
@@ -170,7 +169,7 @@ CREATE TABLE `detailtransaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detailtransaksi`
+-- Dumping data untuk tabel `detailtransaksi`
 --
 
 INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKembali`, `tanggalAturanKembali`, `denda`, `idTransaksi`) VALUES
@@ -228,7 +227,7 @@ INSERT INTO `detailtransaksi` (`idEksBuku`, `harga`, `tanggalPinjam`, `tanggalKe
 ('asd', 5000, '2018-05-21', NULL, '2018-05-28', 0, '');
 
 --
--- Triggers `detailtransaksi`
+-- Trigger `detailtransaksi`
 --
 DELIMITER $$
 CREATE TRIGGER `Insert_eksBuku` AFTER INSERT ON `detailtransaksi` FOR EACH ROW BEGIN
@@ -242,7 +241,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dummydetailpengembalian`
+-- Struktur dari tabel `dummydetailpengembalian`
 --
 
 CREATE TABLE `dummydetailpengembalian` (
@@ -258,7 +257,7 @@ CREATE TABLE `dummydetailpengembalian` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dummydetailtransaksi`
+-- Struktur dari tabel `dummydetailtransaksi`
 --
 
 CREATE TABLE `dummydetailtransaksi` (
@@ -274,7 +273,7 @@ CREATE TABLE `dummydetailtransaksi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dummypengembalian`
+-- Struktur dari tabel `dummypengembalian`
 --
 
 CREATE TABLE `dummypengembalian` (
@@ -288,7 +287,7 @@ CREATE TABLE `dummypengembalian` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dummytransaksi`
+-- Struktur dari tabel `dummytransaksi`
 --
 
 CREATE TABLE `dummytransaksi` (
@@ -302,30 +301,35 @@ CREATE TABLE `dummytransaksi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `eksbuku`
+-- Struktur dari tabel `eksbuku`
 --
 
 CREATE TABLE `eksbuku` (
   `idEksBuku` char(16) NOT NULL,
   `idBuku` char(8) NOT NULL,
   `Status` enum('Tersedia','Dipinjam') DEFAULT 'Tersedia',
-  `tanggalTiba` date NOT NULL
+  `tanggalTiba` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `eksbuku`
+-- Dumping data untuk tabel `eksbuku`
 --
 
 INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`, `tanggalTiba`) VALUES
-('asd', 'DD000001', 'Dipinjam', '2018-04-21'),
-('asde', 'DD000001', 'Tersedia', '2018-04-21'),
-('DD000003KK000001', 'DD000003', 'Tersedia', '2018-05-13'),
-('DD000003KK000002', 'DD000003', 'Tersedia', '2018-05-14'),
-('DD000003KK000003', 'DD000003', 'Tersedia', '2018-05-14'),
-('DD000003KK000004', 'DD000003', 'Tersedia', '2018-05-14');
+('asd', 'DD000001', 'Dipinjam', '2018-04-20 17:00:00'),
+('asde', 'DD000001', 'Tersedia', '2018-04-20 17:00:00'),
+('DD000001KK000003', 'DD000001', 'Tersedia', '0000-00-00 00:00:00'),
+('DD000001KK000004', 'DD000001', 'Tersedia', '0000-00-00 00:00:00'),
+('DD000001KK000005', 'DD000001', 'Tersedia', '0000-00-00 00:00:00'),
+('DD000002KK000001', 'DD000002', 'Tersedia', '2018-05-21 00:28:24'),
+('DD000002KK000002', 'DD000002', 'Tersedia', '2018-05-21 00:31:36'),
+('DD000003KK000001', 'DD000003', 'Tersedia', '2018-05-12 17:00:00'),
+('DD000003KK000002', 'DD000003', 'Tersedia', '2018-05-13 17:00:00'),
+('DD000003KK000003', 'DD000003', 'Tersedia', '2018-05-13 17:00:00'),
+('DD000003KK000004', 'DD000003', 'Tersedia', '2018-05-13 17:00:00');
 
 --
--- Triggers `eksbuku`
+-- Trigger `eksbuku`
 --
 DELIMITER $$
 CREATE TRIGGER `triger_after_delete` AFTER DELETE ON `eksbuku` FOR EACH ROW BEGIN
@@ -339,9 +343,10 @@ $$
 DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `triger_after_insert` AFTER INSERT ON `eksbuku` FOR EACH ROW BEGIN
-	DECLARE P1 INT;
+	DECLARE P1,P2 INT;
     SELECT COUNT(eksbuku.idEksBuku) INTO P1 FROM eksbuku WHERE idBuku=NEW.idBuku;
-    UPDATE buku set buku.jumlahEksemplar = p1 WHERE buku.idBuku = NEW.idBuku;
+    SELECT COUNT(eksbuku.idEksBuku) INTO P2 FROM eksbuku WHERE idBuku=NEW.idBuku and Status="Tersedia";
+    UPDATE buku set buku.jumlahEksemplar = p1, buku.Available=P2 WHERE buku.idBuku = NEW.idBuku;
 END
 $$
 DELIMITER ;
@@ -364,7 +369,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `genre`
+-- Struktur dari tabel `genre`
 --
 
 CREATE TABLE `genre` (
@@ -373,7 +378,7 @@ CREATE TABLE `genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `genre`
+-- Dumping data untuk tabel `genre`
 --
 
 INSERT INTO `genre` (`idGenre`, `namaGenre`) VALUES
@@ -388,7 +393,7 @@ INSERT INTO `genre` (`idGenre`, `namaGenre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `genrebuku`
+-- Struktur dari tabel `genrebuku`
 --
 
 CREATE TABLE `genrebuku` (
@@ -397,7 +402,7 @@ CREATE TABLE `genrebuku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `genrebuku`
+-- Dumping data untuk tabel `genrebuku`
 --
 
 INSERT INTO `genrebuku` (`idGenre`, `idBuku`) VALUES
@@ -409,7 +414,7 @@ INSERT INTO `genrebuku` (`idGenre`, `idBuku`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jabatankaryawan`
+-- Struktur dari tabel `jabatankaryawan`
 --
 
 CREATE TABLE `jabatankaryawan` (
@@ -420,7 +425,7 @@ CREATE TABLE `jabatankaryawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jabatankaryawan`
+-- Dumping data untuk tabel `jabatankaryawan`
 --
 
 INSERT INTO `jabatankaryawan` (`idJabatan`, `namaJabatan`, `gaji`, `keterangan`) VALUES
@@ -431,7 +436,7 @@ INSERT INTO `jabatankaryawan` (`idJabatan`, `namaJabatan`, `gaji`, `keterangan`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `karyawan`
+-- Struktur dari tabel `karyawan`
 --
 
 CREATE TABLE `karyawan` (
@@ -445,7 +450,7 @@ CREATE TABLE `karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `karyawan`
+-- Dumping data untuk tabel `karyawan`
 --
 
 INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `pass`, `foto`) VALUES
@@ -456,7 +461,7 @@ INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Struktur dari tabel `member`
 --
 
 CREATE TABLE `member` (
@@ -473,7 +478,7 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `member`
+-- Dumping data untuk tabel `member`
 --
 
 INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idIdentitas`, `gender`, `email`, `poin`) VALUES
@@ -481,12 +486,12 @@ INSERT INTO `member` (`id`, `nama`, `alamat`, `birtday`, `saldo`, `noTelp`, `idI
 ('M000002', 'Sylvia Putri R. G.', 'ahgshgnnj', '1998-02-07', '0', '085828763665', '3300101010', 'Wanita', 'sylvia@gmail.com', '2000'),
 ('M000003', 'Resha Tepozz', 'paling tepoz', '2018-05-05', '0', '085828763665', '123', 'Pria', 'tepoz@gmail.com', '0'),
 ('M000004', 'thomas', 'tohomlasmdjaskdjsa', '2018-05-19', '0', '089512312313', '23232323232', 'Wanita', 'thomasbudiman05@gmail.com', '0'),
-('M000005', 'repoz', 'asdasdsad', '2018-05-20', '0', '123213', '123213213', 'Pria', 'asdsad@gmail.com', '450');
+('M000005', 'repoz', 'asdasdsad', '2018-05-20', '0', '123213', '123213213', 'Wanita', 'asdsad@gmail.com', '450');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penerbit`
+-- Struktur dari tabel `penerbit`
 --
 
 CREATE TABLE `penerbit` (
@@ -499,7 +504,7 @@ CREATE TABLE `penerbit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penerbit`
+-- Dumping data untuk tabel `penerbit`
 --
 
 INSERT INTO `penerbit` (`idPenerbit`, `NamaPenerbit`, `email`, `noTelp`, `alamat`, `foto`) VALUES
@@ -508,7 +513,7 @@ INSERT INTO `penerbit` (`idPenerbit`, `NamaPenerbit`, `email`, `noTelp`, `alamat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengembalian`
+-- Struktur dari tabel `pengembalian`
 --
 
 CREATE TABLE `pengembalian` (
@@ -520,7 +525,7 @@ CREATE TABLE `pengembalian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pengembalian`
+-- Dumping data untuk tabel `pengembalian`
 --
 
 INSERT INTO `pengembalian` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKaryawan`, `totalDenda`) VALUES
@@ -565,7 +570,7 @@ INSERT INTO `pengembalian` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penulis`
+-- Struktur dari tabel `penulis`
 --
 
 CREATE TABLE `penulis` (
@@ -576,7 +581,7 @@ CREATE TABLE `penulis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penulis`
+-- Dumping data untuk tabel `penulis`
 --
 
 INSERT INTO `penulis` (`idPenulis`, `namaPenulis`, `asal`, `foto`) VALUES
@@ -585,7 +590,7 @@ INSERT INTO `penulis` (`idPenulis`, `namaPenulis`, `asal`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rak`
+-- Struktur dari tabel `rak`
 --
 
 CREATE TABLE `rak` (
@@ -596,7 +601,7 @@ CREATE TABLE `rak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rak`
+-- Dumping data untuk tabel `rak`
 --
 
 INSERT INTO `rak` (`idRak`, `namaRak`, `tanggalRak`, `Abjad`) VALUES
@@ -606,7 +611,7 @@ INSERT INTO `rak` (`idRak`, `namaRak`, `tanggalRak`, `Abjad`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -620,7 +625,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKaryawan`, `subTotal`, `diskon`, `total`) VALUES
@@ -671,23 +676,11 @@ INSERT INTO `transaksi` (`idTransaksi`, `tanggalTransaksi`, `idMember`, `idKarya
 ('T000044', '2018-05-20 23:43:33', 'm000002', 'KSRR0001', 10000, 0, 10000);
 
 --
--- Triggers `transaksi`
---
-DELIMITER $$
-CREATE TRIGGER `after insert` AFTER INSERT ON `transaksi` FOR EACH ROW BEGIN
-	DECLARE P1 INT;
-    SELECT poin INTO P1 FROM member WHERE id =NEW.idMember;
-    UPDATE member set poin = p1 +(NEW.total*0.05) WHERE id =NEW.idMember;
-END
-$$
-DELIMITER ;
-
---
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `buku`
+-- Indeks untuk tabel `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`idBuku`),
@@ -696,150 +689,24 @@ ALTER TABLE `buku`
   ADD KEY `fk_buku3` (`idRak`);
 
 --
--- Indexes for table `detailpengembalian`
+-- Indeks untuk tabel `detailpengembalian`
 --
 ALTER TABLE `detailpengembalian`
   ADD KEY `fk_pengembaian_ideksBuku` (`idEksBuku`),
   ADD KEY `fk_foreign_idtransPengembalian` (`idTransaksi`);
 
 --
--- Indexes for table `detailtransaksi`
+-- Indeks untuk tabel `detailtransaksi`
 --
 ALTER TABLE `detailtransaksi`
   ADD KEY `FK_Det2` (`idEksBuku`),
   ADD KEY `FK_DET3` (`idTransaksi`);
 
 --
--- Indexes for table `eksbuku`
+-- Indeks untuk tabel `eksbuku`
 --
 ALTER TABLE `eksbuku`
-  ADD PRIMARY KEY (`idEksBuku`),
-  ADD KEY `FK_eks1` (`idBuku`);
-
---
--- Indexes for table `genre`
---
-ALTER TABLE `genre`
-  ADD PRIMARY KEY (`idGenre`);
-
---
--- Indexes for table `genrebuku`
---
-ALTER TABLE `genrebuku`
-  ADD PRIMARY KEY (`idGenre`,`idBuku`) USING BTREE,
-  ADD KEY `FK_genn2` (`idBuku`);
-
---
--- Indexes for table `jabatankaryawan`
---
-ALTER TABLE `jabatankaryawan`
-  ADD PRIMARY KEY (`idJabatan`);
-
---
--- Indexes for table `karyawan`
---
-ALTER TABLE `karyawan`
-  ADD PRIMARY KEY (`idKaryawan`),
-  ADD KEY `FK_Karyawan` (`idJabatan`);
-
---
--- Indexes for table `member`
---
-ALTER TABLE `member`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `penerbit`
---
-ALTER TABLE `penerbit`
-  ADD PRIMARY KEY (`idPenerbit`);
-
---
--- Indexes for table `pengembalian`
---
-ALTER TABLE `pengembalian`
-  ADD PRIMARY KEY (`idTransaksi`),
-  ADD KEY `fk_pegawai` (`idKaryawan`),
-  ADD KEY `fk_foreign_memberPengembalian` (`idMember`);
-
---
--- Indexes for table `penulis`
---
-ALTER TABLE `penulis`
-  ADD PRIMARY KEY (`idPenulis`);
-
---
--- Indexes for table `rak`
---
-ALTER TABLE `rak`
-  ADD PRIMARY KEY (`idRak`);
-
---
--- Indexes for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`idTransaksi`),
-  ADD KEY `FK_1` (`idMember`),
-  ADD KEY `FK_2` (`idKaryawan`);
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `buku`
---
-ALTER TABLE `buku`
-  ADD CONSTRAINT `fk_buku1` FOREIGN KEY (`idPenerbit`) REFERENCES `penerbit` (`idPenerbit`),
-  ADD CONSTRAINT `fk_buku2` FOREIGN KEY (`idPenulis`) REFERENCES `penulis` (`idPenulis`),
-  ADD CONSTRAINT `fk_buku3` FOREIGN KEY (`idRak`) REFERENCES `rak` (`idRak`);
-
---
--- Constraints for table `detailpengembalian`
---
-ALTER TABLE `detailpengembalian`
-  ADD CONSTRAINT `fk_foreign_idtransPengembalian` FOREIGN KEY (`idTransaksi`) REFERENCES `pengembalian` (`idTransaksi`),
-  ADD CONSTRAINT `fk_pengembaian_ideksBuku` FOREIGN KEY (`idEksBuku`) REFERENCES `eksbuku` (`idEksBuku`);
-
---
--- Constraints for table `detailtransaksi`
---
-ALTER TABLE `detailtransaksi`
-  ADD CONSTRAINT `FK_idTran` FOREIGN KEY (`idTransaksi`) REFERENCES `transaksi` (`idTransaksi`),
-  ADD CONSTRAINT `fk_foreign_ideksbuku` FOREIGN KEY (`idEksBuku`) REFERENCES `eksbuku` (`idEksBuku`);
-
---
--- Constraints for table `eksbuku`
---
-ALTER TABLE `eksbuku`
-  ADD CONSTRAINT `FK_eks1` FOREIGN KEY (`idBuku`) REFERENCES `buku` (`idBuku`);
-
---
--- Constraints for table `genrebuku`
---
-ALTER TABLE `genrebuku`
-  ADD CONSTRAINT `FK_genn1` FOREIGN KEY (`idGenre`) REFERENCES `genre` (`idGenre`),
-  ADD CONSTRAINT `FK_genn2` FOREIGN KEY (`idBuku`) REFERENCES `buku` (`idBuku`);
-
---
--- Constraints for table `karyawan`
---
-ALTER TABLE `karyawan`
-  ADD CONSTRAINT `FK_Karyawan` FOREIGN KEY (`idJabatan`) REFERENCES `jabatankaryawan` (`idJabatan`);
-
---
--- Constraints for table `pengembalian`
---
-ALTER TABLE `pengembalian`
-  ADD CONSTRAINT `fk_foreign_memberPengembalian` FOREIGN KEY (`idMember`) REFERENCES `member` (`id`),
-  ADD CONSTRAINT `fk_pegawai` FOREIGN KEY (`idKaryawan`) REFERENCES `karyawan` (`idKaryawan`);
-
---
--- Constraints for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD CONSTRAINT `FK_1` FOREIGN KEY (`idMember`) REFERENCES `member` (`id`),
-  ADD CONSTRAINT `FK_2` FOREIGN KEY (`idKaryawan`) REFERENCES `karyawan` (`idKaryawan`);
+  ADD PRIMARY KEY (`idEksBuku`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

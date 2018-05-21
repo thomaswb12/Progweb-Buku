@@ -3,9 +3,7 @@
 <head>
     <?php 
         session_start();
-        if(isset($_SESSION["position"])){
-            
-        }
+        $_SESSION['control']=0;
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,13 +25,18 @@
         ?>
     </header>
     <article>
-        <?php 
-            include "Template/aside.php"
-        ?>
+        <div class="sidebar">
+            <ul>
+                <li id="menu1"><a href="../User/UserDaftarKomik/UserDaftarKomik.php"><h2>CUSTOMER</h2><i class="fas fa-user"></i> (Menu User)</a></li>
+                <li id="menu3"><a href="../HRD/HRDDefault.php"><h2>HRD</h2><i class="fas fa-desktop"></i> (Menu HRD)</a></li>
+                <li id="menu4"><a href="../kasir/KasirDefault.php"><h2>KASIR</h2><i class="fas fa-credit-card"></i></i> (Menu Kasir)</a></li>
+                <li id="menu5"><a href="../Manager/managerDefault.php"><h2>MANAGER</h2><i class="fas fa-calendar-check"></i> (Menu Manager)</a></li>
+                <li id="menu2"><a href="../Gudang/gudangDefault.php"><h2>GUDANG</h2><i class="fas fa-box"></i> (Menu Gudang)</a></li>
+
+            </ul>
+        </div>
         <div id="konten">
-            <?php include "kasir/Kasir - daftar komik/KontenKasirDaftarKomik.php";
-                include "kasir/Kasir - daftar komik/HeadKasirDaftarKomik.php";
-            ?>
+            
         </div>
     </article>
     <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>

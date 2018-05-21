@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['id'] != "admin" || $_SESSION['control'] != 1 ){
+    if($_SESSION['control'] > 1 ){
         $_SESSION['error']= 2;
         header("location:http://localhost/project-akhir/Progweb-Buku/");
     }
@@ -24,7 +24,9 @@
         <body>
             <header>
                 <img src="../../logobaru.png" id="logo"/>
-                <p class="blue font15" id="welcome">Welcome, <span id="namaUser">our customer</span> | <a href="../../"><span id="logOut">Log Out</span></a></p>
+                <p class="blue font15" id="welcome">Welcome, 
+                    <?php if($_SESSION['control']=1){echo '<span id="namaUser">our customer</span>';}
+                    else{ echo $_SESSION['nama'];} ?> | <a href="../../"><span id="logOut">Log Out</span></a></p>
                 <p id="tanggal" class="blue font15">
                 <?php include "../../functionPHP/getTanggal.php"?>
                 </p>

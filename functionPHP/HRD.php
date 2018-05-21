@@ -23,6 +23,7 @@
             if ($result->num_rows == 1) {
                 while($row = $result->fetch_assoc()) {
                     echo '  <div class="detailKaryawan">
+                            <form action="../functionPHP/editKaryawan.php" method="post" enctype="multipart/form-data">
                             <div class="kiri">
                                 <div id="inputan">
                                     <label>ID</label>
@@ -69,11 +70,12 @@
                     if(is_null($row['foto']))
                         echo '<img id="foto200px" class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>';
                     else
-                        echo '<img id="foto200px" class="photo" src="../'.$row['foto'].'"/><br><br><br>';
+                        echo '<img id="foto200px" class="photo" src="'.$row['foto'].'"/><br><br><br>';
 
                     echo '      <input type="button" id="tombolCancel" name="tombokCancel" class="tombol" value="CANCEL" onclick="aside1()"/>
-                                <input type="button" id="tombolSave" name="tombokSave" class="tombol" value="SAVE" onclick="pilihan(5)"/>
+                                <input type="submit" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
                             </div>
+                            </form>
                         </div>';
                 }
             }
@@ -92,7 +94,7 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo '<div class="infoKaryawan">
-                            <img class="photo" src="../'.$row['foto'].'"/>
+                            <img class="photo" src="'.$row['foto'].'"/>
                             <table>
                                 <tr>
                                     <td class="attr"><p class="label">ID</p></td>

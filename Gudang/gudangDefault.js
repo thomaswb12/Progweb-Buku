@@ -262,10 +262,29 @@ function getIdEksemplar(){
         data : {'idKomik':$id},
         url: '../functionPHP/eksemplar.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
-            //alert(response);
-            $("#idEksemplar").html(response);
+            if(response == "ga ada"){
+                $('#error').text('ERROR');
+                $('#tombol').hide();
+                $("#idEksemplar").val('');
+            }
+            else{
+                $('#error').text('');
+                $("#idEksemplar").val(response);
+                $('#tombol').show();
+            }
         }
     });   
+}
+
+function ajaxAdd(){
+    $.ajax({
+        type : 'post',
+        data : {'idKomik':$("#idKomik").val(),'idEksemplar':$("#idEksemplar").val()},
+        url: '../functionPHP/tambahEksemplar.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            alert(response);
+        }
+    });
 }
 
 /*tampilkan pop up detail komik*/

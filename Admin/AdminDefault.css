@@ -23,6 +23,10 @@ body{ /*supaya mentok selayar*/
 .font15{ /*utk font yang ukurannya 15px*/
     font-size: 15px;
 }
+.disable{
+    background-color: grey !important;
+    color: white !important;
+}
 
 /*------------------------bagian header---------------------*/
 header{ /*bagian atas yang isinya logo, tulisan welcome, logout dan tanggal*/
@@ -81,32 +85,34 @@ article div#konten input.tombol:hover{
 /*------------------------bagian artikel---------------------*/
 
 /*------------------------bagian aside---------------------*/
-article div#aside{ /*aside*/
-    float: left; /*taruh kiri*/
-    width: 20%;
-    height: 100%;
-    background-color: rgba(255,255,255,0.46);
+body div.sidebar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #222;*/
 }
-article div#aside hr{ /*garis hr dibuat tidak ada jarak dg element lainnya*/
-    margin: 0px;
+body div.sidebar li{
+    float: left;
 }
-article div#aside h3{ /*option di aside, pengaturan jaraknya dg elemen lainnya*/
-    padding-top: 9px;
-    padding-bottom: 9px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+body div.sidebar li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    text-decoration: none;
+    border: 2px white solid;
+    border-radius: 5px;
+    background-color: #4b345a;
+    margin:230px 42px;
+    width: 200px;
 }
-article div#aside h3:hover{ /*jika di hover, warnanya abu2*/
-    background-color: gray;
+body div.sidebar li a:hover{
+    background-color: #333;
+    color: white;
 }
-.terpilih{ /*utk option aside yg sedang dipilih (disini diasumsikan #aside1 yg terpilih, penambahan class di .js)*/
-    background-color: rgba(51,153,204,0.52); /*aside yg sedang terpilih warna biru*/
-}
-article div#aside div#minimizeOption{ /*minimize option*/
-    display: none; /*tidak ditampilkan di layar versi dekstop*/
-}
-article div#aside pre{
-    display: inline;
+body div.sidebar .pilih{
+    color: black;
 }
 /*------------------------bagian aside---------------------*/
 
