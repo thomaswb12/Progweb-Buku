@@ -1,12 +1,8 @@
-<?php
+<?php 
     session_start();
-    if(!isset($_SESSION['id'])){
-        $_SESSION['error']= 2;
-        header("location:http://localhost/project-akhir/Progweb-Buku/");
-    }
-    else{
-        ?>
-        <!DOCTYPE html>
+    if(isset($_SESSION["id"]) && isset($_SESSION["control"])){
+        if($_SESSION["control"]==5 || $_SESSION["control"]==0){
+            echo '<!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -23,8 +19,9 @@
             <script defer src="../fontawesome-free-5.0.13\svg-with-js\js\fontawesome-all.min.js"></script>
         </head>
         <body>
-            <header>
-                <?php  include "template/header.php" ?>
+            <header>';
+                include "template/header.php";
+            echo '
             </header>
             <article>
                 <div id="aside">
@@ -32,17 +29,24 @@
                         <h3><span><i class="fas fa-bars" style="color: white;"></i></span></h3>
                         <hr/>
                     </div>
-                    <div id="option">
-                    <?php  include "template/aside.php" ?>
-                    </div>
+                    <div id="option">';
+                    include "template/aside.php";
+                echo '    </div>
                 </div>
                 <div id="konten">
                 </div>
             </article>
             <a href="#logo" id="tombolUp"><i class="fas fa-chevron-circle-up blue"></i></a>
         </body>
-        </html>
-        <?php
+        </html>';
     }
+    else{
+        $_SESSION['error'] = 5;
+        header("location:../index.php");
+    }
+}
+else{
+    $_SESSION['error'] = 5;
+    header("location:../index.php");
+}
 ?>
-
