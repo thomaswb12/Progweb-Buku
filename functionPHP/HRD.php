@@ -1,6 +1,7 @@
 <?php
     include "curency.php";
     include "koneksi.php";
+    session_start();
 
     $callFunction = $_POST['function'];
     switch($callFunction){
@@ -10,72 +11,10 @@
         case 4 : loadDetail($_POST['data']);break;
         case 6 : ajaxTampilGambar($_FILES['foto']);break;
         case 7 : tampilkanIdJabatan($_POST['data']); break;
-        case 8 : search($_POST['kata'],$_POST['dari'],$_POST['sorting']);break;
     }
 
     function tampilinGambar($tamp){
         echo is_array($tamp);
-    }
-
-    function search($kata,$dari,$sort){
-        switch ($dari) {
-            case 1: $cari = "idKaryawan";
-                    break;
-            case 2: $cari = "nama";
-                    break;
-            default:
-                    break;
-        }
-        switch ($sort) {
-            case 1: $order = "idKaryawan";
-                    break;
-            case 2: $order = "nama";
-                    break;
-            case 3: $order = "idJabatan";
-                    break;
-            
-            default:
-                    break;
-        }
-        $sql = "SELECT * FROM karyawan, jabatankaryawan where karyawan.idJabatan = jabatankaryawan.idJabatan and karyawan.$cari like '%$kata%' ORDER BY karyawan.$order ASC;";
-        global $conn;
-        //echo $sql;
-        $result = $conn->query($sql);
-        if($result = $conn->query($sql)){
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    echo '<div class="infoKaryawan">';
-                        echo '<img id="foto200px" class="photo" src="'.$row['foto'].'"/>';
-                    echo        '<table>
-                                <tr>
-                                    <td class="attr"><p class="label">ID</p></td>
-                                    <td>:</td>
-                                    <td><p class="isi">'.$row['idKaryawan'].'</p></td>
-                                </tr>
-                                <tr>
-                                    <td class="attr"><p class="label">Nama</p></td>
-                                    <td>:</td>
-                                    <td><p class="isi">'.$row['nama'].'</p></td>
-                                </tr>
-                                <tr>
-                                    <td class="attr"><p class="label">Jabatan</p></td>
-                                    <td>:</td>
-                                    <td><p class="isi">'.$row['namaJabatan'].'</p></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3"><a href="#" class="more" onclick="viewKaryawan('."'".$row['idKaryawan']."'".')">Details >></a></td>
-                                </tr>
-                            </table>
-                        </div>';
-                }
-            }
-            else{
-                echo "gagal";
-            }
-        }
-        $conn->close();
-
-
     }
 
     function loadDetail($data){
@@ -84,36 +23,37 @@
         if($result = $conn->query($sql)){
             if ($result->num_rows == 1) {
                 while($row = $result->fetch_assoc()) {
+                    $_SESSION['idKaryawan'] = $row['idKaryawan'];
                     echo '  <div class="detailKaryawan">
                             <form action="../functionPHP/editKaryawan.php" method="post" enctype="multipart/form-data">
                             <div class="kiri">
                                 <div id="inputan">
                                     <label>ID</label>
-                                    <input type="text" id="idKaryawan" class="disable" value="'.$row['idKaryawan'].'" disable="disabled"/>
+                                    <input type="text" id="idKaryawan" name="idKaryawan" class="disable" disabled="disabled" value="'.$row['idKaryawan'].'" disable="disabled"/>
                                     <br/><br/><br/>
                                     <label>Nama</label>
-                                    <input type="text" id="namaKaryawan" value="'.$row['nama'].'"/>
+                                    <input type="text" id="namaKaryawan" name="namaKaryawan" value="'.$row['nama'].'"/>
                                     <br/><br/><br/>
                                     <label>Jabatan</label>
-                                    <select id="selectJabatan">';
+                                    <select id="selectJabatan" name="selectJabatan">';
                                        $query = "SELECT * FROM jabatankaryawan";
                                        $hasil = $conn->query($query);
                                        while($baris = $hasil->fetch_assoc()){
                                             if($baris['namaJabatan'] == $row['namaJabatan'])
                                                 echo '<option value="'.$baris['idJabatan'].'" selected="selected">'.$baris['namaJabatan'].'</option>';
-                                            else   
+                                            else
                                                 echo '<option value="'.$baris['idJabatan'].'">'.$baris['namaJabatan'].'</option>'; 
                                        }
                     echo           '</select>
                                     <br/><br/><br/>
                                     <label>Email</label>
-                                    <input type="email" id="email" value="'.$row['email'].'"/>
+                                    <input type="email" id="email" name="email" value="'.$row['email'].'"/>
                                     <br/><br/><br/>
                                     <label>No. Telp</label>
-                                    <input type="text" id="telepon" value="'.$row['noTelp'].'" oninput="ceknumeric($(this))" onfocus="fokus($(this))">
+                                    <input type="text" id="telepon" name="telepon" value="'.$row['noTelp'].'" oninput="ceknumeric($(this))" onfocus="fokus($(this))">
                                     <br/><br/><br/>
                                     <div id="divAl"><label>Alamat</label></div>
-                                    <textarea id="alamat" name="alamat">'.$row['Alamat'].'</textarea>
+                                    <textarea id="alamat" name="alamat">'.$row['alamat'].'</textarea>
                                     <br/><br/><br/><br/><hr><br>
                                     <label>Password</label>
                                     <input type="password" id="pass1" name="pass1" oninput="cekPassword()"/>
@@ -134,8 +74,8 @@
                     else
                         echo '<img id="foto200px" class="photo" src="'.$row['foto'].'"/><br><br><br>';
 
-                    echo '      <input type="button" id="tombolCancel" name="tombokCancel" class="tombol" value="CANCEL" onclick="aside1()"/>
-                                <input type="submit" id="tombolSave" name="tombokSave" class="tombol" value="SAVE"/>
+                    echo '      <input type="button" id="tombolCancel" name="tombolCancel" class="tombol" value="CANCEL" onclick="aside1()"/>
+                                <input type="submit" id="tombolSave" name="tombolSave" class="tombol" value="SAVE"/>
                             </div>
                             </form>
                         </div>';
@@ -241,13 +181,8 @@
         $sql = "SELECT idKaryawan FROM karyawan WHERE idJabatan='$data' ORDER BY idKaryawan DESC LIMIT 1";
         $result=mysqli_query($conn,$sql);
         $jabatan;
-        if($result->num_rows>0){
-            while($row=mysqli_fetch_assoc($result)){
-                $jabatan=$row['idKaryawan'];
-            }
-        }
-        else{
-            $jabatan = "$data"."0000";
+        while($row=mysqli_fetch_assoc($result)){
+            $jabatan=$row['idKaryawan'];
         }
         $idJab=substr($jabatan,0,4);
         $idKar=substr($jabatan,4)+1;

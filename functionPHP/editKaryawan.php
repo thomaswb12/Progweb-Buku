@@ -4,12 +4,11 @@
 
     //kalau tombol OK dipencet
     if(!empty($_POST["tombolSave"])){
-        $idKaryawan=$_POST["idKaryawan"];
+        $idKaryawan = $_SESSION['idKaryawan'];
         $namaKaryawan=$_POST["namaKaryawan"];
         $jabatan=$_POST["selectJabatan"];
         $email=$_POST["email"];
         $telepon=$_POST["telepon"];
-        $alamat=$_POST["alamat"];
         $pass1=$_POST["pass1"];
         $pass2=$_POST["pass2"];
 
@@ -17,18 +16,17 @@
         move_uploaded_file($_FILES['gambar']['tmp_name'], $foto);
 
         //kalau data belum lengkap
-        if($idKaryawan==""||$namaKaryawan==""||$jabatan==""||$email==""||$telepon==""||$alamat==""){
+        if($namaKaryawan==""||$jabatan==""||$email==""||$telepon==""){
             $_SESSION["belumLengkap"]=1;
         }
         //kalau data sudah lengkap
         else{       
                 $pass=hash('sha256',$pass1);
-                $query="UPDATE karyawan SET nama='$namaKaryawan', email='$email', noTelp='$telepon', idJabatan='$jabatan', foto=$foto WHERE idKaryawan='$idKaryawan'";
+                $query="UPDATE karyawan SET nama='$namaKaryawan', email='$email', noTelp='$telepon', idJabatan='$jabatan', foto='$foto', pass='$pass' WHERE idKaryawan='$idKaryawan'";  
                 $result=mysqli_query($conn,$query);
                 $_SESSION["berhasil"]=1;
 
         }
         header ("location:../HRD/HRDDefault.php");
     }
-    header ("location:../HRD/HRDDefault.php");
 ?>
