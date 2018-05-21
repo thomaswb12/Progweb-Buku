@@ -94,10 +94,7 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo '<div class="infoKaryawan">';
-                            if($row['foto']=="")
-                                echo '<img id="foto200px" class="photo" src="hrdDaftarKaryawan/profile_pic.jpg"/><br><br><br>';
-                            else
-                                echo '<img id="foto200px" class="photo" src="'.$row['foto'].'"/><br><br><br>';
+                        echo '<img id="foto200px" class="photo" src="'.$row['foto'].'"/>';
                     echo        '<table>
                                 <tr>
                                     <td class="attr"><p class="label">ID</p></td>
