@@ -10,17 +10,15 @@
 <div id="judul">
     <h1>Tambah Eksemplar</h1>
 </div>
-<form action="../functionPHP/tambahEksemplar.php" method="POST">
     <div id="kiri">
         <label>ID Komik</label><br/>
-        <input type="text" id="idKomik" name="idKomik" onkeyup="getIdEksemplar()"/><i id="error"> ERROR</i><br/> 
+        <input type="text" id="idKomik" name="idKomik" oninput="getIdEksemplar()"/><i id="error"> ERROR</i><br/> 
 
         <label>ID Eksemplar</label><br/>
         <input type="text" id="idEksemplar" class="disable" name="idEksemplar" disabled="disabled"/><br/>
     </div>
-    <input type="submit" id="tombol" name="tombolOk" value="SAVE">
+    <input onclick="ajaxAdd()" type="button" id="tombol" name="tombolOk" value="SAVE">
     <input type="button" id="tombol" name="tombol" value="CANCEL">
-</form>
 
 <?php
     //kalau data yang diisi belum lengkap

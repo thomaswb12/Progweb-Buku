@@ -4,6 +4,7 @@
 
 if(!empty($_POST["tombolOk"])){
         //masukkan ke variabel
+        $idKomik = $_SESSION['idKomik'];
         $judul = $_POST['judul'];
         $sinopsis = $_POST['sinopsis'];
         $tgl = $_POST['tanggalTerbit'];
@@ -44,24 +45,13 @@ if(!empty($_POST["tombolOk"])){
         }
         //kalau data sudah lengkap
         else{
-            //untuk cek apakah org itu sudah ada di database (berdasarkan no identitasnya)
-            $query = "SELECT * FROM buku WHERE judulBuku = '$judul'";
-            $hasil = mysqli_query($conn,$query);
-            $count = mysqli_num_rows($hasil);
-            //kalau ada di DB (komik sudah ada)
-            if($count>0){
-                $_SESSION["sudahAda"]=1;
-            }
-            //kalau belum ada di DB -> tambahkan ke DB
-            else{
-                $idRak = "CC000001";
-                $satu = 1;
-                $nol = 0;
-                $query="UPDATE `buku` SET `judulBuku` = '$judul', `tanggalTerbit` = '$tgl', `jumlahHalaman` = '$jml', `beratBuku` = '$berat', `jenisCover` = '$jenisCover', `sinopsis` = '$sinopsis', `panjang` = '$panjang', `lebar` = '$lebar', `Rating` = '$rating', `idRak` = '$idRak',`Location` = '$location', `specialEdition` = '$specialEdition'";
-                $result=mysqli_query($conn,$query);
-                $_SESSION["berhasil"]=1;
-                //echo $query;
-            }
+            $idRak = "CC000001";
+            $satu = 1;
+            $nol = 0;
+            $query="UPDATE `buku` SET `judulBuku` = '$judul', `tanggalTerbit` = '$tgl', `jumlahHalaman` = '$jml', `beratBuku` = '$berat', `jenisCover` = '$jenisCover', `sinopsis` = '$sinopsis', `panjang` = '$panjang', `lebar` = '$lebar', `Rating` = '$rating', `idRak` = '$idRak',`Location` = '$location', `specialEdition` = '$specialEdition' WHERE `idBuku` = '$idKomik'";
+            $result=mysqli_query($conn,$query);
+            $_SESSION["komikEdit"]=1;
+            echo $query;
         }
         //header ("location:../Gudang/gudangDefault.php");
     }

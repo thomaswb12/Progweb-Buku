@@ -2,6 +2,7 @@
     session_start();
     include "getDataBuku.php";
     $id = $_POST['idKomik'];
+    $_SESSION['idKomik'] = $id;
     $buku = getDetailBuku($id);
 echo 
 '<div id="judul">
@@ -128,7 +129,7 @@ echo
 		<input type="text" id="lebar" name="lebar" value="'.$buku['lebar'].'"/><br/>
 	</div>
 	<input type="submit" id="tombol" name="tombolOk" value="SAVE">
-	<input type="button" id="tombol" name="tombol" value="CANCEL">
+	<input type="button" id="tombol" name="tombol" value="CANCEL" onclick="aside1()">
 </form>';
 
     //kalau data yang diisi belum lengkap

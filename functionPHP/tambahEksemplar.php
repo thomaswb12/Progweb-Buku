@@ -3,28 +3,19 @@
 	session_start();
 
     $id = $_POST['idKomik'];
+    $idEksemplar = $_POST['idEksemplar'];
 
-    if($id == ""){
+    if($idEksemplar == ""){
         $_SESSION['belumLengkap'] = 1;
     }
     else{
-    	$query = "SELECT * FROM buku WHERE idBuku = '$id'";
-        $hasil = mysqli_query($conn,$query);
-        $count = mysqli_num_rows($hasil);
-        if($count == 0){
-        	$_SESSION['komik'] = 1;
-
+        $query = "INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`, `tanggalTiba`) VALUES ('$idEksemplar', '$id', 'Tersedia', CURRENT_TIMESTAMP)";
+        if ($conn->query($query) === TRUE) {
+            echo "New record created successfully";
         }
-        else{
-            $query = "UPDATE buku SET Available = Available + 1, jumlahEksemplar = jumlahEksemplar + 1 WHERE idBuku = '$id';";
-            mysqli_query($conn,$query);
-
-            include "eksemplar.php";
-            $idEks = getIdEks($id);
-            $query = "INSERT INTO `eksbuku` (`idEksBuku`, `idBuku`, `Status`, `tanggalTiba`) VALUES ('$idEks', '$id', 'Tersedia', CURDATE());";
-            mysqli_query($conn,$query);
-            $_SESSION['berhasil'] = 1;
+        else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
         }
+        $conn->close();
     }
-    header ("location:../Gudang/gudangDefault.php");
 ?>
