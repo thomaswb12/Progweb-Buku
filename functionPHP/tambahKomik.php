@@ -71,11 +71,27 @@
             }
             //kalau belum ada di DB -> tambahkan ke DB
             else{
-                $idRak = "CC000001";
-                $satu = 1;
-                $nol = 0;
-                $query="INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`,`Dipinjam`,`idPenerbit`,`idPenulis`,`Rating`,`idRak`,`jumlahEksemplar`,`Location`,`Available`,`specialEdition`) VALUES ('$id', '$judul', '$tgl', '$jml', '$berat', '$jenisCover', '$sinopsis', '$panjang', '$lebar', '$nol', '$idPenerbit', '$idPengarang', '$rating', '$idRak', '$satu', '$location', '1', '$specialEdition');";
-                $result=mysqli_query($conn,$query);
+                $sql = "SELECT idRak FROM  rak";
+                $result = mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_assoc($result)){
+                    $idR=$row['idRak'];
+                }
+                $idR = substr($idR,6);
+                $idR+=1;
+                $numlength = strlen((string)$idR);
+                $newId="";
+                for($i=0;$i<6-$numlength;$i++){
+                    $newId=$newId."0";
+                }        
+                $idRak = "CC".$newId.$idR;
+                $namaRak = substr($judul,0,1);
+                $nmR = $namaRak.'1';
+                $query = "INSERT INTO `rak` (`idRak`,`namaRak`,`tanggalRak`,`Abjad`) VALUES ('$idRak','$nmR',CURDATE(),'$namaRak')";
+                echo $query;
+                mysqli_query($conn,$query);
+                $query="INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`,`Dipinjam`,`idPenerbit`,`idPenulis`,`Rating`,`idRak`,`jumlahEksemplar`,`Location`,`Available`,`specialEdition`) VALUES ('$id', '$judul', '$tgl', '$jml', '$berat', '$jenisCover', '$sinopsis', '$panjang', '$lebar', '0', '$idPenerbit', '$idPengarang', '$rating', '$idRak', '1', '$location', '1', '$specialEdition');";
+                echo $query;
+                $result=mysqli_query($conn,$query); 
                 //echo $query;
                 foreach($genre as $selected){
                     $query="INSERT INTO `genrebuku` (`idGenre`, `idBuku`) VALUES ('$selected', '$id');";
@@ -84,6 +100,6 @@
                 $_SESSION["berhasil"]=1;
             }
         }
-        header ("location:../Gudang/gudangDefault.php");
+        //header ("location:../Gudang/gudangDefault.php");
     }
 ?>
