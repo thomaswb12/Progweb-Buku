@@ -6,7 +6,7 @@
             $_SESSION['id'] = $_POST['id'];
             $_SESSION['control'] = 0;
             $_SESSION['nama'] = "Admin";
-            header("location:../Admin/AdminDefault.php");break;
+            header("location:../Admin/AdminDefault.php");
         }
         if($_POST['id'] == "admin" && $_POST['password'] == "admin"){ //untuk login ke page user
             $_SESSION['id'] = $_POST['id'];
