@@ -7,6 +7,7 @@
             <option>Nama</option>
             <option>Jabatan</option>
         </select>
+        <i class="fa fa-search blue font15"></i>
 </div>
 
 <div id="searching">
@@ -17,7 +18,6 @@
          </select>
     <div id="searchBox">
         <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
-        <i class="fa fa-search blue font15" onclick="search()"></i>
     </div>
 </div><br><br>
 

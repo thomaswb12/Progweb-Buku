@@ -12,6 +12,7 @@
                 <option value = 2>Terpopuler</option>
                 <option value = 3>Stok terbanyak</option>
             </select>
+            <i class="fa fa-search blue font15 klik" onclick="search()"></i>
         </div>
 
         <div id="searching">
@@ -24,7 +25,6 @@
             </select>
             <div id="searchBox">
                 <input type="text" placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
-                <i class="fa fa-search blue font15 klik" onclick="search()"></i>
             </div>
         </div>
     </div>

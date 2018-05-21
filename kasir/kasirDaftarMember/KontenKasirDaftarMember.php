@@ -25,6 +25,7 @@
         <option value = 2>Nama</option>
         <option value = 3>Email</option>
     </select>
+    <i class="fa fa-search blue font15 klik" onclick="searchDaftarMember()"></i>
 </div>
 <div id="searching">
     <label id="labelSearchBy" class="blue font15">Search by :</label>
@@ -36,7 +37,6 @@
     </select>
     <div id="searchBox">
         <input type="text"  placeholder="Search" class="font15" id="memberInputSearchBy" name="memberInputSearchBy"/>
-        <i class="fa fa-search blue font15 klik" onclick="searchDaftarMember()"></i>
     </div>
 </div>
 <!--bagian daftar member-->
