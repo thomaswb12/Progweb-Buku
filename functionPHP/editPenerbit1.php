@@ -36,7 +36,7 @@
         <textarea type="text" id="alamat" name="alamat">'.$value['alamat'].'</textarea><br/>
     </div>
     <input type="submit" id="tombol" name="tombolOk" value="SAVE">
-    <input type="button" id="tombol" name="tombol" value="CANCEL">
+    <input type="button" id="tombol" name="tombol" value="CANCEL" onclick="aside3()">
 </form>';
 
     //kalau data yang diisi belum lengkap
@@ -45,26 +45,6 @@
         ?>
         <script type="text/javascript">
             alert("Gagal ditambahkan: Data belum lengkap!");
-        </script>
-        <?php
-    }
-
-    //kalau orang itu sudah jadi member
-    if(isset($_SESSION["sudahAda"])){
-        unset($_SESSION["sudahAda"]);
-        ?>
-        <script type="text/javascript">
-            alert("Gagal ditambahkan: Penerbit sudah ada!");
-        </script>
-        <?php
-    }
-
-    //kalau berhasil didaftarkan menjadi member
-    if(isset($_SESSION["berhasil"])){
-        unset($_SESSION["berhasil"]);
-        ?>
-        <script type="text/javascript">
-            alert("Penerbit berhasil ditambahkan :)");
         </script>
         <?php
     }

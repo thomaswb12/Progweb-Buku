@@ -12,7 +12,5 @@
 	$query = "DELETE FROM buku WHERE `idBuku` = '$_POST[idKomik]'";
 	mysqli_query($conn,$query);
 	
-	$_SESSION['hapus'] = 1;
-
-	//echo header ("location:../Gudang/gudangDaftarKomik.php");
+	$_SESSION['komikHapus'] = 1;
 ?>

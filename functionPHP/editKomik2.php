@@ -50,7 +50,7 @@ if(!empty($_POST["tombolOk"])){
             $nol = 0;
             $query="UPDATE `buku` SET `judulBuku` = '$judul', `tanggalTerbit` = '$tgl', `jumlahHalaman` = '$jml', `beratBuku` = '$berat', `jenisCover` = '$jenisCover', `sinopsis` = '$sinopsis', `panjang` = '$panjang', `lebar` = '$lebar', `Rating` = '$rating', `idRak` = '$idRak',`Location` = '$location', `specialEdition` = '$specialEdition' WHERE `idBuku` = '$idKomik'";
             $result=mysqli_query($conn,$query);
-            $_SESSION["berhasil"]=1;
+            $_SESSION["komikEdit"]=1;
             echo $query;
         }
         //header ("location:../Gudang/gudangDefault.php");
