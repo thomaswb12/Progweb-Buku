@@ -18,16 +18,14 @@
         <input type="text" id="judul" name="judul"/><br/>
 
         <label>Genre</label><br/>
-        <select id="genre" name="genre">
-            <option value="" selected disabled hidden>Choose here</option>
-            <option value="1">Action</option>
-            <option value="2">Romance</option>
-            <option value="3">Fantasi</option>
-            <option value="4">Comedy</option>
-            <option value="5">Thriller</option>
-            <option value="6">Horor</option>
-            <option value="7">Sci-fi</option>
-        </select><br/>
+        <?php
+            $sql =  "SELECT * from genre";
+            if($result = $conn->query($sql)){
+                while($rows = $result->fetch_assoc()){
+                    echo '<input type="checkbox" name="listgenre[]" value="'.$rows['idGenre'].'" style="width:5px;"/><label>'.$rows['namaGenre'].'</label><br/>';
+                }
+            }
+        ?>
 
         <label>Rating</label><br/>
         <select id="rating" name="rating">
