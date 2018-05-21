@@ -179,8 +179,13 @@
         $sql = "SELECT idKaryawan FROM karyawan WHERE idJabatan='$data' ORDER BY idKaryawan DESC LIMIT 1";
         $result=mysqli_query($conn,$sql);
         $jabatan;
-        while($row=mysqli_fetch_assoc($result)){
-            $jabatan=$row['idKaryawan'];
+        if($result->num_rows>0){
+            while($row=mysqli_fetch_assoc($result)){
+                $jabatan=$row['idKaryawan'];
+            }
+        }
+        else{
+            $jabatan = "$data"."0000";
         }
         $idJab=substr($jabatan,0,4);
         $idKar=substr($jabatan,4)+1;
