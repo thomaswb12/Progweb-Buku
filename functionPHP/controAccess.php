@@ -2,6 +2,12 @@
     //print_r($_POST);
     if($_POST){//untuk mengecek apakah sudah ada yg post
         session_start();
+        if($_POST['id'] == "ADMN0000" && $_POST['password'] == "admin"){ //untuk login ke page user
+            $_SESSION['id'] = $_POST['id'];
+            $_SESSION['control'] = 0;
+            $_SESSION['nama'] = "Admin";
+            header("location:../Admin/AdminDefault.php");break;
+        }
         if($_POST['id'] == "admin" && $_POST['password'] == "admin"){ //untuk login ke page user
             $_SESSION['id'] = $_POST['id'];
             $_SESSION['control'] = 1;
