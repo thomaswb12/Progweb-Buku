@@ -131,10 +131,10 @@ function search(){
     $.ajax({
         type : 'post',
         data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'function':8},
-        url: '../../functionPHP/HRD.php',
+        url: '../functionPHP/HRD.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
-            $("#daftarKomik").html(response);
+            $("#daftarKaryawan").html(response);
         }
     });   
 }
