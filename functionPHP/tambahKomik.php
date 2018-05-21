@@ -18,15 +18,13 @@
         $foto = "../images/buku/".$_FILES['gambar']['name'];
         $location = "images/buku/".$_FILES['gambar']['name'];
         move_uploaded_file($_FILES['gambar']['tmp_name'], $foto);
-        switch ($_POST['genre']) {
-            case 1: $genre = 'Action';break;
-            case 2: $genre = 'Romance';break;
-            case 3: $genre = 'Fantasi';break;
-            case 4: $genre = 'Comedy';break;
-            case 5: $genre = 'Thrille';break;
-            case 6: $genre = 'Horor';break;
-            case 7: $genre = 'Sci-fi';break;
+        $genre=array();
+        if(!empty($_POST['listgenre'])){
+            foreach($_POST['listgenre'] as $selected){
+                $genre[]=$selected;
+            }
         }
+        
         switch ($_POST['rating']) {
             case 1: $rating = 'anak-anak';break;
             case 2: $rating = 'remaja';break;
@@ -77,24 +75,14 @@
                 $nol = 0;
                 $query="INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`,`Dipinjam`,`idPenerbit`,`idPenulis`,`Rating`,`idRak`,`jumlahEksemplar`,`Location`,`Available`,`specialEdition`) VALUES ('$id', '$judul', '$tgl', '$jml', '$berat', '$jenisCover', '$sinopsis', '$panjang', '$lebar', '$nol', '$idPenerbit', '$idPengarang', '$rating', '$idRak', '$satu', '$location', '1', '$specialEdition');";
                 $result=mysqli_query($conn,$query);
-                $_SESSION["berhasil"]=1;
                 //echo $query;
+                foreach($genre as $selected){
+                    $query="INSERT INTO `genrebuku` (`idGenre`, `idBuku`) VALUES ('$selected', '$id');";
+                    $result=mysqli_query($conn,$query);
+                }
+                $_SESSION["berhasil"]=1;
             }
         }
         header ("location:../Gudang/gudangDefault.php");
-        /*echo $judul;
-        echo $sinopsis;
-        echo $idPengarang;
-        echo $idPenerbit;
-        echo $tgl;
-        echo $jml;
-        echo $berat;
-        echo $panjang;
-        echo $lebar;
-        echo $foto;
-        echo $rating;
-        echo $genre;
-        echo $specialEdition;
-        echo $jenisCover;*/
     }
 ?>

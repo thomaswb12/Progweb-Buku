@@ -82,10 +82,6 @@ $(window).resize(function(){
     }  
 });
 
-function edit(){
-    $("div#konten").load("gudangEditKomik/editKomik.php");
-    $("div#gantiHead").load("gudangEditKomik/headEditKomik.html");
-}
 function view(){
     $("#asideDetail").addClass('terpilih');
     $("#dropdown").show();
@@ -266,10 +262,29 @@ function getIdEksemplar(){
         data : {'idKomik':$id},
         url: '../functionPHP/eksemplar.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
-            //alert(response);
-            $("#idEksemplar").html(response);
+            if(response == "ga ada"){
+                $('#error').text('ERROR');
+                $('#tombol').hide();
+                $("#idEksemplar").val('');
+            }
+            else{
+                $('#error').text('');
+                $("#idEksemplar").val(response);
+                $('#tombol').show();
+            }
         }
     });   
+}
+
+function ajaxAdd(){
+    $.ajax({
+        type : 'post',
+        data : {'idKomik':$("#idKomik").val(),'idEksemplar':$("#idEksemplar").val()},
+        url: '../functionPHP/tambahEksemplar.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            alert(response);
+        }
+    });
 }
 
 /*tampilkan pop up detail komik*/
@@ -288,11 +303,100 @@ function munculPopup(temp){
     $("#blur").fadeIn();
 }
 
+function munculPopupPenerbit(temp){
+    var a = temp;
+    $.ajax({
+        type : 'post',
+        data : {'idPenerbit':a},
+        url: '../functionPHP/popUpGudangPenerbit.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#popup").html(response);
+        }
+    });
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
+}
+
 function pencetBlur(){
     $("#popup").css('display','none');
     $("#blur").css('display','none');
 }
 
-function getIdEks(){
+function editKomik($idKomik){
+    $("div#gantiHead").load("gudangEditKomik/headEditKomik.html");
+    $.ajax({
+        type : 'post',
+        data : {'idKomik':$idKomik},
+        url: '../functionPHP/editKomik1.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#konten").html(response);
+        }
+    });
+}
 
+function deleteKomik($idKomik){
+    $.ajax({
+        type : 'post',
+        data : {'idKomik':$idKomik},
+        url: '../functionPHP/deleteKomik.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            pencetBlur();
+        }
+    });
+    aside1();
+}
+
+function editPenerbit($idPenerbit){
+    $("div#gantiHead").load("gudangEditPenerbit/headEditPenerbit.html");
+    $.ajax({
+        type : 'post',
+        data : {'idPenerbit':$idPenerbit},
+        url: '../functionPHP/editPenerbit1.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#konten").html(response);
+        }
+    });
+}
+
+function deletePenerbit($idPenerbit){
+    $.ajax({
+        type : 'post',
+        data : {'idPenerbit':$idPenerbit},
+        url: '../functionPHP/deletePenerbit.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            pencetBlur();
+        }
+    });
+    aside3();
+}
+
+function editPengarang($idPengarang){
+    $("div#gantiHead").load("gudangEditPengarang/headEditPengarang.html");
+    $.ajax({
+        type : 'post',
+        data : {'idPengarang':$idPengarang},
+        url: '../functionPHP/editPengarang1.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#konten").html(response);
+        }
+    });
+}
+
+function deletePengarang($idPengarang){
+    $.ajax({
+        type : 'post',
+        data : {'idPengarang':$idPengarang},
+        url: '../functionPHP/deletePengarang.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            pencetBlur();
+        }
+    });
+    aside3();
 }

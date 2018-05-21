@@ -21,7 +21,7 @@
         </select>
         <div id="searchBox">
             <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy" onkeyup="searchKomik()" />
-            <i class="fa fa-search blue font15" onclick="searchKomik()"></i>
+            <i class="fa fa-search blue font15 klik" onclick="searchKomik()"></i>
         </div>
     </div>
 </div>
@@ -31,3 +31,24 @@
 <div id="blur" onclick="pencetBlur()">
 </div>
 <div id="popup"></div>
+
+<?php
+    session_start();
+
+    if(isset($_SESSION['komikHapus'])){
+        unset($_SESSION['komikHapus']);
+        ?>
+        <script>
+            alert("Sukses menghapus komik");
+        </script>
+        <?php   
+    }
+    else if(isset($_SESSION['komikEdit'])){
+        unset($_SESSION['komikEdit']);
+        ?>
+        <script>
+            alert("Sukses mengedit komik");
+        </script>
+        <?php   
+    }
+?>

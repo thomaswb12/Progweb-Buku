@@ -1,16 +1,23 @@
 <?php
-    function getIdEks($idKomik){
-        include "getDataBuku.php";
+        include "koneksi.php";
 
-        $data = getDetailBuku($idKomik);
-        foreach($data as $value){
-            $jml = $value['jumlahEksemplar'];
+        $idKomik = $_POST['idKomik'];
+
+        $sql = "SELECT * from buku where idBuku= '$idKomik'";
+        $result = $conn->query($sql);
+        if($result->num_rows==1){
+            $sql1 = "SELECT * from eksbuku where idBuku= '$idKomik'";
+            $result1 = $conn->query($sql1);
+            $tamp = "KK";
+            for($i=0;$i<6-strlen($result1->num_rows+1);$i++){
+                $tamp .="0";
+            }
+            $tamp.=($result1->num_rows+1);
+            $hasil = $idKomik. $tamp;
+            $conn->close();
+            echo $idKomik. $tamp;
         }
-        $numlength = strlen((string)$jml);
-        $newId="";
-        for($i=0;$i<6-$numlength;$i++){
-            $newId=$newId."0";
+        else{
+            echo "ga ada";
         }
-        return $idKomik."KK".$newId.$jml;
-    }
 ?>

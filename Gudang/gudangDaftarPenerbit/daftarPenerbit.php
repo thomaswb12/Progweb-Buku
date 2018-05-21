@@ -18,10 +18,34 @@
             <option>Nama Penerbit</option>
         </select>
         <div id="searchBox">
-            <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
+            <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy" onkeyup="searchPenerbit()"/>
             <i class="fa fa-search blue font15"  onclick="searchPenerbit()"></i>
         </div>
     </div>
 </div>
 <div id="daftar" class="font15">
 </div>
+<!-- keperluan popup-->
+<div id="blur" onclick="pencetBlur()">
+</div>
+<div id="popup"></div>
+<?php
+    session_start();
+
+    if(isset($_SESSION['penerbitEdit'])){
+        unset($_SESSION['penerbitEdit']);
+        ?>
+        <script>
+            alert("Sukses mengedit penerbit");
+        </script>
+        <?php
+    }
+    else if(isset($_SESSION['penerbitHapus'])){
+        unset($_SESSION['penerbitHapus']);
+        ?>
+        <script>
+            alert("Sukses menghapus penerbit");
+        </script>
+        <?php
+    }
+?>
