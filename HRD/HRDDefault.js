@@ -124,17 +124,19 @@ function pencetBlur(){
     $("#blur").css('display','none');
 }
 
-function searchNama(){
-    var a = $("#inputID").val();
+function search(){
+    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
+    $dari = $('#selectSearchBy').val();
+    $sorting = $('#selectSortBy').val();
     $.ajax({
         type : 'post',
-        data : {'id':a},
-        url: 'PHP/Kasir%20-%20peminjaman/getNama.php',
+        data : {'kata':$kata,'dari':$dari,'sorting':$sorting,'status':1},
+        url: '../../functionPHP/HRD.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
-            $("#namaMember").val(response);
+            $("#daftarKomik").html(response);
         }
-     });
+    });   
 }
 
 function load(){
