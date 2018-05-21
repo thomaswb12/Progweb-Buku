@@ -1,38 +1,40 @@
 <?php
-    session_start();
-    include "getDataBuku.php";
-    $buku = getDetailBuku($_POST['idBuku']);
-     //cek available atau tidak
-    if($buku['Available']>0){
-        $status='AVAILABLE';
-        $warna='green';
-    }
-    else{
-        $status='UNAVAILABLE';
-        $warna='red';
-    }
-    //cek apakah special edition dan favorit
-    $special='';
-    $favorit='';
-    if($buku['specialEdition']=="Ya"){
-        $special='Special Edition';
-    }
-    if($buku['Dipinjam']>2500){
-        $favorit='Favorit';
-    }
+session_start();
+include "getDataBuku.php";
+$buku = getDetailBuku($_POST['idBuku']);
+ //cek available atau tidak
+if($buku['Available']>0){
+    $status='AVAILABLE';
+    $warna='green';
+}
+else{
+    $status='UNAVAILABLE';
+    $warna='red';
+}
+//cek apakah special edition dan favorit
+$special='';
+$favorit='';
+if($buku['specialEdition']=="Ya"){
+    $special='Special Edition';
+}
+if($buku['Dipinjam']>2500){
+    $favorit='Favorit';
+}
 
-    //hitung harga dan lama pinjam
-    $harga=getHargaBuku($buku['tanggalTerbit'],$buku['specialEdition']);
-    $lamapinjam=getLamaPinjam($buku['tanggalTerbit']);
+//hitung harga dan lama pinjam
+$harga=getHargaBuku($buku['tanggalTerbit'],$buku['specialEdition']);
+$lamapinjam=getLamaPinjam($buku['tanggalTerbit']);
+global $conn;
 
-    echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
+echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
         <br/><br/>
         <div id="popupScroll">
-            <p id="popupJudul">'.$buku['judulBuku'].'<button style="float:right;height:50px;width:120px;" onclick="deleteKomik('."'".$buku['idBuku']."'".')">DELETE</button>'.'<button style="float:right;height:50px;width:120px;" onclick="editKomik('."'".$buku['idBuku']."'".')">EDIT</button></p>
+            <p id="popupJudul">'.$buku['judulBuku'].'</p>
             <div id="divImg">';
+                //if($_POST['status']==1) echo '<img class="komik" src="../../'.$buku['Location'].'"/>';
                 echo '<img class="komik" src="../'.$buku['Location'].'"/>';
             echo '</div>
-            <div id="istimewa" style="float:left">
+            <div id="istimewa">
                 <h3 id="popupPopular" style="color:red;">'.$favorit.'</h3>
                 <h3 id="popupSpecial" style="color:orange;">'.$special.'</h3>
             </div>
@@ -67,7 +69,7 @@
                 <tr><td>Dipinjam</td>
                     <td id="popupDipinjam">'.$buku['Dipinjam'].'</td></tr>
                 <tr><td>Genre</td>
-                    <td id="popupGenre">'.$buku['NamaPenerbit'].'</td></tr>
+                    <td id="popupGenre">'.getGenre($buku['idBuku'],$conn).'</td></tr>
                 <tr><td>Rating</td>
                     <td id="popupRating">'.$buku['Rating'].'</td></tr>
                 <tr><td>Rak</td>
