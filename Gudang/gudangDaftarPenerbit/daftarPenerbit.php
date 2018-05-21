@@ -18,10 +18,14 @@
             <option>Nama Penerbit</option>
         </select>
         <div id="searchBox">
-            <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy"/>
+            <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy" onkeyup="searchPenerbit()"/>
             <i class="fa fa-search blue font15"  onclick="searchPenerbit()"></i>
         </div>
     </div>
 </div>
 <div id="daftar" class="font15">
 </div>
+<!-- keperluan popup-->
+<div id="blur" onclick="pencetBlur()">
+</div>
+<div id="popup"></div>

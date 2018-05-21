@@ -284,17 +284,28 @@ function munculPopup(temp){
     $("#blur").fadeIn();
 }
 
+function munculPopupPenerbit(temp){
+    var a = temp;
+    $.ajax({
+        type : 'post',
+        data : {'idPenerbit':a},
+        url: '../functionPHP/popUpGudangPenerbit.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#popup").html(response);
+        }
+    });
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
+}
+
 function pencetBlur(){
     $("#popup").css('display','none');
     $("#blur").css('display','none');
 }
 
-function edit($idKomik){
-    //$("div#konten").load("gudangEditKomik/editKomik.php");
+function editKomik($idKomik){
     $("div#gantiHead").load("gudangEditKomik/headEditKomik.html");
-    $('#inputSearchBy').val() !="" ? $kata = $('#inputSearchBy').val(): $kata ="";
-    $dari = $('#selectSearchBy').val();
-    $sorting = $('#selectSortBy').val();
     $.ajax({
         type : 'post',
         data : {'idKomik':$idKomik},
@@ -313,7 +324,34 @@ function deleteKomik($idKomik){
         url: '../functionPHP/deleteKomik.php',
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
+            pencetBlur();
+            aside1();
+        }
+    });
+}
+
+function editPenerbit($idPenerbit){
+    $("div#gantiHead").load("gudangEditKomik/headEditKomik.html");
+    $.ajax({
+        type : 'post',
+        data : {'idPenerbit':$idPenerbit},
+        url: '../functionPHP/editPenerbit1.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
             $("#konten").html(response);
+        }
+    });
+}
+
+function deletePenerbit($idPenerbit){
+    $.ajax({
+        type : 'post',
+        data : {'idPenerbit':$idPenerbit},
+        url: '../functionPHP/deletePenerbit.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            pencetBlur();
+            aside3();
         }
     });
 }
