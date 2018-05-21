@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Bulan Mei 2018 pada 04.14
+-- Waktu pembuatan: 21 Bulan Mei 2018 pada 04.53
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.4
 
@@ -431,6 +431,7 @@ CREATE TABLE `jabatankaryawan` (
 --
 
 INSERT INTO `jabatankaryawan` (`idJabatan`, `namaJabatan`, `gaji`, `keterangan`) VALUES
+('GDNG', 'Gudang', 1000000, 'Mengurus update'),
 ('HRDD', 'HRD', 8500000, 'HRD mengurusi bagian kepegawaian beserta jabatannya'),
 ('KSRR', 'Kasir', 5000000, 'Melayani member dalam transaksi dan pendaftaran member'),
 ('MNGR', 'Manager', 9000000, 'Manager mengurusi bagian daftar peminjaman dan laporan keuangan');
@@ -456,6 +457,7 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`idKaryawan`, `nama`, `email`, `noTelp`, `idJabatan`, `pass`, `foto`) VALUES
+('GDNG0001', 'Leo', 'leo@gmail.com', '089521337888', 'GDNG', 'd9af2db0dcb2499edee364f94d572fb87c8eeb35649d3f048690081c55b3d44b', '../images/karyawan/GDNG0001.jpg'),
 ('HRDD0001', 'Dika Adrianus', 'dika@gmail.com', '082766478882', 'HRDD', 'dda29d2a069f67bfaa0f505b7bc837c0181b39888926a126e9d707828d12b4b4', '../images/karyawan/HRDD0001.jpg'),
 ('KSRR0001', 'Kirana amarinda', 'kirana@ti.ukdw.ac.id', '087874532112', 'KSRR', '2678cc3e16e93cf29052a41193271b5ecf05d9c6cebe7b42288652d65458a457', '../images/karyawan/KSRR0001.jpg'),
 ('MNGR0001', 'Anna Melianna', 'anna@gmail.com', '085763828029', 'MNGR', '55579b557896d0ce1764c47fed644f9b35f58bad620674af23f356d80ed0c503', '../images/karyawan/MNGR0001.jpg');
@@ -713,10 +715,64 @@ ALTER TABLE `eksbuku`
   ADD PRIMARY KEY (`idEksBuku`);
 
 --
+-- Indeks untuk tabel `genre`
+--
+ALTER TABLE `genre`
+  ADD PRIMARY KEY (`idGenre`);
+
+--
+-- Indeks untuk tabel `genrebuku`
+--
+ALTER TABLE `genrebuku`
+  ADD KEY `id` (`idGenre`) USING BTREE;
+
+--
+-- Indeks untuk tabel `jabatankaryawan`
+--
+ALTER TABLE `jabatankaryawan`
+  ADD PRIMARY KEY (`idJabatan`);
+
+--
 -- Indeks untuk tabel `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`idKaryawan`);
+
+--
+-- Indeks untuk tabel `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `penerbit`
+--
+ALTER TABLE `penerbit`
+  ADD PRIMARY KEY (`idPenerbit`);
+
+--
+-- Indeks untuk tabel `pengembalian`
+--
+ALTER TABLE `pengembalian`
+  ADD PRIMARY KEY (`idTransaksi`);
+
+--
+-- Indeks untuk tabel `penulis`
+--
+ALTER TABLE `penulis`
+  ADD PRIMARY KEY (`idPenulis`);
+
+--
+-- Indeks untuk tabel `rak`
+--
+ALTER TABLE `rak`
+  ADD PRIMARY KEY (`idRak`);
+
+--
+-- Indeks untuk tabel `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`idTransaksi`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

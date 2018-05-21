@@ -10,10 +10,15 @@
         case 4 : loadDetail($_POST['data']);break;
         case 6 : ajaxTampilGambar($_FILES['foto']);break;
         case 7 : tampilkanIdJabatan($_POST['data']); break;
+        case 8 : search();break;
     }
 
     function tampilinGambar($tamp){
         echo is_array($tamp);
+    }
+
+    function search(){
+
     }
 
     function loadDetail($data){
