@@ -1,5 +1,6 @@
 <?php
     include "../../functionPHP/komik.php";
+    include "../../functionPHP/koneksi.php";
     session_start();
 ?>
 <div id="judul">
@@ -50,10 +51,28 @@
 
     <div id="kanan">
         <label>ID Pengarang</label><br/>
-        <input type="text" id="idPengarang" name="idPengarang"/><br/>
+        <select id="idPengarang" name="idPengarang">
+            <?php
+                $sql =  "SELECT * from penulis";
+                if($result = $conn->query($sql)){
+                    while($rows = $result->fetch_assoc()){
+                        echo '<option value="'.$rows['idPenulis'].'">'.$rows['namaPenulis'].'</option>';
+                    }
+                }
+            ?>
+        </select><br/>
 
         <label>ID Penerbit</label><br/>
-        <input type="text" id="idPenerbit" name="idPenerbit"/><br/>
+        <select id="idPenerbit" name="idPenerbit">
+            <?php
+                $sql =  "SELECT * from penerbit";
+                if($result = $conn->query($sql)){
+                    while($rows = $result->fetch_assoc()){
+                        echo '<option value="'.$rows['idPenerbit'].'">'.$rows['NamaPenerbit'].'</option>';
+                    }
+                }
+            ?>
+        <select><br/>
 
         <label>Tanggal Terbit</label><br/>
         <input type="date" id="tanggalTerbit" name="tanggalTerbit"/><br/>
