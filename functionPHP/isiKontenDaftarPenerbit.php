@@ -8,7 +8,7 @@
         $hasil = getAllPenerbit();
     $i=1;
     foreach($hasil as $penerbit){
-        echo '<div class="info">';
+        echo '<div class="info" onclick="munculPopupPenerbit('."'".$penerbit['idPenerbit']."'".')">';
         echo '<img class="foto" src="'.$penerbit['foto'].'"/>';
         echo '<p class="ID">ID : '.$penerbit['idPenerbit'].'</p>
                 <p class="Penerbit">Penerbit : '.$penerbit['NamaPenerbit'].'</p>

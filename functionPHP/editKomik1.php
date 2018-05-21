@@ -2,6 +2,7 @@
     session_start();
     include "getDataBuku.php";
     $id = $_POST['idKomik'];
+    $_SESSION['idKomik'] = $id;
     $buku = getDetailBuku($id);
 echo 
 '<div id="judul">

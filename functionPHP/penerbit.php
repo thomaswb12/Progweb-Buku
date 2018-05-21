@@ -20,7 +20,20 @@
         return "AA".$newId.$id;
     }
 
-    //ambil semua di tabel member
+    function getPenerbit($idPenerbit){
+        global $conn;
+        $sql = "SELECT * FROM penerbit WHERE `idPenerbit` = '$idPenerbit'";
+        $result=mysqli_query($conn,$sql);
+        $data=array();
+        if($result = $conn->query($sql)){
+            while($rows = $result->fetch_assoc()){
+                $data = $rows;
+            }
+            return $data;
+        }
+    }
+
+    //ambil semua di tabel penerbit
     function getAllPenerbit(){
         global $conn;
         $sql = "SELECT * FROM penerbit ORDER BY idPenerbit ASC";
@@ -32,7 +45,7 @@
         return $data;
     }
 
-    //ambil member yg di search / & sort
+    //ambil penerbit yg di search / & sort
     function getAllPenerbitWith($kata,$dari,$sort){
         global $conn;
         switch($dari){
