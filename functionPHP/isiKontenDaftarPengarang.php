@@ -8,7 +8,7 @@
         $hasil = getAllPengarang();
     $i=1;
     foreach($hasil as $pengarang){
-        echo '<div class="info">';
+        echo '<div class="info" onclick="munculPopupPengarang('."'".$pengarang['idPenulis']."'".')">';
         echo '<img class="foto" src="'.$pengarang['foto'].'"/>';
         echo '<p class="ID">ID : '.$pengarang['idPenulis'].'</p>
             <p class="Penerbit">Penerbit : '.$pengarang['namaPenulis'].'</p>
