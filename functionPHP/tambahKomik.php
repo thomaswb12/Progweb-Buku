@@ -90,7 +90,6 @@
                 echo $query;
                 mysqli_query($conn,$query);
                 $query="INSERT INTO `buku` (`idBuku`, `judulBuku`, `tanggalTerbit`, `jumlahHalaman`, `beratBuku`, `jenisCover`, `sinopsis`, `panjang`, `lebar`,`Dipinjam`,`idPenerbit`,`idPenulis`,`Rating`,`idRak`,`jumlahEksemplar`,`Location`,`Available`,`specialEdition`) VALUES ('$id', '$judul', '$tgl', '$jml', '$berat', '$jenisCover', '$sinopsis', '$panjang', '$lebar', '0', '$idPenerbit', '$idPengarang', '$rating', '$idRak', '1', '$location', '1', '$specialEdition');";
-                echo $query;
                 $result=mysqli_query($conn,$query); 
                 //echo $query;
                 foreach($genre as $selected){
@@ -100,6 +99,6 @@
                 $_SESSION["berhasil"]=1;
             }
         }
-        //header ("location:../Gudang/gudangDefault.php");
+        header ("location:../Gudang/gudangDefault.php");
     }
 ?>
