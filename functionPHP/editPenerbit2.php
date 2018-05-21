@@ -19,7 +19,7 @@
         else{
             $query="UPDATE `penerbit` SET `NamaPenerbit` = '$nama', `email` = '$email', `alamat` = '$alamat', `noTelp` = '$noTelp', `foto` = '$foto' WHERE `idPenerbit` = '$id'";
             $result=mysqli_query($conn,$query);
-            $_SESSION["berhasil"]=1;
+            $_SESSION["penerbitEdit"]=1;
         }
         header ("location:../Gudang/gudangDefault.php");
     }

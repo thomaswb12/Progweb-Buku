@@ -35,13 +35,20 @@
 <?php
     session_start();
 
-    if(isset($_SESSION['hapus'])){
-        unset($_SESSION['hapus']);
+    if(isset($_SESSION['komikHapus'])){
+        unset($_SESSION['komikHapus']);
         ?>
         <script>
             alert("Sukses menghapus komik");
         </script>
-        <?php
-        
+        <?php   
+    }
+    else if(isset($_SESSION['komikEdit'])){
+        unset($_SESSION['komikEdit']);
+        ?>
+        <script>
+            alert("Sukses mengedit komik");
+        </script>
+        <?php   
     }
 ?>

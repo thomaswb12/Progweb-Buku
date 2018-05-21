@@ -325,13 +325,13 @@ function deleteKomik($idKomik){
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
             pencetBlur();
-            aside1();
         }
     });
+    aside1();
 }
 
 function editPenerbit($idPenerbit){
-    $("div#gantiHead").load("gudangEditKomik/headEditKomik.html");
+    $("div#gantiHead").load("gudangEditPenerbit/headEditPenerbit.html");
     $.ajax({
         type : 'post',
         data : {'idPenerbit':$idPenerbit},
@@ -351,7 +351,33 @@ function deletePenerbit($idPenerbit){
         success: function (response) {//response is value returned from php (for your example it's "bye bye"
             //alert(response);
             pencetBlur();
-            aside3();
         }
     });
+    aside3();
+}
+
+function editPengarang($idPengarang){
+    $("div#gantiHead").load("gudangEditPengarang/headEditPengarang.html");
+    $.ajax({
+        type : 'post',
+        data : {'idPengarang':$idPengarang},
+        url: '../functionPHP/editPengarang1.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#konten").html(response);
+        }
+    });
+}
+
+function deletePengarang($idPengarang){
+    $.ajax({
+        type : 'post',
+        data : {'idPengarang':$idPengarang},
+        url: '../functionPHP/deletePengarang.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            pencetBlur();
+        }
+    });
+    aside3();
 }

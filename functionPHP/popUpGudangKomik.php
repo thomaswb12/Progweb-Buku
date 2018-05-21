@@ -28,7 +28,7 @@
     echo '<i id="tombolClose" class="klik fas fa-times simbolX" onclick="pencetBlur()"></i>
         <br/><br/>
         <div id="popupScroll">
-            <p id="popupJudul">'.$buku['judulBuku'].'<button style="float:right;height:50px;width:120px;" onclick="deleteKomik('."'".$buku['idBuku']."'".')">DELETE</button>'.'<button style="float:right;height:50px;width:120px;" onclick="edit('."'".$buku['idBuku']."'".')">EDIT</button></p>
+            <p id="popupJudul">'.$buku['judulBuku'].'<button style="float:right;height:50px;width:120px;" onclick="deleteKomik('."'".$buku['idBuku']."'".')">DELETE</button>'.'<button style="float:right;height:50px;width:120px;" onclick="editKomik('."'".$buku['idBuku']."'".')">EDIT</button></p>
             <div id="divImg">';
                 echo '<img class="komik" src="../'.$buku['Location'].'"/>';
             echo '</div>

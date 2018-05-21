@@ -35,3 +35,23 @@
 <div id="blur" onclick="pencetBlur()">
 </div>
 <div id="popup"></div>
+<?php
+    session_start();
+
+    if(isset($_SESSION['pengarangEdit'])){
+        unset($_SESSION['pengarangEdit']);
+        ?>
+        <script>
+            alert("Sukses mengedit pengarang");
+        </script>
+        <?php
+    }
+    else if(isset($_SESSION['pengarangHapus'])){
+        unset($_SESSION['pengarangHapus']);
+        ?>
+        <script>
+            alert("Sukses menghapus pengarang");
+        </script>
+        <?php
+    }
+?>
