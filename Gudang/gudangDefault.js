@@ -318,6 +318,21 @@ function munculPopupPenerbit(temp){
     $("#blur").fadeIn();
 }
 
+function munculPopupPengarang(temp){
+    var a = temp;
+    $.ajax({
+        type : 'post',
+        data : {'idPengarang':a},
+        url: '../functionPHP/popUpGudangPengarang.php',
+        success: function (response) {//response is value returned from php (for your example it's "bye bye"
+            //alert(response);
+            $("#popup").html(response);
+        }
+    });
+    $("#popup").fadeIn();
+    $("#blur").fadeIn();
+}
+
 function pencetBlur(){
     $("#popup").css('display','none');
     $("#blur").css('display','none');

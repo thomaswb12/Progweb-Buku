@@ -20,6 +20,19 @@
         return "BB".$newId.$id;
     }
 
+    function getPengarang($idPengarang){
+        global $conn;
+        $sql = "SELECT * FROM penulis WHERE `idPenulis` = '$idPengarang'";
+        $result=mysqli_query($conn,$sql);
+        $data=array();
+        if($result = $conn->query($sql)){
+            while($rows = $result->fetch_assoc()){
+                $data = $rows;
+            }
+            return $data;
+        }
+    }
+
     //ambil semua di tabel member
     function getAllPengarang(){
         global $conn;

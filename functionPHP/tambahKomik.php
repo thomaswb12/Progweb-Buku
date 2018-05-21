@@ -15,8 +15,9 @@
         $berat = $_POST['beratKomik'].'.0';
         $panjang = $_POST['panjang'];
         $lebar = $_POST['lebar'];
-        $foto = "../images/buku/".$_FILES['gambar']['name'];
-        $location = "images/buku/".$_FILES['gambar']['name'];
+        $ext = strchr($_FILES['gambar']['name'],".");
+        $foto = "../images/buku/".$judul.'_Indonesia'.$ext;
+        $location = "images/buku/".$judul.'_Indonesia'.$ext;
         move_uploaded_file($_FILES['gambar']['tmp_name'], $foto);
         $genre=array();
         if(!empty($_POST['listgenre'])){
