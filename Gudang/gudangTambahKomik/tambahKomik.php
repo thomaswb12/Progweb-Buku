@@ -48,7 +48,7 @@
     </div>
 
     <div id="kanan">
-        <label>ID Pengarang</label><br/>
+        <label>Pengarang</label><br/>
         <select id="idPengarang" name="idPengarang">
             <?php
                 $sql =  "SELECT * from penulis";
@@ -60,7 +60,7 @@
             ?>
         </select><br/>
 
-        <label>ID Penerbit</label><br/>
+        <label>Penerbit</label><br/>
         <select id="idPenerbit" name="idPenerbit">
             <?php
                 $sql =  "SELECT * from penerbit";
