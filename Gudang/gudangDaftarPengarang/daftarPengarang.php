@@ -11,6 +11,7 @@
             <option value="4">No. Telp</option>
             <option value="5">Alamat</option>
         </select>
+        <i class="fa fa-search blue font15" onclick="searchPengarang()"></i>
     </div>
 
     <div id="searching">
@@ -25,7 +26,6 @@
         </select>
         <div id="searchBox">
             <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy" onkeyup="searchPengarang()" />
-            <i class="fa fa-search blue font15" onclick="searchPengarang()"></i>
         </div>
     </div>
 </div>

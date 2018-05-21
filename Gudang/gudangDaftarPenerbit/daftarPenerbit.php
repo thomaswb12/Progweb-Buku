@@ -8,6 +8,7 @@
             <option>ID</option>
             <option>Nama Penerbit</option>
         </select>
+        <i class="fa fa-search blue font15"  onclick="searchPenerbit()"></i>
     </div>
 
     <div id="searching">
@@ -19,7 +20,6 @@
         </select>
         <div id="searchBox">
             <input type="text"  placeholder="Search" class="font15" id="inputSearchBy" name="inputSearchBy" onkeyup="searchPenerbit()"/>
-            <i class="fa fa-search blue font15"  onclick="searchPenerbit()"></i>
         </div>
     </div>
 </div>
