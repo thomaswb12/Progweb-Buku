@@ -10,14 +10,71 @@
         case 4 : loadDetail($_POST['data']);break;
         case 6 : ajaxTampilGambar($_FILES['foto']);break;
         case 7 : tampilkanIdJabatan($_POST['data']); break;
-        case 8 : search();break;
+        case 8 : search($_POST['kata'],$_POST['dari'],$_POST['sorting']);break;
     }
 
     function tampilinGambar($tamp){
         echo is_array($tamp);
     }
 
-    function search(){
+    function search($kata,$dari,$sort){
+        switch ($dari) {
+            case 1: $cari = "idKaryawan";
+                    break;
+            case 2: $cari = "nama";
+                    break;
+            default:
+                    break;
+        }
+        switch ($sort) {
+            case 1: $order = "idKaryawan";
+                    break;
+            case 2: $order = "nama";
+                    break;
+            case 3: $order = "idJabatan";
+                    break;
+            
+            default:
+                    break;
+        }
+        $sql = "SELECT * FROM karyawan, jabatankaryawan where karyawan.idJabatan = jabatankaryawan.idJabatan and karyawan.$cari like '%$kata%' ORDER BY karyawan.$order ASC;";
+        global $conn;
+        //echo $sql;
+        $result = $conn->query($sql);
+        if($result = $conn->query($sql)){
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo '<div class="infoKaryawan">';
+                        echo '<img id="foto200px" class="photo" src="'.$row['foto'].'"/>';
+                    echo        '<table>
+                                <tr>
+                                    <td class="attr"><p class="label">ID</p></td>
+                                    <td>:</td>
+                                    <td><p class="isi">'.$row['idKaryawan'].'</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="attr"><p class="label">Nama</p></td>
+                                    <td>:</td>
+                                    <td><p class="isi">'.$row['nama'].'</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="attr"><p class="label">Jabatan</p></td>
+                                    <td>:</td>
+                                    <td><p class="isi">'.$row['namaJabatan'].'</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><a href="#" class="more" onclick="viewKaryawan('."'".$row['idKaryawan']."'".')">Details >></a></td>
+                                </tr>
+                            </table>
+                        </div>';
+                }
+            }
+            else{
+                echo "gagal";
+            }
+        }
+        $conn->close();
+
 
     }
 
